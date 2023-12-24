@@ -7,8 +7,17 @@ using UnityEngine.Events;
 public class SpawnerEnemy : MonoBehaviour
 {
     public List<GameObject> prefabsEnemies;
-    public float CountEnemyWave => GameManager.numberWave * 5;
+    public float MaxCountEnemyWave => GameManager.numberWave * 5;
+    private float remainderEnemyWave; // остаток врагов в волне
     private float counterEnemySpawn;
+
+    [SerializeField]
+    private float minRadius;
+    [SerializeField]
+    private float maxRadius;
+
+    public static bool isSpawn;
+    private bool isAliveEnemy = false;
 
     [SerializeField]
     private TextMeshProUGUI counterEnemyUI;
@@ -22,17 +31,21 @@ public class SpawnerEnemy : MonoBehaviour
         }
     }
 
-    private readonly float frequencySpawn = 1f;
+    [SerializeField]
+    private float frequencySpawn;
 
     private void Awake()
     {
         GlobalEventManager.NextWave.AddListener(StartSpawn);
+        GlobalEventManager.EndWave.AddListener(() => isSpawn = false);
         GlobalEventManager.DeathEnemy.AddListener(SubtractCounter);
     }
 
     private void Update()
     {
-        if (counterEnemySpawn == 0)
+        isAliveEnemy = !(counterEnemySpawn == 0 && remainderEnemyWave == 0);
+
+        if (!isAliveEnemy && isSpawn)
         {
             GlobalEventManager.Start_EndWave();
         }
@@ -40,20 +53,24 @@ public class SpawnerEnemy : MonoBehaviour
 
     private void StartSpawn()
     {
+        isSpawn = true;
         StartCoroutine(Spawner());
     }
 
     public IEnumerator Spawner()
     {
-        for (int i = 0; i < CountEnemyWave; i++)
+        remainderEnemyWave = MaxCountEnemyWave;
+        while(remainderEnemyWave > 0)
         {
-            Instantiate(prefabsEnemies[0]);
+            Instantiate(prefabsEnemies[0], Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position, Quaternion.identity);
+            remainderEnemyWave--;
             CounterEnemySpawn++;
             yield return new WaitForSeconds(frequencySpawn);
+            Debug.Log(remainderEnemyWave);
         }
     }
 
-    private void SubtractCounter()
+    private void SubtractCounter() // вычитание счетчика
     {
         CounterEnemySpawn--;
     }
