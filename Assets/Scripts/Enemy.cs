@@ -1,13 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField]
     private float startHp;
-
     private float hp;
+    public float xp;
     [SerializeField]
     private float speed;
     [SerializeField]
@@ -16,6 +14,7 @@ public class Enemy : MonoBehaviour
     public bool isMove;
 
     private Transform target;
+    public GameObject[] drops;
 
     public float HP
     {
@@ -60,12 +59,11 @@ public class Enemy : MonoBehaviour
     {
         var direction = target.position - transform.position;
         transform.position += speed * Time.deltaTime * direction.normalized;
-        //transform.Translate(direction * speed * Time.deltaTime);
     }
 
     private Vector3 DirectionToTarget()
     {
-        return (target.position - transform.position);
+        return target.position - transform.position;
     }
 
     private float DistanceToTarget()
@@ -89,7 +87,10 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        GlobalEventManager.Start_DeathEnemy();
+        foreach (var drop in drops)
+        {
+            Instantiate(drop, transform.position, Quaternion.identity);
+        }
         Destroy(gameObject);
     }
 }

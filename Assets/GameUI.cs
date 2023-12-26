@@ -9,22 +9,23 @@ public class GameUI : MonoBehaviour
 
     private void Awake()
     {
-        GlobalEventManager.EndWave.AddListener(ShowSelected);
+        GlobalEventManager.ChoiseBonus.AddListener(ShowSelected);
     }
 
     public void ShowSelected()
     {
         selected.SetActive(true);
+        Time.timeScale = 0f;
     }
     
     public void HideSelected()
     {
         selected.SetActive(false);
+        Time.timeScale = 1f;
     }
 
     public void ButtonOK()
     {
         HideSelected();
-        GlobalEventManager.Start_NextWave();
     }
 }

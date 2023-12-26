@@ -7,9 +7,6 @@ using UnityEngine.Events;
 public class SpawnerEnemy : MonoBehaviour
 {
     public List<GameObject> prefabsEnemies;
-    public float MaxCountEnemyWave => GameManager.numberWave * 5;
-    private float remainderEnemyWave; // остаток врагов в волне
-    private float counterEnemySpawn;
 
     [SerializeField]
     private float minRadius;
@@ -17,38 +14,13 @@ public class SpawnerEnemy : MonoBehaviour
     private float maxRadius;
 
     public static bool isSpawn;
-    private bool isAliveEnemy = false;
-
-    [SerializeField]
-    private TextMeshProUGUI counterEnemyUI;
-    public float CounterEnemySpawn
-    {
-        get { return counterEnemySpawn; }
-        set
-        {
-            counterEnemySpawn = value;
-            counterEnemyUI.text = counterEnemySpawn.ToString();
-        }
-    }
 
     [SerializeField]
     private float frequencySpawn;
 
-    private void Awake()
+    private void Start()
     {
-        GlobalEventManager.NextWave.AddListener(StartSpawn);
-        GlobalEventManager.EndWave.AddListener(() => isSpawn = false);
-        GlobalEventManager.DeathEnemy.AddListener(SubtractCounter);
-    }
-
-    private void Update()
-    {
-        isAliveEnemy = !(counterEnemySpawn == 0 && remainderEnemyWave == 0);
-
-        if (!isAliveEnemy && isSpawn)
-        {
-            GlobalEventManager.Start_EndWave();
-        }
+        StartSpawn();
     }
 
     private void StartSpawn()
@@ -59,19 +31,12 @@ public class SpawnerEnemy : MonoBehaviour
 
     public IEnumerator Spawner()
     {
-        remainderEnemyWave = MaxCountEnemyWave;
-        while(remainderEnemyWave > 0)
+        while(isSpawn)
         {
-            Instantiate(prefabsEnemies[0], Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position, Quaternion.identity);
-            remainderEnemyWave--;
-            CounterEnemySpawn++;
+            var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
+            position.z = 0f;
+            Instantiate(prefabsEnemies[0], position, Quaternion.identity);
             yield return new WaitForSeconds(frequencySpawn);
-            Debug.Log(remainderEnemyWave);
         }
-    }
-
-    private void SubtractCounter() // вычитание счетчика
-    {
-        CounterEnemySpawn--;
     }
 }

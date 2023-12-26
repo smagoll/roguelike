@@ -3,22 +3,16 @@ using UnityEngine.Events;
 
 public class GlobalEventManager : MonoBehaviour
 {
-    public static UnityEvent NextWave = new();
-    public static UnityEvent EndWave = new();
-    public static UnityEvent DeathEnemy = new();
+    public static UnityEvent ChoiseBonus = new();
+    public static UnityEvent<float> UpdateXp = new();
 
-    public static void Start_NextWave()
+    public static void Start_ChoiseBonus()
     {
-        NextWave.Invoke();
+        ChoiseBonus.Invoke();
     }
-    
-    public static void Start_EndWave()
+        
+    public static void Start_UpdateXp(float xp)
     {
-        EndWave.Invoke();
-    }
-    
-    public static void Start_DeathEnemy()
-    {
-        DeathEnemy.Invoke();
+        UpdateXp.Invoke(xp);
     }
 }
