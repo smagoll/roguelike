@@ -14,7 +14,7 @@ public class DamageHurt : MonoBehaviour
     [SerializeField]
     private float timeBeforeDestroy;
 
-    private void Awake()
+    private void Start()
     {
         textDamage.text = damage.ToString();
 
