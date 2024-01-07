@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    public float damage;
+    private float damage;
+    public float scaleDamage;
     private float startFrequency;
-    public float scaleFrequency = 1;
-    public float Frequency { get => startFrequency * scaleFrequency; set => startFrequency = value; }
+    public float scaleFrequency = 100;
+    public float Frequency { get => startFrequency * scaleFrequency / 100; set => startFrequency = value; }
+    public float Damage { get => damage * scaleDamage / 100; set => damage = value; }
 
     public virtual void StartAttack()
     {

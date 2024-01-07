@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    [SerializeField]
+    public Hero hero;
     private float maxHp;
     private float hp;
-    [SerializeField]
     private float speed;
     private float scaleHp = 1;
     private float scaleSpeed = 1;
@@ -48,20 +47,22 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
+        animator = GetComponent<Animator>();
+        InitializeStats();
         HP = maxHp;
 
         GlobalEventManager.IncreaseHP.AddListener(IncreaseHP);
-    }
-
-    private void Start()
-    {
-        animator = GetComponent<Animator>();
-        GlobalEventManager.Start_UpdateHealthBar(hp, maxHp);
 
         foreach (var upgrade in upgrades)
         {
             GameManager.AddUpgrade(upgrade);
         }
+
+    }
+
+    private void Start()
+    {
+        GlobalEventManager.Start_UpdateHealthBar(hp, maxHp);
     }
 
     public void TakeDamage(float damage)
@@ -78,5 +79,13 @@ public class Character : MonoBehaviour
     private void IncreaseHP(float hp)
     {
         HP += hp;
+    }
+
+    private void InitializeStats()
+    {
+        GetComponent<SpriteRenderer>().sprite = hero.sprite;
+        animator.runtimeAnimatorController = hero.animator;
+        maxHp = hero.hp;
+        speed = hero.speed;
     }
 }

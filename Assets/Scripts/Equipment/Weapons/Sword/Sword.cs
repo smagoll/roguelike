@@ -38,7 +38,7 @@ public class Sword : Weapon
         foreach (var enemy in enemies)
         {
             var qwe = enemy.GetComponent<Enemy>();
-            qwe.TakeDamage(damage);
+            qwe.TakeDamage(Damage);
         }
     }
 
@@ -55,12 +55,14 @@ public class Sword : Weapon
 
     public void Initialize(UpgradeAddSword dataSword)
     {
-        damage = dataSword.damage;
+        Damage = dataSword.damage;
         prefabSword = dataSword.prefabSword;
         swordObject = dataSword.prefabSwordObject;
         Frequency = dataSword.startFrequencyAttack;
         attackRange = dataSword.attackRange;
         upgrades = dataSword.upgrades;
+
+        GlobalEventManager.Start_AddItem(dataSword);
 
         StartAttack();
     }

@@ -2,16 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bow : Weapon
+public class Bow : Weapon, IProjectileController
 {
     public GameObject prefabArrow;
+    public bool isArrowThrough = false;
+
     public float attackRange;
-    public float distanceFlight;
-    public float speedFlightArrow;
 
     public Upgrade[] upgrades;
 
     private PlayerController playerController;
+
+    public float DistanceFlight { get; set; }
+    public float SpeedFlight { get; set; }
 
     private void Awake()
     {
@@ -38,6 +41,9 @@ public class Bow : Weapon
         var arrowObject = Instantiate(prefabArrow, gameObject.transform.position, Quaternion.identity);
         var arrow = arrowObject.GetComponent<Arrow>();
         arrow.bow = this;
+        arrow.projectileController = this;
+        arrow.IsThrough = isArrowThrough;
+
         if (direction == Vector3.zero)
         {
             arrow.direction = playerController.directionLook;
@@ -48,15 +54,17 @@ public class Bow : Weapon
         }
     }
 
-    public void Initialaze(UpgradeAddBow dataBow)
+    public void Initialize(UpgradeAddBow dataBow)
     {
         prefabArrow = dataBow.prefabSword;
-        damage = dataBow.damage;
-        speedFlightArrow = dataBow.speedFlightArrow;
+        Damage = dataBow.damage;
+        SpeedFlight = dataBow.speedFlightArrow;
         attackRange = dataBow.attackRange;
-        Frequency = dataBow.startFrequencyAttack;
+        Frequency = dataBow.frequency;
         upgrades = dataBow.upgrades;
-        distanceFlight = dataBow.distanceFlight;
+        DistanceFlight = dataBow.distanceFlight;
+
+        GlobalEventManager.Start_AddItem(dataBow);
 
         StartAttack();
     }

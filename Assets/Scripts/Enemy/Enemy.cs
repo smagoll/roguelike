@@ -6,22 +6,22 @@ public class Enemy : MonoBehaviour
     private float startHp;
     private float hp;
     public float xp;
-    [SerializeField]
-    private float speed;
-    [SerializeField]
-    private float distanceStop;
+    public float speed;
+    public float distanceStop;
 
     public float damage;
     public float freqAttack;
     public float lastAttackTime = 0f;
 
     public bool isMove;
+    public bool isDeath;
 
     private Transform target;
 
     public int stageForOpen;
 
     public GameObject[] drops;
+    public Animator animator;
 
     public float HP
     {
@@ -40,6 +40,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         HP = startHp;
+        animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -49,6 +50,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (isDeath)
+        {
+            return;
+        }
+
         CheckIsMove();
 
         if (isMove)
@@ -59,7 +65,7 @@ public class Enemy : MonoBehaviour
         {
             if (Time.time - lastAttackTime > freqAttack)
             {
-                Attack();
+                animator.SetTrigger("attack");
                 lastAttackTime = Time.time;
             }
         }
@@ -101,7 +107,14 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Death()
+    private void Death()
+    {
+        isDeath = true;
+        GetComponent<PolygonCollider2D>().enabled = false;
+        animator.SetTrigger("death");
+    }
+
+    public void DestroyEnemy()
     {
         AppearanceDrops();
         Destroy(gameObject);

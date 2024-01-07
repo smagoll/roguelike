@@ -9,6 +9,8 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private GameObject selected;
     [SerializeField]
+    private GameObject infoHero;
+    [SerializeField]
     private GameObject damageHurtPrefab;
     [SerializeField]
     private TextMeshProUGUI textXp;
@@ -16,16 +18,37 @@ public class GameUI : MonoBehaviour
     private TextMeshProUGUI textNumberStage;
 
     [SerializeField]
+    private InfoMenu infoMenu;
+
+    [SerializeField]
     private GameObject upgradeViewPrefab;
     [SerializeField]
     private Transform upgradesLayout;
 
+    public bool isPause = false;
+
     private void Awake()
     {
         GlobalEventManager.ShowUpgrades.AddListener(ShowUpgrades);
-        GlobalEventManager.UpdateXpText.AddListener(UpdateXpText);
-        GlobalEventManager.UpdateStageText.AddListener(UpdateStageText);
         GlobalEventManager.CreateDamageHurt.AddListener(CreateDamageHurt);
+        GlobalEventManager.AddItem.AddListener(infoMenu.AddItem);
+    }
+
+    public void ButtonPause()
+    {
+        if (!isPause)
+        {
+            infoHero.SetActive(true);
+            Time.timeScale = 0;
+            isPause = true;
+        }
+        else
+        {
+            isPause = false;
+            infoHero.SetActive(false);
+            Time.timeScale = 1;
+        }
+
     }
 
     public void ShowUpgrades(List<Upgrade> upgrades)
@@ -63,16 +86,6 @@ public class GameUI : MonoBehaviour
     public void ButtonOK()
     {
         HideSelected();
-    }
-
-    private void UpdateXpText(float xpCollect, float xpForCurrentStage)
-    {
-        textXp.text = $"{xpCollect}/{xpForCurrentStage}";
-    }    
-    
-    private void UpdateStageText(int numberStage)
-    {
-        textNumberStage.text = $"Stage {numberStage}";
     }
 
     public Upgrade RandomUpgrade(ref List<Upgrade> upgrades)

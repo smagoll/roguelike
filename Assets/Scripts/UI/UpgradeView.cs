@@ -1,7 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
 {
@@ -12,12 +11,16 @@ public class UpgradeView : MonoBehaviour
     private TextMeshProUGUI level;
     [SerializeField]
     private TextMeshProUGUI description;
+    [SerializeField]
+    private Image image;
 
     private void Start()
     {
         if (upgrade != null)
         {
+            image.sprite = upgrade.icon;
             title.text = upgrade.title;
+            level.text = upgrade.level.ToString();
             description.text = upgrade.description;
         }
     }

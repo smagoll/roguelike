@@ -98,11 +98,11 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 17
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -10
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -252,5 +252,5 @@ MonoBehaviour:
   damage: 0
   textDamage: {fileID: 2003055012749252113}
   moveY: 0.05
-  timeInMove: 0.2
+  timeInMove: 0.7
   timeBeforeDestroy: 0.35

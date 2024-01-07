@@ -10,10 +10,11 @@ public class StageBar : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textStage;
 
-    private void Start()
+    private void Awake()
     {
-        slider = GetComponent<Slider>();
         GlobalEventManager.UpdateStageBar.AddListener(UpdateStageBar);
+
+        slider = GetComponent<Slider>();
     }
 
     public void UpdateStageBar(int stage, float xpCollect, float xpForCurrentStage)

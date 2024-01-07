@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "UpgradeWeapon", menuName = "Upgrades/UpgradesAddWeapon/UpgradeAddSword")]
+[CreateAssetMenu(fileName = "AddSword", menuName = "Upgrades/Add/Weapons/Sword")]
 public class UpgradeAddSword : Upgrade
 {
     public float damage;
