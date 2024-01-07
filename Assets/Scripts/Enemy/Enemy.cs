@@ -74,7 +74,13 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(float damage)
     {
         HP -= damage;
-        GlobalEventManager.Start_CreateDamageHurt(transform.position, damage);
+        GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, TextHit.Default);
+    }
+    
+    public void TakeDamage(float damage, TextHit textHit)
+    {
+        HP -= damage;
+        GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, textHit);
     }
 
     private void MoveToPlayer()

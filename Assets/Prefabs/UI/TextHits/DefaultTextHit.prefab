@@ -148,7 +148,7 @@ GameObject:
   - component: {fileID: 8953268858322937362}
   - component: {fileID: 1710122189132906087}
   m_Layer: 5
-  m_Name: Damage Hurt
+  m_Name: DefaultTextHit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -253,4 +253,4 @@ MonoBehaviour:
   textDamage: {fileID: 2003055012749252113}
   moveY: 0.05
   timeInMove: 0.7
-  timeBeforeDestroy: 0.35
+  timeBeforeDestroy: 0.3

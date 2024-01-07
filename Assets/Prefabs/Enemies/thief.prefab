@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 9095143992541676026}
   - component: {fileID: 7010759865120759045}
   - component: {fileID: 7655717843538145253}
-  - component: {fileID: 7423386196196685105}
   - component: {fileID: 9033326059125020830}
   m_Layer: 3
   m_Name: thief
@@ -190,32 +189,6 @@ PolygonCollider2D:
       - {x: 0.16, y: 0.03}
       - {x: 0.04, y: 0.16}
   m_UseDelaunayMesh: 0
---- !u!114 &7423386196196685105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6499632400935299304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98288fe5a94f69f44b2df2c4856f464a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startHp: 10
-  xp: 1
-  speed: 1
-  distanceStop: 0.2
-  damage: 2
-  freqAttack: 1
-  lastAttackTime: 0
-  isMove: 1
-  isDeath: 0
-  stageForOpen: 5
-  drops:
-  - {fileID: 2566861449976774461, guid: 576baa68b24a5604bbce3659e585857f, type: 3}
-  - {fileID: 2566861449976774461, guid: 49c11e9cf8351844294923b887b88710, type: 3}
-  animator: {fileID: 0}
 --- !u!114 &9033326059125020830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHp: 10
   xp: 2
-  speed: 1.1
+  speed: 1
   distanceStop: 0.2
   damage: 3
   freqAttack: 0.7

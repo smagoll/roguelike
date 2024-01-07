@@ -33,7 +33,7 @@ public class DropCollector : MonoBehaviour
     {
         if (collision.CompareTag("Drop"))
         {
-            var drop = collision.gameObject.GetComponent<Experience>();
+            var drop = collision.gameObject.GetComponent<Drop>();
             drop.isAttraction = true;
         }
     }

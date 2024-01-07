@@ -5,7 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     private float damage;
-    public float scaleDamage;
+    public float scaleDamage = 100;
     private float startFrequency;
     public float scaleFrequency = 100;
     public float Frequency { get => startFrequency * scaleFrequency / 100; set => startFrequency = value; }

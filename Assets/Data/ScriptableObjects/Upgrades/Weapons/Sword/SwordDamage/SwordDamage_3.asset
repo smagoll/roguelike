@@ -15,7 +15,7 @@ MonoBehaviour:
   icon: {fileID: 21300000, guid: dbebefa8fa9e3ca4ab0fa5e44e41890b, type: 2}
   title: "\u0417\u0430\u043A\u0430\u043B\u043A\u0430 \u043C\u0435\u0447\u0430"
   level: 3
-  description: "\u043B\u0435\u0432\u0435\u043B3"
+  description: "+7 \u043A \u0443\u0440\u043E\u043D\u0430 \u043C\u0435\u0447\u0430"
   chance: 10
   isWeapon: 0
   isAbility: 0

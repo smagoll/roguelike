@@ -10,7 +10,7 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<int> OpenEnemies = new();
     public static UnityEvent<float, float> UpdateHealthBar = new();
     public static UnityEvent<int, float, float> UpdateStageBar = new();
-    public static UnityEvent<Vector3, float> CreateDamageHurt = new();
+    public static UnityEvent<Vector3, float, TextHit> CreateDamageHurt = new();
     public static UnityEvent<Upgrade> AddItem = new();
 
     public static void Start_ShowUpgrades(List<Upgrade> upgrades)
@@ -38,9 +38,9 @@ public class GlobalEventManager : MonoBehaviour
         UpdateStageBar.Invoke(stage, xpCollect, xpForCurrentStage);
     }
     
-    public static void Start_CreateDamageHurt(Vector3 position, float damage)
+    public static void Start_CreateDamageHurt(Vector3 position, float damage, TextHit textHit)
     {
-        CreateDamageHurt.Invoke(position, damage);
+        CreateDamageHurt.Invoke(position, damage, textHit);
     } 
     
     public static void Start_IncreaseHP(float hp)

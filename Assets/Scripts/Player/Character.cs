@@ -70,6 +70,12 @@ public class Character : MonoBehaviour
         HP -= damage;
         animator.SetTrigger("hurt");
     }
+    
+    public void TakeDamage(float damage, TextHit textHit)
+    {
+        HP -= damage;
+        animator.SetTrigger("hurt");
+    }
 
     public void Death()
     {

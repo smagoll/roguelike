@@ -19,7 +19,7 @@ public class DamageHurt : MonoBehaviour
         textDamage.text = damage.ToString();
 
         transform.DOMove(transform.position + new Vector3(0, 0.2f, 0), timeInMove);
-        DOTween.Sequence().Append(transform.DOScale(0.03f, 0.1f)).AppendInterval(.4f).Append(textDamage.DOFade(0.1f, 1f)).AppendCallback(() => Delete());
+        DOTween.Sequence().Append(transform.DOScale(0.03f, 0.1f)).AppendInterval(timeBeforeDestroy).Append(textDamage.DOFade(0.1f, 1f)).AppendCallback(() => Delete());
     }
 
     public void Delete()

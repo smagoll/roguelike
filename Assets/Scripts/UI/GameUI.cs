@@ -11,8 +11,6 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private GameObject infoHero;
     [SerializeField]
-    private GameObject damageHurtPrefab;
-    [SerializeField]
     private TextMeshProUGUI textXp;
     [SerializeField]
     private TextMeshProUGUI textNumberStage;
@@ -30,7 +28,6 @@ public class GameUI : MonoBehaviour
     private void Awake()
     {
         GlobalEventManager.ShowUpgrades.AddListener(ShowUpgrades);
-        GlobalEventManager.CreateDamageHurt.AddListener(CreateDamageHurt);
         GlobalEventManager.AddItem.AddListener(infoMenu.AddItem);
     }
 
@@ -105,11 +102,5 @@ public class GameUI : MonoBehaviour
             }
         }
         return null;
-    }
-
-    private void CreateDamageHurt(Vector3 position, float damage)
-    {
-        var damageHurt = Instantiate(damageHurtPrefab, position, Quaternion.identity);
-        damageHurt.GetComponent<DamageHurt>().damage = damage;
     }
 }
