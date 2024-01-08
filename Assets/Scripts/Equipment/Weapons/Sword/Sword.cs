@@ -7,8 +7,6 @@ public class Sword : Weapon
 
     public float attackRange;
 
-    public Upgrade[] upgrades;
-
     private PlayerController playerController;
 
     private void Awake()
@@ -16,17 +14,10 @@ public class Sword : Weapon
         playerController = GetComponent<PlayerController>();
     }
 
-    public override void StartAttack()
+    private void Start()
     {
         swordObject = Instantiate(prefabSword, gameObject.transform);
         swordObject.SetActive(false);
-
-        foreach (var upgrade in upgrades)
-        {
-            GameManager.AddUpgrade(upgrade);
-        }
-
-        base.StartAttack();
     }
 
     public override void Action()

@@ -23,7 +23,7 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private Transform upgradesLayout;
 
-    public bool isPause = false;
+    public static bool isPause = false;
 
     private void Awake()
     {

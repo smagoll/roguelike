@@ -7,8 +7,6 @@ public class Bow : Weapon, IProjectileController
 
     public float attackRange;
 
-    public Upgrade[] upgrades;
-
     private PlayerController playerController;
 
     public float DistanceFlight { get; set; }
@@ -17,20 +15,6 @@ public class Bow : Weapon, IProjectileController
     private void Awake()
     {
         playerController = GetComponent<PlayerController>();
-    }
-
-    public override void StartAttack()
-    {
-        if (upgrades.Length > 0)
-        {
-            foreach (var upgrade in upgrades)
-            {
-                GameManager.AddUpgrade(upgrade);
-            }
-        }
-
-
-        base.StartAttack();
     }
 
     public override void Action()

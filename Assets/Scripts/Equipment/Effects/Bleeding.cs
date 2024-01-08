@@ -1,10 +1,10 @@
-using System.Collections;
 using UnityEngine;
 
 public class Bleeding : MonoBehaviour
 {
     private float damagePerSecond;
     private readonly float frequency = 0.5f;
+    private float lastTimeTick;
 
     public float TimeBleeding { get; set; }
 
@@ -15,18 +15,23 @@ public class Bleeding : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(StartBleeding());
+        lastTimeTick = Time.time;
+        TimeBleeding = 5f;
     }
 
-    private IEnumerator StartBleeding()
+    private void Update()
     {
-        while (TimeBleeding <= 0)
+        if (Time.time - lastTimeTick >= frequency)
         {
-            yield return new WaitForSeconds(frequency);
             GetComponent<Enemy>().TakeDamage(damagePerSecond, TextHit.Small);
-            TimeBleeding--;
+            lastTimeTick = Time.time;
         }
 
-        Destroy(gameObject);
+        TimeBleeding -= Time.deltaTime;
+
+        if (TimeBleeding <= 0)
+        {
+            Destroy(this);
+        }
     }
 }

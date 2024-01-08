@@ -23,8 +23,8 @@ MonoBehaviour:
   prefabSword: {fileID: 8715774982045832175, guid: 3f640843c9ba1844d855f446e3b47162, type: 3}
   attackRange: 4
   distanceFlight: 3.5
-  frequency: 2
-  speedFlightArrow: 5
+  frequency: 1
+  speedFlightArrow: 7
   upgrades:
   - {fileID: 11400000, guid: 4e786d7d87f54e54d980eebbfffbb6a9, type: 2}
   - {fileID: 11400000, guid: 87ecce83bebf8ba449c7089d45d8e634, type: 2}
