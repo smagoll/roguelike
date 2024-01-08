@@ -39,6 +39,18 @@ public class Sword : Weapon
         {
             var qwe = enemy.GetComponent<Enemy>();
             qwe.TakeDamage(Damage);
+
+            if (isBleeding)
+            {
+                Bleeding bleedingEnemy = enemy.GetComponent<Bleeding>();
+
+                if (bleedingEnemy == null)
+                {
+                    bleedingEnemy = enemy.gameObject.AddComponent<Bleeding>();
+                }
+
+                bleedingEnemy.Damage = Damage;
+            }
         }
     }
 

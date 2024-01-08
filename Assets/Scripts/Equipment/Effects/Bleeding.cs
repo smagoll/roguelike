@@ -4,7 +4,7 @@ using UnityEngine;
 public class Bleeding : MonoBehaviour
 {
     private float damagePerSecond;
-    private float frequency;
+    private readonly float frequency = 0.5f;
 
     public float TimeBleeding { get; set; }
 
