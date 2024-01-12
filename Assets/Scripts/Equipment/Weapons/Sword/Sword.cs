@@ -67,6 +67,6 @@ public class Sword : Weapon
 
         GlobalEventManager.Start_AddItem(dataSword);
 
-        StartAttack();
+        isAttack = true;
     }
 }

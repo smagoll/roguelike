@@ -1,11 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private FloatingJoystick joystick;
     private Character character;
     private SpriteRenderer spriteRenderer;
     public Vector2 directionLook;
@@ -25,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        var direction = new Vector2(joystick.Direction.x, joystick.Direction.y);
+        var direction = new Vector2(GameManager.joystick.Direction.x, GameManager.joystick.Direction.y);
         transform.Translate(character.Speed * Time.deltaTime * direction);
 
         var isMove = direction.magnitude > 0;

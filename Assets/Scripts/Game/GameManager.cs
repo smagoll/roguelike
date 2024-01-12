@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using Cinemachine;
 using UnityEngine;
+using Zenject;
 
 public class GameManager : MonoBehaviour
 {
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
 
     [Header("Player")]
     public static GameObject player;
+    public static Joystick joystick;
     public static LayerMask layerEnemy;
     public static LayerMask layerPlayer;
 
@@ -45,9 +48,15 @@ public class GameManager : MonoBehaviour
     public List<Upgrade> upgradesAbility;
     public static List<Upgrade> upgrades = new();
 
+    [Inject]
+    private void Construct(Character character, Joystick input)
+    {
+        player = character.gameObject;
+        joystick = input;
+    }
+
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         layerEnemy = LayerMask.GetMask("Enemy");
         layerPlayer = LayerMask.GetMask("Player");
 

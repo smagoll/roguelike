@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireBall : AbilityDynamic, IProjectileController
+public class FireBall : EquipmentDynamic, IProjectileController
 {
     public GameObject prefabFireBall;
 
@@ -12,6 +12,7 @@ public class FireBall : AbilityDynamic, IProjectileController
     public float DistanceFlight { get; set; }
 
     public float SpeedFlight { get; set; }
+    public Vector2 Direction { get; set; }
 
     public override void Action()
     {
@@ -19,8 +20,7 @@ public class FireBall : AbilityDynamic, IProjectileController
         var fireBallProjectile = fireBall.GetComponent<FireBallProjectile>();
         fireBallProjectile.projectileController = this;
         fireBallProjectile.fireBall = this;
-        var direction = new Vector2(Random.Range(-1,1), Random.Range(-1, 1));
-        fireBallProjectile.direction = direction;
+        Direction = new Vector2(Random.Range(-1,1), Random.Range(-1, 1));
     }
 
     public void Initialize(UpgradeAddFireball dataFireball)
@@ -33,6 +33,6 @@ public class FireBall : AbilityDynamic, IProjectileController
         prefabFireBall = dataFireball.prefabFireball;
         upgrades = dataFireball.upgrades;
 
-        StartAttack();
+        isAttack = true;
     }
 }

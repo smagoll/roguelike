@@ -28,5 +28,6 @@ public class UpgradeView : MonoBehaviour
     public void SelectUpgrade()
     {
         upgrade.Action();
+        GameUI.IsPause = false;
     }
 }

@@ -3,17 +3,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AddEffect", menuName = "Upgrades/EffectWeapon")]
 public class AddEffect : Upgrade
 {
-    public Effects effect;
-    public Weapons weapon;
+    public Effect effect;
+    public WeaponEnum weapon;
 
     public override void Action()
     {
         switch (weapon)
         {
-            case Weapons.Sword:
+            case WeaponEnum.Sword:
                 ActivateEffect(GameManager.player.GetComponent<Sword>());
                 break;
-            case Weapons.Bow:
+            case WeaponEnum.Bow:
                 ActivateEffect(GameManager.player.GetComponent<Bow>());
                 break;
         }
@@ -23,7 +23,7 @@ public class AddEffect : Upgrade
     {
         switch (effect)
         {
-            case Effects.Bleeding:
+            case Effect.Bleeding:
                 weapon.isBleeding = true;
                 break;
         }

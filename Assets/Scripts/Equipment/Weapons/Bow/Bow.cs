@@ -11,6 +11,7 @@ public class Bow : Weapon, IProjectileController
 
     public float DistanceFlight { get; set; }
     public float SpeedFlight { get; set; }
+    public Vector2 Direction { get; set; }
 
     private void Awake()
     {
@@ -19,20 +20,16 @@ public class Bow : Weapon, IProjectileController
 
     public override void Action()
     {
-        var direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
+        Direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
         var arrowObject = Instantiate(prefabArrow, gameObject.transform.position, Quaternion.identity);
         var arrow = arrowObject.GetComponent<Arrow>();
         arrow.bow = this;
         arrow.projectileController = this;
         arrow.IsThrough = isArrowThrough;
 
-        if (direction == Vector3.zero)
+        if (Direction == Vector2.zero)
         {
-            arrow.direction = playerController.directionLook;
-        }
-        else
-        {
-            arrow.direction = direction;
+            Direction = playerController.directionLook;
         }
     }
 
@@ -48,6 +45,6 @@ public class Bow : Weapon, IProjectileController
 
         GlobalEventManager.Start_AddItem(dataBow);
 
-        StartAttack();
+        isAttack = true;
     }
 }

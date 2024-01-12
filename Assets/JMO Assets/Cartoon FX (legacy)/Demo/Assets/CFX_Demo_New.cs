@@ -58,39 +58,39 @@ public class CFX_Demo_New : MonoBehaviour
 	
 	void Update()
 	{
-		if(Input.GetKeyDown(KeyCode.LeftArrow))
+		if(UnityEngine.Input.GetKeyDown(KeyCode.LeftArrow))
 		{
-			prevParticle();
+            prevParticle();
 		}
-		else if(Input.GetKeyDown(KeyCode.RightArrow))
+		else if(UnityEngine.Input.GetKeyDown(KeyCode.RightArrow))
 		{
-			nextParticle();
+            nextParticle();
 		}
-		else if(Input.GetKeyDown(KeyCode.Delete))
+		else if(UnityEngine.Input.GetKeyDown(KeyCode.Delete))
 		{
-			destroyParticles();
+            destroyParticles();
 		}
 		
-		if(Input.GetMouseButtonDown(0))
+		if(UnityEngine.Input.GetMouseButtonDown(0))
 		{
-			RaycastHit hit = new RaycastHit();
-			if(groundCollider.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit, 9999f))
+            RaycastHit hit = new RaycastHit();
+			if(groundCollider.Raycast(Camera.main.ScreenPointToRay(UnityEngine.Input.mousePosition), out hit, 9999f))
 			{
-				GameObject particle = spawnParticle();
+                GameObject particle = spawnParticle();
 				particle.transform.position = hit.point + particle.transform.position;
 			}
 		}
 		
-		float scroll = Input.GetAxis("Mouse ScrollWheel");
+		float scroll = UnityEngine.Input.GetAxis("Mouse ScrollWheel");
 		if(scroll != 0f)
 		{
 			Camera.main.transform.Translate(Vector3.forward * (scroll < 0f ? -1f : 1f), Space.Self);
 		}
 		
-		if(Input.GetMouseButtonDown(2))
+		if(UnityEngine.Input.GetMouseButtonDown(2))
 		{
-			Camera.main.transform.position = defaultCamPosition;
-			Camera.main.transform.rotation = defaultCamRotation;
+            Camera.main.transform.position = defaultCamPosition;
+            Camera.main.transform.rotation = defaultCamRotation;
 		}
 	}
 

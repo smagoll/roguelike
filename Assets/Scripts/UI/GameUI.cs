@@ -23,7 +23,17 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private Transform upgradesLayout;
 
-    public static bool isPause = false;
+    private static bool isPause = false;
+
+    public static bool IsPause
+    {
+        get => isPause;
+        set
+        {
+            isPause = value;
+            GameManager.joystick.gameObject.SetActive(!isPause);
+        }
+    }
 
     private void Awake()
     {
@@ -37,11 +47,11 @@ public class GameUI : MonoBehaviour
         {
             infoHero.SetActive(true);
             Time.timeScale = 0;
-            isPause = true;
+            IsPause = true;
         }
         else
         {
-            isPause = false;
+            IsPause = false;
             infoHero.SetActive(false);
             Time.timeScale = 1;
         }
@@ -50,6 +60,7 @@ public class GameUI : MonoBehaviour
 
     public void ShowUpgrades(List<Upgrade> upgrades)
     {
+        IsPause = true;
         selected.SetActive(true);
         Time.timeScale = 0f;
 
