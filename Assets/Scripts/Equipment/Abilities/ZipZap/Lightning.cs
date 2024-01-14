@@ -55,7 +55,15 @@ public class Lightning : Projectile
         this.prefabLightning = prefabLightning;
         Sequence = sequence - 1;
         this.attackRange = attackRange;
-        this.direction = direction;
+
+        if (direction == Vector2.zero)
+        {
+            this.direction = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
+        }
+        else
+        {
+            this.direction = direction;
+        }
     }
 
     private Vector2 DirectionCloseEnemy(GameObject currentEnemy)

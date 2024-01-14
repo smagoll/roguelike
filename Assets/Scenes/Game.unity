@@ -1166,9 +1166,10 @@ MonoBehaviour:
   upgradesWeapon:
   - {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
   - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
-  - {fileID: 11400000, guid: cf067d2efe5151d4e8cf327102e54410, type: 2}
   upgradesAbility:
   - {fileID: 11400000, guid: f98bae41aa161bc4b8da81805951dd0f, type: 2}
+  - {fileID: 11400000, guid: cf067d2efe5151d4e8cf327102e54410, type: 2}
+  - {fileID: 11400000, guid: 89c5165198945a94c9873a9364870947, type: 2}
 --- !u!114 &533176928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,7 +1191,7 @@ MonoBehaviour:
   prefabsOpenEnemies: []
   minRadius: 5
   maxRadius: 10
-  frequencySpawn: 1
+  frequencySpawn: 0.5
 --- !u!1 &558134848
 GameObject:
   m_ObjectHideFlags: 0

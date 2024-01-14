@@ -20,7 +20,7 @@ public class FireBall : EquipmentDynamic, IProjectileController
         var fireBallProjectile = fireBall.GetComponent<FireBallProjectile>();
         fireBallProjectile.projectileController = this;
         fireBallProjectile.fireBall = this;
-        Direction = new Vector2(Random.Range(-1,1), Random.Range(-1, 1));
+        fireBallProjectile.direction = new Vector2(Random.Range(-1,1), Random.Range(-1, 1));
     }
 
     public void Initialize(UpgradeAddFireball dataFireball)

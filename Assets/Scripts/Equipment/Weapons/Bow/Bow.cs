@@ -28,9 +28,9 @@ public class Bow : Weapon, IProjectileController
         arrow.IsThrough = isArrowThrough;
 
         if (Direction == Vector2.zero)
-        {
-            Direction = playerController.directionLook;
-        }
+            arrow.direction = playerController.directionLook;
+        else
+            arrow.direction = Direction;
     }
 
     public void Initialize(UpgradeAddBow dataBow)
