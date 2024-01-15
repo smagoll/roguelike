@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour
 {
@@ -8,9 +9,11 @@ public class Character : MonoBehaviour
     private float maxHp;
     private float hp;
     private float speed;
+    private float evasion;
     private float scaleHp = 1;
     private float scaleSpeed = 1;
     public Animator animator;
+    public DropCollector dropCollector;
 
     public Upgrade[] upgrades;
 
@@ -44,6 +47,7 @@ public class Character : MonoBehaviour
             GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);
         }
     }
+    public float Evasion { get => evasion; set => evasion = value; }
 
     private void Awake()
     {
@@ -67,13 +71,19 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        HP -= damage;
-        animator.SetTrigger("hurt");
+        var rnd = Random.Range(0, 100);
+        if (rnd > evasion)
+        {
+            HP -= damage;
+            animator.SetTrigger("hurt");
+        }
+
     }
 
     public void Death()
     {
         Debug.Log("death");
+        SceneManager.LoadScene("Menu");
     }
 
     private void IncreaseHP(float hp)
@@ -87,5 +97,6 @@ public class Character : MonoBehaviour
         animator.runtimeAnimatorController = hero.animator;
         maxHp = hero.hp;
         speed = hero.speed;
+        evasion = hero.evasion;
     }
 }

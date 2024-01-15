@@ -183,6 +183,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hero: {fileID: 11400000, guid: a904ccc4e6371b14aacd41837e4875a2, type: 2}
   animator: {fileID: 0}
+  dropCollector: {fileID: 6967991368976675773}
   upgrades:
   - {fileID: 11400000, guid: 1fb64cefc84d78b4cad45924bf4f9dee, type: 2}
   - {fileID: 11400000, guid: a45606f48686ca34fa9094ed7c638cbc, type: 2}
@@ -190,6 +191,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 85c4e2c183b7f604ea064d48f8eb2390, type: 2}
   - {fileID: 11400000, guid: 6691d0be50264a240ab66a5e4b5cc033, type: 2}
   - {fileID: 11400000, guid: 28dfd6e5144e4bb418cdebbed9aaff76, type: 2}
+  - {fileID: 11400000, guid: d5dad015b4f9de3448cd32e7b76dc30c, type: 2}
+  - {fileID: 11400000, guid: a18b027e8aad580489157d2bb40784fc, type: 2}
+  - {fileID: 11400000, guid: da9dd723262bbc84ab23672e3e95c4fa, type: 2}
+  - {fileID: 11400000, guid: 75d17c8dff0e1874190724f113eddb59, type: 2}
+  - {fileID: 11400000, guid: e50f7732ae3e8414a8cbd5d1cc3c3ffc, type: 2}
+  - {fileID: 11400000, guid: f741a417072046b4da29301c6b93b1cc, type: 2}
 --- !u!1 &1720271548948345570
 GameObject:
   m_ObjectHideFlags: 0

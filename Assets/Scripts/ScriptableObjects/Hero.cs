@@ -7,5 +7,6 @@ public class Hero : ScriptableObject
     public Sprite sprite;
     public int hp;
     public float speed;
+    public float evasion;
     public RuntimeAnimatorController animator;
 }

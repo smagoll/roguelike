@@ -8,9 +8,8 @@ public class GameManager : MonoBehaviour
     [Header("Stage")]
     private static int numberStage = 1;
     public float xpForFirstStage; // необходимый опыт для первой стадии
-    public float XpForCurrentStage => xpForFirstStage * Mathf.Pow(scaleStage, numberStage - 1); // необходимый опыт за текущую стадию
+    public float XpForCurrentStage => xpForFirstStage * numberStage; // необходимый опыт за текущую стадию
     private float xpCollect = 0; // собранный опыт за текущую стадию
-    public float scaleStage; // умножение необходимого опыта стадии при переходе на новую
 
     public float XpCollect
     {
@@ -61,11 +60,7 @@ public class GameManager : MonoBehaviour
         layerPlayer = LayerMask.GetMask("Player");
 
         GlobalEventManager.UpdateXp.AddListener(UpdateXp);
-
-        foreach (var upgrade in upgradesAbility)
-        {
-            AddUpgrade(upgrade);
-        }
+        InitializeUpgrades();
     }
 
     private void Start()
@@ -114,5 +109,18 @@ public class GameManager : MonoBehaviour
     public static void AddUpgrade(Upgrade upgrade)
     {
         upgrades.Add(upgrade);
+    }
+
+    private void InitializeUpgrades()
+    {
+        foreach (var upgrade in upgradesAbility)
+        {
+            AddUpgrade(upgrade);
+        }
+        
+        foreach (var upgrade in upgradesWeapon)
+        {
+            AddUpgrade(upgrade);
+        }
     }
 }

@@ -64,8 +64,8 @@ public class GameUI : MonoBehaviour
         selected.SetActive(true);
         Time.timeScale = 0f;
 
-        var countUpgrades = 3;
         var upgradesClone = new List<Upgrade>(upgrades);
+        int countUpgrades = upgrades.Count >= 3 ? 3 : upgrades.Count;
         for (int i = 0; i < countUpgrades; i++)
         {
             var randomUpgrade = RandomUpgrade(ref upgradesClone);
