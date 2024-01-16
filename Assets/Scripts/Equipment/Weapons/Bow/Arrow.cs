@@ -17,7 +17,7 @@ public class Arrow : Projectile
             collision.GetComponent<Enemy>().TakeDamage(bow.Damage);
 
             if (!IsThrough)
-                Destroy(gameObject);
+                DestroyProjectile();
         }
     }
 }

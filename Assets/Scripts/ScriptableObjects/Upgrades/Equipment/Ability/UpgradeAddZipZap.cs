@@ -16,7 +16,7 @@ public class UpgradeAddZipZap : Upgrade
 
     public override void Action()
     {
-        var player = GameManager.player.AddComponent<ZipZap>();
-        player.Initialize(this);
+        var zipZap = GameManager.player.AddComponent<ZipZap>();
+        zipZap.Initialize(this);
     }
 }

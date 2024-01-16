@@ -37,7 +37,10 @@ public class Field : MonoBehaviour
 
             foreach (var enemy in enemiesCopy)
             {
-                enemy.GetComponent<Enemy>().TakeDamage(controller.damage);
+                if (enemy != null)
+                {
+                    enemy.GetComponent<Enemy>().TakeDamage(controller.damage);
+                }
             }
         }
     }
