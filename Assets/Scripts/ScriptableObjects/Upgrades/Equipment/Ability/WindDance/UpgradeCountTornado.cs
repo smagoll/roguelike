@@ -7,7 +7,7 @@ public class UpgradeCountTornado : Upgrade
 {
     public override void Action()
     {
-        switch (level)
+        switch (rare)
         {
             case 1:
                 GameManager.player.GetComponent<WindDance>().CountTornado += 1;
