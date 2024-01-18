@@ -12,14 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1573b978c9e7410439672c86fdf0027c, type: 3}
   m_Name: AddFireball
   m_EditorClassIdentifier: 
+  icon: {fileID: 0}
   title: "\u041E\u0433\u043D\u0435\u043D\u043D\u044B\u0439 \u0448\u0430\u0440"
+  rare: 0
   description: "\u0433\u043E\u0440\u044F\u0447\u0430\u044F \u0448\u0442\u0443\u0447\u043A\u0430"
   chance: 20
   isWeapon: 1
   isAbility: 0
+  id: 1
+  level: 1
+  isOpen: 0
   damage: 5
   prefabFireball: {fileID: 2526813752728630605, guid: e5971d37613a09745a02b50e4d26d047, type: 3}
-  attackRange: 5
   rangeBlast: 0.5
   distanceFlight: 5
   frequency: 3

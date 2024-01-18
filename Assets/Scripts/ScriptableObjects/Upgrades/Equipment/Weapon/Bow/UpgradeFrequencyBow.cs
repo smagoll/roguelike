@@ -5,7 +5,7 @@ public class UpgradeFrequencyBow : Upgrade
 {
     public override void Action()
     {
-        switch (level)
+        switch (rare)
         {
             case 1:
                 GameManager.player.GetComponent<Bow>().scaleFrequency -= 1;

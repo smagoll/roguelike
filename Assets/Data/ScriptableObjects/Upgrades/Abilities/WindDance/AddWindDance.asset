@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
   title: "\u0422\u0430\u043D\u0435\u0446 \u0432\u0435\u0442\u0440\u0430"
-  level: 1
+  rare: 0
   description: "\u0432\u0438\u0443 \u0432\u0438\u0443"
   chance: 15
   isWeapon: 0
   isAbility: 1
+  id: 3
+  level: 1
+  isOpen: 0
   prefabTornado: {fileID: 9157619315405315567, guid: 38a6b538d8a16534785607225bf941fc, type: 3}
   damage: 2
   timeLifeTornado: 5
