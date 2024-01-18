@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public float xpForFirstStage; // необходимый опыт для первой стадии
     public float XpForCurrentStage => xpForFirstStage * numberStage; // необходимый опыт за текущую стадию
     private float xpCollect = 0; // собранный опыт за текущую стадию
+    private static int coin = 0;
+
+    public static int Coin { get => coin; set => coin = value; }
 
     public float XpCollect
     {
