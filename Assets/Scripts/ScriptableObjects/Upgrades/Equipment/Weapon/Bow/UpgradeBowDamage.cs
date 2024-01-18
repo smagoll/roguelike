@@ -5,7 +5,7 @@ public class UpgradeBowDamage : Upgrade
 {
     public override void Action()
     {
-        switch (level)
+        switch (rare)
         {
             case 1:
                 GameManager.player.GetComponent<Bow>().Damage += 2;

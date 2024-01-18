@@ -14,11 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 582fedd1c92d5fa459190f0b9bca3ba0, type: 2}
   title: "\u041C\u0430\u0433\u043D\u0438\u0442\u043D\u043E\u0435 \u043F\u043E\u043B\u0435"
-  level: 2
+  rare: 0
   description: "\u0431\u0437\u0437\u0437..."
   chance: 10
   isWeapon: 0
   isAbility: 1
+  id: 2
+  level: 1
+  isOpen: 0
   prefabField: {fileID: 7032785621556537540, guid: adb65e404ca031849bc111a8aafb7025, type: 3}
   damage: 2
   frequency: 0.8

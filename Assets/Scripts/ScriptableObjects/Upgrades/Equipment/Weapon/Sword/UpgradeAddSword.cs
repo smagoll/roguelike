@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AddSword", menuName = "Upgrades/Add/Weapons/Sword")]
-public class UpgradeAddSword : Upgrade
+public class UpgradeAddSword : UpgradeWeapon
 {
     public float damage;
     public GameObject prefabSword;

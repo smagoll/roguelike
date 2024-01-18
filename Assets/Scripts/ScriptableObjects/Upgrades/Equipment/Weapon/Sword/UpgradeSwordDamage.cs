@@ -5,7 +5,7 @@ public class UpgradeSwordDamage : Upgrade
 {
     public override void Action()
     {
-        switch (level)
+        switch (rare)
         {
             case 1:
                 GameManager.player.GetComponent<Sword>().Damage += 3;

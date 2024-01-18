@@ -6,7 +6,7 @@ public class UpgradeSpeed : Upgrade
 
     public override void Action()
     {
-        switch (level)
+        switch (rare)
         {
             case 1:
                 GameManager.player.GetComponent<Character>().ScaleSpeed += 10;

@@ -20,7 +20,7 @@ public class UpgradeView : MonoBehaviour
         {
             image.sprite = upgrade.icon;
             title.text = upgrade.title;
-            level.text = upgrade.level.ToString();
+            level.text = upgrade.rare.ToString();
             description.text = upgrade.description;
         }
     }

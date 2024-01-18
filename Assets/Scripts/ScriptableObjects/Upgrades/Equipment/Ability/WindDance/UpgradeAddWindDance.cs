@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AddWindDance", menuName = "Upgrades/Add/Abilities/WindDance")]
-public class UpgradeAddWindDance : Upgrade
+public class UpgradeAddWindDance : UpgradeAbility
 {
     public GameObject prefabTornado;
 

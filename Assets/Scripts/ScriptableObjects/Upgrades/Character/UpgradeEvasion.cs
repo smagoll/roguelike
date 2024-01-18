@@ -7,7 +7,7 @@ public class UpgradeEvasion : Upgrade
 {
     public override void Action()
     {
-        switch (level)
+        switch (rare)
         {
             case 1:
                 GameManager.player.GetComponent<Character>().Evasion += 1;
