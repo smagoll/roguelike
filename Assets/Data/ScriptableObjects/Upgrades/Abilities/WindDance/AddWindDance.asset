@@ -26,4 +26,7 @@ MonoBehaviour:
   speedFlight: 1
   countTornado: 1
   frequencyChangeDirection: 2
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: dc20459f69435414986236b5cceac97a, type: 2}
+  - {fileID: 11400000, guid: b9cc3b885bbe24b42871113343a8c7c2, type: 2}
+  - {fileID: 11400000, guid: 25619c9f7f950bf43bd674b12ed48cee, type: 2}
