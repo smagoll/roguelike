@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using Zenject;
 
 public class UIManagerMenu : MonoBehaviour
 {
@@ -12,6 +12,11 @@ public class UIManagerMenu : MonoBehaviour
     private void Awake()
     {
         GlobalEventManager.UpdateCoinMenu.AddListener(UpdateCoinText);
+    }
+
+    private void Start()
+    {
+        UpdateCoinText(DataManager.gameData.coins);
     }
 
     public void UpdateCoinText(int countCoins)

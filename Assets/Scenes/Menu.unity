@@ -293,8 +293,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 73.931}
+  m_SizeDelta: {x: 0, y: -147.86}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &56408455
 MonoBehaviour:
@@ -1260,7 +1260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd9e2aaf87160c48a534ffb6105505b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinText: {fileID: 0}
+  coinText: {fileID: 437880265}
 --- !u!4 &458633390
 Transform:
   m_ObjectHideFlags: 0
@@ -1292,7 +1292,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &704856671
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1305,19 +1305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa587c181462bac4cb90f2e32bda4880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameData:
-    coins: 0
-    weapons: []
-    abilities: []
   countCoins: 3
-  abilities:
-  - {fileID: 11400000, guid: f98bae41aa161bc4b8da81805951dd0f, type: 2}
-  - {fileID: 11400000, guid: 89c5165198945a94c9873a9364870947, type: 2}
-  - {fileID: 11400000, guid: 175a10160ea5290409de2f192e563795, type: 2}
-  - {fileID: 11400000, guid: cf067d2efe5151d4e8cf327102e54410, type: 2}
-  weapons:
-  - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
-  - {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
 --- !u!4 &704856672
 Transform:
   m_ObjectHideFlags: 0

@@ -15,8 +15,10 @@ public class UpgradeAddBow : UpgradeWeapon
     public float speedFlightArrow;
     public Upgrade[] upgrades;
     [Header("Steps")]
-    public float stepDamage;
-    public float stepFrequency;
+    [SerializeField]
+    private float stepDamage;
+    [SerializeField]
+    private float stepFrequency;
 
     public float Damage => damage + stepDamage * (Level - 1);
     public float Frequency => frequency - stepFrequency * (Level - 1);

@@ -7,13 +7,9 @@ using UnityEngine;
 public struct GameData
 {
     public int coins;
-    public EquipmentData[] weapons;
-    public EquipmentData[] abilities;
 
-    public GameData(int coins, EquipmentData[] weapons, EquipmentData[] abilities)
+    public GameData(int coins)
     {
         this.coins = coins;
-        this.weapons = weapons;
-        this.abilities = abilities;
     }
 }

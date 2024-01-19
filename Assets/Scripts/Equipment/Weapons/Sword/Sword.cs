@@ -58,7 +58,7 @@ public class Sword : Weapon
 
     public void Initialize(UpgradeAddSword dataSword)
     {
-        Damage = dataSword.damage;
+        Damage = dataSword.Damage;
         prefabSword = dataSword.prefabSword;
         swordObject = dataSword.prefabSwordObject;
         Frequency = dataSword.startFrequencyAttack;

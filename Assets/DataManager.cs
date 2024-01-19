@@ -6,25 +6,23 @@ using System.Linq;
 
 public class DataManager : MonoBehaviour
 {
-    public GameData gameData = new();
+    public static GameData gameData = new();
 
-    public int countCoins;
-    public UpgradeAbility[] abilities;
-    public UpgradeWeapon[] weapons;
+    public int countCoins = 0;
 
     private string filePath;
 
     private void Awake()
     {
+        GlobalEventManager.IncreaseCoins.AddListener(IncreaseCoins);
+        GlobalEventManager.DecreaseCoins.AddListener(DecreaseCoins);
         filePath = Application.persistentDataPath + "/GameData.json";
         Load();
     }
-
+    
     public void Save()
     {
         gameData.coins = countCoins;
-        gameData.abilities = abilities.Select(x => new EquipmentData(x.Id, x.Level, x.IsOpen)).ToArray();
-        gameData.weapons = weapons.Select(x => new EquipmentData(x.Id, x.Level, x.IsOpen)).ToArray();
         string gameDataJson = JsonUtility.ToJson(gameData);
         File.WriteAllText(filePath, gameDataJson);
     }
@@ -36,5 +34,23 @@ public class DataManager : MonoBehaviour
             string gameDataJson = File.ReadAllText(filePath);
             gameData = JsonUtility.FromJson<GameData>(gameDataJson);
         }
+        else
+        {
+            Save();
+        }
+    }
+
+    private void IncreaseCoins(int coins)
+    {
+        countCoins += coins;
+
+        Save();
+    }
+    
+    private void DecreaseCoins(int coins)
+    {
+        countCoins -= coins;
+
+        Save();
     }
 }

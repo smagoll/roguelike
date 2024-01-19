@@ -5,7 +5,9 @@ public abstract class UpgradeEquipment : Upgrade, IEquipmentData
     [Header("General")]
     [SerializeField]
     private int id;
+    [SerializeField]
     private int level = 1;
+    [SerializeField]
     private bool isOpen = false;
 
     public EquipmentType equipmentType;

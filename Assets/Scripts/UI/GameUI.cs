@@ -114,4 +114,9 @@ public class GameUI : MonoBehaviour
         }
         return null;
     }
+
+    public void ShowEndWindow()
+    {
+
+    }
 }

@@ -14,7 +14,7 @@ public class DataInstaller : MonoInstaller
 
     public void Data()
     {
-        var gameData = dataManager.gameData;
+        var gameData = DataManager.gameData;
         Container.Bind<GameData>().FromInstance(gameData).AsSingle();
     }
 }
