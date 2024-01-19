@@ -12,6 +12,8 @@ public class UpgradeAddSword : UpgradeWeapon
 
     public override void Action()
     {
+        Debug.Log(Level);
+        Debug.Log(gameData.coins);
         var sword = GameManager.player.AddComponent<Sword>();
         sword.Initialize(this);
     }

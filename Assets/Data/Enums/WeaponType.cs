@@ -1,4 +1,4 @@
-public enum WeaponEnum
+public enum WeaponType
 {
     Sword,
     Bow

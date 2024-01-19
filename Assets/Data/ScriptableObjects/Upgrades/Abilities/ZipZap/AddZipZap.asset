@@ -17,11 +17,10 @@ MonoBehaviour:
   rare: 0
   description: "\u043C\u043E\u043B\u043D\u0438\u044F \u0432\u0430\u0443 \u0447\u0430\u0443"
   chance: 10
-  isWeapon: 0
-  isAbility: 1
   id: 4
   level: 1
   isOpen: 0
+  equipmentType: 1
   damage: 2
   prefabLightning: {fileID: 547906044967120555, guid: 6e590dd4bb869df429632e63fb752082, type: 3}
   distanceFlight: 2

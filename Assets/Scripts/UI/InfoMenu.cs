@@ -20,20 +20,19 @@ public class InfoMenu : MonoBehaviour
         image.sprite = GameManager.player.GetComponent<Character>().hero.sprite;
     }
 
-    public void AddItem(Upgrade upgrade)
+    public void AddItem(UpgradeEquipment upgrade)
     {
-        if (upgrade.isWeapon)
+        GameObject item;
+        switch (upgrade.equipmentType)
         {
-            var item = Instantiate(prefabItem, weaponMenu);
-            item.GetComponent<InfoIcon>().upgrade = upgrade;
-        }
-        else
-        {
-            if (upgrade.isAbility)
-            {
-                var item = Instantiate(prefabItem, abilityMenu);
+            case EquipmentType.Weapon:
+                item = Instantiate(prefabItem, weaponMenu);
                 item.GetComponent<InfoIcon>().upgrade = upgrade;
-            }
+                break;
+            case EquipmentType.Ability:
+                item = Instantiate(prefabItem, abilityMenu);
+                item.GetComponent<InfoIcon>().upgrade = upgrade;
+                break;
         }
     }
 }

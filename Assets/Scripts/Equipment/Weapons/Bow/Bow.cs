@@ -36,10 +36,10 @@ public class Bow : Weapon, IProjectileController
     public void Initialize(UpgradeAddBow dataBow)
     {
         prefabArrow = dataBow.prefabSword;
-        Damage = dataBow.damage;
+        Damage = dataBow.Damage;
         SpeedFlight = dataBow.speedFlightArrow;
         attackRange = dataBow.attackRange;
-        Frequency = dataBow.frequency;
+        Frequency = dataBow.Frequency;
         upgrades = dataBow.upgrades;
         DistanceFlight = dataBow.distanceFlight;
 

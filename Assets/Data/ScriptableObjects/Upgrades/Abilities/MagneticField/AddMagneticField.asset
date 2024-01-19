@@ -17,11 +17,10 @@ MonoBehaviour:
   rare: 0
   description: "\u0431\u0437\u0437\u0437..."
   chance: 10
-  isWeapon: 0
-  isAbility: 1
   id: 2
   level: 1
   isOpen: 0
+  equipmentType: 1
   prefabField: {fileID: 7032785621556537540, guid: adb65e404ca031849bc111a8aafb7025, type: 3}
   damage: 2
   frequency: 0.8

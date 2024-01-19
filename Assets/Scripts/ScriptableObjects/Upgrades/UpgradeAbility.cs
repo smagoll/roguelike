@@ -1,15 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
+using Zenject;
 
-public abstract class UpgradeAbility : Upgrade, IEquipmentData
+public abstract class UpgradeAbility : UpgradeEquipment
 {
-    [SerializeField]
-    private int id;
-    [SerializeField]
-    private int level;
-    [SerializeField]
-    private bool isOpen;
-
-    public int Id { get => id; set => id = value; }
-    public int Level { get => level; set => level = value; }
-    public bool IsOpen { get => isOpen; set => isOpen = value; }
+    [Inject]
+    private void Construct(GameData gameData)
+    {
+        var data = gameData.abilities.Where(x => x.id == Id).FirstOrDefault();
+        Level = data.level;
+        IsOpen = data.isOpen;
+    }
 }

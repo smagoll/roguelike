@@ -17,16 +17,15 @@ MonoBehaviour:
   rare: 0
   description: "\u043F\u0443\u0448\u043A\u0430 \u043D\u0438\u0440\u0438\u0430\u043B\u043A\u0430"
   chance: 15
-  isWeapon: 1
-  isAbility: 0
   id: 2
   level: 1
-  isOpen: 0
+  isOpen: 1
+  equipmentType: 0
   damage: 4
+  frequency: 1
   prefabSword: {fileID: 8715774982045832175, guid: 3f640843c9ba1844d855f446e3b47162, type: 3}
   attackRange: 4
   distanceFlight: 3.5
-  frequency: 1
   speedFlightArrow: 7
   upgrades:
   - {fileID: 11400000, guid: 4e786d7d87f54e54d980eebbfffbb6a9, type: 2}
@@ -36,3 +35,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: fe8e69ca2e1268348a3b2b8496a00c5d, type: 2}
   - {fileID: 11400000, guid: d22d9a504522a634ca11ffc20c0d8f44, type: 2}
   - {fileID: 11400000, guid: 2de433600c9976e4b9ec055bb3bfedfe, type: 2}
+  stepDamage: 0
+  stepFrequency: 0

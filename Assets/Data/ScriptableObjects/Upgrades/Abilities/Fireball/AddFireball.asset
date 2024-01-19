@@ -17,11 +17,10 @@ MonoBehaviour:
   rare: 0
   description: "\u0433\u043E\u0440\u044F\u0447\u0430\u044F \u0448\u0442\u0443\u0447\u043A\u0430"
   chance: 20
-  isWeapon: 1
-  isAbility: 0
   id: 1
   level: 1
   isOpen: 0
+  equipmentType: 1
   damage: 5
   prefabFireball: {fileID: 2526813752728630605, guid: e5971d37613a09745a02b50e4d26d047, type: 3}
   rangeBlast: 0.5

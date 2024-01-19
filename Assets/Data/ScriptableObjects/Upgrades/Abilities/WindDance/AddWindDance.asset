@@ -17,11 +17,10 @@ MonoBehaviour:
   rare: 0
   description: "\u0432\u0438\u0443 \u0432\u0438\u0443"
   chance: 15
-  isWeapon: 0
-  isAbility: 1
   id: 3
   level: 1
   isOpen: 0
+  equipmentType: 1
   prefabTornado: {fileID: 9157619315405315567, guid: 38a6b538d8a16534785607225bf941fc, type: 3}
   damage: 2
   timeLifeTornado: 5

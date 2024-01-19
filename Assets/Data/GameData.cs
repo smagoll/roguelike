@@ -7,6 +7,13 @@ using UnityEngine;
 public struct GameData
 {
     public int coins;
-    public List<EquipmentData> weapons;
-    public List<EquipmentData> abilities;
+    public EquipmentData[] weapons;
+    public EquipmentData[] abilities;
+
+    public GameData(int coins, EquipmentData[] weapons, EquipmentData[] abilities)
+    {
+        this.coins = coins;
+        this.weapons = weapons;
+        this.abilities = abilities;
+    }
 }

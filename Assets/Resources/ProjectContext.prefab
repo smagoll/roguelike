@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2512717019894715822}
   - component: {fileID: 3549895333476240777}
-  - component: {fileID: 7497189195592440472}
+  - component: {fileID: 6177861308577454725}
+  - component: {fileID: -4166187796623784029}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -46,7 +47,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scriptableObjectInstallers: []
-  _monoInstallers: []
+  _monoInstallers:
+  - {fileID: 6177861308577454725}
   _installerPrefabs: []
   _parentNewObjectsUnderContext: 0
   _editorReflectionBakingCoverageMode: 0
@@ -61,7 +63,20 @@ MonoBehaviour:
       _missingHandlerDefaultResponse: 2
       _requireStrictUnsubscribe: 0
       _defaultAsyncTickPriority: 1
---- !u!114 &7497189195592440472
+--- !u!114 &6177861308577454725
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315347697102581070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 771eb63e18129544a9b4bba29671bc47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataManager: {fileID: -4166187796623784029}
+--- !u!114 &-4166187796623784029
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73,12 +88,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa587c181462bac4cb90f2e32bda4880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  countCoins: 3
-  abilities:
-  - {fileID: 11400000, guid: f98bae41aa161bc4b8da81805951dd0f, type: 2}
-  - {fileID: 11400000, guid: 89c5165198945a94c9873a9364870947, type: 2}
-  - {fileID: 11400000, guid: 175a10160ea5290409de2f192e563795, type: 2}
-  - {fileID: 11400000, guid: cf067d2efe5151d4e8cf327102e54410, type: 2}
+  gameData:
+    coins: 0
+    weapons: []
+    abilities: []
+  countCoins: 5
+  abilities: []
   weapons:
-  - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
   - {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
+  - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}

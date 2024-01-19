@@ -4,16 +4,16 @@ using UnityEngine;
 public class AddEffect : Upgrade
 {
     public Effect effect;
-    public WeaponEnum weapon;
+    public WeaponType weapon;
 
     public override void Action()
     {
         switch (weapon)
         {
-            case WeaponEnum.Sword:
+            case WeaponType.Sword:
                 ActivateEffect(GameManager.player.GetComponent<Sword>());
                 break;
-            case WeaponEnum.Bow:
+            case WeaponType.Bow:
                 ActivateEffect(GameManager.player.GetComponent<Bow>());
                 break;
         }

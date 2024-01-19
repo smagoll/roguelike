@@ -10,6 +10,12 @@ public class MainMenuInstaller : MonoInstaller
 
     public override void InstallBindings()
     {
+        Scroll();
+    }
+
+    public void Scroll()
+    {
         Container.Bind<SimpleScrollSnap>().FromInstance(simpleScrollSnap).AsSingle();
     }
+
 }
