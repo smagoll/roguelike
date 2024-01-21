@@ -15,6 +15,7 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<int> UpdateCoinMenu = new();
     public static UnityEvent<int> IncreaseCoins = new();
     public static UnityEvent<int> DecreaseCoins = new();
+    public static UnityEvent EndGame = new();
 
     public static void Start_ShowUpgrades(List<Upgrade> upgrades)
     {
@@ -69,6 +70,11 @@ public class GlobalEventManager : MonoBehaviour
     public static void Start_DecreaseCoins(int coins)
     {
         DecreaseCoins.Invoke(coins);
+    }
+    
+    public static void Start_EndGame()
+    {
+        EndGame.Invoke();
     }
 
 

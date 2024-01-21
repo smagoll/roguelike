@@ -8,6 +8,13 @@ public class DataManager : MonoBehaviour
 {
     public static GameData gameData = new();
 
+    [SerializeField]
+    private UpgradeWeapon[] weapons;
+    [SerializeField]
+    private UpgradeAbility[] abilities;
+    [SerializeField]
+    private Hero[] heroes;
+
     public int countCoins = 0;
 
     private string filePath;
@@ -22,7 +29,6 @@ public class DataManager : MonoBehaviour
     
     public void Save()
     {
-        gameData.coins = countCoins;
         string gameDataJson = JsonUtility.ToJson(gameData);
         File.WriteAllText(filePath, gameDataJson);
     }
@@ -36,20 +42,35 @@ public class DataManager : MonoBehaviour
         }
         else
         {
-            Save();
+            CreateFirstSave();
         }
     }
 
     private void IncreaseCoins(int coins)
     {
-        countCoins += coins;
+        gameData.coins += coins;
 
         Save();
     }
     
     private void DecreaseCoins(int coins)
     {
-        countCoins -= coins;
+        gameData.coins -= coins;
+
+        Save();
+    }
+
+    public void CreateFirstSave()
+    {
+        gameData.coins = 0;
+        gameData.weapons = weapons.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
+        gameData.abilities = abilities.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
+
+        gameData.heroes = heroes.Select(x => new HeroData(x.Id, false)).OrderBy(x => x.id).ToArray();
+        gameData.heroes[0].isOpen = true;
+
+        gameData.equipmentSelected.id_hero = 1;
+        gameData.equipmentSelected.id_weapons.Add(1);
 
         Save();
     }

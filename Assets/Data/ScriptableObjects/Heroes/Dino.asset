@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5462bc8b9bea244b1288071f78fb42, type: 3}
   m_Name: Dino
   m_EditorClassIdentifier: 
+  id: 1
   sprite: {fileID: 527929922, guid: 88a6245e986c3454cbb3ea8d94b980cb, type: 3}
   hp: 100
   speed: 2
+  evasion: 0
   animator: {fileID: 9100000, guid: f9ac8f7dd810b914186152887eed9aa9, type: 2}

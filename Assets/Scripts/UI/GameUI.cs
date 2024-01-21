@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameUI : MonoBehaviour
@@ -14,6 +15,8 @@ public class GameUI : MonoBehaviour
     private TextMeshProUGUI textXp;
     [SerializeField]
     private TextMeshProUGUI textNumberStage;
+    [SerializeField]
+    private GameObject endWindow;
 
     [SerializeField]
     private InfoMenu infoMenu;
@@ -38,7 +41,7 @@ public class GameUI : MonoBehaviour
     private void Awake()
     {
         GlobalEventManager.ShowUpgrades.AddListener(ShowUpgrades);
-        GlobalEventManager.AddItem.AddListener(infoMenu.AddItem);
+        GlobalEventManager.EndGame.AddListener(ShowEndWindow);
     }
 
     public void ButtonPause()
@@ -117,6 +120,6 @@ public class GameUI : MonoBehaviour
 
     public void ShowEndWindow()
     {
-
+        endWindow.SetActive(true);
     }
 }
