@@ -6,6 +6,8 @@ public class AddEffect : Upgrade
     public Effect effect;
     public WeaponType weapon;
 
+    public override UpgradeType UpgradeType => UpgradeType.Add;
+
     public override void Action()
     {
         switch (weapon)

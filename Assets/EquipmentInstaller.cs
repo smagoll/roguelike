@@ -5,10 +5,10 @@ using Zenject;
 
 public class EquipmentInstaller : MonoInstaller
 {
-    public UpgradeEquipment[] equipments;
+    public Hero[] heroes;
 
     public override void InstallBindings()
     {
-        Container.Bind<UpgradeEquipment[]>().FromInstance(equipments).AsSingle();
+        Container.Bind<Hero[]>().FromInstance(heroes).AsSingle();
     }
 }

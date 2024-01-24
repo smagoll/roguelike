@@ -14,12 +14,6 @@ public class Sword : Weapon
         playerController = GetComponent<PlayerController>();
     }
 
-    private void Start()
-    {
-        swordObject = Instantiate(prefabSword, gameObject.transform);
-        swordObject.SetActive(false);
-    }
-
     public override void Action()
     {
         RotationToCloseEnemy();
@@ -66,6 +60,9 @@ public class Sword : Weapon
         upgrades = dataSword.upgrades;
 
         GlobalEventManager.Start_AddItem(dataSword);
+
+        swordObject = Instantiate(prefabSword, gameObject.transform);
+        swordObject.SetActive(false);
 
         isAttack = true;
     }

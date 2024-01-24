@@ -6,12 +6,12 @@ using System.Linq;
 
 public class DataManager : MonoBehaviour
 {
-    public static GameData gameData = new();
+    public static DataManager instance = null;
 
-    [SerializeField]
-    private UpgradeWeapon[] weapons;
-    [SerializeField]
-    private UpgradeAbility[] abilities;
+    public GameData gameData = new();
+
+    public UpgradeWeapon[] weapons;
+    public UpgradeAbility[] abilities;
     [SerializeField]
     private Hero[] heroes;
 
@@ -21,6 +21,11 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance != null && instance != this)
+            Destroy(this);
+        else
+            instance = this;
+
         GlobalEventManager.IncreaseCoins.AddListener(IncreaseCoins);
         GlobalEventManager.DecreaseCoins.AddListener(DecreaseCoins);
         filePath = Application.persistentDataPath + "/GameData.json";
@@ -70,7 +75,6 @@ public class DataManager : MonoBehaviour
         gameData.heroes[0].isOpen = true;
 
         gameData.equipmentSelected.id_hero = 1;
-        gameData.equipmentSelected.id_weapons.Add(1);
 
         Save();
     }

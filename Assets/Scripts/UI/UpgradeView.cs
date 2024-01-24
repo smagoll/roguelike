@@ -28,7 +28,8 @@ public class UpgradeView : MonoBehaviour
     public void SelectUpgrade()
     {
         upgrade.Action();
-        GameManager.upgrades.Remove(upgrade);
+        if (upgrade.UpgradeType == UpgradeType.Add)
+            GameManager.upgrades.Remove(upgrade);
         GameUI.IsPause = false;
     }
 }

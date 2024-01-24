@@ -101,21 +101,13 @@ public class GameUI : MonoBehaviour
 
     public Upgrade RandomUpgrade(ref List<Upgrade> upgrades)
     {
-        int maxRange = upgrades.Sum(x => x.chance);
-        var random = Random.Range(0, maxRange);
-        foreach (var upgrade in upgrades)
-        {
-            if (random > upgrade.chance)
-            {
-                random -= upgrade.chance;
-            }
-            else
-            {
-                upgrades.Remove(upgrade);
-                return upgrade;
-            }
-        }
-        return null;
+        var rare = GameCalculator.GetRandomRareUpgrade();
+        var randomUpgrades = upgrades.Where(x => x.rare == rare).ToArray();
+
+        var rnd = Random.Range(0, randomUpgrades.Length);
+        var upgrade = randomUpgrades[rnd];
+        upgrades.Remove(upgrade);
+        return upgrade;
     }
 
     public void ShowEndWindow()

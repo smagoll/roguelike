@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     private float scaleSpeed = 1;
     public Animator animator;
     public DropCollector dropCollector;
+    public UpgradeWeapon weapon;
 
     public Upgrade[] upgrades;
 
@@ -67,6 +68,7 @@ public class Character : MonoBehaviour
     private void Start()
     {
         GlobalEventManager.Start_UpdateHealthBar(hp, maxHp);
+        weapon.Action();
     }
 
     public void TakeDamage(float damage)
@@ -98,5 +100,6 @@ public class Character : MonoBehaviour
         maxHp = hero.hp;
         speed = hero.speed;
         evasion = hero.evasion;
+        weapon = hero.weapon;
     }
 }

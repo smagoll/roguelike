@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameCalculator
+public static class GameCalculator
 {
     public static Vector2 GetRandomDirection()
     {
@@ -10,5 +10,19 @@ public class GameCalculator
         float angleInRadians = angle * Mathf.Deg2Rad;
         Vector2 directionLocal = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
         return directionLocal.normalized;
+    }
+
+    public static RareType GetRandomRareUpgrade()
+    {
+        var rnd = Random.Range(0, 100);
+
+        if (rnd < 10)
+            return RareType.Epic;
+        if (rnd < 40)
+            return RareType.Uncommon;
+        if (rnd < 100)
+            return RareType.Common;
+
+        return RareType.Common;
     }
 }

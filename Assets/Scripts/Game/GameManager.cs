@@ -46,8 +46,7 @@ public class GameManager : MonoBehaviour
     public static LayerMask layerEnemy;
     public static LayerMask layerPlayer;
 
-    public List<Upgrade> upgradesWeapon;
-    public List<Upgrade> upgradesAbility;
+    public UpgradeAbility[] upgradesAbility;
     public static List<Upgrade> upgrades = new();
 
     [Inject]
@@ -69,7 +68,6 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         GlobalEventManager.Start_UpdateStageBar(numberStage, xpCollect, XpForCurrentStage);
-        GlobalEventManager.Start_ShowUpgrades(upgradesWeapon);
     }
 
     public static GameObject GetCloseEnemy(Transform from, float radius)
@@ -117,11 +115,6 @@ public class GameManager : MonoBehaviour
     private void InitializeUpgrades()
     {
         foreach (var upgrade in upgradesAbility)
-        {
-            AddUpgrade(upgrade);
-        }
-        
-        foreach (var upgrade in upgradesWeapon)
         {
             AddUpgrade(upgrade);
         }

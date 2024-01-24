@@ -13,13 +13,10 @@ MonoBehaviour:
   m_Name: AddSword
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 8b78a4138e91c7e45b9bbdb847626c71, type: 2}
+  rare: 1
   title: "\u041C\u0435\u0447"
-  rare: 0
   description: "\u0445\u0443 \u0438\u0437 \u0445\u0443"
-  chance: 10
   id: 1
-  level: 3
-  isOpen: 1
   equipmentType: 0
   damage: 3
   frequency: 2

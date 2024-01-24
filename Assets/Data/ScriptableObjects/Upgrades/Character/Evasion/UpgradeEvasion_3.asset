@@ -13,9 +13,7 @@ MonoBehaviour:
   m_Name: UpgradeEvasion_3
   m_EditorClassIdentifier: 
   icon: {fileID: 0}
+  rare: 2
   title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
-  level: 3
   description: "+3% \u043A \u0443\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u044E"
-  chance: 10
-  isWeapon: 0
-  isAbility: 0
+  evasion: 3

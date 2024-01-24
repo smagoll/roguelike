@@ -1,21 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SwordDamage", menuName = "Upgrades/Weapons/Sword/Damage")]
-public class UpgradeSwordDamage : Upgrade
+public class UpgradeSwordDamage : UpgradeStats
 {
+    public float damage;
+
     public override void Action()
     {
-        switch (rare)
-        {
-            case 1:
-                GameManager.player.GetComponent<Sword>().Damage += 3;
-                break;
-            case 2:
-                GameManager.player.GetComponent<Sword>().Damage += 5;
-                break;
-            case 3:
-                GameManager.player.GetComponent<Sword>().Damage += 7;
-                break;
-        }
+        GameManager.player.GetComponent<Sword>().Damage += damage;//3,5,7
     }
 }

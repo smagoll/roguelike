@@ -16,7 +16,7 @@ public class UIManagerMenu : MonoBehaviour
 
     private void Start()
     {
-        UpdateCoinText(DataManager.gameData.coins);
+        UpdateCoinText(DataManager.instance.gameData.coins);
     }
 
     public void UpdateCoinText(int countCoins)

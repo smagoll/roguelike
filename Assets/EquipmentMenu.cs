@@ -1,21 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class EquipmentMenu : MonoBehaviour
 {
-    public EquipmentSelectedData equipmentSelected;
+    [SerializeField]
+    private GameObject weaponsEquipmentUI;
+    [SerializeField]
+    private GameObject abilitiesEquipmentUI;
 
-    [SerializeField]
-    private Image iconHero;
-    [SerializeField]
-    private WeaponsEquipmentUI weaponsEquipment;
-    [SerializeField]
-    private AbilitiesEquipmentUI abilitiesEquipment;
-
-    private void Awake()
+    public void ShowWeapons()
     {
-        equipmentSelected = DataManager.gameData.equipmentSelected;
+        abilitiesEquipmentUI.SetActive(false);
+        weaponsEquipmentUI.SetActive(true);
+    }
+    
+    public void ShowAbilities()
+    {
+        weaponsEquipmentUI.SetActive(false);
+        abilitiesEquipmentUI.SetActive(true);
     }
 }

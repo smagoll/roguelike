@@ -13,7 +13,8 @@ public class Hero : ScriptableObject
     public float speed;
     public float evasion;
     public RuntimeAnimatorController animator;
+    public UpgradeWeapon weapon;
 
     public int Id => id;
-    public bool IsOpen => DataManager.gameData.heroes.Where(x => x.id == id).FirstOrDefault().isOpen;
+    public bool IsOpen => DataManager.instance.gameData.heroes.Where(x => x.id == id).FirstOrDefault().isOpen;
 }

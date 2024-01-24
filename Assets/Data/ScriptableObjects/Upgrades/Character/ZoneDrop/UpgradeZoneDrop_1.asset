@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: UpgradeZoneDrop_1
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: fcdf7214799c62a43badf414dd9a4bd2, type: 2}
+  rare: 0
   title: "\u0421\u0431\u043E\u0440 \u044F\u0433\u043E\u0434"
-  level: 1
   description: "+10% \u043A \u0440\u0430\u0434\u0438\u0443\u0441\u0443 \u0441\u0431\u043E\u0440\u0430
     \u043B\u0443\u0442\u0430"
   chance: 30
-  isWeapon: 0
-  isAbility: 0
+  scaleRadius: 10

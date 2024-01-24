@@ -35,7 +35,7 @@ public class GameInstaller : MonoInstaller
     public void Player()
     {
         Character character = Container
-    .InstantiatePrefabForComponent<Character>(prefabPlayer, spawnpoint.position, Quaternion.identity, null);
+            .InstantiatePrefabForComponent<Character>(prefabPlayer, spawnpoint.position, Quaternion.identity, null);
 
         Container.Bind<Character>().FromInstance(character).AsSingle();
         cam.Follow = character.transform;
