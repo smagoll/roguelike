@@ -5,5 +5,6 @@ public class GameData
     public EquipmentData[] weapons;
     public EquipmentData[] abilities;
     public HeroData[] heroes;
+    public ImprovementStatData[] improvements;
     public EquipmentSelectedData equipmentSelected = new();
 }

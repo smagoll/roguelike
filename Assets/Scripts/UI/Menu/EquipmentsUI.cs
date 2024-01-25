@@ -8,20 +8,18 @@ public class EquipmentsUI : MonoBehaviour
     [SerializeField]
     private GameObject prefabCell;
     [SerializeField]
-    private EquipmentType equipmentType;
-    [SerializeField]
     private Transform openAbility;
     [SerializeField]
     private Transform closeAbility;
 
-    private List<CellEquipment> cells = new();
+    private List<CellAbility> cells = new();
 
     private void Start()
     {
-        UpdateAbilities();
+        UpdateCells();
     }
 
-    public void UpdateAbilities()
+    public void UpdateCells()
     {
         var abilities = DataManager.instance.gameData.abilities.OrderBy(x => x.id).ToArray();
 
@@ -29,8 +27,8 @@ public class EquipmentsUI : MonoBehaviour
         {
             Transform transformEquipment = ability.isOpen ? openAbility : closeAbility;
             var cellObject = Instantiate(prefabCell, transformEquipment);
-            var cell = cellObject.GetComponent<CellEquipment>();
-            cell.InitEquipment(ability.id, equipmentType);
+            var cell = cellObject.GetComponent<CellAbility>();
+            cell.Init(ability.id);
             cells.Add(cell);
         }
     }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using System.Linq;
+using UnityEditor;
 
 public class DataManager : MonoBehaviour
 {
@@ -12,8 +13,8 @@ public class DataManager : MonoBehaviour
 
     public UpgradeWeapon[] weapons;
     public UpgradeAbility[] abilities;
-    [SerializeField]
-    private Hero[] heroes;
+    public Hero[] heroes;
+    public ImprovementStat[] improvements;
 
     public int countCoins = 0;
 
@@ -70,6 +71,7 @@ public class DataManager : MonoBehaviour
         gameData.coins = 0;
         gameData.weapons = weapons.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
         gameData.abilities = abilities.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
+        gameData.improvements = improvements.Select(x => new ImprovementStatData(x.id, x.Level)).OrderBy(x => x.id).ToArray();
 
         gameData.heroes = heroes.Select(x => new HeroData(x.Id, false)).OrderBy(x => x.id).ToArray();
         gameData.heroes[0].isOpen = true;
