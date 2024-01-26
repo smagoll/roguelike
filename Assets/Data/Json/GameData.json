@@ -1,0 +1,60 @@
+{
+    "coins": 0,
+    "weapons": [
+        {
+            "id": 1,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 2,
+            "level": 1,
+            "isOpen": false
+        }
+    ],
+    "abilities": [
+        {
+            "id": 1,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 2,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 4,
+            "level": 1,
+            "isOpen": false
+        }
+    ],
+    "heroes": [
+        {
+            "id": 1,
+            "isOpen": true
+        }
+    ],
+    "improvements": [
+        {
+            "id": 1,
+            "level": 0
+        },
+        {
+            "id": 2,
+            "level": 0
+        },
+        {
+            "id": 3,
+            "level": 0
+        }
+    ],
+    "equipmentSelected": {
+        "id_hero": 1
+    }
+}

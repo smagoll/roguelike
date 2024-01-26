@@ -29,7 +29,7 @@ public class DataManager : MonoBehaviour
 
         GlobalEventManager.IncreaseCoins.AddListener(IncreaseCoins);
         GlobalEventManager.DecreaseCoins.AddListener(DecreaseCoins);
-        filePath = Application.persistentDataPath + "/GameData.json";
+        filePath = Application.dataPath + "/Data/Json/GameData.json";
         Load();
     }
     

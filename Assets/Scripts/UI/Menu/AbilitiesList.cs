@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ImprovementList : MonoBehaviour
+public class AbilitiesList : MonoBehaviour
 {
     [SerializeField]
     private GameObject prefabCell;
@@ -19,12 +19,13 @@ public class ImprovementList : MonoBehaviour
 
     public void UpdateCells()
     {
-        var abilities = DataManager.instance.gameData.improvements.OrderBy(x => x.id).ToArray();
+        var abilities = DataManager.instance.gameData.abilities.OrderBy(x => x.id).ToArray();
 
         foreach (var ability in abilities)
         {
-            var cellObject = Instantiate(prefabCell, openAbility);
-            var cell = cellObject.GetComponent<CellImprovement>();
+            Transform transformEquipment = ability.isOpen ? openAbility : closeAbility;
+            var cellObject = Instantiate(prefabCell, transformEquipment);
+            var cell = cellObject.GetComponent<CellAbility>();
             cell.Init(ability.id);
         }
     }
