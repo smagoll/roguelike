@@ -112,6 +112,7 @@ public class GameUI : MonoBehaviour
 
     public void ShowEndWindow()
     {
+        Time.timeScale = 0f;
         endWindow.SetActive(true);
     }
 }

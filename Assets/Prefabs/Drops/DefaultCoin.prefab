@@ -134,5 +134,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isAttraction: 0
-  chance: 5
+  chance: 10
   countCoin: 1

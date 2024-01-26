@@ -8,10 +8,14 @@ using Zenject;
 
 public class CellAbility : Cell
 {
+    [SerializeField]
+    private TextMeshProUGUI textLevel;
+
     public override void Init(int id)
     {
         var selectedEquipment = DataManager.instance.abilities.Where(x => x.Id == id).FirstOrDefault();
         IsOpen = DataManager.instance.gameData.abilities.Where(x => x.id == id).Select(x => x.isOpen).FirstOrDefault();
         image.sprite = selectedEquipment.icon;
+        textLevel.text = selectedEquipment.Level.ToString();
     }
 }

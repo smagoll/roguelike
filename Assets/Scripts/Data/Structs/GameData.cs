@@ -6,5 +6,6 @@ public class GameData
     public EquipmentData[] abilities;
     public HeroData[] heroes;
     public ImprovementStatData[] improvements;
+    public Prices prices;
     public EquipmentSelectedData equipmentSelected = new();
 }

@@ -30,7 +30,7 @@ public class Character : MonoBehaviour
                 hp = Mathf.Round(value);
                 GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);
             }
-            if (hp <= 0)
+            if (value <= 0)
             {
                 Death();
             }
@@ -84,8 +84,7 @@ public class Character : MonoBehaviour
 
     public void Death()
     {
-        Debug.Log("death");
-        SceneManager.LoadScene("Menu");
+        GlobalEventManager.Start_EndGame();
     }
 
     private void IncreaseHP(float hp)

@@ -213,4 +213,5 @@ MonoBehaviour:
   stageForOpen: 1
   drops:
   - {fileID: 2566861449976774461, guid: 576baa68b24a5604bbce3659e585857f, type: 3}
+  - {fileID: 2566861449976774461, guid: c1ccc1e505fb03c4a8e7eced021b5738, type: 3}
   animator: {fileID: 0}

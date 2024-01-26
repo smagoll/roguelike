@@ -27,12 +27,9 @@ public class ScrollMenu : MonoBehaviour
             centeredMenu = numberCentred;
         }
 
-        var panel = simpleScrollSnap.Panels[numberCentred];
-        var button = panel.GetComponent<ElementMenu>().buttonSelected;
+        var panel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
+        panel.UpdateView();
+        var button = panel.buttonSelected;
         eventSystem.SetSelectedGameObject(button);
     }
-
-
-
-    
 }

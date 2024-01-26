@@ -5,13 +5,14 @@ using DanielLochner.Assets.SimpleScrollSnap;
 using UnityEngine.UI;
 using Zenject;
 
-public class ElementMenu : MonoBehaviour
+public abstract class MenuElement : MonoBehaviour
 {
-    public SimpleScrollSnap simpleScrollSnap;
+    [Header("Navigation")]
+    private SimpleScrollSnap simpleScrollSnap;
     public int numberPanel;
     public GameObject buttonSelected;
 
-    private void Start()
+    private void Awake()
     {
         buttonSelected.GetComponent<Button>().onClick.AddListener(Select);
     }
@@ -26,4 +27,6 @@ public class ElementMenu : MonoBehaviour
     {
         simpleScrollSnap.GoToPanel(numberPanel);
     }
+
+    public abstract void UpdateView();
 }

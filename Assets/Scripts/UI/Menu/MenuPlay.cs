@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
 
-public class PlayMenu : MonoBehaviour
+public class MenuPlay : MenuElement
 {
     public EquipmentSelectedData equipmentSelected;
 
@@ -19,7 +19,7 @@ public class PlayMenu : MonoBehaviour
         this.heroes = heroes;
     }
 
-    private void Awake()
+    private void Start()
     {
         equipmentSelected = DataManager.instance.gameData.equipmentSelected;
         UpdateHero();
@@ -29,5 +29,10 @@ public class PlayMenu : MonoBehaviour
     {
         var hero = heroes.Where(x => x.Id == equipmentSelected.id_hero).FirstOrDefault();
         iconHero.sprite = hero.sprite;
+    }
+
+    public override void UpdateView()
+    {
+        UpdateHero();
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class AbilitiesList : MonoBehaviour
+public class MenuEquipment : MenuElement
 {
     [SerializeField]
     private GameObject prefabCell;
@@ -28,5 +28,10 @@ public class AbilitiesList : MonoBehaviour
             var cell = cellObject.GetComponent<CellAbility>();
             cell.Init(ability.id);
         }
+    }
+
+    public override void UpdateView()
+    {
+        
     }
 }

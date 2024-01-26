@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class HeroesList : MonoBehaviour
+public class MenuHeroes : MenuElement
 {
     [SerializeField]
     private GameObject prefabCell;
@@ -19,14 +19,24 @@ public class HeroesList : MonoBehaviour
 
     public void UpdateCells()
     {
+        if (openCells.transform.childCount > 0)
+        {
+            foreach (Transform child in openCells.transform) Destroy(child.gameObject);
+        }
+
         var heroes = DataManager.instance.gameData.heroes.OrderBy(x => x.id).ToArray();
 
         foreach (var hero in heroes)
         {
             Transform transformEquipment = hero.isOpen ? openCells : closeCells;
             var cellObject = Instantiate(prefabCell, transformEquipment);
-            var cell = cellObject.GetComponent<Cell>();
+            var cell = cellObject.GetComponent<CellHero>();
             cell.Init(hero.id);
         }
+    }
+
+    public override void UpdateView()
+    {
+        UpdateCells();
     }
 }
