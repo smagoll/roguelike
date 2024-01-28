@@ -24,7 +24,7 @@ public abstract class Cell : MonoBehaviour
 
     public abstract void Init(int id);
 
-    private void SetFade(bool isOpen)
+    public virtual void SetFade(bool isOpen)
     {
         fade.SetActive(!isOpen);
     }

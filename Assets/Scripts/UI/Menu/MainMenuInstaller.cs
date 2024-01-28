@@ -17,5 +17,4 @@ public class MainMenuInstaller : MonoInstaller
     {
         Container.Bind<SimpleScrollSnap>().FromInstance(simpleScrollSnap).AsSingle();
     }
-
 }
