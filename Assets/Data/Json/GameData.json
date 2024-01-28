@@ -1,1 +1,63 @@
-{"coins":7,"weapons":[{"id":1,"level":1,"isOpen":false},{"id":2,"level":1,"isOpen":false}],"abilities":[{"id":1,"level":1,"isOpen":false},{"id":2,"level":1,"isOpen":true},{"id":3,"level":1,"isOpen":false},{"id":4,"level":2,"isOpen":true}],"heroes":[{"id":1,"isOpen":true}],"improvements":[{"id":1,"level":0},{"id":2,"level":0},{"id":3,"level":0}],"prices":{"improvement":200,"chest":500},"equipmentSelected":{"id_hero":1}}
+{
+    "coins": 207,
+    "weapons": [
+        {
+            "id": 1,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 2,
+            "level": 1,
+            "isOpen": false
+        }
+    ],
+    "abilities": [
+        {
+            "id": 1,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 2,
+            "isOpen": true
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "isOpen": false
+        },
+        {
+            "id": 4,
+            "level": 2,
+            "isOpen": true
+        }
+    ],
+    "heroes": [
+        {
+            "id": 1,
+            "isOpen": true
+        }
+    ],
+    "improvements": [
+        {
+            "id": 1,
+            "level": 0
+        },
+        {
+            "id": 2,
+            "level": 0
+        },
+        {
+            "id": 3,
+            "level": 0
+        }
+    ],
+    "prices": {
+        "improvement": 5,
+        "chest": 500
+    },
+    "equipmentSelected": {
+        "id_hero": 1
+    }
+}

@@ -35,8 +35,8 @@ public class DataManager : MonoBehaviour
     
     public void Save()
     {
-        string gameDataJson = JsonUtility.ToJson(gameData);
-        File.WriteAllText(filePath, gameDataJson);
+        //string gameDataJson = JsonUtility.ToJson(gameData);
+        //File.WriteAllText(filePath, gameDataJson);
     }
 
     public void Load()

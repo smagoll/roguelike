@@ -16,12 +16,12 @@ public class UIManagerMenu : MonoBehaviour
 
     private void Start()
     {
-        UpdateCoinText(DataManager.instance.gameData.coins);
+        UpdateCoinText();
     }
 
-    public void UpdateCoinText(int countCoins)
+    public void UpdateCoinText()
     {
-        coinText.text = countCoins.ToString();
+        coinText.text = DataManager.instance.gameData.coins.ToString();
     }
 
     public void ButtonPlay()

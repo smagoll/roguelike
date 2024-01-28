@@ -11,13 +11,15 @@ public class ImprovementsMenu : MenuElement
     [SerializeField]
     private GameObject prefabCell;
     [SerializeField]
-    private Transform layout;
+    private Transform allImprovements;
     [SerializeField]
     private TextMeshProUGUI value;
     [SerializeField]
     private GameObject buttonBuy;
 
     private bool isEnable = false;
+
+    private List<CellImprovement> cells = new();
 
     public bool IsEnable
     {
@@ -31,21 +33,22 @@ public class ImprovementsMenu : MenuElement
 
     private void Start()
     {
-        price = DataManager.instance.gameData.prices.improvement;
-        value.text = price.ToString();
-        CheckOpportunityBuy();
+        UpdateView();
         UpdateCells();
     }
 
     public void UpdateCells()
     {
+        foreach (Transform child in allImprovements.transform) Destroy(child.gameObject);
+
         var imrovements = DataManager.instance.gameData.improvements.OrderBy(x => x.id).ToArray();
 
         foreach (var improvement in imrovements)
         {
-            var cellObject = Instantiate(prefabCell, layout);
+            var cellObject = Instantiate(prefabCell, allImprovements);
             var cell = cellObject.GetComponent<CellImprovement>();
             cell.Init(improvement.id);
+            cells.Add(cell);
         }
     }
 
@@ -53,7 +56,8 @@ public class ImprovementsMenu : MenuElement
     {
         if (IsEnable)
         {
-            Debug.Log("buy");
+            RandomImprovement();
+            UpdateView();
         }
     }
 
@@ -64,6 +68,20 @@ public class ImprovementsMenu : MenuElement
 
     public override void UpdateView()
     {
+        price = DataManager.instance.gameData.prices.improvement;
+        value.text = price.ToString();
         CheckOpportunityBuy();
+        GlobalEventManager.Start_UpdateCoinMenu();
+    }
+
+    public void RandomImprovement()
+    {
+        var improvements = DataManager.instance.gameData.improvements;
+        var rnd = Random.Range(0, improvements.Length);
+        improvements[rnd].level++;
+        cells.Where(x => x.id == improvements[rnd].id).FirstOrDefault().Init(improvements[rnd].id);
+        DataManager.instance.gameData.coins -= price;
+        DataManager.instance.gameData.prices.improvement += 5;
+        DataManager.instance.Save();
     }
 }

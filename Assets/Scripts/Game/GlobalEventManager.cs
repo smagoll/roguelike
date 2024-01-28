@@ -12,7 +12,7 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<int, float, float> UpdateStageBar = new();
     public static UnityEvent<Vector3, float, TextHit> CreateDamageHurt = new();
     public static UnityEvent<UpgradeEquipment> AddItem = new();
-    public static UnityEvent<int> UpdateCoinMenu = new();
+    public static UnityEvent UpdateCoinMenu = new();
     public static UnityEvent<int> IncreaseCoins = new();
     public static UnityEvent<int> DecreaseCoins = new();
     public static UnityEvent EndGame = new();
@@ -57,9 +57,9 @@ public class GlobalEventManager : MonoBehaviour
         AddItem.Invoke(upgrade);
     }
     
-    public static void Start_UpdateCoinMenu(int coins)
+    public static void Start_UpdateCoinMenu()
     {
-        UpdateCoinMenu.Invoke(coins);
+        UpdateCoinMenu.Invoke();
     }
 
     public static void Start_IncreaseCoins(int coins)

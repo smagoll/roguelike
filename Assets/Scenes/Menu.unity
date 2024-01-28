@@ -1412,10 +1412,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1042781308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 850, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 425, y: -40}
+  m_SizeDelta: {x: 850, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &591826751
 MonoBehaviour:
@@ -1476,9 +1476,9 @@ RectTransform:
   - {fileID: 1244865635}
   m_Father: {fileID: 79233356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 425, y: -93.015015}
   m_SizeDelta: {x: 275.6007, y: 147.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649037356
@@ -1524,7 +1524,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 649037357}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 867476094}
+        m_TargetAssemblyTypeName: ImprovementsMenu, Assembly-CSharp
+        m_MethodName: BuyImprovement
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &649037357
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1822,7 +1834,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &809968535
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2030,7 +2042,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &867476092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2066,7 +2078,7 @@ MonoBehaviour:
   numberPanel: 3
   buttonSelected: {fileID: 1029474031}
   prefabCell: {fileID: 7263280767387261184, guid: 13e08f47be9b9f34aad519e04c78e592, type: 3}
-  layout: {fileID: 591826750}
+  allImprovements: {fileID: 591826750}
   value: {fileID: 1244865636}
   buttonBuy: {fileID: 649037354}
 --- !u!1 &908696430
@@ -2163,7 +2175,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &908718678
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2966,8 +2978,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.50683594}
-  m_SizeDelta: {x: 850, y: 1498.9863}
+  m_AnchoredPosition: {x: 0, y: -1.0068359}
+  m_SizeDelta: {x: 850, y: 1497.9863}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1336114369
 GameObject:
@@ -3479,7 +3491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000000028871, y: -53.27594}
+  m_AnchoredPosition: {x: -0.000000028871, y: -53.276}
   m_SizeDelta: {x: 831.72, y: 106.55188}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1477132188
@@ -3595,7 +3607,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1483244857
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5215,10 +5227,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2785994071164428862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 850, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 425, y: -75}
+  m_SizeDelta: {x: 850, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &3844327069110370895
 RectTransform:
@@ -5493,10 +5505,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2785994071164428862}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 850, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 425, y: -25}
+  m_SizeDelta: {x: 850, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &9217801340915751998
 RectTransform:

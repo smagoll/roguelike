@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public abstract class Drop : MonoBehaviour
 {
@@ -11,7 +12,12 @@ public abstract class Drop : MonoBehaviour
 
     private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameManager.player;
+    }
+
+    private void Start()
+    {
+        Fall();
     }
 
     private void Update()
@@ -33,5 +39,11 @@ public abstract class Drop : MonoBehaviour
     }
 
     public abstract void Action();
+
+    public void Fall()
+    {
+        var pointLanding = Random.onUnitSphere * Random.Range(0, 1);
+        transform.DOScale(0.2f, 0.05f);
+    }
 }
 

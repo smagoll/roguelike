@@ -3,6 +3,7 @@ using TMPro;
 
 public class CellImprovement : Cell
 {
+    public int id;
     public TextMeshProUGUI title;
     public TextMeshProUGUI value;
 
@@ -12,6 +13,6 @@ public class CellImprovement : Cell
         image.sprite = selectedEquipment.icon;
         title.text = selectedEquipment.title;
         value.text = selectedEquipment.Value.ToString();
-
+        this.id = id;
     }
 }

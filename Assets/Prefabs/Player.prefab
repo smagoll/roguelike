@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9999998, y: 2.9999998, z: 2.9999998}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7095250604767065590}
@@ -184,6 +184,7 @@ MonoBehaviour:
   hero: {fileID: 11400000, guid: a904ccc4e6371b14aacd41837e4875a2, type: 2}
   animator: {fileID: 0}
   dropCollector: {fileID: 6967991368976675773}
+  weapon: {fileID: 0}
   upgrades:
   - {fileID: 11400000, guid: 1fb64cefc84d78b4cad45924bf4f9dee, type: 2}
   - {fileID: 11400000, guid: a45606f48686ca34fa9094ed7c638cbc, type: 2}
