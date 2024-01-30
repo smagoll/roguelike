@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Weapon : EquipmentDynamic
+public abstract class Weapon : EquipmentDynamic
 {
     private float damage;
     public float scaleDamage = 100;

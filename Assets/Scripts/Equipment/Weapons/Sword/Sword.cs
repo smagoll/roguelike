@@ -18,25 +18,6 @@ public class Sword : Weapon
     {
         RotationToCloseEnemy();
         swordObject.SetActive(true);
-        var enemies = Physics2D.OverlapCircleAll(swordObject.transform.position, attackRange, GameManager.layerEnemy);
-
-        foreach (var enemy in enemies)
-        {
-            var qwe = enemy.GetComponent<Enemy>();
-            qwe.TakeDamage(Damage);
-
-            if (isBleeding)
-            {
-                Bleeding bleedingEnemy = enemy.GetComponent<Bleeding>();
-
-                if (bleedingEnemy == null)
-                {
-                    bleedingEnemy = enemy.gameObject.AddComponent<Bleeding>();
-                }
-
-                bleedingEnemy.Damage = Damage;
-            }
-        }
     }
 
     private void RotationToCloseEnemy()
@@ -63,6 +44,7 @@ public class Sword : Weapon
 
         swordObject = Instantiate(prefabSword, gameObject.transform);
         swordObject.SetActive(false);
+        swordObject.GetComponent<SwordObject>().sword = this;
 
         isAttack = true;
     }

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1432292336210519618}
   - component: {fileID: 4015132576062553519}
   m_Layer: 6
-  m_Name: Player
+  m_Name: Witch
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dfe0a7c9022b24ea6988797c28bb4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hero: {fileID: 11400000, guid: a904ccc4e6371b14aacd41837e4875a2, type: 2}
+  hero: {fileID: 0}
   animator: {fileID: 0}
   dropCollector: {fileID: 6967991368976675773}
   weapon: {fileID: 0}

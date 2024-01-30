@@ -10,6 +10,11 @@
             "id": 2,
             "level": 1,
             "isOpen": false
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "isOpen": false
         }
     ],
     "abilities": [
@@ -20,6 +25,7 @@
         },
         {
             "id": 2,
+            "level": 1,
             "isOpen": true
         },
         {
@@ -36,6 +42,7 @@
     "heroes": [
         {
             "id": 1,
+            "level": 1,
             "isOpen": true
         }
     ],

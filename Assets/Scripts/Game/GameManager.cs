@@ -78,7 +78,7 @@ public class GameManager : MonoBehaviour
 
         foreach (var enemy in enemies)
         {
-            var distance = (player.transform.position - enemy.transform.position).sqrMagnitude;
+            var distance = (from.transform.position - enemy.transform.position).sqrMagnitude;
             if (distance < closestDistance)
             {
                 closestDistance = distance;
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
             return Vector3.zero;
         }
 
-        var heading = (closeEnemy.transform.position - player.transform.position);
+        var heading = (closeEnemy.transform.position - from.position);
         var direction = heading / heading.magnitude;
 
         return direction;

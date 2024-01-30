@@ -1,7 +1,7 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "AddBow", menuName = "Upgrades/Add/Weapons/Bow")]
-public class UpgradeAddBow : UpgradeWeapon
+[CreateAssetMenu(fileName = "AddMagicWand", menuName = "Upgrades/Add/Weapons/MagicWand")]
+public class UpgradeAddMagicWand : UpgradeWeapon
 {
     [Header("Stats")]
     [SerializeField]
@@ -9,10 +9,12 @@ public class UpgradeAddBow : UpgradeWeapon
     [SerializeField]
     private float frequency;
 
-    public GameObject prefabSword;
+    public GameObject prefabSphere;
+    public int countSphere;
+    public float radiusSphere;
     public float attackRange;
     public float distanceFlight;
-    public float speedFlightArrow;
+    public float speedFlight;
     public Upgrade[] upgrades;
     [Header("Steps")]
     [SerializeField]
@@ -25,7 +27,7 @@ public class UpgradeAddBow : UpgradeWeapon
 
     public override void Action()
     {
-        var bow = GameManager.player.AddComponent<Bow>();
-        bow.Initialize(this);
+        var magicWand = GameManager.player.AddComponent<MagicWand>();
+        magicWand.Initialize(prefabSphere, attackRange, radiusSphere, countSphere, speedFlight, distanceFlight, Damage, Frequency, upgrades) ;
     }
 }

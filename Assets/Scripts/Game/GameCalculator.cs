@@ -7,6 +7,11 @@ public static class GameCalculator
     public static Vector2 GetRandomDirection()
     {
         var angle = Random.Range(0, 360f);
+        return GetDirectionOnTheAngle(angle);
+    }
+
+    public static Vector2 GetDirectionOnTheAngle(float angle)
+    {
         float angleInRadians = angle * Mathf.Deg2Rad;
         Vector2 directionLocal = new Vector2(Mathf.Cos(angleInRadians), Mathf.Sin(angleInRadians));
         return directionLocal.normalized;

@@ -52,6 +52,7 @@ public class Character : MonoBehaviour
 
     private void Awake()
     {
+        hero = DataManager.instance.GetEquipmentHero();
         animator = GetComponent<Animator>();
         InitializeStats();
         HP = maxHp;

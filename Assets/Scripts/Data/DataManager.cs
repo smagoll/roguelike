@@ -73,11 +73,16 @@ public class DataManager : MonoBehaviour
         gameData.abilities = abilities.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
         gameData.improvements = improvements.Select(x => new ImprovementStatData(x.id, x.Level)).OrderBy(x => x.id).ToArray();
 
-        gameData.heroes = heroes.Select(x => new HeroData(x.Id, false)).OrderBy(x => x.id).ToArray();
+        gameData.heroes = heroes.Select(x => new HeroData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
         gameData.heroes[0].isOpen = true;
 
         gameData.equipmentSelected.id_hero = 1;
 
         Save();
+    }
+
+    public Hero GetEquipmentHero()
+    {
+        return heroes.Where(x => x.Id == gameData.equipmentSelected.id_hero).FirstOrDefault();
     }
 }

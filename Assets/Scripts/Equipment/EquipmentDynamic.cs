@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EquipmentDynamic : Equipment
+public abstract class EquipmentDynamic : Equipment
 {
     private float startFrequency;
     public float scaleFrequency = 100;
@@ -24,8 +24,5 @@ public class EquipmentDynamic : Equipment
         }
     }
 
-    public virtual void Action()
-    {
-        Debug.Log("action");
-    }
+    public abstract void Action();
 }

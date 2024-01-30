@@ -95,11 +95,15 @@ MonoBehaviour:
     abilities: []
     heroes: []
     improvements: []
+    prices:
+      improvement: 0
+      chest: 0
     equipmentSelected:
       id_hero: 0
   weapons:
   - {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
   - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
+  - {fileID: 11400000, guid: 0582b85b56127804fa3c4c3319b54d71, type: 2}
   abilities:
   - {fileID: 11400000, guid: f98bae41aa161bc4b8da81805951dd0f, type: 2}
   - {fileID: 11400000, guid: 89c5165198945a94c9873a9364870947, type: 2}
@@ -107,6 +111,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: cf067d2efe5151d4e8cf327102e54410, type: 2}
   heroes:
   - {fileID: 11400000, guid: a904ccc4e6371b14aacd41837e4875a2, type: 2}
+  - {fileID: 11400000, guid: 3796b54dce0102c45b0725167a7bcaa7, type: 2}
+  - {fileID: 11400000, guid: 18039b3b21426b44e8fc3ff7fa6ceacc, type: 2}
   improvements:
   - {fileID: 11400000, guid: 71513cddafc99844eb46ee9e8bacf5bc, type: 2}
   - {fileID: 11400000, guid: 1c25be376d8dd324b9edbdb780ca8b2c, type: 2}
