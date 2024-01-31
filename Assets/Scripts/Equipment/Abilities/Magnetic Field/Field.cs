@@ -8,6 +8,12 @@ public class Field : MonoBehaviour
     public MagneticField controller;
     public float lastTimeAttack = 0f;
     public List<GameObject> enemies = new();
+    private Vector3 scale;
+
+    private void Awake()
+    {
+        scale = transform.localScale;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -43,5 +49,10 @@ public class Field : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void UpdateScale(float scaleScale)
+    {
+        transform.localScale = scale * (scaleScale) / 100;
     }
 }

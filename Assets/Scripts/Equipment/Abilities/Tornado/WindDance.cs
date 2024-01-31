@@ -9,7 +9,8 @@ public class WindDance : EquipmentDynamic
     public float damage;
     public float timeLifeTornado;
     public float frequencyChangeDirection;
-    public float speedFlight;
+    public float scaleSpeedFlight = 100;
+    private float speedFlight;
 
     private int countTornado;
 
@@ -23,11 +24,14 @@ public class WindDance : EquipmentDynamic
         }
     }
 
+    public float SpeedFlight { get => speedFlight * scaleSpeedFlight / 100; set => speedFlight = value; }
+
+
     public override void Action()
     {
         var tornadoObject = Instantiate(prefabTornado, transform.position, Quaternion.identity);
         var tornado = tornadoObject.GetComponent<Tornado>();
-        tornado.Initialize(damage, timeLifeTornado, frequencyChangeDirection, speedFlight);
+        tornado.Initialize(damage, timeLifeTornado, frequencyChangeDirection, SpeedFlight);
     }
 
     public void Initialize(float damage, float timeLife, float frequency, float frequencyChangeDirection, float speedFlight, int countTornado, Upgrade[] upgrades, GameObject prefabTornado)

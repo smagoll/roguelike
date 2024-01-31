@@ -3,9 +3,24 @@ using UnityEngine;
 public class Sword : Weapon
 {
     private GameObject prefabSword;
-    private GameObject swordObject;
+    public GameObject swordObject;
 
-    public float attackRange;
+    private float scaleAttackRange = 100;
+    public float ScaleAttackRange
+    {
+        get
+        {
+            return scaleAttackRange;
+        }
+        set
+        {
+            scaleAttackRange = value;
+            swordObject.GetComponent<SwordObject>().UpdateScale(scaleAttackRange);
+        }
+    }
+    private float attackRange;
+
+    public float AttackRange { get => attackRange * scaleAttackRange / 100; set => attackRange = value; }
 
     private PlayerController playerController;
 
@@ -22,12 +37,12 @@ public class Sword : Weapon
 
     private void RotationToCloseEnemy()
     {
-        var direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange * 2);
+        var direction = GameManager.GetDirectionToCloseEnemy(transform, AttackRange * 2);
         if (direction.magnitude == 0)
         {
             direction = playerController.directionLook;
         }
-        Vector3 positionAttack = gameObject.transform.position + direction * attackRange;
+        Vector3 positionAttack = gameObject.transform.position + direction * AttackRange;
         swordObject.transform.position = positionAttack;
     }
 

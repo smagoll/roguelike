@@ -18,7 +18,7 @@ MonoBehaviour:
   description: "\u0430\u043B\u0430\u0445\u0430\u043C\u043E\u0440\u0430 \u0434\u0435\u0442\u043A\u0430"
   id: 3
   equipmentType: 0
-  damage: 1
+  damage: 2
   frequency: 1
   prefabSphere: {fileID: 8859960020742224401, guid: 3c8d8fc6292c13445a4106bf88ffc1ff, type: 3}
   countSphere: 1
@@ -26,6 +26,15 @@ MonoBehaviour:
   attackRange: 5
   distanceFlight: 5
   speedFlight: 3
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: a4ddc1fe3a25b9241831258735d62c73, type: 2}
+  - {fileID: 11400000, guid: bdb994ab7568259448d6eb2dfe3f9003, type: 2}
+  - {fileID: 11400000, guid: d760e9cbdedcd0c4a86b4a06e2fdd22f, type: 2}
+  - {fileID: 11400000, guid: 818f0beeb2e7fc04c9dddcb82e6c9c84, type: 2}
+  - {fileID: 11400000, guid: 72f24f92a8a056d4a8346e8ef3dd27a0, type: 2}
+  - {fileID: 11400000, guid: 29e2f70daf7797346b4f7995408c40f7, type: 2}
+  - {fileID: 11400000, guid: 2e4ddef0e2b3a2f4c83baf0e98ce03b5, type: 2}
+  - {fileID: 11400000, guid: 6182c039b9311d6429c3414ae10e68ee, type: 2}
+  - {fileID: 11400000, guid: 32395ac1d0bbd18468eca98ee0538ef1, type: 2}
   stepDamage: 2
   stepFrequency: 0.1

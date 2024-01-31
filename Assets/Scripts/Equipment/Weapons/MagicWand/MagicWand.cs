@@ -7,37 +7,38 @@ public class MagicWand : Weapon
     [SerializeField]
     private GameObject prefabSphere;
     [SerializeField]
-    private float attackRange;
+    public float attackRange;
     [SerializeField]
     private float radiusSphere;
     [SerializeField]
     private int countSphere;
     [SerializeField]
-    private float speedFlight;
+    public float speedFlight;
     [SerializeField]
-    private float distanceFlight;
+    public float distanceFlight;
 
     public List<MagicWandSphere> spheres = new();
 
-    public override void Action()
-    {
+    public override void Action() { }
 
-    }
-
-    public void SpawnSphere()
+    public void SpawnSphere(int count)
     {
-        var direction = GameCalculator.GetDirectionOnTheAngle(360f / countSphere);
-        var position = new Vector3(direction.x, direction.y, 0f).normalized * radiusSphere;
-        var sphereObject = Instantiate(prefabSphere, position, Quaternion.identity, transform);
-        var sphere = sphereObject.GetComponent<MagicWandSphere>();
-        sphere.Initialize(speedFlight, distanceFlight, Frequency, Damage, attackRange);
-        spheres.Add(sphere);
+        for (int i = 0; i < count; i++)
+        {
+            var direction = GameCalculator.GetDirectionOnTheAngle(360f / countSphere);
+            var position = new Vector3(direction.x, direction.y, 0f).normalized * radiusSphere;
+            var sphereObject = Instantiate(prefabSphere, position, Quaternion.identity, transform);
+            var sphere = sphereObject.GetComponent<MagicWandSphere>();
+            sphere.Initialize(this);
+            spheres.Add(sphere);
+        }
+
         UpdateAngleSpheres();
     }
 
     public void UpdateAngleSpheres()
     {
-        var angle = 360f / countSphere;
+        var angle = 360f / spheres.Count;
         float localAngle = 0;
         foreach (var sphere in spheres)
         {
@@ -59,10 +60,7 @@ public class MagicWand : Weapon
         Frequency = frequency;
         this.upgrades = upgrades;
 
-        for (int i = 0; i < countSphere; i++)
-        {
-            SpawnSphere();
-        }
+        SpawnSphere(countSphere);
 
         isAttack = true;
     }

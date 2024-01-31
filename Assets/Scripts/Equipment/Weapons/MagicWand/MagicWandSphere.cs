@@ -2,24 +2,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MagicWandSphere : Weapon, IProjectileController
+public class MagicWandSphere : MonoBehaviour, IProjectileController
 {
     public GameObject prefabProjectile;
     [HideInInspector]
-    public float attackRange;
+    private MagicWand magicWand;
+    public bool isAttack = false;
+    private float lastTimeAttack = 0f;
 
     public float DistanceFlight { get; set; }
     public float SpeedFlight { get; set; }
     public Vector2 Direction { get; set; }
 
-    public override void Action()
+    private void Update()
     {
-        Direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
+        if (isAttack)
+        {
+            if (Time.time - lastTimeAttack >= magicWand.Frequency)
+            {
+                Action();
+                lastTimeAttack = Time.time;
+            }
+        }
+    }
+
+    public void Action()
+    {
+        Direction = GameManager.GetDirectionToCloseEnemy(transform, magicWand.attackRange);
         var projectileObject = Instantiate(prefabProjectile, gameObject.transform.position, Quaternion.identity);
         var projectile = projectileObject.GetComponent<MagicWandProjectile>();
         projectile.direction = Direction;
         projectile.projectileController = this;
-        projectile.damage = Damage;
+        projectile.damage = magicWand.Damage;
 
         if (Direction == Vector2.zero)
             projectile.direction = GameCalculator.GetRandomDirection();
@@ -28,13 +42,11 @@ public class MagicWandSphere : Weapon, IProjectileController
 
     }
 
-    public void Initialize(float speedFlight, float distanceFlight, float frequency, float damage, float attackRange)
+    public void Initialize(MagicWand magicWand)
     {
-        SpeedFlight = speedFlight;
-        DistanceFlight = distanceFlight;
-        Frequency = frequency;
-        Damage = damage;
-        this.attackRange = attackRange;
+        this.magicWand = magicWand;
+        SpeedFlight = magicWand.speedFlight;
+        DistanceFlight = magicWand.distanceFlight;
 
         isAttack = true;
     }

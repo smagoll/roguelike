@@ -83,6 +83,7 @@ public class DataManager : MonoBehaviour
 
     public Hero GetEquipmentHero()
     {
+        Debug.Log(gameData.equipmentSelected.id_hero);
         return heroes.Where(x => x.Id == gameData.equipmentSelected.id_hero).FirstOrDefault();
     }
 }

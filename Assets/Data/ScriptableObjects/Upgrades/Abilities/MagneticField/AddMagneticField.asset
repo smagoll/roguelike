@@ -21,4 +21,13 @@ MonoBehaviour:
   prefabField: {fileID: 7032785621556537540, guid: adb65e404ca031849bc111a8aafb7025, type: 3}
   damage: 2
   frequency: 0.8
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: c2f97fef0fca25d4cb9c69c722a669f8, type: 2}
+  - {fileID: 11400000, guid: f6932c5d558d01e459874009084b0eb1, type: 2}
+  - {fileID: 11400000, guid: 6de69f3a6a932b648a74f90798215652, type: 2}
+  - {fileID: 11400000, guid: fb34cb39e57bf4c42ab90f1b29b2dee2, type: 2}
+  - {fileID: 11400000, guid: 3033eeb85594fbc458e28a124b6f1a12, type: 2}
+  - {fileID: 11400000, guid: d9b7d003437020c4ebd6a198e961b125, type: 2}
+  - {fileID: 11400000, guid: a8f1a22881159bb48b52078bd1fa7592, type: 2}
+  - {fileID: 11400000, guid: bce0b10b2ea7dc448a0ac5bd75d45b43, type: 2}
+  - {fileID: 11400000, guid: 057219b6f392a2c48a2ba2ced27b2b7a, type: 2}

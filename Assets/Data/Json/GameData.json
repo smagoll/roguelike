@@ -44,6 +44,16 @@
             "id": 1,
             "level": 1,
             "isOpen": true
+        },
+        {
+            "id": 2,
+            "level": 1,
+            "isOpen": true
+        },
+        {
+            "id": 3,
+            "level": 1,
+            "isOpen": true
         }
     ],
     "improvements": [

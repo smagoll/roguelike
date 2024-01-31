@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: AddSword
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 8b78a4138e91c7e45b9bbdb847626c71, type: 2}
-  rare: 1
+  rare: 2
   title: "\u041C\u0435\u0447"
   description: "\u0445\u0443 \u0438\u0437 \u0445\u0443"
   id: 1
@@ -29,5 +29,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7ea8bc8c0d730b349917030d9d512a52, type: 2}
   - {fileID: 11400000, guid: de245caca060ec640b8e4cd45280423b, type: 2}
   - {fileID: 11400000, guid: 2785d5cfccd5f184385debd3981eb69f, type: 2}
+  - {fileID: 11400000, guid: a56a5f373b9767741996fb1b6c30e7f7, type: 2}
+  - {fileID: 11400000, guid: 245a49261ae58a14b80a4c4dd698b012, type: 2}
+  - {fileID: 11400000, guid: 277a2dbbf138f9d45aeff0fbf5aa7aeb, type: 2}
+  - {fileID: 11400000, guid: ac5e4630d5f84394cb8b3f97189ce48f, type: 2}
+  - {fileID: 11400000, guid: e1bf624e2008bb7448fe52ff24815eba, type: 2}
+  - {fileID: 11400000, guid: bfdf705958070a14b94c3636e7a3aacb, type: 2}
   stepDamage: 1
   stepFrequency: 0.1

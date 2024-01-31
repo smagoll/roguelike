@@ -6,19 +6,35 @@ public class MagneticField : EquipmentStatic
 {
     public float damage;
     private float frequency;
-    public float scaleRadius = 100;
+    public float scaleFrequency = 100;
+    private float scaleRadius = 100;
+
     public GameObject prefabField;
+    private GameObject field;
 
     public float Frequency
     {
-        get => frequency * scaleRadius / 100;
+        get => frequency * scaleFrequency / 100;
         set => frequency = value;
+    }
+
+    public float ScaleRadius
+    {
+        get
+        {
+            return scaleRadius;
+        }
+        set
+        {
+            scaleRadius = value;
+            field.GetComponent<Field>().UpdateScale(scaleRadius);
+        }
     }
 
     private void CreateField()
     {
-        var fieldObject = Instantiate(prefabField, transform);
-        fieldObject.GetComponent<Field>().controller = this;
+        field = Instantiate(prefabField, transform);
+        field.GetComponent<Field>().controller = this;
     }
 
     public void Initialize(UpgradeAddField data)

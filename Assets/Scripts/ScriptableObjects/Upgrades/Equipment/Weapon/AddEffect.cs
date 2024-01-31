@@ -10,15 +10,8 @@ public class AddEffect : Upgrade
 
     public override void Action()
     {
-        switch (weapon)
-        {
-            case WeaponType.Sword:
-                ActivateEffect(GameManager.player.GetComponent<Sword>());
-                break;
-            case WeaponType.Bow:
-                ActivateEffect(GameManager.player.GetComponent<Bow>());
-                break;
-        }
+          ActivateEffect(GameManager.player.GetComponent<Weapon>());
+
     }
 
     private void ActivateEffect(Weapon weapon)
