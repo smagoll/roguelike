@@ -1348,6 +1348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a4846362d6fd114b8b33807126e2356, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 533176927}
   prefabsCloseEnemies:
   - {fileID: 6499632400935299304, guid: 6fd94f9059769c84a8bbd61126a08586, type: 3}
   - {fileID: 6499632400935299304, guid: fd382ae28c109f84d9d51c6d9d7cd71c, type: 3}
@@ -24411,6 +24412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textCoin: {fileID: 129511922}
+  gameManager: {fileID: 533176927}
 --- !u!1 &1775012313
 GameObject:
   m_ObjectHideFlags: 0

@@ -6,13 +6,13 @@ using Zenject;
 public class GameManager : MonoBehaviour
 {
     [Header("Stage")]
-    private static int numberStage = 1;
+    private int numberStage = 1;
     public float xpForFirstStage; // необходимый опыт для первой стадии
     public float XpForCurrentStage => xpForFirstStage * numberStage; // необходимый опыт за текущую стадию
     private float xpCollect = 0; // собранный опыт за текущую стадию
-    private static int coin = 0;
+    private int coin = 0;
 
-    public static int Coin { get => coin; set => coin = value; }
+    public int Coin { get => coin; set => coin = value; }
 
     public float XpCollect
     {
@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public static int NumberStage
+    public int NumberStage
     {
         get { return numberStage; }
         set

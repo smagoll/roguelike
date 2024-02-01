@@ -27,7 +27,7 @@ public class GameInstaller : MonoInstaller
         {
             case Input.Mobile:
                 Joystick joystick = Container.InstantiatePrefabForComponent<Joystick>(prefabJoystick, Canvas);
-                Container.Bind<Joystick>().FromInstance(joystick).AsSingle();
+                Container.Bind<Joystick>().FromInstance(joystick).AsSingle().NonLazy();
                 break;
         }
     }

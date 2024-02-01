@@ -6,6 +6,9 @@ using UnityEngine.Events;
 
 public class SpawnerEnemy : MonoBehaviour
 {
+    [SerializeField]
+    private GameManager gameManager;
+
     public List<GameObject> prefabsCloseEnemies = new();
     public List<GameObject> prefabsOpenEnemies = new();
 
@@ -21,7 +24,7 @@ public class SpawnerEnemy : MonoBehaviour
 
     public float FrequencySpawn
     {
-        get => frequencySpawn - GameManager.NumberStage * 0.01f;
+        get => frequencySpawn - gameManager.NumberStage * 0.01f;
     }
 
     private void Awake()
@@ -31,7 +34,7 @@ public class SpawnerEnemy : MonoBehaviour
 
     private void Start()
     {
-        OpenEnemies(GameManager.NumberStage);
+        OpenEnemies(gameManager.NumberStage);
         StartSpawn();
     }
 

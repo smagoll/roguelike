@@ -8,6 +8,8 @@ public class EndGameWindow : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI textCoin;
+    [SerializeField]
+    private GameManager gameManager;
 
     private void Awake()
     {
@@ -16,12 +18,12 @@ public class EndGameWindow : MonoBehaviour
 
     public void UpdateTextCoin()
     {
-        textCoin.text = GameManager.Coin.ToString();
+        textCoin.text = gameManager.Coin.ToString();
     }
 
     public void LoadMenu()
     {
-        DataManager.instance.gameData.coins = GameManager.Coin;
+        DataManager.instance.gameData.coins = gameManager.Coin;
         DataManager.instance.Save();
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Menu");
