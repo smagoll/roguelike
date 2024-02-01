@@ -17,7 +17,7 @@ public class GameInstaller : MonoInstaller
     public override void InstallBindings()
     {
         SetInput();
-        Player();
+        InstallPlayer();
     }
 
 
@@ -32,7 +32,7 @@ public class GameInstaller : MonoInstaller
         }
     }
 
-    public void Player()
+    public void InstallPlayer()
     {
         Character character = Container
             .InstantiatePrefabForComponent<Character>(prefabPlayer, spawnpoint.position, Quaternion.identity, null);

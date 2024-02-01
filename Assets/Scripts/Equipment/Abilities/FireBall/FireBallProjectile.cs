@@ -16,7 +16,7 @@ public class FireBallProjectile : Projectile
 
     public override void DestroyProjectile()
     {
-        var enemies = Physics2D.OverlapCircleAll(transform.position, fireBall.rangeBlast, GameManager.layerEnemy);
+        var enemies = Physics2D.OverlapCircleAll(transform.position, fireBall.ExplosionRadius, GameManager.layerEnemy);
         if (enemies.Length > 0)
         {
             foreach (var enemy in enemies)

@@ -23,8 +23,8 @@ public class EndGameWindow : MonoBehaviour
     {
         DataManager.instance.gameData.coins = GameManager.Coin;
         DataManager.instance.Save();
-        SceneManager.LoadScene("Menu");
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;
     }
 }
