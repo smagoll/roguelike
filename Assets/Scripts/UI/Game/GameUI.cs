@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -66,6 +67,7 @@ public class GameUI : MonoBehaviour
         IsPause = true;
         selected.SetActive(true);
         Time.timeScale = 0f;
+        GameManager.joystick.JoystickUp();
 
         var upgradesClone = new List<Upgrade>(upgrades);
         int countUpgrades = upgrades.Count >= 3 ? 3 : upgrades.Count;

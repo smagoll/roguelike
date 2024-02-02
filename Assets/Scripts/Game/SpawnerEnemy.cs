@@ -8,6 +8,8 @@ public class SpawnerEnemy : MonoBehaviour
 {
     [SerializeField]
     private GameManager gameManager;
+    [SerializeField]
+    private Transform enemiesTransform;
 
     public List<GameObject> prefabsCloseEnemies = new();
     public List<GameObject> prefabsOpenEnemies = new();
@@ -54,7 +56,7 @@ public class SpawnerEnemy : MonoBehaviour
             var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
             position.z = 0f;
             int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
-            Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity);
+            Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
             yield return new WaitForSeconds(FrequencySpawn);
         }
     }
