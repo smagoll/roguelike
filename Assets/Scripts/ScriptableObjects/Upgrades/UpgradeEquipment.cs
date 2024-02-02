@@ -10,6 +10,8 @@ public abstract class UpgradeEquipment : Upgrade
     public EquipmentType equipmentType;
     public override UpgradeType UpgradeType => UpgradeType.Add;
 
+    public Stat[] stats;
+
     public int Id { get => id; set => id = value; }
     public int Level
     {

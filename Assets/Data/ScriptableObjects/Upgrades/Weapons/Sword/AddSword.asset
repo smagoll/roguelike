@@ -20,10 +20,17 @@ MonoBehaviour:
   equipmentType: 0
   damage: 3
   frequency: 2
+  stats:
+  - type: 0
+    value: 3
+    step: 1
+  - type: 1
+    value: 2
+    step: 0.03
   prefabSword: {fileID: 5613213001346707890, guid: d80f0bd62a188744a8d68bf6f8502364, type: 3}
-  prefabSwordObject: {fileID: 0}
+  prefabSwordObject: {fileID: 5613213001346707890, guid: d80f0bd62a188744a8d68bf6f8502364, type: 3}
   attackRange: 0.7
-  startFrequencyAttack: 3
+  startFrequencyAttack: 2
   upgrades:
   - {fileID: 11400000, guid: aa9282b591e164a46b1972e765182c7f, type: 2}
   - {fileID: 11400000, guid: 7ea8bc8c0d730b349917030d9d512a52, type: 2}

@@ -5,6 +5,7 @@ using UnityEngine.Events;
 public class GlobalEventManager : MonoBehaviour
 {
     public static UnityEvent<List<Upgrade>> ShowUpgrades = new();
+    public static UnityEvent<int> ShowWindowUpgrade = new();
     public static UnityEvent<float> IncreaseHP = new();
     public static UnityEvent<float> UpdateXp = new();
     public static UnityEvent<int> OpenEnemies = new();
@@ -75,6 +76,11 @@ public class GlobalEventManager : MonoBehaviour
     public static void Start_EndGame()
     {
         EndGame.Invoke();
+    }
+    
+    public static void Start_ShowWindowUpgrade(int id)
+    {
+        ShowWindowUpgrade.Invoke(id);
     }
 
 

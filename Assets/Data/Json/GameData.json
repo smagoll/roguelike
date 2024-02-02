@@ -72,7 +72,8 @@
     ],
     "prices": {
         "improvement": 5,
-        "chest": 500
+        "chest": 500,
+        "upgrade_abilities": 10
     },
     "equipmentSelected": {
         "id_hero": 1

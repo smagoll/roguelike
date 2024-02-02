@@ -42,7 +42,7 @@ public class Sword : Weapon
         {
             direction = playerController.directionLook;
         }
-        Vector3 positionAttack = gameObject.transform.position + direction * AttackRange;
+        Vector3 positionAttack = gameObject.transform.position + direction * AttackRange / 3 * 2;
         swordObject.transform.position = positionAttack;
     }
 

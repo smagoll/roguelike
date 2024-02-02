@@ -7,15 +7,15 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using Zenject;
 
-public class CellAbility : Cell, ISelectHandler, IDeselectHandler
+public class CellAbility : Cell
 {
+    private int id;
     [SerializeField]
     private TextMeshProUGUI textLevel;
-    [SerializeField]
-    private GameObject buttonUpgrade;
 
     public override void Init(int id)
     {
+        this.id = id;
         var selectedEquipment = DataManager.instance.abilities.Where(x => x.Id == id).FirstOrDefault();
         IsOpen = DataManager.instance.gameData.abilities.Where(x => x.id == id).Select(x => x.isOpen).FirstOrDefault();
         image.sprite = selectedEquipment.icon;
@@ -28,18 +28,8 @@ public class CellAbility : Cell, ISelectHandler, IDeselectHandler
         GetComponent<Button>().interactable = isOpen;
     }
 
-    public void qwe()
+    public void ShowWindowUpgrade()
     {
-        Debug.Log("qwe");
-    }
-
-    public void OnSelect(BaseEventData eventData)
-    {
-        buttonUpgrade.SetActive(true);
-    }
-
-    public void OnDeselect(BaseEventData eventData)
-    {
-        buttonUpgrade.SetActive(false);
+        GlobalEventManager.Start_ShowWindowUpgrade(id);
     }
 }
