@@ -18,6 +18,17 @@ MonoBehaviour:
   description: "\u043C\u043E\u043B\u043D\u0438\u044F \u0432\u0430\u0443 \u0447\u0430\u0443"
   id: 4
   equipmentType: 1
+  stats:
+  - type: 0
+    statUpgradeType: 0
+    value: 3
+    step: 2
+    clampValue: 20000
+  - type: 1
+    statUpgradeType: 1
+    value: 1.5
+    step: 0.02
+    clampValue: 0.5
   damage: 2
   prefabLightning: {fileID: 547906044967120555, guid: 6e590dd4bb869df429632e63fb752082, type: 3}
   distanceFlight: 2
