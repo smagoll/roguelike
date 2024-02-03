@@ -17,6 +17,10 @@ public class WindowUpgrade : MonoBehaviour
     private TextMeshProUGUI textPrice;
     [SerializeField]
     private GameObject buttonUpgrade;
+    [SerializeField]
+    private Transform listStats;
+    [SerializeField]
+    private GameObject prefabStatInfo;
     private int price;
     private int startPrice;
     private UpgradeAbility ability;
@@ -41,6 +45,18 @@ public class WindowUpgrade : MonoBehaviour
         price = abilityData.level * startPrice;
         numberLevel.text = abilityData.level.ToString();
         textPrice.text = price.ToString();
+        UpdateStats();
+    }
+
+    public void UpdateStats()
+    {
+        foreach(Transform child in listStats) Destroy(child.gameObject);
+
+        foreach (var stat in ability.stats)
+        {
+            var statInfo = Instantiate(prefabStatInfo, listStats);
+            statInfo.GetComponent<StatInfoUI>().Initialize(abilityData, stat);
+        }
     }
 
     public void IncreaseLevelAbility()

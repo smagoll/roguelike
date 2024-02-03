@@ -12,9 +12,6 @@ public class UpgradeAddSword : UpgradeWeapon
     public float startFrequencyAttack;
     public Upgrade[] upgrades;
 
-    public float Damage => stats.FirstOrDefault(x => x.type == StatType.damage).value + stats.FirstOrDefault(x => x.type == StatType.damage).step * (Level - 1);
-    public float Frequency => stats.FirstOrDefault(x => x.type == StatType.frequency).value - stats.FirstOrDefault(x => x.type == StatType.frequency).step * (Level - 1);
-
     public override void Action()
     {
         var sword = GameManager.player.AddComponent<Sword>();

@@ -22,9 +22,6 @@ public class UpgradeAddMagicWand : UpgradeWeapon
     [SerializeField]
     private float stepFrequency;
 
-    public float Damage => damage + stepDamage * (Level - 1);
-    public float Frequency => frequency - stepFrequency * (Level - 1);
-
     public override void Action()
     {
         var magicWand = GameManager.player.AddComponent<MagicWand>();

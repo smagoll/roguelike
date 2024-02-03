@@ -18,6 +18,17 @@ MonoBehaviour:
   description: "\u0430\u043B\u0430\u0445\u0430\u043C\u043E\u0440\u0430 \u0434\u0435\u0442\u043A\u0430"
   id: 3
   equipmentType: 0
+  stats:
+  - type: 0
+    statUpgradeType: 0
+    value: 2
+    step: 1
+    clampValue: 10000
+  - type: 1
+    statUpgradeType: 1
+    value: 1
+    step: 0.03
+    clampValue: 0.3
   damage: 2
   frequency: 1
   prefabSphere: {fileID: 8859960020742224401, guid: 3c8d8fc6292c13445a4106bf88ffc1ff, type: 3}

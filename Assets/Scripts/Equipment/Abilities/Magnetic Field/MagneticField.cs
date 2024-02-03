@@ -39,9 +39,9 @@ public class MagneticField : EquipmentStatic
 
     public void Initialize(UpgradeAddField data)
     {
-        damage = data.damage;
+        damage = data.Damage;
         upgrades = data.upgrades;
-        Frequency = data.frequency;
+        Frequency = data.Frequency;
         prefabField = data.prefabField;
 
         CreateField();

@@ -12,6 +12,10 @@ public abstract class UpgradeEquipment : Upgrade
 
     public Stat[] stats;
 
+    public float Damage => stats.FirstOrDefault(x => x.Type == StatType.damage).GetValue(Level);
+    public float Frequency => stats.FirstOrDefault(x => x.Type == StatType.frequency).GetValue(Level);
+
+
     public int Id { get => id; set => id = value; }
     public int Level
     {
