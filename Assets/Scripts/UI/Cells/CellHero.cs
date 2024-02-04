@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using UnityEngine.UI;
 
 public class CellHero : Cell
 {

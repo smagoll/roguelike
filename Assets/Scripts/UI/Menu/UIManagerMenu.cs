@@ -9,7 +9,9 @@ public class UIManagerMenu : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
     [SerializeField]
-    private WindowUpgrade windowUpgrade;
+    private WindowUpgrade windowUpgradeWeapon;
+    [SerializeField]
+    private WindowUpgrade windowUpgradeAbility;
 
     private void Awake()
     {
@@ -34,7 +36,16 @@ public class UIManagerMenu : MonoBehaviour
 
     public void ShowWindowUpgrade(int id, EquipmentType equipmentType)
     {
-        windowUpgrade.SetInfo(id, equipmentType);
-        windowUpgrade.gameObject.SetActive(true);
+        switch (equipmentType)
+        {
+            case EquipmentType.Weapon:
+                windowUpgradeWeapon.SetInfo(id, equipmentType);
+                windowUpgradeWeapon.gameObject.SetActive(true);
+                break;
+            case EquipmentType.Ability:
+                windowUpgradeAbility.SetInfo(id, equipmentType);
+                windowUpgradeAbility.gameObject.SetActive(true);
+                break;
+        }
     }
 }

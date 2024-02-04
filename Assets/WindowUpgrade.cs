@@ -26,7 +26,8 @@ public class WindowUpgrade : MonoBehaviour
 
     private int price;
     private int startPrice;
-    private UpgradeEquipment equipment;
+    [HideInInspector]
+    public UpgradeEquipment equipment;
     private EquipmentData equipmentData;
     private SimpleScrollSnap scrollSnap;
 
@@ -97,7 +98,7 @@ public class WindowUpgrade : MonoBehaviour
             buttonUpgrade.GetComponent<Button>().interactable = true;
         }
     }
-
+     
     private void OnEnable()
     {
         scrollSnap.UseSwipeGestures = false;
@@ -107,4 +108,6 @@ public class WindowUpgrade : MonoBehaviour
     {
         scrollSnap.UseSwipeGestures = true;
     }
+
+    
 }

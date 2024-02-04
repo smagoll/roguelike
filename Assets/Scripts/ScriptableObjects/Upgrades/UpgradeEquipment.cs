@@ -24,7 +24,7 @@ public abstract class UpgradeEquipment : Upgrade
             switch (equipmentType)
             {
                 case EquipmentType.Weapon:
-                    return DataManager.instance.gameData.heroes.Where(x => x.id == DataManager.instance.gameData.equipmentSelected.id_hero).FirstOrDefault().level;
+                    return DataManager.instance.gameData.heroes.Where(x => x.id == id).FirstOrDefault().level;
                 case EquipmentType.Ability:
                     return DataManager.instance.gameData.abilities.Where(x => x.id == id).FirstOrDefault().level;
             }
@@ -38,7 +38,6 @@ public abstract class UpgradeEquipment : Upgrade
         {
             case EquipmentType.Weapon:
                 DataManager.instance.gameData.heroes.FirstOrDefault(x => x.id == Id).level++;
-
                 break;
             case EquipmentType.Ability:
                 DataManager.instance.gameData.abilities.FirstOrDefault(x => x.id == Id).level++;
