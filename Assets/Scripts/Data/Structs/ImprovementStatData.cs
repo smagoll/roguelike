@@ -1,5 +1,5 @@
 ﻿[System.Serializable]
-public struct ImprovementStatData
+public class ImprovementStatData
 {
     public int id;
     public int level;

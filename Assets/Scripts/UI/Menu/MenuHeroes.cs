@@ -11,6 +11,8 @@ public class MenuHeroes : MenuElement
     private Transform openCells;
     [SerializeField]
     private Transform closeCells;
+    [SerializeField]
+    private WindowUpgrade windowUpgrade;
 
     private void Start()
     {

@@ -31,4 +31,18 @@ public abstract class UpgradeEquipment : Upgrade
             return 1;
         }
     }
+
+    public void LevelUp()
+    {
+        switch (equipmentType)
+        {
+            case EquipmentType.Weapon:
+                DataManager.instance.gameData.heroes.FirstOrDefault(x => x.id == Id).level++;
+
+                break;
+            case EquipmentType.Ability:
+                DataManager.instance.gameData.abilities.FirstOrDefault(x => x.id == Id).level++;
+                break;
+        }
+    }
 }

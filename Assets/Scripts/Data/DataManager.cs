@@ -12,7 +12,7 @@ public class DataManager : MonoBehaviour
     public GameData gameData = new();
 
     public UpgradeWeapon[] weapons;
-    public UpgradeAbility[] abilities;
+    public UpgradeEquipment[] abilities;
     public Hero[] heroes;
     public ImprovementStat[] improvements;
 

@@ -8,10 +8,13 @@ using Zenject;
 public class UIManagerMenu : MonoBehaviour
 {
     public TextMeshProUGUI coinText;
+    [SerializeField]
+    private WindowUpgrade windowUpgrade;
 
     private void Awake()
     {
         GlobalEventManager.UpdateCoinMenu.AddListener(UpdateCoinText);
+        GlobalEventManager.ShowWindowUpgrade.AddListener(ShowWindowUpgrade);
     }
 
     private void Start()
@@ -27,5 +30,11 @@ public class UIManagerMenu : MonoBehaviour
     public void ButtonPlay()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void ShowWindowUpgrade(int id, EquipmentType equipmentType)
+    {
+        windowUpgrade.SetInfo(id, equipmentType);
+        windowUpgrade.gameObject.SetActive(true);
     }
 }

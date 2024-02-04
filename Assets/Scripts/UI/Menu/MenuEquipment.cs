@@ -17,7 +17,6 @@ public class MenuEquipment : MenuElement
     private void Start()
     {
         UpdateCells();
-        GlobalEventManager.ShowWindowUpgrade.AddListener(ShowWindowUpgrade);
     }
 
     public void UpdateCells()
@@ -38,9 +37,4 @@ public class MenuEquipment : MenuElement
         windowUpgrade.gameObject.SetActive(false);
     }
 
-    public void ShowWindowUpgrade(int id)
-    {
-        windowUpgrade.SetInfo(id);
-        windowUpgrade.gameObject.SetActive(true);
-    }
 }

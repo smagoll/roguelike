@@ -4,5 +4,5 @@ public struct EquipmentSelected
 {
     public Hero hero;
     public List<UpgradeWeapon> weapons;
-    public List<UpgradeAbility> abilities;
+    public List<UpgradeEquipment> abilities;
 }

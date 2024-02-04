@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
     public static LayerMask layerEnemy;
     public static LayerMask layerPlayer;
 
-    private UpgradeAbility[] upgradesAbility;
+    private UpgradeEquipment[] upgradesAbility;
     public static List<Upgrade> upgrades = new();
 
     [Inject]

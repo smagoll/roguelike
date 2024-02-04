@@ -1,5 +1,5 @@
 ﻿[System.Serializable]
-public struct HeroData
+public class HeroData
 {
     public int id;
     public int level;

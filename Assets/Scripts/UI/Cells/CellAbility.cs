@@ -30,6 +30,6 @@ public class CellAbility : Cell
 
     public void ShowWindowUpgrade()
     {
-        GlobalEventManager.Start_ShowWindowUpgrade(id);
+        GlobalEventManager.Start_ShowWindowUpgrade(id, EquipmentType.Ability);
     }
 }

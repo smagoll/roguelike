@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AddZipZap", menuName = "Upgrades/Add/Abilities/ZipZap")]
-public class UpgradeAddZipZap : UpgradeAbility
+public class UpgradeAddZipZap : UpgradeEquipment
 {
     public float damage;
     public GameObject prefabLightning;

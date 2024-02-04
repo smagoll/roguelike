@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AddMagneticField", menuName = "Upgrades/Add/Abilities/MagneticField")]
-public class UpgradeAddField : UpgradeAbility
+public class UpgradeAddField : UpgradeEquipment
 {
     public GameObject prefabField;
     public float damage;
