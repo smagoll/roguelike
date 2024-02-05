@@ -11,6 +11,7 @@ public class ImprovementStat : ScriptableObject
     public float step;
     public int Level => DataManager.instance.gameData.improvements.Where(x => x.id == id).FirstOrDefault().level;
     public RareType rare;
+    public StatType statType;
 
     public float Value => step * Level;
 }

@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Linq;
+using UnityEngine;
 
 [System.Serializable]
 public class Stat
 {
     [SerializeField]
-    private StatType type;
+    private StatType statType;
     [SerializeField]
     private StatUpgradeType statUpgradeType;
     [SerializeField]
@@ -15,9 +17,12 @@ public class Stat
     [SerializeField]
     private float clampValue = 0;
 
+    private ImprovementStatData[] improvements;
+
 
     public float Step => step;
-    public StatType Type => type;
+    public StatType Type => statType;
+    public float Percent => DataManager.instance.improvements.FirstOrDefault(x => x.statType == statType).Value;
 
     public float GetValue(int level)
     {
@@ -26,12 +31,17 @@ public class Stat
         switch (statUpgradeType)
         {
             case StatUpgradeType.Increase:
-                valueFinal = Mathf.Clamp(value + step * (level - 1), float.MinValue, clampValue);
+                valueFinal = value + step * (level - 1);
+                valueFinal = ((float)Math.Round(valueFinal * (1 + Percent / 100), 2));
+                valueFinal = Mathf.Clamp(valueFinal, float.MinValue, clampValue);
                 break;
             case StatUpgradeType.Decrease:
-                valueFinal = Mathf.Clamp(value - step * (level - 1), clampValue, float.MaxValue);
+                valueFinal = value - step * (level - 1);
+                valueFinal = ((float)Math.Round(valueFinal * (1 - Percent / 100), 2));
+                valueFinal = Mathf.Clamp(valueFinal, clampValue, float.MaxValue);
                 break;
         }
+
         return valueFinal;
     }
 }

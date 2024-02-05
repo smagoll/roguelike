@@ -98,6 +98,8 @@ MonoBehaviour:
     prices:
       improvement: 0
       chest: 0
+      upgrade_abilities: 0
+      upgrade_weapons: 0
     equipmentSelected:
       id_hero: 0
   weapons:
@@ -117,4 +119,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71513cddafc99844eb46ee9e8bacf5bc, type: 2}
   - {fileID: 11400000, guid: 1c25be376d8dd324b9edbdb780ca8b2c, type: 2}
   - {fileID: 11400000, guid: 029d5ad08ac08304eaaefdf079b57066, type: 2}
+  - {fileID: 11400000, guid: 27b7d1b78da99084c9151970df3a1a5b, type: 2}
   countCoins: 0

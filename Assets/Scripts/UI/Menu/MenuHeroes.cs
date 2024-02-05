@@ -13,7 +13,7 @@ public class MenuHeroes : MenuElement
     [SerializeField]
     private Transform closeCells;
     [SerializeField]
-    private WindowUpgrade windowUpgrade;
+    private HeroInfoUI heroInfoUI;
 
     private void Start()
     {
@@ -41,5 +41,6 @@ public class MenuHeroes : MenuElement
     public override void UpdateView()
     {
         UpdateCells();
+        heroInfoUI.UpdateInfo();
     }
 }

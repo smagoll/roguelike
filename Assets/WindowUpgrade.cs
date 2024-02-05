@@ -57,10 +57,13 @@ public class WindowUpgrade : MonoBehaviour
 
     public void UpdateInfo()
     {
-        price = equipment.Level * startPrice;
-        numberLevel.text = equipment.Level.ToString();
-        textPrice.text = price.ToString();
-        UpdateStats();
+        if (equipment != null)
+        {
+            price = equipment.Level * startPrice;
+            numberLevel.text = equipment.Level.ToString();
+            textPrice.text = price.ToString();
+            UpdateStats();
+        }
     }
 
     public void UpdateStats()
