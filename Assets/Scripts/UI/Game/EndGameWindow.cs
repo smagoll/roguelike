@@ -23,7 +23,7 @@ public class EndGameWindow : MonoBehaviour
 
     public void LoadMenu()
     {
-        DataManager.instance.gameData.coins = gameManager.Coin;
+        DataManager.instance.gameData.coins += gameManager.Coin;
         DataManager.instance.Save();
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Menu");
