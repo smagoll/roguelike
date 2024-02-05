@@ -27,7 +27,7 @@ public class MenuPlay : MenuElement
 
     public void UpdateHero()
     {
-        var hero = heroes.Where(x => x.Id == equipmentSelected.id_hero).FirstOrDefault();
+        var hero = DataManager.instance.heroes.FirstOrDefault(x => x.Id == DataManager.instance.gameData.equipmentSelected.id_hero);
         iconHero.sprite = hero.sprite;
     }
 

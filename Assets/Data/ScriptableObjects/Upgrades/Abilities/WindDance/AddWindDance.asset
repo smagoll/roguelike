@@ -19,12 +19,12 @@ MonoBehaviour:
   id: 3
   equipmentType: 1
   stats:
-  - type: 0
+  - statType: 0
     statUpgradeType: 0
     value: 1
     step: 0.5
     clampValue: 5000
-  - type: 1
+  - statType: 1
     statUpgradeType: 1
     value: 2
     step: 0.05
