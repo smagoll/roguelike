@@ -61,7 +61,7 @@ public class Character : MonoBehaviour
 
         foreach (var upgrade in upgrades)
         {
-            GameManager.AddUpgrade(upgrade);
+            GlobalEventManager.Start_AddUpgrade(upgrade);
         }
 
     }

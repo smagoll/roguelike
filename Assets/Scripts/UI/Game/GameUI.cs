@@ -13,11 +13,11 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private GameObject infoHero;
     [SerializeField]
-    private TextMeshProUGUI textXp;
-    [SerializeField]
     private TextMeshProUGUI textNumberStage;
     [SerializeField]
-    private GameObject endWindow;
+    private TextMeshProUGUI textCountCoins;
+    [SerializeField]
+    private EndGameWindow endWindow;
 
     [SerializeField]
     private InfoMenu infoMenu;
@@ -43,6 +43,8 @@ public class GameUI : MonoBehaviour
     {
         GlobalEventManager.ShowUpgrades.AddListener(ShowUpgrades);
         GlobalEventManager.EndGame.AddListener(ShowEndWindow);
+        GlobalEventManager.AddItem.AddListener(infoMenu.AddItem);
+        GlobalEventManager.UpdateCoinGameText.AddListener((int coins) => textCountCoins.text = coins.ToString());
     }
 
     public void ButtonPause()
@@ -115,6 +117,7 @@ public class GameUI : MonoBehaviour
     public void ShowEndWindow()
     {
         Time.timeScale = 0f;
-        endWindow.SetActive(true);
+        endWindow.UpdateTextCoin();
+        endWindow.gameObject.SetActive(true);
     }
 }

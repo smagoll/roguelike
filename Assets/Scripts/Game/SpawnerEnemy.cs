@@ -23,6 +23,11 @@ public class SpawnerEnemy : MonoBehaviour
 
     [SerializeField]
     private float frequencySpawn;
+    private float lastTimeSpawn = 0;
+
+    [SerializeField]
+    private float percentIncreaseHP;
+    private float scaleHpEnemy => Mathf.Pow(1 + percentIncreaseHP / 100, gameManager.NumberStage - 1);
 
     public float FrequencySpawn
     {
@@ -40,29 +45,34 @@ public class SpawnerEnemy : MonoBehaviour
         StartSpawn();
     }
 
+    private void Update()
+    {
+        if (isSpawn)
+        {
+            if (Time.time - lastTimeSpawn >= FrequencySpawn)
+            {
+                var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
+                position.z = 0f;
+                int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
+                GameObject enemy = Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
+                enemy.GetComponent<Enemy>().scaleHp = scaleHpEnemy;
+                lastTimeSpawn = Time.time;
+            }
+        }
+    }
+
     private void StartSpawn()
     {
         if (prefabsCloseEnemies.Count != 0)
         {
             isSpawn = true;
-            StartCoroutine(Spawner());
         }
     }
 
-    public IEnumerator Spawner()
-    {
-        while(isSpawn)
-        {
-            var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
-            position.z = 0f;
-            int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
-            Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
-            yield return new WaitForSeconds(FrequencySpawn);
-        }
-    }
 
     private void OpenEnemies(int stage)
     {
+
         if (prefabsCloseEnemies.Count == 0)
         {
             return;

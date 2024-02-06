@@ -6,8 +6,6 @@ public class StageBar : MonoBehaviour
 {
     private Slider slider;
     [SerializeField]
-    private TextMeshProUGUI textXp;
-    [SerializeField]
     private TextMeshProUGUI textStage;
 
     private void Awake()
@@ -21,7 +19,6 @@ public class StageBar : MonoBehaviour
     {
         slider.maxValue = xpForCurrentStage;
         slider.value = xpCollect;
-        textXp.text = $"{xpCollect}/{xpForCurrentStage}";
         textStage.text = $"Stage {stage}";
     }
 }

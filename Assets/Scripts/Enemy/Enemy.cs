@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float startHp;
     private float hp;
+    public float scaleHp;
     public float xp;
     public float speed;
     public float distanceStop;
@@ -39,12 +40,12 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        HP = startHp;
         animator = GetComponent<Animator>();
     }
 
     private void Start()
     {
+        HP = startHp * scaleHp;
         target = GameManager.player.transform;
     }
 

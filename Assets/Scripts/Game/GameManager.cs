@@ -12,7 +12,15 @@ public class GameManager : MonoBehaviour
     private float xpCollect = 0; // собранный опыт за текущую стадию
     private int coin = 0;
 
-    public int Coin { get => coin; set => coin = value; }
+    public int Coin
+    {
+        get => coin;
+        set
+        {
+            coin = value;
+            GlobalEventManager.Start_UpdateCoinGameText(coin);
+        }
+    }
 
     public float XpCollect
     {
@@ -47,7 +55,7 @@ public class GameManager : MonoBehaviour
     public static LayerMask layerPlayer;
 
     private UpgradeEquipment[] upgradesAbility;
-    public static List<Upgrade> upgrades = new();
+    public List<Upgrade> upgrades = new();
 
     [Inject]
     private void Construct(Character character, Joystick input)
@@ -63,10 +71,14 @@ public class GameManager : MonoBehaviour
         upgradesAbility =  DataManager.instance.abilities;
 
         GlobalEventManager.UpdateXp.AddListener(UpdateXp);
+        GlobalEventManager.IncreaseCoinGame.AddListener((int coins) => Coin += coins);
+        GlobalEventManager.AddUpgrade.AddListener(AddUpgrade);
+        GlobalEventManager.RemoveUpgrade.AddListener((Upgrade upgrade) => upgrades.Remove(upgrade));
     }
 
     private void Start()
     {
+        GlobalEventManager.Start_UpdateCoinGameText(Coin);
         GlobalEventManager.Start_UpdateStageBar(numberStage, xpCollect, XpForCurrentStage);
         InitializeUpgrades();
     }
@@ -108,7 +120,7 @@ public class GameManager : MonoBehaviour
         XpCollect += xp;
     }
 
-    public static void AddUpgrade(Upgrade upgrade)
+    public void AddUpgrade(Upgrade upgrade)
     {
         upgrades.Add(upgrade);
     }

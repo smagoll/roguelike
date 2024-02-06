@@ -13,9 +13,13 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<int, float, float> UpdateStageBar = new();
     public static UnityEvent<Vector3, float, TextHit> CreateDamageHurt = new();
     public static UnityEvent<UpgradeEquipment> AddItem = new();
+    public static UnityEvent<Upgrade> AddUpgrade = new();
+    public static UnityEvent<Upgrade> RemoveUpgrade = new();
     public static UnityEvent UpdateCoinMenu = new();
-    public static UnityEvent<int> IncreaseCoins = new();
-    public static UnityEvent<int> DecreaseCoins = new();
+    public static UnityEvent<int> IncreaseCoinGame = new();
+    public static UnityEvent<int> UpdateCoinGameText = new();
+    public static UnityEvent<int> IncreaseCoinsData = new();
+    public static UnityEvent<int> DecreaseCoinsData = new();
     public static UnityEvent EndGame = new();
 
     public static void Start_ShowUpgrades(List<Upgrade> upgrades)
@@ -65,12 +69,22 @@ public class GlobalEventManager : MonoBehaviour
 
     public static void Start_IncreaseCoins(int coins)
     {
-        IncreaseCoins.Invoke(coins);
+        IncreaseCoinsData.Invoke(coins);
     }
     
     public static void Start_DecreaseCoins(int coins)
     {
-        DecreaseCoins.Invoke(coins);
+        DecreaseCoinsData.Invoke(coins);
+    }
+    
+    public static void Start_IncreaseCoinGame(int coins)
+    {
+        IncreaseCoinGame.Invoke(coins);
+    }
+    
+    public static void Start_UpdateCoinGameText(int coins)
+    {
+        UpdateCoinGameText.Invoke(coins);
     }
     
     public static void Start_EndGame()
@@ -82,6 +96,13 @@ public class GlobalEventManager : MonoBehaviour
     {
         ShowWindowUpgrade.Invoke(id, equipmentType);
     }
-
-
+    
+    public static void Start_AddUpgrade(Upgrade upgrade)
+    {
+        AddUpgrade.Invoke(upgrade);
+    }
+    public static void Start_RemoveUpgrade(Upgrade upgrade)
+    {
+        RemoveUpgrade.Invoke(upgrade);
+    }
 }

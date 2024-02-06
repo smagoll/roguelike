@@ -28,8 +28,8 @@ public class FireBall : EquipmentDynamic, IProjectileController
 
     public void Initialize(UpgradeAddFireball dataFireball)
     {
-        Frequency = dataFireball.frequency;
-        damage = dataFireball.damage;
+        Frequency = dataFireball.Frequency;
+        damage = dataFireball.Damage;
         explosionRadius = dataFireball.rangeBlast;
         DistanceFlight = dataFireball.distanceFlight;
         SpeedFlight = dataFireball.speedFlight;

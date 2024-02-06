@@ -7,9 +7,7 @@ public class UpgradeAddWindDance : UpgradeEquipment
 {
     public GameObject prefabTornado;
 
-    public float damage;
     public float timeLifeTornado;
-    public float frequency;
     public float speedFlight;
     public int countTornado;
     public float frequencyChangeDirection;
@@ -19,6 +17,6 @@ public class UpgradeAddWindDance : UpgradeEquipment
     public override void Action()
     {
         var windDance = GameManager.player.AddComponent<WindDance>();
-        windDance.Initialize(damage, timeLifeTornado, frequency, frequencyChangeDirection, speedFlight, countTornado, upgrades, prefabTornado);
+        windDance.Initialize(Damage, timeLifeTornado, Frequency, frequencyChangeDirection, speedFlight, countTornado, upgrades, prefabTornado);
     }
 }

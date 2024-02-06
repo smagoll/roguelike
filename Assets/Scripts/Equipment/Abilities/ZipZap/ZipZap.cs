@@ -25,12 +25,12 @@ public class ZipZap : EquipmentDynamic, IProjectileController
 
     public void Initialize(UpgradeAddZipZap data)
     {
-        damage = data.damage;
+        damage = data.Damage;
         countLightnings = data.countLightnings;
         Lightning = data.prefabLightning;
         DistanceFlight = data.distanceFlight;
         SpeedFlight = data.speedFlight;
-        Frequency = data.frequency;
+        Frequency = data.Frequency;
         upgrades = data.upgrades;
         attackRange = data.attackRange;
 

@@ -11,11 +11,6 @@ public class EndGameWindow : MonoBehaviour
     [SerializeField]
     private GameManager gameManager;
 
-    private void Awake()
-    {
-        GlobalEventManager.EndGame.AddListener(UpdateTextCoin);
-    }
-
     public void UpdateTextCoin()
     {
         textCoin.text = gameManager.Coin.ToString();

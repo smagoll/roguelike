@@ -16,7 +16,6 @@ public class InfoMenu : MonoBehaviour
 
     private void Awake()
     {
-        GlobalEventManager.AddItem.AddListener(AddItem);
         image.sprite = GameManager.player.GetComponent<Character>().hero.sprite;
     }
 

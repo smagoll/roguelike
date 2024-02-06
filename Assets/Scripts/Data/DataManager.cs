@@ -27,8 +27,8 @@ public class DataManager : MonoBehaviour
         else
             instance = this;
 
-        GlobalEventManager.IncreaseCoins.AddListener(IncreaseCoins);
-        GlobalEventManager.DecreaseCoins.AddListener(DecreaseCoins);
+        GlobalEventManager.IncreaseCoinsData.AddListener(IncreaseCoins);
+        GlobalEventManager.DecreaseCoinsData.AddListener(DecreaseCoins);
         filePath = Application.dataPath + "/Data/Json/GameData.json";
         Load();
     }
@@ -83,7 +83,6 @@ public class DataManager : MonoBehaviour
 
     public Hero GetEquipmentHero()
     {
-        Debug.Log(gameData.equipmentSelected.id_hero);
         return heroes.Where(x => x.Id == gameData.equipmentSelected.id_hero).FirstOrDefault();
     }
 }
