@@ -69,11 +69,11 @@ public class DataManager : MonoBehaviour
     public void CreateFirstSave()
     {
         gameData.coins = 0;
-        gameData.weapons = weapons.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
-        gameData.abilities = abilities.Select(x => new EquipmentData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
+        gameData.weapons = weapons.Select(x => new EquipmentData(x.Id, 0)).OrderBy(x => x.id).ToArray();
+        gameData.abilities = abilities.Select(x => new EquipmentData(x.Id, 0)).OrderBy(x => x.id).ToArray();
         gameData.improvements = improvements.Select(x => new ImprovementStatData(x.id, x.Level)).OrderBy(x => x.id).ToArray();
 
-        gameData.heroes = heroes.Select(x => new HeroData(x.Id, 1, false)).OrderBy(x => x.id).ToArray();
+        gameData.heroes = heroes.Select(x => new HeroData(x.Id, false)).OrderBy(x => x.id).ToArray();
         gameData.heroes[0].isOpen = true;
 
         gameData.equipmentSelected.id_hero = 1;

@@ -10,10 +10,11 @@ public abstract class UpgradeEquipment : Upgrade
     public EquipmentType equipmentType;
     public override UpgradeType UpgradeType => UpgradeType.Add;
 
+    [Header("Stats")]
     public Stat[] stats;
 
-    public float Damage => stats.FirstOrDefault(x => x.Type == StatType.damage).GetValue(Level);
-    public float Frequency => stats.FirstOrDefault(x => x.Type == StatType.frequency).GetValue(Level);
+    public float Damage => stats.FirstOrDefault(x => x.Type == StatType.Damage).GetValue(Level);
+    public float Frequency => stats.FirstOrDefault(x => x.Type == StatType.Frequency).GetValue(Level);
 
 
     public int Id { get => id; set => id = value; }
@@ -24,7 +25,7 @@ public abstract class UpgradeEquipment : Upgrade
             switch (equipmentType)
             {
                 case EquipmentType.Weapon:
-                    return DataManager.instance.gameData.heroes.Where(x => x.id == id).FirstOrDefault().level;
+                    return DataManager.instance.gameData.weapons.Where(x => x.id == id).FirstOrDefault().level;
                 case EquipmentType.Ability:
                     return DataManager.instance.gameData.abilities.Where(x => x.id == id).FirstOrDefault().level;
             }
@@ -37,7 +38,7 @@ public abstract class UpgradeEquipment : Upgrade
         switch (equipmentType)
         {
             case EquipmentType.Weapon:
-                DataManager.instance.gameData.heroes.FirstOrDefault(x => x.id == Id).level++;
+                DataManager.instance.gameData.weapons.FirstOrDefault(x => x.id == Id).level++;
                 break;
             case EquipmentType.Ability:
                 DataManager.instance.gameData.abilities.FirstOrDefault(x => x.id == Id).level++;

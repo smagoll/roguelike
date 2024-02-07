@@ -2,7 +2,7 @@
 public struct Prices
 {
     public int improvement;
-    public int chest;
+    public ChestData[] chests;
     public int upgrade_abilities;
     public int upgrade_weapons;
 }

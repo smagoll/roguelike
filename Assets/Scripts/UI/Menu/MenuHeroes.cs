@@ -22,14 +22,9 @@ public class MenuHeroes : MenuElement
 
     public void UpdateCells()
     {
-        if (openCells.transform.childCount > 0)
-        {
-            foreach (Transform child in openCells.transform) Destroy(child.gameObject);
-        }
+        ClearCells();
 
-        var heroes = DataManager.instance.gameData.heroes.OrderBy(x => x.id).ToArray();
-
-        foreach (var hero in heroes)
+        foreach (var hero in DataManager.instance.gameData.heroes.OrderBy(x => x.id))
         {
             Transform transformEquipment = hero.isOpen ? openCells : closeCells;
             var cellObject = Instantiate(prefabCell, transformEquipment);
@@ -42,5 +37,18 @@ public class MenuHeroes : MenuElement
     {
         UpdateCells();
         heroInfoUI.UpdateInfo();
+    }
+
+    private void ClearCells()
+    {
+        if (openCells.transform.childCount > 0)
+        {
+            foreach (Transform child in openCells.transform) Destroy(child.gameObject);
+        }
+
+        if (closeCells.transform.childCount > 0)
+        {
+            foreach (Transform child in closeCells.transform) Destroy(child.gameObject);
+        }
     }
 }

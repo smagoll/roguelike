@@ -68,7 +68,7 @@ public class Character : MonoBehaviour
 
     private void Start()
     {
-        GlobalEventManager.Start_UpdateHealthBar(hp, maxHp);
+        GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);
         weapon.Action();
     }
 
@@ -97,9 +97,9 @@ public class Character : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sprite = hero.sprite;
         animator.runtimeAnimatorController = hero.animator;
-        maxHp = hero.hp;
-        speed = hero.speed;
-        evasion = hero.evasion;
+        maxHp = hero.Hp;
+        speed = hero.Speed;
+        evasion = hero.Evasion;
         weapon = hero.weapon;
     }
 }

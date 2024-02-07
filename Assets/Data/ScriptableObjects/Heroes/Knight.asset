@@ -14,8 +14,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   sprite: {fileID: 527929922, guid: 88a6245e986c3454cbb3ea8d94b980cb, type: 3}
-  hp: 100
-  speed: 2
-  evasion: 0
   animator: {fileID: 9100000, guid: f9ac8f7dd810b914186152887eed9aa9, type: 2}
   weapon: {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
+  stats:
+  - statType: 2
+    statUpgradeType: 0
+    value: 100
+    step: 0
+    clampValue: 10000
+  - statType: 3
+    statUpgradeType: 0
+    value: 2
+    step: 0
+    clampValue: 3
+  - statType: 4
+    statUpgradeType: 0
+    value: 0
+    step: 0
+    clampValue: 70

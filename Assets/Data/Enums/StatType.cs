@@ -1,5 +1,8 @@
 ﻿public enum StatType
 {
-    damage,
-    frequency
+    Damage,
+    Frequency,
+    HP,
+    Speed,
+    Evasion
 }

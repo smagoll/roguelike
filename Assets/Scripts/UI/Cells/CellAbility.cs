@@ -17,7 +17,7 @@ public class CellAbility : Cell
     {
         this.id = id;
         var selectedEquipment = DataManager.instance.abilities.Where(x => x.Id == id).FirstOrDefault();
-        IsOpen = DataManager.instance.gameData.abilities.Where(x => x.id == id).Select(x => x.isOpen).FirstOrDefault();
+        IsOpen = DataManager.instance.gameData.abilities.Where(x => x.id == id).Select(x => x.IsOpen).FirstOrDefault();
         image.sprite = selectedEquipment.icon;
         textLevel.text = selectedEquipment.Level.ToString();
     }

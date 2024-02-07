@@ -3,12 +3,12 @@ public class EquipmentData
 {
     public int id;
     public int level;
-    public bool isOpen;
 
-    public EquipmentData(int id, int level, bool isOpen)
+    public bool IsOpen => level > 0;
+
+    public EquipmentData(int id, int level)
     {
         this.id = id;
         this.level = level;
-        this.isOpen = isOpen;
     }
 }

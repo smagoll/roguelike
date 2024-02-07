@@ -8,7 +8,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textHp;
 
-    private void Start()
+    private void Awake()
     {
         slider = GetComponent<Slider>();
         GlobalEventManager.UpdateHealthBar.AddListener(UpdateHealthBar);

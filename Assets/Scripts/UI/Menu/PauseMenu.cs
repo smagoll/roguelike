@@ -1,7 +1,8 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InfoMenu : MonoBehaviour
+public class PauseMenu : MonoBehaviour
 {
     [SerializeField]
     private Transform weaponMenu;
@@ -13,6 +14,7 @@ public class InfoMenu : MonoBehaviour
 
     [SerializeField]
     private Image image;
+
 
     private void Awake()
     {
@@ -34,4 +36,5 @@ public class InfoMenu : MonoBehaviour
                 break;
         }
     }
+
 }

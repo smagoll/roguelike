@@ -22,7 +22,19 @@ public class Stat
 
     public float Step => step;
     public StatType Type => statType;
-    public float Percent => DataManager.instance.improvements.FirstOrDefault(x => x.statType == statType).Value;
+    public float Percent
+    {
+        get
+        {
+            var improvement = DataManager.instance.improvements.FirstOrDefault(x => x.statType == statType);
+            return improvement == null ? 0 : improvement.Value;
+        }
+    }
+
+    public Stat(StatType statType)
+    {
+        this.statType = statType;
+    }
 
     public float GetValue(int level)
     {
@@ -37,6 +49,25 @@ public class Stat
                 break;
             case StatUpgradeType.Decrease:
                 valueFinal = value - step * (level - 1);
+                valueFinal = ((float)Math.Round(valueFinal * (1 - Percent / 100), 2));
+                valueFinal = Mathf.Clamp(valueFinal, clampValue, float.MaxValue);
+                break;
+        }
+
+        return valueFinal;
+    }
+    
+    public float GetValue()
+    {
+        float valueFinal = value;
+
+        switch (statUpgradeType)
+        {
+            case StatUpgradeType.Increase:
+                valueFinal = ((float)Math.Round(valueFinal * (1 + Percent / 100), 2));
+                valueFinal = Mathf.Clamp(valueFinal, float.MinValue, clampValue);
+                break;
+            case StatUpgradeType.Decrease:
                 valueFinal = ((float)Math.Round(valueFinal * (1 - Percent / 100), 2));
                 valueFinal = Mathf.Clamp(valueFinal, clampValue, float.MaxValue);
                 break;

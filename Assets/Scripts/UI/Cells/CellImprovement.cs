@@ -12,7 +12,7 @@ public class CellImprovement : Cell
         var selectedEquipment = DataManager.instance.improvements.Where(x => x.id == id).FirstOrDefault();
         image.sprite = selectedEquipment.icon;
         title.text = selectedEquipment.title;
-        value.text = selectedEquipment.Value.ToString();
+        value.text = selectedEquipment.Value.ToString() + "%";
         this.id = id;
     }
 }

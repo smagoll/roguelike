@@ -120,4 +120,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1c25be376d8dd324b9edbdb780ca8b2c, type: 2}
   - {fileID: 11400000, guid: 029d5ad08ac08304eaaefdf079b57066, type: 2}
   - {fileID: 11400000, guid: 27b7d1b78da99084c9151970df3a1a5b, type: 2}
+  - {fileID: 11400000, guid: 201250b7f0d14eb4d8dfaa48830b50fc, type: 2}
   countCoins: 0

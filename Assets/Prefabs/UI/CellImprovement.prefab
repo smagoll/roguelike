@@ -274,9 +274,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 866421706, guid: 1b6b1dd198c1dd740a3fd0c3c1a6b5c9, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -557,5 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2726865394996260824}
   fade: {fileID: 5482281100759451494}
+  id: 0
   title: {fileID: 6349515771737527707}
   value: {fileID: 4025699750900341369}

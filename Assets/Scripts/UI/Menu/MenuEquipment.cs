@@ -25,7 +25,7 @@ public class MenuEquipment : MenuElement
 
         foreach (var ability in abilities)
         {
-            Transform transformEquipment = ability.isOpen ? openAbility : closeAbility;
+            Transform transformEquipment = ability.IsOpen ? openAbility : closeAbility;
             var cellObject = Instantiate(prefabCell, transformEquipment);
             var cell = cellObject.GetComponent<CellAbility>();
             cell.Init(ability.id);

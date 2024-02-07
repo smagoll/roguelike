@@ -288,6 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2726865394996260824}
   fade: {fileID: 5482281100759451494}
+  button: {fileID: 1260770264976172851}
 --- !u!114 &1260770264976172851
 MonoBehaviour:
   m_ObjectHideFlags: 0

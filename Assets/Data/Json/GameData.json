@@ -3,56 +3,46 @@
     "weapons": [
         {
             "id": 1,
-            "level": 1,
-            "isOpen": false
+            "level": 1
         },
         {
             "id": 2,
-            "level": 1,
-            "isOpen": false
+            "level": 1
         },
         {
             "id": 3,
-            "level": 1,
-            "isOpen": false
+            "level": 1
         }
     ],
     "abilities": [
         {
             "id": 1,
-            "level": 1,
-            "isOpen": false
+            "level": 0
         },
         {
             "id": 2,
-            "level": 1,
-            "isOpen": true
+            "level": 1
         },
         {
             "id": 3,
-            "level": 1,
-            "isOpen": false
+            "level": 0
         },
         {
             "id": 4,
-            "level": 2,
-            "isOpen": true
+            "level": 2
         }
     ],
     "heroes": [
         {
             "id": 1,
-            "level": 1,
             "isOpen": true
         },
         {
             "id": 2,
-            "level": 1,
             "isOpen": true
         },
         {
             "id": 3,
-            "level": 1,
             "isOpen": true
         }
     ],
@@ -72,11 +62,31 @@
         {
             "id": 4,
             "level": 0
+        },
+        {
+            "id": 5,
+            "level": 0
         }
     ],
     "prices": {
         "improvement": 5,
-        "chest": 500,
+        "chests": [
+            {
+                "title": "Обычный сундук",
+                "rare": 0,
+                "price": 500
+            },
+            {
+                "title": "Редкий сундук",
+                "rare": 1,
+                "price": 1000
+            },
+            {
+                "title": "Эпический сундук",
+                "rare": 2,
+                "price": 2000
+            }
+        ],
         "upgrade_abilities": 10,
         "upgrade_weapons": 20
     },

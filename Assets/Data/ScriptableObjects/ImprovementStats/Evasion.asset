@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39cb0a04c30adb74c83396579801f630, type: 3}
-  m_Name: HP
+  m_Name: Evasion
   m_EditorClassIdentifier: 
-  id: 2
-  icon: {fileID: 21300000, guid: ea22ed92c601b074192697190c42287c, type: 2}
-  title: "\u0417\u0434\u043E\u0440\u043E\u0432\u044C\u0435"
-  step: 5
-  rare: 0
-  statType: 2
+  id: 5
+  icon: {fileID: 0}
+  title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
+  step: 1
+  rare: 1
+  statType: 4

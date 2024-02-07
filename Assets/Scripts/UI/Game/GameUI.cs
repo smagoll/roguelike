@@ -20,7 +20,7 @@ public class GameUI : MonoBehaviour
     private EndGameWindow endWindow;
 
     [SerializeField]
-    private InfoMenu infoMenu;
+    private PauseMenu infoMenu;
 
     [SerializeField]
     private GameObject upgradeViewPrefab;

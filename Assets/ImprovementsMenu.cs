@@ -41,9 +41,9 @@ public class ImprovementsMenu : MenuElement
     {
         foreach (Transform child in allImprovements.transform) Destroy(child.gameObject);
 
-        var imrovements = DataManager.instance.gameData.improvements.OrderBy(x => x.id).ToArray();
+        var improvements = DataManager.instance.gameData.improvements.OrderBy(x => x.id).ToArray();
 
-        foreach (var improvement in imrovements)
+        foreach (var improvement in improvements)
         {
             var cellObject = Instantiate(prefabCell, allImprovements);
             var cell = cellObject.GetComponent<CellImprovement>();
