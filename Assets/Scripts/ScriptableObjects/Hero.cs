@@ -7,7 +7,7 @@ public class Hero : ScriptableObject
 {
     [SerializeField]
     private int id;
-
+    public string title;
     public Sprite sprite;
 
     public RuntimeAnimatorController animator;
@@ -16,7 +16,7 @@ public class Hero : ScriptableObject
     public Stat[] stats;
 
     public int Id => id;
-    public bool IsOpen => DataManager.instance.gameData.heroes.Where(x => x.id == id).FirstOrDefault().isOpen;
+    public bool IsOpen => DataManager.instance.gameData.heroes.Where(x => x.id == id).Select(x => x.stageForOpen <= DataManager.instance.gameData.record).FirstOrDefault();
     public float Hp => stats.FirstOrDefault(x => x.Type == StatType.HP).GetValue();
     public float Speed => stats.FirstOrDefault(x => x.Type == StatType.Speed).GetValue();
     public float Evasion => stats.FirstOrDefault(x => x.Type == StatType.Evasion).GetValue();

@@ -1,6 +1,7 @@
 [System.Serializable]
 public class GameData
 {
+    public int record;
     public int coins;
     public EquipmentData[] weapons;
     public EquipmentData[] abilities;

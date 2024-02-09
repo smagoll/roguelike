@@ -1,8 +1,21 @@
 ﻿using System.Linq;
+using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class CellHero : Cell
 {
+    [SerializeField]
+    private TextMeshProUGUI titleHero;
+    [SerializeField]
+    private TextMeshProUGUI textBlock;
+    [SerializeField]
+    private Image iconWeapon;
+    [SerializeField]
+    private Transform listStats;
+    [SerializeField]
+    private GameObject prefabStatInfo;
+
     private int id;
     private Button button;
 
@@ -14,10 +27,22 @@ public class CellHero : Cell
     public override void Init(int id)
     {
         var selectedEquipment = DataManager.instance.heroes.FirstOrDefault(x => x.Id == id);
-        IsOpen = DataManager.instance.gameData.heroes.Where(x => x.id == id).Select(x => x.isOpen).FirstOrDefault();
+        IsOpen = selectedEquipment.IsOpen;
         image.sprite = selectedEquipment.sprite;
         this.id = selectedEquipment.Id;
         button.interactable = IsOpen;
+        titleHero.text = selectedEquipment.title;
+        iconWeapon.sprite = selectedEquipment.weapon.icon;
+
+        var stageForOpen = DataManager.instance.gameData.heroes.FirstOrDefault(x => x.id == id).stageForOpen;
+        textBlock.text = $"Необходимо пройти {stageForOpen} стадию";
+
+        foreach (var stat in selectedEquipment.weapon.stats)
+        {
+            var statInfo = Instantiate(prefabStatInfo, listStats);
+            statInfo.GetComponent<StatInfoUI>().Initialize(selectedEquipment.weapon.Level, stat);
+        }
+
     }
 
     public void ShowWindowUpgrade()

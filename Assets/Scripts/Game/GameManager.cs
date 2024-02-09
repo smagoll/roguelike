@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using Cinemachine;
 using UnityEngine;
 using Zenject;
@@ -54,7 +55,7 @@ public class GameManager : MonoBehaviour
     public static LayerMask layerEnemy;
     public static LayerMask layerPlayer;
 
-    private UpgradeEquipment[] upgradesAbility;
+    private List<UpgradeAbility> upgradesAbility = new();
     public List<Upgrade> upgrades = new();
 
     [Inject]
@@ -68,7 +69,8 @@ public class GameManager : MonoBehaviour
     {
         layerEnemy = LayerMask.GetMask("Enemy");
         layerPlayer = LayerMask.GetMask("Player");
-        upgradesAbility =  DataManager.instance.abilities;
+
+        InitializeUpgrades();
 
         GlobalEventManager.UpdateXp.AddListener(UpdateXp);
         GlobalEventManager.IncreaseCoinGame.AddListener((int coins) => Coin += coins);
@@ -80,7 +82,6 @@ public class GameManager : MonoBehaviour
     {
         GlobalEventManager.Start_UpdateCoinGameText(Coin);
         GlobalEventManager.Start_UpdateStageBar(numberStage, xpCollect, XpForCurrentStage);
-        InitializeUpgrades();
     }
 
     public static GameObject GetCloseEnemy(Transform from, float radius)
@@ -127,9 +128,12 @@ public class GameManager : MonoBehaviour
 
     private void InitializeUpgrades()
     {
-        foreach (var upgrade in upgradesAbility)
+        foreach (var abilityData in DataManager.instance.gameData.abilities)
         {
-            AddUpgrade(upgrade);
+            if (abilityData.IsOpen)
+            {
+                upgrades.Add(DataManager.instance.abilities.FirstOrDefault(x => x.Id == abilityData.id));
+            }
         }
     }
 }

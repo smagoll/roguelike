@@ -33,7 +33,7 @@ public class MagicWandSphere : MonoBehaviour, IProjectileController
         var projectile = projectileObject.GetComponent<MagicWandProjectile>();
         projectile.direction = Direction;
         projectile.projectileController = this;
-        projectile.damage = magicWand.Damage;
+        projectile.magicWand = magicWand;
 
         if (Direction == Vector2.zero)
             projectile.direction = GameCalculator.GetRandomDirection();

@@ -1,44 +1,30 @@
+using System.Linq;
 using UnityEngine;
 
-public class Bleeding : MonoBehaviour
+public class Bleeding : Effect
 {
     private float damagePerSecond;
-    private readonly float frequency = 0.5f;
+    private float frequency;
     private float lastTimeTick;
-    private Enemy enemy;
-
-    public float TimeBleeding { get; set; }
 
     public float Damage
     {
         set => damagePerSecond = value / 10f;
     }
 
-    private void Start()
+    public override void ActionStart()
     {
-        enemy = GetComponent<Enemy>();
         lastTimeTick = Time.time;
-        TimeBleeding = 5f;
+        Damage = weapon.Damage;
+        frequency = stats.FirstOrDefault(x => x.Type == StatType.Frequency).GetValue();
     }
 
-    private void Update()
+    public override void ActionUpdate()
     {
-        if (enemy.isDeath)
-        {
-            return;
-        }
-
         if (Time.time - lastTimeTick >= frequency)
         {
-            GetComponent<Enemy>().TakeDamage(damagePerSecond, TextHit.Small);
+            enemy.TakeDamage(damagePerSecond, TextHit.Small);
             lastTimeTick = Time.time;
-        }
-
-        TimeBleeding -= Time.deltaTime;
-
-        if (TimeBleeding <= 0)
-        {
-            Destroy(this);
         }
     }
 }

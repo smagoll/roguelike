@@ -3,8 +3,8 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AddEffect", menuName = "Upgrades/EffectWeapon")]
 public class AddEffect : Upgrade
 {
-    public Effect effect;
-    public WeaponType weapon;
+    public Stat[] stats;
+    public EffectType effect;
 
     public override UpgradeType UpgradeType => UpgradeType.Add;
 
@@ -18,8 +18,11 @@ public class AddEffect : Upgrade
     {
         switch (effect)
         {
-            case Effect.Bleeding:
-                weapon.isBleeding = true;
+            case EffectType.Bleeding:
+                weapon.effectControllers.Add(new EffectController<Bleeding>(stats, weapon));
+                break;
+            case EffectType.Gravity:
+                weapon.effectControllers.Add(new EffectController<Gravity>(stats, weapon));
                 break;
         }
     }

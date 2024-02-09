@@ -26,7 +26,7 @@ public class MenuHeroes : MenuElement
 
         foreach (var hero in DataManager.instance.gameData.heroes.OrderBy(x => x.id))
         {
-            Transform transformEquipment = hero.isOpen ? openCells : closeCells;
+            Transform transformEquipment = hero.stageForOpen <= DataManager.instance.gameData.record ? openCells : closeCells;
             var cellObject = Instantiate(prefabCell, transformEquipment);
             var cell = cellObject.GetComponent<CellHero>();
             cell.Init(hero.id);

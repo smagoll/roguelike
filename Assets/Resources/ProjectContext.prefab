@@ -90,6 +90,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData:
+    record: 0
     coins: 0
     weapons: []
     abilities: []
@@ -97,7 +98,7 @@ MonoBehaviour:
     improvements: []
     prices:
       improvement: 0
-      chest: 0
+      chests: []
       upgrade_abilities: 0
       upgrade_weapons: 0
     equipmentSelected:
@@ -107,10 +108,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
   - {fileID: 11400000, guid: 0582b85b56127804fa3c4c3319b54d71, type: 2}
   abilities:
-  - {fileID: 11400000, guid: f98bae41aa161bc4b8da81805951dd0f, type: 2}
-  - {fileID: 11400000, guid: 89c5165198945a94c9873a9364870947, type: 2}
   - {fileID: 11400000, guid: 175a10160ea5290409de2f192e563795, type: 2}
+  - {fileID: 11400000, guid: 89c5165198945a94c9873a9364870947, type: 2}
   - {fileID: 11400000, guid: cf067d2efe5151d4e8cf327102e54410, type: 2}
+  - {fileID: 11400000, guid: f98bae41aa161bc4b8da81805951dd0f, type: 2}
   heroes:
   - {fileID: 11400000, guid: a904ccc4e6371b14aacd41837e4875a2, type: 2}
   - {fileID: 11400000, guid: 3796b54dce0102c45b0725167a7bcaa7, type: 2}

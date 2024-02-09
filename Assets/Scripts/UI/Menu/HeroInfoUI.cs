@@ -35,7 +35,7 @@ public class HeroInfoUI : MonoBehaviour
         hero = DataManager.instance.heroes.FirstOrDefault(x => x.Id == idHero);
         iconHero.sprite = hero.sprite;
         iconWeapon.sprite = hero.weapon.icon;
-        nameHero.text = hero.name;
+        nameHero.text = hero.title;
 
         foreach (var stat in hero.weapon.stats)
         {

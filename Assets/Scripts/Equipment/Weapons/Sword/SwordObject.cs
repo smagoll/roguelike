@@ -41,19 +41,7 @@ public class SwordObject : MonoBehaviour
         foreach (var result in results)
         {
             var enemy = result.gameObject.GetComponent<Enemy>();
-            enemy.TakeDamage(sword.Damage);
-
-            if (sword.isBleeding)
-            {
-                Bleeding bleedingEnemy = enemy.GetComponent<Bleeding>();
-
-                if (bleedingEnemy == null)
-                {
-                    bleedingEnemy = enemy.gameObject.AddComponent<Bleeding>();
-                }
-
-                bleedingEnemy.Damage = sword.Damage;
-            }
+            enemy.TakeDamage(sword.Damage, sword.effectControllers.ToArray());
         }
     }
 

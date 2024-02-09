@@ -78,6 +78,18 @@ public class Enemy : MonoBehaviour
         GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, TextHit.Default);
     }
     
+    public void TakeDamage(float damage, IEffectController[] effectControllers)
+    {
+        HP -= damage;
+
+        GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, TextHit.Default);
+
+        foreach (var effectController in effectControllers)
+        {
+            effectController.AddEffect(this);
+        }
+    }
+    
     public void TakeDamage(float damage, TextHit textHit)
     {
         HP -= damage;

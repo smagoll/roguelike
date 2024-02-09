@@ -76,9 +76,3 @@ public class Stat
         return valueFinal;
     }
 }
-
-public enum StatUpgradeType
-{
-    Increase,
-    Decrease
-}

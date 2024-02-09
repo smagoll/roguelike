@@ -27,7 +27,7 @@ public class SpawnerEnemy : MonoBehaviour
 
     [SerializeField]
     private float percentIncreaseHP;
-    private float scaleHpEnemy => Mathf.Pow(1 + percentIncreaseHP / 100, gameManager.NumberStage - 1);
+    private float ScaleHpEnemy => Mathf.Pow(1 + percentIncreaseHP / 100, gameManager.NumberStage - 1);
 
     public float FrequencySpawn
     {
@@ -55,7 +55,7 @@ public class SpawnerEnemy : MonoBehaviour
                 position.z = 0f;
                 int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
                 GameObject enemy = Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
-                enemy.GetComponent<Enemy>().scaleHp = scaleHpEnemy;
+                enemy.GetComponent<Enemy>().scaleHp = ScaleHpEnemy;
                 lastTimeSpawn = Time.time;
             }
         }

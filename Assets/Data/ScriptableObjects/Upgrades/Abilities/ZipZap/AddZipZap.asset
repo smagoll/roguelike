@@ -29,20 +29,18 @@ MonoBehaviour:
     value: 1.5
     step: 0.02
     clampValue: 0.5
-  damage: 2
   prefabLightning: {fileID: 547906044967120555, guid: 6e590dd4bb869df429632e63fb752082, type: 3}
   distanceFlight: 2
-  frequency: 1.5
   speedFlight: 15
   countLightnings: 3
   attackRange: 2
   upgrades:
-  - {fileID: 11400000, guid: 63999529ac9bc6245a9132eee5de51f9, type: 2}
-  - {fileID: 11400000, guid: d31275f8ce010574dad96209ba149169, type: 2}
-  - {fileID: 11400000, guid: 8885bb446eb52ef40b9cb10da4bd3de7, type: 2}
   - {fileID: 11400000, guid: 37d2cc670de4358499fec64357dbacfa, type: 2}
   - {fileID: 11400000, guid: bfbdc7223922e4b4ea3215a43f2fa44b, type: 2}
   - {fileID: 11400000, guid: 2dc860d69ea9f2d459105cf49288ad34, type: 2}
   - {fileID: 11400000, guid: 63999529ac9bc6245a9132eee5de51f9, type: 2}
   - {fileID: 11400000, guid: d31275f8ce010574dad96209ba149169, type: 2}
   - {fileID: 11400000, guid: 8885bb446eb52ef40b9cb10da4bd3de7, type: 2}
+  - {fileID: 11400000, guid: 1800597f40654664b92a5c4a152557f2, type: 2}
+  - {fileID: 11400000, guid: 82da444d5f5170541853f5bc4a14a9be, type: 2}
+  - {fileID: 11400000, guid: 9bb189350728f514597116bea788881c, type: 2}

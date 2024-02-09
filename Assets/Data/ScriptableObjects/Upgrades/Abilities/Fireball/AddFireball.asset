@@ -29,10 +29,21 @@ MonoBehaviour:
     value: 3
     step: 0.05
     clampValue: 1.5
-  damage: 5
+  - statType: 5
+    statUpgradeType: 0
+    value: 0.5
+    step: 0.05
+    clampValue: 5
   prefabFireball: {fileID: 2526813752728630605, guid: e5971d37613a09745a02b50e4d26d047, type: 3}
-  rangeBlast: 0.5
   distanceFlight: 5
-  frequency: 3
   speedFlight: 2
-  upgrades: []
+  upgrades:
+  - {fileID: 11400000, guid: ecd6456e7aef7fb47b87ca4859a2c54b, type: 2}
+  - {fileID: 11400000, guid: 959e7c60d9bc2e745976475d881ea1b7, type: 2}
+  - {fileID: 11400000, guid: b74071e9a7746464fa856b8f2c6605b5, type: 2}
+  - {fileID: 11400000, guid: 76e15f361166b5846a81ca9ac5d61904, type: 2}
+  - {fileID: 11400000, guid: 651911d9fdef9b34294b33b8db4a3e05, type: 2}
+  - {fileID: 11400000, guid: b33d0560aee7a604f903ff08201543d8, type: 2}
+  - {fileID: 11400000, guid: bd83ee3b1923cef429acbcd394459a7e, type: 2}
+  - {fileID: 11400000, guid: dd92e74f90e7c0247b62553373328862, type: 2}
+  - {fileID: 11400000, guid: 3c38ee5b079d38746b991e9ae32bf3c8, type: 2}

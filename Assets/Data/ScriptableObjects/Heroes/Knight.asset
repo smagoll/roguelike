@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   id: 1
+  title: "\u0420\u044B\u0446\u0430\u0440\u044C"
   sprite: {fileID: 527929922, guid: 88a6245e986c3454cbb3ea8d94b980cb, type: 3}
   animator: {fileID: 9100000, guid: f9ac8f7dd810b914186152887eed9aa9, type: 2}
   weapon: {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}

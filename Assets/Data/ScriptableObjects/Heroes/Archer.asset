@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   id: 2
+  title: "\u041B\u0443\u0447\u043D\u0438\u043A"
   sprite: {fileID: 527929922, guid: 88a6245e986c3454cbb3ea8d94b980cb, type: 3}
   animator: {fileID: 9100000, guid: f9ac8f7dd810b914186152887eed9aa9, type: 2}
   weapon: {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}

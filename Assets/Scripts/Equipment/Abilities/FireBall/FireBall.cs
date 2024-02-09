@@ -7,7 +7,7 @@ public class FireBall : EquipmentDynamic, IProjectileController
     public GameObject prefabFireBall;
 
     public float damage;
-    public float scaleExplosionRadius;
+    public float scaleExplosionRadius = 100;
     private float explosionRadius;
 
     public float DistanceFlight { get; set; }
@@ -30,7 +30,7 @@ public class FireBall : EquipmentDynamic, IProjectileController
     {
         Frequency = dataFireball.Frequency;
         damage = dataFireball.Damage;
-        explosionRadius = dataFireball.rangeBlast;
+        explosionRadius = dataFireball.RadiusBlast;
         DistanceFlight = dataFireball.distanceFlight;
         SpeedFlight = dataFireball.speedFlight;
         prefabFireBall = dataFireball.prefabFireball;

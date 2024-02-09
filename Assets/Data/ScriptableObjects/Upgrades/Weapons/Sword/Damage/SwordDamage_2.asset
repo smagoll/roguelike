@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: SwordDamage_2
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: dbebefa8fa9e3ca4ab0fa5e44e41890b, type: 2}
-  rare: 2
+  rare: 1
   title: "\u0417\u0430\u043A\u0430\u043B\u043A\u0430 \u043C\u0435\u0447\u0430"
   description: "+5 \u043A \u0443\u0440\u043E\u043D\u0430 \u043C\u0435\u0447\u0430"
-  chance: 25
   damage: 5

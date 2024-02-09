@@ -1,4 +1,5 @@
 {
+    "record": 230,
     "coins": 207,
     "weapons": [
         {
@@ -17,7 +18,7 @@
     "abilities": [
         {
             "id": 1,
-            "level": 0
+            "level": 1
         },
         {
             "id": 2,
@@ -25,7 +26,7 @@
         },
         {
             "id": 3,
-            "level": 0
+            "level": 1
         },
         {
             "id": 4,
@@ -35,15 +36,18 @@
     "heroes": [
         {
             "id": 1,
-            "isOpen": true
+            "isOpen": true,
+            "stageForOpen": 0
         },
         {
             "id": 2,
-            "isOpen": true
+            "isOpen": true,
+            "stageForOpen": 100
         },
         {
             "id": 3,
-            "isOpen": true
+            "isOpen": true,
+            "stageForOpen": 200
         }
     ],
     "improvements": [

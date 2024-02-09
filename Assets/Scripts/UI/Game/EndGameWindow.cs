@@ -9,17 +9,31 @@ public class EndGameWindow : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textCoin;
     [SerializeField]
+    private TextMeshProUGUI textRecord;
+    [SerializeField]
     private GameManager gameManager;
 
     public void UpdateTextCoin()
     {
         textCoin.text = gameManager.Coin.ToString();
+        textRecord.text = gameManager.NumberStage.ToString();
+    }
+
+    private void UpdateData()
+    {
+        DataManager.instance.gameData.coins += gameManager.Coin;
+
+        if (gameManager.NumberStage > DataManager.instance.gameData.record)
+        {
+            DataManager.instance.gameData.record = gameManager.NumberStage;
+        }
+
+        DataManager.instance.Save();
     }
 
     public void LoadMenu()
     {
-        DataManager.instance.gameData.coins += gameManager.Coin;
-        DataManager.instance.Save();
+        UpdateData();
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneManager.LoadScene("Menu");
         Time.timeScale = 1f;

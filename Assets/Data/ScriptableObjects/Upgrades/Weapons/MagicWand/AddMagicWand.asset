@@ -47,5 +47,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2e4ddef0e2b3a2f4c83baf0e98ce03b5, type: 2}
   - {fileID: 11400000, guid: 6182c039b9311d6429c3414ae10e68ee, type: 2}
   - {fileID: 11400000, guid: 32395ac1d0bbd18468eca98ee0538ef1, type: 2}
+  - {fileID: 11400000, guid: 63819feb188a99e4ea15bf404a242d73, type: 2}
   stepDamage: 2
   stepFrequency: 0.1

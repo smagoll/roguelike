@@ -2,7 +2,7 @@
 
 public class MagicWandProjectile : Projectile
 {
-    public float damage;
+    public MagicWand magicWand;
     private bool isHit = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -13,7 +13,7 @@ public class MagicWandProjectile : Projectile
         if (collision.CompareTag("Enemy"))
         {
             isHit = true;
-            collision.GetComponent<Enemy>().TakeDamage(damage);
+            collision.GetComponent<Enemy>().TakeDamage(magicWand.Damage, magicWand.effectControllers.ToArray());
 
             DestroyProjectile();
         }

@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Bleeding
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 2597cee30bfd4de4fa22ab9cddd8da73, type: 2}
+  rare: 0
   title: "\u041A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u0435"
-  level: 1
   description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u043A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u0435
     \u043A \u043E\u0440\u0443\u0436\u0438\u044E"
-  chance: 15
-  isWeapon: 0
-  isAbility: 0
+  stats:
+  - statType: 6
+    statUpgradeType: 0
+    value: 5
+    step: 0
+    clampValue: 10
+  - statType: 1
+    statUpgradeType: 1
+    value: 0.5
+    step: 0
+    clampValue: 0.3
   effect: 0
-  weapon: 0

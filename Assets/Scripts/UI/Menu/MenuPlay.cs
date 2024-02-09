@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -22,7 +23,7 @@ public class MenuPlay : MenuElement
     private void Start()
     {
         equipmentSelected = DataManager.instance.gameData.equipmentSelected;
-        UpdateHero();
+        UpdateView();
     }
 
     public void UpdateHero()

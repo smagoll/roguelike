@@ -15,5 +15,5 @@ MonoBehaviour:
   icon: {fileID: 0}
   rare: 2
   title: "\u0421\u0436\u0430\u0442\u0438\u0435"
-  description: "+30% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"
-  scaleAttackSpeed: 30
+  description: "+10% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"
+  scaleAttackSpeed: 10

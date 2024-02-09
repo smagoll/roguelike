@@ -4,5 +4,8 @@
     Frequency,
     HP,
     Speed,
-    Evasion
+    Evasion,
+    Radius,
+    Duration,
+    Slowdown
 }

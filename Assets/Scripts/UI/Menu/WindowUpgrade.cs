@@ -63,6 +63,7 @@ public class WindowUpgrade : MonoBehaviour
             numberLevel.text = equipment.Level.ToString();
             textPrice.text = price.ToString();
             UpdateStats();
+            CheckPrice();
         }
     }
 
@@ -85,7 +86,6 @@ public class WindowUpgrade : MonoBehaviour
             equipment.LevelUp();
             DataManager.instance.Save();
             UpdateInfo();
-            CheckPrice();
             GlobalEventManager.Start_UpdateCoinMenu();
         }
     }

@@ -1,13 +1,15 @@
+using System.Linq;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "AddFireball", menuName = "Upgrades/Add/Abilities/Fireball")]
-public class UpgradeAddFireball : UpgradeEquipment
+public class UpgradeAddFireball : UpgradeAbility
 {
     public GameObject prefabFireball;
-    public float rangeBlast;
     public float distanceFlight;
     public float speedFlight;
     public Upgrade[] upgrades;
+
+    public float RadiusBlast => stats.FirstOrDefault(x => x.Type == StatType.Radius).GetValue(Level);
 
     public override void Action()
     {

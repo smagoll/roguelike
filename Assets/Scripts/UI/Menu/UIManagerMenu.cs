@@ -12,6 +12,9 @@ public class UIManagerMenu : MonoBehaviour
     private WindowUpgrade windowUpgradeWeapon;
     [SerializeField]
     private WindowUpgrade windowUpgradeAbility;
+    [SerializeField]
+    private TextMeshProUGUI textRecord;
+
 
     private void Awake()
     {
@@ -22,11 +25,17 @@ public class UIManagerMenu : MonoBehaviour
     private void Start()
     {
         UpdateCoinText();
+        UpdateRecord();
     }
 
     public void UpdateCoinText()
     {
         coinText.text = DataManager.instance.gameData.coins.ToString();
+    }
+
+    private void UpdateRecord()
+    {
+        textRecord.text = DataManager.instance.gameData.record.ToString();
     }
 
     public void ButtonPlay()
