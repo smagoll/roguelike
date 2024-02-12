@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.VFX;
 
 public class Field : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Field : MonoBehaviour
     public float lastTimeAttack = 0f;
     public List<GameObject> enemies = new();
     private Vector3 scale;
+    [SerializeField]
+    private VisualEffect impulse;
 
     private void Awake()
     {
@@ -37,6 +40,7 @@ public class Field : MonoBehaviour
         if (Time.time - lastTimeAttack > controller.Frequency)
         {
             lastTimeAttack = Time.time;
+            impulse.SendEvent("OnPlay");
 
             if (enemiesCopy.Count == 0)
                 return;

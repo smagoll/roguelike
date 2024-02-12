@@ -11,6 +11,8 @@ public class Lightning : Projectile
     private int sequence;
     private bool isHit = false;
     public GameObject lastEnemy;
+    [SerializeField]
+    private GameObject hit;
 
     public int Sequence
     {
@@ -44,6 +46,7 @@ public class Lightning : Projectile
             lightning.Initialize(projectileController, damage, prefabLightning, sequence, attackRange, directionToNext);
             lightning.lastEnemy = lastEnemy;
 
+            Instantiate(hit, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
