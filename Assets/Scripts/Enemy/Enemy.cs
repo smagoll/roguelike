@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Enemy : MonoBehaviour
 {
+    public ObjectPool<Enemy> pool;
+
     [SerializeField]
     private float startHp;
     private float hp;
@@ -45,7 +48,7 @@ public class Enemy : MonoBehaviour
 
     private void Start()
     {
-        HP = startHp * scaleHp;
+        UpdateStats();
         target = GameManager.player.transform;
     }
 
@@ -136,7 +139,16 @@ public class Enemy : MonoBehaviour
     public void DestroyEnemy()
     {
         AppearanceDrops();
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        UpdateStats();
+        pool.Release(this);
+    }
+
+    private void UpdateStats()
+    {
+        HP = startHp * scaleHp;
+        isDeath = false;
+        GetComponent<PolygonCollider2D>().enabled = true;
     }
 
     public virtual void Attack()

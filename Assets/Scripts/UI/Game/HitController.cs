@@ -1,20 +1,26 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class HitController : MonoBehaviour
 {
     [SerializeField]
-    private GameObject defaultText;
+    private DamageHurt defaultText;
     [SerializeField]
-    private GameObject smallText;
+    private DamageHurt smallText;
+    [SerializeField]
+    private Transform hitsTransform;
 
     private void Awake()
     {
         GlobalEventManager.CreateDamageHurt.AddListener(CreateDamageHurt);
+
+
     }
 
     private void CreateDamageHurt(Vector3 position, float damage, TextHit textHit)
     {
-        GameObject textHitPrefab = defaultText;
+        DamageHurt textHitPrefab = defaultText;
 
         switch (textHit)
         {
@@ -26,7 +32,7 @@ public class HitController : MonoBehaviour
                 break;
         }
 
-        var damageHurt = Instantiate(textHitPrefab, position, Quaternion.identity);
+        var damageHurt = Instantiate(textHitPrefab, position, Quaternion.identity, hitsTransform);
         damageHurt.GetComponent<DamageHurt>().damage = damage;
     }
 }

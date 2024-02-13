@@ -28,12 +28,12 @@ public class Character : MonoBehaviour
             if (value > 0 && value <= MaxHP)
             {
                 hp = Mathf.Round(value);
-                GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);
             }
             if (value <= 0)
             {
                 Death();
             }
+            GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);
         }
     }
 

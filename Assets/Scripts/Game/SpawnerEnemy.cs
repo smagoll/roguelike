@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Pool;
 
 public class SpawnerEnemy : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class SpawnerEnemy : MonoBehaviour
     [SerializeField]
     private float frequencySpawn;
     private float lastTimeSpawn = 0;
+
+    private List<ObjectPool<Enemy>> objectPools = new();
 
     [SerializeField]
     private float percentIncreaseHP;
@@ -53,9 +56,14 @@ public class SpawnerEnemy : MonoBehaviour
             {
                 var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
                 position.z = 0f;
-                int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
-                GameObject enemy = Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
-                enemy.GetComponent<Enemy>().scaleHp = ScaleHpEnemy;
+                //int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
+                //GameObject enemy = Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
+                int rndPool = Random.Range(0, objectPools.Count);
+                var enemy = objectPools[rndPool].Get();
+                enemy.transform.position = position;
+                enemy.pool = objectPools[rndPool];
+                enemy.scaleHp = ScaleHpEnemy;
+                //enemy.GetComponent<Enemy>().scaleHp = ScaleHpEnemy;
                 lastTimeSpawn = Time.time;
             }
         }
@@ -82,10 +90,12 @@ public class SpawnerEnemy : MonoBehaviour
 
         foreach (var closeEnemy in prefabsCloseEnemies)
         {
-            if (closeEnemy.GetComponent<Enemy>().stageForOpen <= stage)
+            var enemy = closeEnemy.GetComponent<Enemy>();
+            if (enemy.stageForOpen <= stage)
             {
-                prefabsOpenEnemies.Add(closeEnemy);
-                removeEnemies.Add(closeEnemy);
+                objectPools.Add(CreatePool(enemy));
+                //prefabsOpenEnemies.Add(closeEnemy);
+                //removeEnemies.Add(closeEnemy);
             }
         }
 
@@ -93,5 +103,21 @@ public class SpawnerEnemy : MonoBehaviour
         {
             prefabsCloseEnemies.Remove(removeEnemy);
         }
+    }
+
+    private ObjectPool<Enemy> CreatePool(Enemy enemy)
+    {
+        ObjectPool<Enemy> pool = new(() =>
+        {
+            return Instantiate(enemy, enemiesTransform);
+        }, enemy => {
+            enemy.gameObject.SetActive(true);
+        }, enemy => {
+            enemy.gameObject.SetActive(false);
+        }, enemy => {
+            enemy.DestroyEnemy();
+        }, false);
+
+        return pool;
     }
 }
