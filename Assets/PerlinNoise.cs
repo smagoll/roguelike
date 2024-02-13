@@ -3,42 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PerlinNoise : MonoBehaviour
+public static class PerlinNoise
 {
-    public int width = 256;
-    public int height = 256;
-
-    public float scale = 20;
-
-    private void Start()
+    public static float[,] GenerateNoiseMap(int width, int height, float scale)
     {
-        Renderer renderer = GetComponent<Renderer>();
-        renderer.material.mainTexture = GenerateTexture();
-    }
-
-    private Texture2D GenerateTexture()
-    {
-        Texture2D texture = new(width, height);
+        float[,] noiseMap = new float[width, height];
 
         for (int x = 0; x < width; x++)
         {
             for (int y = 0; y < height; y++)
             {
-                Color color = CalculateColor(x, y);
-                texture.SetPixel(x, y, color);
+                float xCoord = x / scale;
+                float yCoord = y / scale;
+
+                float sample = Mathf.PerlinNoise(xCoord, yCoord);
+                noiseMap[x, y] = sample;
             }
         }
 
-        texture.Apply();
-        return texture;
-    }
-
-    private Color CalculateColor(int x, int y)
-    {
-        float xCoord = x / width * scale;
-        float yCoord = x / width * scale;
-
-        float sample = Mathf.PerlinNoise(xCoord, yCoord);
-        return new Color(sample, sample, sample);
+        return noiseMap;
     }
 }
