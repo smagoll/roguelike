@@ -56,14 +56,11 @@ public class SpawnerEnemy : MonoBehaviour
             {
                 var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
                 position.z = 0f;
-                //int randomEnemy = Random.Range(0, prefabsOpenEnemies.Count);
-                //GameObject enemy = Instantiate(prefabsOpenEnemies[randomEnemy], position, Quaternion.identity, enemiesTransform);
                 int rndPool = Random.Range(0, objectPools.Count);
                 var enemy = objectPools[rndPool].Get();
                 enemy.transform.position = position;
                 enemy.pool = objectPools[rndPool];
                 enemy.scaleHp = ScaleHpEnemy;
-                //enemy.GetComponent<Enemy>().scaleHp = ScaleHpEnemy;
                 lastTimeSpawn = Time.time;
             }
         }
@@ -94,8 +91,6 @@ public class SpawnerEnemy : MonoBehaviour
             if (enemy.stageForOpen <= stage)
             {
                 objectPools.Add(CreatePool(enemy));
-                //prefabsOpenEnemies.Add(closeEnemy);
-                //removeEnemies.Add(closeEnemy);
             }
         }
 

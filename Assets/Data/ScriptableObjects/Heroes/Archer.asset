@@ -15,7 +15,7 @@ MonoBehaviour:
   id: 2
   title: "\u041B\u0443\u0447\u043D\u0438\u043A"
   sprite: {fileID: 1869717370, guid: a14fe5633c97ea64281651f659ec7dcb, type: 3}
-  animator: {fileID: 9100000, guid: f9ac8f7dd810b914186152887eed9aa9, type: 2}
+  animator: {fileID: 9100000, guid: f7b9e88ae8aeee34d8eff193579fa6f4, type: 2}
   weapon: {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
   stats:
   - statType: 2

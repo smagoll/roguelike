@@ -10,7 +10,7 @@ public class ChunkSystem : MonoBehaviour
     [SerializeField]
     private Grid grid;
     [SerializeField]
-    private int size;
+    public int size;
     [SerializeField]
     private Tilemap prefabTilemap;
     [SerializeField]
@@ -33,6 +33,7 @@ public class ChunkSystem : MonoBehaviour
     private void CreateChunk(int x, int y)
     {
         var tilemap = Instantiate(prefabTilemap, grid.gameObject.transform);
+        tilemap.gameObject.GetComponent<TilemapRenderer>().sortingOrder = -1;
         var coordChunk = new Vector2Int(x, y);
         chunks[x + 1, y + 1] = new ChunkData(coordChunk, tilemap);
     }

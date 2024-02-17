@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class WindDance : EquipmentDynamic
 {
-    public GameObject prefabTornado;
-
     public float damage;
     public float timeLifeTornado;
     public float frequencyChangeDirection;
     public float scaleSpeedFlight = 100;
     private float speedFlight;
+
+    ObjectPool<Tornado> tornados;
 
     private int countTornado;
 
@@ -29,12 +30,12 @@ public class WindDance : EquipmentDynamic
 
     public override void Action()
     {
-        var tornadoObject = Instantiate(prefabTornado, transform.position, Quaternion.identity);
-        var tornado = tornadoObject.GetComponent<Tornado>();
-        tornado.Initialize(damage, timeLifeTornado, frequencyChangeDirection, SpeedFlight);
+        var tornado = tornados.Get();
+        tornado.transform.position = transform.position;
+        tornado.Initialize(damage, timeLifeTornado, frequencyChangeDirection, SpeedFlight, tornados);
     }
 
-    public void Initialize(float damage, float timeLife, float frequency, float frequencyChangeDirection, float speedFlight, int countTornado, Upgrade[] upgrades, GameObject prefabTornado)
+    public void Initialize(float damage, float timeLife, float frequency, float frequencyChangeDirection, float speedFlight, int countTornado, Upgrade[] upgrades, Tornado prefabTornado)
     {
         this.damage = damage;
         this.timeLifeTornado = timeLife;
@@ -43,8 +44,25 @@ public class WindDance : EquipmentDynamic
         this.speedFlight = speedFlight;
         CountTornado = countTornado;
         this.upgrades = upgrades;
-        this.prefabTornado = prefabTornado;
+
+        tornados = CreatePool(prefabTornado);
 
         isAttack = true;
+    }
+
+    private ObjectPool<Tornado> CreatePool(Tornado tornado)
+    {
+        ObjectPool<Tornado> pool = new(() =>
+        {
+            return Instantiate(tornado, transform.position, Quaternion.identity);
+        }, tornado => {
+            tornado.gameObject.SetActive(true);
+        }, tornado => {
+            tornado.gameObject.SetActive(false);
+        }, tornado => {
+            Destroy(tornado.gameObject);
+        }, false);
+
+        return pool;
     }
 }

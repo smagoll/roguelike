@@ -173,16 +173,14 @@ MonoBehaviour:
   width: 20
   height: 20
   cam: {fileID: 1962316301}
-  panSpeed: 8.5
-  seed: 100
-  scale: 30
-  octaves: 1
-  persistence: 0.5
+  seed: 50
+  scale: 10
+  octaves: 4
+  persistence: 0.765
   lacunarity: 1
-  tilemapVisualizer: {fileID: 492619110}
-  mapDisplay: {fileID: 492619112}
-  floorTile: {fileID: 11400000, guid: b498b8b97c6fd934f9d363414be9e4e5, type: 2}
-  grainTile: {fileID: 11400000, guid: 21858e2616157db459321001846646f2, type: 2}
+  floorTile: {fileID: 11400000, guid: 21858e2616157db459321001846646f2, type: 2}
+  grainGreyTile: {fileID: 11400000, guid: b498b8b97c6fd934f9d363414be9e4e5, type: 2}
+  grainTile: {fileID: 11400000, guid: cf0329c4111d1cb4a969cebcb22ef994, type: 2}
   chunkSystem: {fileID: 492619113}
 --- !u!114 &492619110
 MonoBehaviour:
@@ -208,7 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6704e693e7b44f24d9f67b56440ed42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textureRenderer: {fileID: 1195821704}
 --- !u!114 &492619113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,10 +247,10 @@ Grid:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 775598299}
   m_Enabled: 1
-  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellSize: {x: 1, y: 1, z: 1}
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
-  m_CellSwizzle: 0
+  m_CellSwizzle: 2
 --- !u!4 &775598301
 Transform:
   m_ObjectHideFlags: 0

@@ -11,7 +11,6 @@ public class MapGenerator : MonoBehaviour
 
     [Header("Camera")]
     [SerializeField] private Camera cam;
-    [Range(0, 50)] [SerializeField] private float panSpeed = 5.0F;
     private Vector2Int posCam;
 
     [Header("Noise Configuration")]
@@ -21,11 +20,10 @@ public class MapGenerator : MonoBehaviour
     [Range(0, 1)] [SerializeField] private float persistence = 0.5F;
     [SerializeField] private float lacunarity = 1.0F;
 
-    public TilemapVisualizer tilemapVisualizer;
-    public MapDisplay mapDisplay;
-
     [SerializeField]
     private TileBase floorTile;
+    [SerializeField]
+    private TileBase grainGreyTile;
     [SerializeField]
     private TileBase grainTile;
 
@@ -35,8 +33,8 @@ public class MapGenerator : MonoBehaviour
 
     private void Start()
     {
-        for (int x = 0; x < 3; x++)
-            for (int y = 0; y < 3; y++)
+        for (int x = 0; x < chunkSystem.size; x++)
+            for (int y = 0; y < chunkSystem.size; y++)
             {
                 GenerateMap(chunkSystem.chunks[x,y].coord, chunkSystem.chunks[x, y].tilemap);
             }
@@ -44,10 +42,6 @@ public class MapGenerator : MonoBehaviour
 
     private void Update()
     {
-        //if (Mathf.Abs(posCam.x - cam.transform.position.x) > panSpeed - 1 || Mathf.Abs(posCam.y - cam.transform.position.y) > panSpeed - 1)
-        //{
-        //    GenerateMap();
-        //}
         Check();
     }
 
@@ -57,9 +51,9 @@ public class MapGenerator : MonoBehaviour
         int x = 0;
         int y = 0;
 
-        if (Mathf.Abs(direction.x) > 10)
+        if (Mathf.Abs(direction.x) > width)
             x = direction.x < 0 ? -1 : 1;
-        else if (Mathf.Abs(direction.y) > 10)
+        else if (Mathf.Abs(direction.y) > height)
             y = direction.y < 0 ? -1 : 1;
         else
             return;
@@ -71,7 +65,6 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap(Vector2Int chunkCoord, Tilemap tilemap)
     {
-        //posCam = new Vector2Int((int)cam.transform.position.x, (int)cam.transform.position.y);
         chunkCoord = chunkCoord * width;
         noiseMap = PerlinNoise.GenerateNoiseMap(width, height, scale, seed, octaves, persistence, lacunarity, chunkCoord);
 
@@ -84,10 +77,17 @@ public class MapGenerator : MonoBehaviour
             for (int y = -(height / 2); y < (height / 2); y++)
             {
                 var posTileInMap = positions[x + (width / 2), y + (height / 2)];
-                if (posTileInMap > 0.5f)
-                    PaintSingleTile(tilemap, grainTile, x, y, chunkCoord);
-                if (posTileInMap < 0.5f)
+
+                if (posTileInMap > -1f)
                     PaintSingleTile(tilemap, floorTile, x, y, chunkCoord);
+                if (posTileInMap > -0.5f && posTileInMap < 0)
+                    PaintSingleTile(tilemap, grainTile, x, y, chunkCoord);
+                if (posTileInMap > 0.32f && posTileInMap < .35f)
+                    PaintSingleTile(tilemap, grainGreyTile, x, y, chunkCoord);
+                if (posTileInMap > 0.35f && posTileInMap < 0.37f)
+                    PaintSingleTile(tilemap, grainTile, x, y, chunkCoord);
+                if (posTileInMap > 0.9f)
+                    PaintSingleTile(tilemap, grainTile, x, y, chunkCoord);
             }
         yield return null;
     }
@@ -98,4 +98,10 @@ public class MapGenerator : MonoBehaviour
         tilemap.SetTile(new Vector3Int((int)x, (int)y), tile);
     }
 
+}
+
+public enum TileType
+{
+    Ground,
+    Items
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AddWindDance", menuName = "Upgrades/Add/Abilities/WindDance")]
 public class UpgradeAddWindDance : UpgradeAbility
 {
-    public GameObject prefabTornado;
+    public Tornado prefabTornado;
 
     public float timeLifeTornado;
     public float speedFlight;

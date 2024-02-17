@@ -29,7 +29,7 @@ MonoBehaviour:
     value: 2
     step: 0.01
     clampValue: 1
-  prefabTornado: {fileID: 9157619315405315567, guid: 38a6b538d8a16534785607225bf941fc, type: 3}
+  prefabTornado: {fileID: 8385121235830570119, guid: 38a6b538d8a16534785607225bf941fc, type: 3}
   timeLifeTornado: 5
   speedFlight: 1
   countTornado: 1

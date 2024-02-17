@@ -132,14 +132,13 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         isDeath = true;
-        GetComponent<PolygonCollider2D>().enabled = false;
+        GetComponent<CircleCollider2D>().enabled = false;
         animator.SetTrigger("death");
     }
 
     public void DestroyEnemy()
     {
         AppearanceDrops();
-        //Destroy(gameObject);
         UpdateStats();
         pool.Release(this);
     }
@@ -148,7 +147,7 @@ public class Enemy : MonoBehaviour
     {
         HP = startHp * scaleHp;
         isDeath = false;
-        GetComponent<PolygonCollider2D>().enabled = true;
+        GetComponent<CircleCollider2D>().enabled = true;
     }
 
     public virtual void Attack()
