@@ -4,6 +4,8 @@ using UnityEngine.Pool;
 
 public class HitController : MonoBehaviour
 {
+    private ObjectPool<DamageHurt> poolDefaultText;
+    private ObjectPool<DamageHurt> poolSmallText;
     [SerializeField]
     private DamageHurt defaultText;
     [SerializeField]
@@ -14,25 +16,29 @@ public class HitController : MonoBehaviour
     private void Awake()
     {
         GlobalEventManager.CreateDamageHurt.AddListener(CreateDamageHurt);
-
+        poolDefaultText = GameManager.CreatePool<DamageHurt>(defaultText, hitsTransform);
+        poolSmallText = GameManager.CreatePool<DamageHurt>(smallText, hitsTransform);
 
     }
 
     private void CreateDamageHurt(Vector3 position, float damage, TextHit textHit)
     {
-        DamageHurt textHitPrefab = defaultText;
+        ObjectPool<DamageHurt> pool = poolDefaultText;
 
         switch (textHit)
         {
             case TextHit.Default:
-                textHitPrefab = defaultText;
+                pool = poolDefaultText;
                 break;
             case TextHit.Small:
-                textHitPrefab = smallText;
+                pool = poolSmallText;
                 break;
         }
 
-        var damageHurt = Instantiate(textHitPrefab, position, Quaternion.identity, hitsTransform);
-        damageHurt.GetComponent<DamageHurt>().damage = damage;
+        var damageHurt = pool.Get();
+        damageHurt.transform.position = position;
+        damageHurt.damage = damage;
+        damageHurt.pool = pool;
+        damageHurt.Show();
     }
 }

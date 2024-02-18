@@ -1,9 +1,11 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class DamageHurt : MonoBehaviour
 {
+    public ObjectPool<DamageHurt> pool;
     public float damage;
     [SerializeField]
     private TextMeshProUGUI textDamage;
@@ -14,7 +16,7 @@ public class DamageHurt : MonoBehaviour
     [SerializeField]
     private float timeBeforeDestroy;
 
-    private void Start()
+    public void Show()
     {
         textDamage.text = damage.ToString();
 
@@ -24,6 +26,8 @@ public class DamageHurt : MonoBehaviour
 
     public void Delete()
     {
-        Destroy(gameObject);
+        pool.Release(this);
+        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        textDamage.DOFade(1f, 0f);
     }
 }

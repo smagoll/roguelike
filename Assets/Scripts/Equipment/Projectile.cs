@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     public IProjectileController projectileController;
     public Vector2 direction;
-    private Vector2 startPosition;
+    public Vector2 startPosition;
 
     public void Flight()
     {
@@ -15,8 +15,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        startPosition = transform.position;
-        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        UpdateProjectile();
     }
 
     private void Update()
@@ -27,6 +26,12 @@ public class Projectile : MonoBehaviour
             DestroyProjectile();
         }
         Flight();
+    }
+
+    public void UpdateProjectile()
+    {
+        startPosition = transform.position;
+        transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
     }
 
     public virtual void DestroyProjectile()

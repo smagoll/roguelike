@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class FireBallProjectile : Projectile
 {
+    private ObjectPool<FireBallProjectile> pool;
     public FireBall fireBall;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -24,6 +26,7 @@ public class FireBallProjectile : Projectile
                 enemy.GetComponent<Enemy>().TakeDamage(fireBall.damage);
             }
         }
-        base.DestroyProjectile();
+
+        pool.Release(this);
     }
 }

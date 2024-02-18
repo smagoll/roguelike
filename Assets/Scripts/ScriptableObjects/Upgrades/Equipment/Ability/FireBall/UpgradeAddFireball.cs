@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AddFireball", menuName = "Upgrades/Add/Abilities/Fireball")]
 public class UpgradeAddFireball : UpgradeAbility
 {
-    public GameObject prefabFireball;
+    public FireBallProjectile prefabFireball;
     public float distanceFlight;
     public float speedFlight;
     public Upgrade[] upgrades;

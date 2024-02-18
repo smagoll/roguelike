@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Cinemachine;
 using UnityEngine;
+using UnityEngine.Pool;
 using Zenject;
 
 public class GameManager : MonoBehaviour
@@ -135,5 +136,37 @@ public class GameManager : MonoBehaviour
                 upgrades.Add(DataManager.instance.abilities.FirstOrDefault(x => x.Id == abilityData.id));
             }
         }
+    }
+
+    public static ObjectPool<T> CreatePool<T>(T obj) where T : MonoBehaviour
+    {
+        ObjectPool<T> pool = new(() =>
+        {
+            return Instantiate(obj);
+        }, obj => {
+            obj.gameObject.SetActive(true);
+        }, obj => {
+            obj.gameObject.SetActive(false);
+        }, obj => {
+            Destroy(obj);
+        }, false);
+
+        return pool;
+    }
+
+    public static ObjectPool<T> CreatePool<T>(T obj, Transform transform) where T : MonoBehaviour
+    {
+        ObjectPool<T> pool = new(() =>
+        {
+            return Instantiate(obj, transform);
+        }, obj => {
+            obj.gameObject.SetActive(true);
+        }, obj => {
+            obj.gameObject.SetActive(false);
+        }, obj => {
+            Destroy(obj);
+        }, false);
+
+        return pool;
     }
 }

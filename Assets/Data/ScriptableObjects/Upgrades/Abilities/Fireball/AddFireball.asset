@@ -34,7 +34,7 @@ MonoBehaviour:
     value: 0.5
     step: 0.05
     clampValue: 5
-  prefabFireball: {fileID: 2526813752728630605, guid: e5971d37613a09745a02b50e4d26d047, type: 3}
+  prefabFireball: {fileID: 8155400374831445789, guid: e5971d37613a09745a02b50e4d26d047, type: 3}
   distanceFlight: 5
   speedFlight: 2
   upgrades:

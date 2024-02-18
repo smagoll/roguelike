@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "AddZipZap", menuName = "Upgrades/Add/Abilities/ZipZap")]
 public class UpgradeAddZipZap : UpgradeAbility
 {
-    public GameObject prefabLightning;
+    public Lightning prefabLightning;
     public float distanceFlight;
     public float speedFlight;
     public int countLightnings;

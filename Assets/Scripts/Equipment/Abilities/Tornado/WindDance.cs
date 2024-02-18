@@ -45,24 +45,8 @@ public class WindDance : EquipmentDynamic
         CountTornado = countTornado;
         this.upgrades = upgrades;
 
-        tornados = CreatePool(prefabTornado);
+        tornados = GameManager.CreatePool<Tornado>(prefabTornado);
 
         isAttack = true;
-    }
-
-    private ObjectPool<Tornado> CreatePool(Tornado tornado)
-    {
-        ObjectPool<Tornado> pool = new(() =>
-        {
-            return Instantiate(tornado, transform.position, Quaternion.identity);
-        }, tornado => {
-            tornado.gameObject.SetActive(true);
-        }, tornado => {
-            tornado.gameObject.SetActive(false);
-        }, tornado => {
-            Destroy(tornado.gameObject);
-        }, false);
-
-        return pool;
     }
 }

@@ -2,29 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Lightning : Projectile
 {
+    ObjectPool<Lightning> pool;
     public float damage;
     public float attackRange;
-    public GameObject prefabLightning;
     private int sequence;
     private bool isHit = false;
-    public GameObject lastEnemy;
     [SerializeField]
     private GameObject hit;
-
-    public int Sequence
-    {
-        set
-        {
-            sequence = value;
-            if (sequence <= 0)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -33,40 +21,37 @@ public class Lightning : Projectile
             return;
         }
 
-        if (collision.CompareTag("Enemy") && collision.gameObject != lastEnemy)
+        if (collision.CompareTag("Enemy"))
         {
-            lastEnemy = collision.gameObject;
             isHit = true;
-            var directionToNext = DirectionCloseEnemy(collision.gameObject);
+            sequence -= 1;
             
             collision.GetComponent<Enemy>().TakeDamage(damage);
-
-            var lightningObject = Instantiate(prefabLightning, gameObject.transform.position, Quaternion.identity);
-            var lightning = lightningObject.GetComponent<Lightning>();
-            lightning.Initialize(projectileController, damage, prefabLightning, sequence, attackRange, directionToNext);
-            lightning.lastEnemy = lastEnemy;
-
             Instantiate(hit, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+
+            if (sequence <= 0)
+            {
+                pool.Release(this);
+            }
+
+            direction = DirectionCloseEnemy(collision.gameObject);
+            UpdateProjectile();
+            isHit = true;
         }
     }
 
-    public void Initialize(IProjectileController projectileController, float damage, GameObject prefabLightning, int sequence, float attackRange, Vector2 direction)
+    public void Initialize(IProjectileController projectileController, float damage, int sequence, float attackRange, Vector2 direction, ObjectPool<Lightning> pool)
     {
         this.projectileController = projectileController;
         this.damage = damage;
-        this.prefabLightning = prefabLightning;
-        Sequence = sequence - 1;
+        this.sequence = sequence;
         this.attackRange = attackRange;
+        this.pool = pool;
 
         if (direction == Vector2.zero)
-        {
             this.direction = new Vector2(Random.Range(-1, 1), Random.Range(-1, 1));
-        }
         else
-        {
             this.direction = direction;
-        }
     }
 
     private Vector2 DirectionCloseEnemy(GameObject currentEnemy)

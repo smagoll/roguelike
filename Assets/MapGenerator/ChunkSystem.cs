@@ -71,7 +71,6 @@ public class ChunkSystem : MonoBehaviour
                 {
                     copyChunks[x, y].tilemap.ClearAllTiles();
                     mapGenerator.GenerateMap(chunks[x,y].coord, chunks[x, y].tilemap);
-                    //CreateChunk(x, y);
                 }
 
             }
