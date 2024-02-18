@@ -14,18 +14,12 @@ public class ZipZap : EquipmentDynamic, IProjectileController
     public float SpeedFlight { get; set; }
     public Vector2 Direction { get; set; }
 
-    public Lightning lightning;
-
-    private void Awake()
-    {
-        pool = GameManager.CreatePool<Lightning>(lightning);
-    }
-
     public override void Action()
     {
         var lightning = pool.Get();
         Direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
         lightning.projectileController = this;
+        lightning.transform.position = transform.position;
         lightning.Initialize(this, damage, countLightnings, attackRange, Direction, pool);
     }
 
@@ -33,12 +27,13 @@ public class ZipZap : EquipmentDynamic, IProjectileController
     {
         damage = data.Damage;
         countLightnings = data.countLightnings;
-        lightning = data.prefabLightning;
         DistanceFlight = data.distanceFlight;
         SpeedFlight = data.speedFlight;
         Frequency = data.Frequency;
         upgrades = data.upgrades;
         attackRange = data.attackRange;
+
+        pool = GameManager.CreatePool<Lightning>(data.prefabLightning);
 
         isAttack = true;
     }

@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -44,7 +45,7 @@ public class GameUI : MonoBehaviour
         GlobalEventManager.ShowUpgrades.AddListener(ShowUpgrades);
         GlobalEventManager.EndGame.AddListener(ShowEndWindow);
         GlobalEventManager.AddItem.AddListener(infoMenu.AddItem);
-        GlobalEventManager.UpdateCoinGameText.AddListener((int coins) => textCountCoins.text = coins.ToString());
+        GlobalEventManager.UpdateCoinGameText.AddListener(UpdateCoin);
     }
 
     public void ButtonPause()
@@ -119,5 +120,11 @@ public class GameUI : MonoBehaviour
         Time.timeScale = 0f;
         endWindow.UpdateTextCoin();
         endWindow.gameObject.SetActive(true);
+    }
+
+    private void UpdateCoin(int coins)
+    {
+        var scale = textCountCoins.transform.localScale;
+        DOTween.Sequence().AppendCallback(() => textCountCoins.text = coins.ToString()).Append(textCountCoins.transform.DOScale(1.3f, 0.1f)).Append(textCountCoins.transform.DOScale(1f, 0.1f));
     }
 }

@@ -101,6 +101,7 @@ public class GlobalEventManager : MonoBehaviour
     {
         AddUpgrade.Invoke(upgrade);
     }
+
     public static void Start_RemoveUpgrade(Upgrade upgrade)
     {
         RemoveUpgrade.Invoke(upgrade);

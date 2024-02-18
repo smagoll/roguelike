@@ -36,7 +36,7 @@ public class Lightning : Projectile
 
             direction = DirectionCloseEnemy(collision.gameObject);
             UpdateProjectile();
-            isHit = true;
+            isHit = false;
         }
     }
 
