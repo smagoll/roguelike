@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 595433839110931710}
   - component: {fileID: 1381956865416909270}
   - component: {fileID: 4321948942624463092}
+  - component: {fileID: 1323397594974228903}
   m_Layer: 0
   m_Name: explosion_gravity
   m_TagString: Untagged
@@ -56,7 +57,10 @@ VisualEffect:
     m_Vector3f:
       m_Array: []
     m_Vector4f:
-      m_Array: []
+      m_Array:
+      - m_Value: {x: 0, y: 0, z: 0, w: 0}
+        m_Name: ColorParticle
+        m_Overridden: 0
     m_Uint:
       m_Array: []
     m_Int:
@@ -111,3 +115,15 @@ VFXRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &1323397594974228903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800929519684802651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345338303ef704940a1723f914b5cf94, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

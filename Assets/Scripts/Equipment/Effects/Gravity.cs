@@ -14,6 +14,7 @@ public class Gravity : Effect
     
     public override void ActionEnd()
     {
+        EffectEventManager.Start_CreateGravityExplosion(transform);
         enemy.Speed = startSpeed;
         var enemies = Physics2D.OverlapCircleAll(transform.position, ExplosionRadius, GameManager.layerEnemy);
         if (enemies.Length > 0)

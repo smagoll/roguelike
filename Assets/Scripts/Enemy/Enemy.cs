@@ -142,14 +142,18 @@ public class Enemy : MonoBehaviour
         UpdateStats();
         pool.Release(this);
     }
-
+      
     private void UpdateStats()
-    {
+    {  
         HP = startHp * scaleHp;
         isDeath = false;
         GetComponent<CircleCollider2D>().enabled = true;
-    }
 
+        var effects = GetComponents<Effect>();
+        if(effects.Length > 0)
+            foreach (var effect in effects) Destroy(effect);
+    }
+    
     public virtual void Attack()
     {
         var players = Physics2D.OverlapCircleAll(gameObject.transform.position, distanceStop);

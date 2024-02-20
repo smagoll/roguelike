@@ -125,6 +125,8 @@ public class GameUI : MonoBehaviour
     private void UpdateCoin(int coins)
     {
         var scale = textCountCoins.transform.localScale;
-        DOTween.Sequence().AppendCallback(() => textCountCoins.text = coins.ToString()).Append(textCountCoins.transform.DOScale(1.3f, 0.1f)).Append(textCountCoins.transform.DOScale(1f, 0.1f));
+        DOTween.Sequence().AppendCallback(() => textCountCoins.text = coins.ToString())
+            .Append(textCountCoins.transform.DOScale(1.3f, 0.1f))
+            .Append(textCountCoins.transform.DOScale(1f, 0.1f));
     }
 }

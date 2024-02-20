@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    public bool isFlight = true;
     public IProjectileController projectileController;
     public Vector2 direction;
     public Vector2 startPosition;
@@ -20,12 +21,15 @@ public class Projectile : MonoBehaviour
 
     private void Update()
     {
-        var distanceFlight = (new Vector2(transform.position.x, transform.position.y) - startPosition).magnitude;
-        if (distanceFlight > projectileController.DistanceFlight)
+        if (isFlight)
         {
-            DestroyProjectile();
+            var distanceFlight = (new Vector2(transform.position.x, transform.position.y) - startPosition).magnitude;
+            if (distanceFlight > projectileController.DistanceFlight)
+            {
+                DestroyProjectile();
+            }
+            Flight();
         }
-        Flight();
     }
 
     public void UpdateProjectile()

@@ -17,10 +17,11 @@ public class ZipZap : EquipmentDynamic, IProjectileController
     public override void Action()
     {
         var lightning = pool.Get();
-        Direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
         lightning.projectileController = this;
-        lightning.transform.position = transform.position;
+        Direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
         lightning.Initialize(this, damage, countLightnings, attackRange, Direction, pool);
+        lightning.transform.position = transform.position;
+        lightning.StartFlight();
     }
 
     public void Initialize(UpgradeAddZipZap data)

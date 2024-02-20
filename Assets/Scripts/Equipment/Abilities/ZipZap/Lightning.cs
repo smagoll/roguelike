@@ -13,6 +13,7 @@ public class Lightning : Projectile
     private bool isHit = false;
     [SerializeField]
     private GameObject hit;
+    public Transform trail;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -31,13 +32,31 @@ public class Lightning : Projectile
 
             if (sequence <= 0)
             {
-                pool.Release(this);
+                DestroyProjectile();
             }
 
             direction = DirectionCloseEnemy(collision.gameObject);
             UpdateProjectile();
+            UpdateRotation();
             isHit = false;
         }
+    }
+
+    private void OnEnable()
+    {
+        isHit = false;
+    }
+
+    public void StartFlight()
+    {
+        UpdateProjectile();
+        UpdateRotation();
+        isFlight = true;
+    }
+
+    private void UpdateRotation()
+    {
+        trail.localEulerAngles = new Vector3(0, 0, -transform.eulerAngles.z);
     }
 
     public void Initialize(IProjectileController projectileController, float damage, int sequence, float attackRange, Vector2 direction, ObjectPool<Lightning> pool)
@@ -69,5 +88,11 @@ public class Lightning : Projectile
             }
         }
         return Vector2.zero;
+    }
+
+    public override void DestroyProjectile()
+    {
+        isFlight = false;
+        pool.Release(this);
     }
 }

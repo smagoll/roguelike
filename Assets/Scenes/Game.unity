@@ -1338,6 +1338,8 @@ GameObject:
   - component: {fileID: 533176926}
   - component: {fileID: 533176927}
   - component: {fileID: 533176928}
+  - component: {fileID: 533176929}
+  - component: {fileID: 533176930}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1399,6 +1401,32 @@ MonoBehaviour:
   maxRadius: 10
   frequencySpawn: 0.3
   percentIncreaseHP: 10
+--- !u!114 &533176929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533176925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0022c3b4c54daa4489c07ab458514762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravityExplosion: {fileID: 8800929519684802651, guid: ea29b6666069ba34299be1485723f1e9, type: 3}
+--- !u!114 &533176930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533176925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee8bb37a3e1fa4a4eb064e1a17635a9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upgrades: []
 --- !u!1 &558134848
 GameObject:
   m_ObjectHideFlags: 0
@@ -4400,7 +4428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0, b: 0, a: 0.2}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
