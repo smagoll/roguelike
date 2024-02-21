@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e48c70c32bcf774b971c66c0965d726, type: 3}
   m_Name: AddZipZap
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -633533361, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 1
   title: "\u0417\u0438\u043F \u0417\u0430\u043F"
   description: "\u043C\u043E\u043B\u043D\u0438\u044F \u0432\u0430\u0443 \u0447\u0430\u0443"

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b02ce8120f3836442bcc5a1236993c21, type: 3}
   m_Name: CountSphere_Common
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -677108049, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 0
   title: "\u0420\u0430\u0437\u043C\u043D\u043E\u0436\u0435\u043D\u0438\u0435"
   description: "+1 \u0441\u0444\u0435\u0440\u0430"

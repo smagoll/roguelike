@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1573b978c9e7410439672c86fdf0027c, type: 3}
   m_Name: AddFireball
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: -439223267, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 1
   title: "\u041E\u0433\u043D\u0435\u043D\u043D\u044B\u0439 \u0448\u0430\u0440"
   description: "\u0433\u043E\u0440\u044F\u0447\u0430\u044F \u0448\u0442\u0443\u0447\u043A\u0430"

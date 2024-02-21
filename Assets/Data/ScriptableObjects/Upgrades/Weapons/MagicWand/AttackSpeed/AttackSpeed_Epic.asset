@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4de3fc1d7f08d949bea32c450d8bbcb, type: 3}
   m_Name: AttackSpeed_Epic
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1531835291, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 2
   title: "\u041F\u0430\u043A\u043E\u0441\u0442\u044C"
-  description: "+15% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"
-  scaleFrequency: 15
+  description: "+10% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"
+  scaleFrequency: 10

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8373e783f7302d46b736f3f6befaad5, type: 3}
   m_Name: FrequencyBow_3
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1457902684, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 2
   title: "\u0422\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430 \u043F\u0430\u043B\u044C\u0446\u0435\u0432"
   description: "+5% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"

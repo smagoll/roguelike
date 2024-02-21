@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cef83e45370ce14d8c7d69dd7dfd817, type: 3}
   m_Name: Damage_Epic
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1508865806, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 2
   title: "\u041D\u0430\u043A\u0430\u043B\u0438\u0432\u0430\u043D\u0438\u0435"
   description: "+4 \u043A \u0443\u0440\u043E\u043D\u0443"

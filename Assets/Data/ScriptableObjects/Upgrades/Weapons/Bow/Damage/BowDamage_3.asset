@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c69418ae0046a4c89186364d1853a0, type: 3}
   m_Name: BowDamage_3
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 447350492, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 2
   title: "\u041D\u0430\u0442\u044F\u0433\u0438\u0432\u0430\u043D\u0438\u0435 \u0442\u0435\u0442\u0438\u0432\u044B"
   description: "+5 \u043A \u0443\u0440\u043E\u043D\u0443 \u043B\u0443\u043A\u0430"
-  damage: 7
+  damage: 5

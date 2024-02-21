@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8a04cf700430604f9baf7a813892493, type: 3}
   m_Name: AttackSpeed_Epic
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 1902951594, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 2
   title: "\u041A\u0447\u0430\u0443"
   description: "+10% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"

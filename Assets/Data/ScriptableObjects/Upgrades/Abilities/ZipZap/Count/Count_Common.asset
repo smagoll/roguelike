@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633e77e6c0a6bae4e99a28c42f0390ef, type: 3}
   m_Name: Count_Common
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 438278884, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 0
   title: "\u041F\u0440\u043E\u0432\u043E\u0434\u043D\u0438\u043A"
   description: "+1 \u043A \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0443

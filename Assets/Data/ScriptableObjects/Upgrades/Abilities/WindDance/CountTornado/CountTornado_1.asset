@@ -12,10 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6f0e88737c3c949b2ce1dc60ae77fb, type: 3}
   m_Name: CountTornado_1
   m_EditorClassIdentifier: 
-  icon: {fileID: 0}
+  icon: {fileID: 362053957, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 0
   title: "\u041F\u0440\u043E\u043A\u0430\u0447\u043A\u0430 \u0434\u044B\u0445\u0430\u043B\u043A\u0438"
   description: "+1 \u043A \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0443
     \u0442\u043E\u0440\u043D\u0430\u0434\u043E"
-  chance: 20
   countTornado: 1
