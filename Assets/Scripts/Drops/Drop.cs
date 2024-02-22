@@ -43,7 +43,7 @@ public abstract class Drop : MonoBehaviour
     public void Fall()
     {
         var pointLanding = Random.onUnitSphere * Random.Range(0, 1);
-        transform.DOScale(0.2f, 0.05f);
+        //transform.DOScale(0.2f, 0.05f);
     }
 }
 

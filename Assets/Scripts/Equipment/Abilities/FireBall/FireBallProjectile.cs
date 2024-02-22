@@ -5,7 +5,7 @@ using UnityEngine.Pool;
 
 public class FireBallProjectile : Projectile
 {
-    private ObjectPool<FireBallProjectile> pool;
+    public ObjectPool<FireBallProjectile> pool;
     public FireBall fireBall;
 
     private void OnTriggerEnter2D(Collider2D collision)

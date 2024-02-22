@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2400611971278669335}
   - component: {fileID: 4202768685222578582}
   - component: {fileID: 7341845980539237081}
+  - component: {fileID: 1885481556495688358}
+  - component: {fileID: 2298421733083173323}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -29,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.049999997, y: 0.049999997, z: 0.049999997}
+  m_LocalScale: {x: 0.36, y: 0.36, z: 0.36}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: -331460859, guid: 7dc7fa9f846fdc64ca55de53a7ac9e27, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -98,14 +100,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12fa29c205f69f14a9b5d0098a8800f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgrades: []
-  scaleFrequency: 100
-  isAttack: 0
-  scaleDamage: 100
-  isBleeding: 0
-  magicWand: {fileID: 0}
   prefabProjectile: {fileID: 8859960020742224401, guid: bc1cd5e5bfd75b2418ff95e0d5a9a87a, type: 3}
-  attackRange: 0
+  isAttack: 0
 --- !u!114 &7341845980539237081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,3 +117,59 @@ MonoBehaviour:
   target: {fileID: 0}
   speedRotate: 100
   isActive: 1
+--- !u!95 &1885481556495688358
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8859960020742224401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b1335a3c2e77a1542bf843a568a7435f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!58 &2298421733083173323
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8859960020742224401}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.15999998

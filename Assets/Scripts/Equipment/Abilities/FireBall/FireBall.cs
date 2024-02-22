@@ -6,7 +6,6 @@ using UnityEngine.Pool;
 public class FireBall : EquipmentDynamic, IProjectileController
 {
     private ObjectPool<FireBallProjectile> pool;
-    public FireBallProjectile prefabFireBall;
 
     public float damage;
     public float scaleExplosionRadius = 100;
@@ -19,11 +18,6 @@ public class FireBall : EquipmentDynamic, IProjectileController
 
     public float ExplosionRadius { get => explosionRadius * scaleExplosionRadius / 100; set => explosionRadius = value; }
 
-    private void Awake()
-    {
-        pool = GameManager.CreatePool<FireBallProjectile>(prefabFireBall);
-    }
-
     public override void Action()
     {
         var fireBall = pool.Get();
@@ -31,6 +25,7 @@ public class FireBall : EquipmentDynamic, IProjectileController
         fireBall.projectileController = this;
         fireBall.fireBall = this;
         fireBall.direction = GameCalculator.GetRandomDirection();
+        fireBall.pool = pool;
     }
 
     public void Initialize(UpgradeAddFireball dataFireball)
@@ -40,8 +35,9 @@ public class FireBall : EquipmentDynamic, IProjectileController
         explosionRadius = dataFireball.RadiusBlast;
         DistanceFlight = dataFireball.distanceFlight;
         SpeedFlight = dataFireball.speedFlight;
-        prefabFireBall = dataFireball.prefabFireball;
         upgrades = dataFireball.upgrades;
+
+        pool = GameManager.CreatePool<FireBallProjectile>(dataFireball.prefabFireball);
 
         isAttack = true;
     }

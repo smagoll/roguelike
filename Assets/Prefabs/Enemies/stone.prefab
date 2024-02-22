@@ -163,6 +163,7 @@ MonoBehaviour:
   - {fileID: 2566861449976774461, guid: 576baa68b24a5604bbce3659e585857f, type: 3}
   - {fileID: 2566861449976774461, guid: c1ccc1e505fb03c4a8e7eced021b5738, type: 3}
   animator: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!58 &4227209399384801113
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -197,4 +198,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.16
+  m_Radius: 0.15
