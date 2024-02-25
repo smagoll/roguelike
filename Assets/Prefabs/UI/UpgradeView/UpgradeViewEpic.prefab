@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nan
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b9ebb298cd1e4084a989a455945bf028, type: 2}
-  m_sharedMaterial: {fileID: 16826146059010221, guid: b9ebb298cd1e4084a989a455945bf028, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
+  m_sharedMaterial: {fileID: 6137584911582904113, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -201,8 +201,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nan
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b9ebb298cd1e4084a989a455945bf028, type: 2}
-  m_sharedMaterial: {fileID: 16826146059010221, guid: b9ebb298cd1e4084a989a455945bf028, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
+  m_sharedMaterial: {fileID: 6137584911582904113, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -335,8 +335,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: NaN
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b9ebb298cd1e4084a989a455945bf028, type: 2}
-  m_sharedMaterial: {fileID: 16826146059010221, guid: b9ebb298cd1e4084a989a455945bf028, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
+  m_sharedMaterial: {fileID: 6137584911582904113, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -491,7 +491,7 @@ GameObject:
   - component: {fileID: 152180043116429450}
   - component: {fileID: 8647284695763871326}
   m_Layer: 5
-  m_Name: UpgradeView
+  m_Name: UpgradeViewEpic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,7 +540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8076118, g: 0.3433962, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

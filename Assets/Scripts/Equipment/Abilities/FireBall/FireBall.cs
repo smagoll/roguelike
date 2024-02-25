@@ -26,6 +26,7 @@ public class FireBall : EquipmentDynamic, IProjectileController
         fireBall.fireBall = this;
         fireBall.direction = GameCalculator.GetRandomDirection();
         fireBall.pool = pool;
+        fireBall.UpdateProjectile();
     }
 
     public void Initialize(UpgradeAddFireball dataFireball)

@@ -11,6 +11,7 @@ public abstract class MenuElement : MonoBehaviour
     private SimpleScrollSnap simpleScrollSnap;
     public int numberPanel;
     public GameObject buttonSelected;
+    private AudioUI audio;
 
     private void Awake()
     {
