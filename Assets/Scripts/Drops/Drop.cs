@@ -2,22 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using UnityEngine.Pool;
 
 public abstract class Drop : MonoBehaviour
 {
+    public ObjectPool<Drop> pool;
     private readonly float speed = 4f;
     public bool isAttraction = false;
     public int chance;
+    public DropManager.DropType dropType;
     private GameObject player;
 
     private void Awake()
     {
         player = GameManager.player;
-    }
-
-    private void Start()
-    {
-        Fall();
     }
 
     private void Update()
@@ -34,16 +32,16 @@ public abstract class Drop : MonoBehaviour
         if (collision.CompareTag("CenterCollector"))
         {
             Action();
-            Destroy(gameObject);
+            pool.Release(this);
+            AudioGame.instance.PlaySFX(AudioGame.instance.dropTake);
         }
     }
 
-    public abstract void Action();
-
-    public void Fall()
+    private void OnEnable()
     {
-        var pointLanding = Random.onUnitSphere * Random.Range(0, 1);
-        //transform.DOScale(0.2f, 0.05f);
+        isAttraction = false;
     }
+
+    public abstract void Action();
 }
 

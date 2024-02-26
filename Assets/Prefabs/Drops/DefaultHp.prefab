@@ -135,4 +135,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttraction: 0
   chance: 5
+  dropType: 1
   countHp: 1

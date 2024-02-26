@@ -9,8 +9,6 @@ public class UpgradeView : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI title;
     [SerializeField]
-    private TextMeshProUGUI level;
-    [SerializeField]
     private TextMeshProUGUI description;
     [SerializeField]
     private Image image;
@@ -21,7 +19,6 @@ public class UpgradeView : MonoBehaviour
         {
             image.sprite = upgrade.icon;
             title.text = upgrade.title;
-            level.text = upgrade.rare.ToString();
             description.text = upgrade.description;
         }
     }

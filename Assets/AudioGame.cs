@@ -6,10 +6,16 @@ public class AudioGame : MonoBehaviour
 {
     public static AudioGame instance;
 
+    [Header("Audio Sources")]
     public AudioSource sfxSource;
     public AudioSource musicSource;
+    public AudioSource moveSource;
 
+    [Header("SFX")]
     public AudioClip hit;
+    public AudioClip dropTake;
+
+    [Header("Loops")]
     public AudioClip music;
 
     private void Awake()

@@ -31,7 +31,12 @@ public class PlayerController : MonoBehaviour
         character.animator.SetBool("isMove", isMove);
 
         if (isMove)
+        {
             directionLook = direction;
+            AudioGame.instance.moveSource.enabled = true;
+        }else
+            AudioGame.instance.moveSource.enabled = false;
+
 
         CheckFlip(direction);
     }

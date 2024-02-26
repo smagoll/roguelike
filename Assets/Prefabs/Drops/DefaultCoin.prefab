@@ -136,6 +136,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttraction: 0
   chance: 10
+  dropType: 2
   countCoin: 1
 --- !u!95 &643274274434521995
 Animator:

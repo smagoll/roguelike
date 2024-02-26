@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -24,7 +25,8 @@ public class Enemy : MonoBehaviour
 
     public int stageForOpen;
 
-    public GameObject[] drops;
+    public DropManager.DropType[] drops;
+    //public Drop[] drops;
     public Animator animator;
     public ParticleSystem hit;
 
@@ -175,11 +177,7 @@ public class Enemy : MonoBehaviour
     {
         foreach (var drop in drops)
         {
-            var randomNumber = Random.Range(0, 100);
-            if (randomNumber <= drop.GetComponent<Drop>().chance)
-            {
-                Instantiate(drop, transform.position, Quaternion.identity);
-            }
+            GlobalEventManager.Start_SpawnDrop(drop, transform.position);
         }
     }
 }

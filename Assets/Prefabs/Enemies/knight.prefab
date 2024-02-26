@@ -159,10 +159,9 @@ MonoBehaviour:
   isMove: 1
   isDeath: 0
   stageForOpen: 20
-  drops:
-  - {fileID: 2566861449976774461, guid: 576baa68b24a5604bbce3659e585857f, type: 3}
-  - {fileID: 2566861449976774461, guid: 49c11e9cf8351844294923b887b88710, type: 3}
+  drops: 000000000200000001000000
   animator: {fileID: 0}
+  hit: {fileID: 0}
 --- !u!58 &3344561361105422530
 CircleCollider2D:
   m_ObjectHideFlags: 0

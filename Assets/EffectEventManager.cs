@@ -18,6 +18,6 @@ public class EffectEventManager
     public static void Start_CreateHit(Transform transform)
     {
         createHit.Invoke(transform);
-        AudioGame.instance.PlaySFX(AudioGame.instance.hit);
+        //AudioGame.instance.PlaySFX(AudioGame.instance.hit);
     }
 }
