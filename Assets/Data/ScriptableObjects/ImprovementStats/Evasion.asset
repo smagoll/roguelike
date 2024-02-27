@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Evasion
   m_EditorClassIdentifier: 
   id: 5
-  icon: {fileID: 0}
+  icon: {fileID: 1195349977, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   title: "\u0423\u043A\u043B\u043E\u043D\u0435\u043D\u0438\u0435"
   step: 1
   rare: 1

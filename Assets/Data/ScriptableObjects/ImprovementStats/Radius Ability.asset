@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Radius Ability
   m_EditorClassIdentifier: 
   id: 3
-  icon: {fileID: 0}
+  icon: {fileID: -2007268844, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   title: "\u0420\u0430\u0434\u0438\u0443\u0441"
   step: 10
   rare: 1
+  statType: 0

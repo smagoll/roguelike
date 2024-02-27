@@ -16,5 +16,6 @@ public class UpgradeAddZipZap : UpgradeAbility
     {
         var zipZap = GameManager.player.AddComponent<ZipZap>();
         zipZap.Initialize(this);
+        GlobalEventManager.Start_AddItem(this);
     }
 }

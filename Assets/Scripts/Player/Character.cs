@@ -79,8 +79,13 @@ public class Character : MonoBehaviour
         {
             HP -= damage;
             animator.SetTrigger("hurt");
+            AudioGame.instance.PlayMainSFX(AudioGame.instance.playerDamage);
             CinemachineShake.Instance.ShakeCamera(2f, .1f);
             CinemachineShake.Instance.ShowDamageBackground();
+        }
+        else
+        {
+            AudioGame.instance.PlayMainSFX(AudioGame.instance.playerMiss);
         }
 
     }

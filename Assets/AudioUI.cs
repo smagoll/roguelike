@@ -9,7 +9,7 @@ public class AudioUI : MonoBehaviour
         click
     }
 
-    private AudioUI instance;
+    public static AudioUI instance;
 
     [SerializeField]
     private AudioSource musicSource;

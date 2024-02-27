@@ -55,8 +55,6 @@ public class Sword : Weapon
         attackRange = dataSword.attackRange;
         upgrades = dataSword.upgrades;
 
-        GlobalEventManager.Start_AddItem(dataSword);
-
         swordObject = Instantiate(prefabSword, gameObject.transform);
         swordObject.SetActive(false);
         swordObject.GetComponent<SwordObject>().sword = this;

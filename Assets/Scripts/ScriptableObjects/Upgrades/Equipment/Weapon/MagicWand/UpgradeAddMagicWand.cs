@@ -26,5 +26,6 @@ public class UpgradeAddMagicWand : UpgradeWeapon
     {
         var magicWand = GameManager.player.AddComponent<MagicWand>();
         magicWand.Initialize(prefabSphere, attackRange, radiusSphere, countSphere, speedFlight, distanceFlight, Damage, Frequency, upgrades) ;
+        GlobalEventManager.Start_AddItem(this);
     }
 }

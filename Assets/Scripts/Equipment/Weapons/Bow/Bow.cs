@@ -43,8 +43,6 @@ public class Bow : Weapon, IProjectileController
         upgrades = dataBow.upgrades;
         DistanceFlight = dataBow.distanceFlight;
 
-        GlobalEventManager.Start_AddItem(dataBow);
-
         isAttack = true;
     }
 }

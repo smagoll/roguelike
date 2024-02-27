@@ -24,7 +24,7 @@ public class FireBall : EquipmentDynamic, IProjectileController
         fireBall.transform.position = transform.position;
         fireBall.projectileController = this;
         fireBall.fireBall = this;
-        fireBall.direction = GameCalculator.GetRandomDirection();
+        fireBall.direction = GameManager.GetDirectionToCloseEnemy(transform, DistanceFlight);
         fireBall.pool = pool;
         fireBall.UpdateProjectile();
     }

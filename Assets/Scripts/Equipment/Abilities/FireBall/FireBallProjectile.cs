@@ -26,7 +26,8 @@ public class FireBallProjectile : Projectile
                 enemy.GetComponent<Enemy>().TakeDamage(fireBall.damage);
             }
         }
-
+        EffectManager.instance.CreateFireballExplosion(transform);
+        AudioGame.instance.PlayMainSFX(AudioGame.instance.fireballExplosion);
         pool.Release(this);
     }
 }

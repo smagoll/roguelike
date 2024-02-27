@@ -5,24 +5,79 @@ using UnityEngine.Pool;
 
 public class EffectManager : MonoBehaviour
 {
+    public static EffectManager instance;
+
+    [SerializeField]
+    private Transform effectTransform;
+    [Header("Gravity")]
     [SerializeField]
     private GameObject gravityExplosion;
     [SerializeField]
+    private GameObject prefabGravityEffect;
+
+    [Header("Fireball")]
+    [SerializeField]
+    private GameObject fireballExplosion;
+    [SerializeField]
+    private float scaleExplosion;
+
+    [Header("Hit")]
+    [SerializeField]
     private GameObject hit;
+
+    private ObjectPool<GameObject> poolGravityExplosion;
+    private ObjectPool<GameObject> poolFireballExplosion;
+    private ObjectPool<GameObject> poolHit;
+
+
 
     private void Awake()
     {
-        EffectEventManager.createGravityExplosion.AddListener(CreatePoolExplosion);
-        EffectEventManager.createHit.AddListener(CreateHit);
+        if (instance == null) instance = this;
+
+        poolFireballExplosion = CreatePool(fireballExplosion);
+        poolGravityExplosion = CreatePool(gravityExplosion);
+        poolHit = CreatePool(hit);
     }
 
-    private void CreatePoolExplosion(Transform transform)
+    public void CreateGravityExplosion(Transform transform)
     {
-        Instantiate(gravityExplosion, transform.position, Quaternion.identity);
+        var explosion = poolGravityExplosion.Get();
+        explosion.transform.position = transform.position;
     }
     
-    private void CreateHit(Transform transform)
+    public void CreateFireballExplosion(Transform transform)
     {
-        Instantiate(hit, transform.position, Quaternion.identity);
+        var explosion = poolFireballExplosion.Get();
+        explosion.transform.position = transform.position;
+        var fireBallController = GameManager.player.GetComponent<FireBall>();
+        explosion.transform.localScale = new Vector3(scaleExplosion, scaleExplosion, scaleExplosion) * fireBallController.scaleExplosionRadius / 100;
+    }
+    
+    public void CreateHit(Transform transform)
+    {
+        var hitEffect = poolHit.Get();
+        hitEffect.transform.position = transform.position;
+    }
+
+    public GameObject CreateGravityEffect(Transform transform)
+    {
+        return Instantiate(prefabGravityEffect, transform);
+    }
+
+    private ObjectPool<GameObject> CreatePool(GameObject gameObject)
+    {
+        ObjectPool<GameObject> pool = new(() =>
+        {
+            return Instantiate(gameObject, effectTransform);
+        }, obj => {
+            obj.gameObject.SetActive(true);
+        }, obj => {
+            obj.gameObject.SetActive(false);
+        }, obj => {
+            Destroy(obj);
+        }, false);
+
+        return pool;
     }
 }

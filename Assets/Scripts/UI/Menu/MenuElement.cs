@@ -11,11 +11,11 @@ public abstract class MenuElement : MonoBehaviour
     private SimpleScrollSnap simpleScrollSnap;
     public int numberPanel;
     public GameObject buttonSelected;
-    private AudioUI audio;
 
     private void Awake()
     {
         buttonSelected.GetComponent<Button>().onClick.AddListener(Select);
+        buttonSelected.GetComponent<Button>().onClick.AddListener(PlaySFXButton);
     }
 
     [Inject]
@@ -27,6 +27,11 @@ public abstract class MenuElement : MonoBehaviour
     private void Select()
     {
         simpleScrollSnap.GoToPanel(numberPanel);
+    }
+
+    private void PlaySFXButton()
+    {
+        AudioUI.instance.PlaySFX(AudioUI.instance.click);
     }
 
     public abstract void UpdateView();

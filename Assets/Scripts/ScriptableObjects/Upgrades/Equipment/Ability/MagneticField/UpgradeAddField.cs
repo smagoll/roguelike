@@ -14,5 +14,6 @@ public class UpgradeAddField : UpgradeAbility
     {
         var field = GameManager.player.AddComponent<MagneticField>();
         field.Initialize(this);
+        GlobalEventManager.Start_AddItem(this);
     }
 }

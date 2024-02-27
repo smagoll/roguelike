@@ -26,7 +26,6 @@ public class Enemy : MonoBehaviour
     public int stageForOpen;
 
     public DropManager.DropType[] drops;
-    //public Drop[] drops;
     public Animator animator;
     public ParticleSystem hit;
 
@@ -82,7 +81,7 @@ public class Enemy : MonoBehaviour
     {
         HP -= damage;
         GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, TextHit.Default);
-        EffectEventManager.Start_CreateHit(transform);
+        EffectManager.instance.CreateHit(transform);
     }
     
     public void TakeDamage(float damage, IEffectController[] effectControllers)
@@ -90,7 +89,7 @@ public class Enemy : MonoBehaviour
         HP -= damage;
 
         GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, TextHit.Default);
-        EffectEventManager.Start_CreateHit(transform);
+        EffectManager.instance.CreateHit(transform);
 
         foreach (var effectController in effectControllers)
         {
@@ -102,7 +101,7 @@ public class Enemy : MonoBehaviour
     {
         HP -= damage;
         GlobalEventManager.Start_CreateDamageHurt(transform.position, damage, textHit);
-        EffectEventManager.Start_CreateHit(transform);
+        EffectManager.instance.CreateHit(transform);
     }
 
     private void MoveToPlayer()

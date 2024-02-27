@@ -29,6 +29,7 @@ public class Lightning : Projectile
             
             collision.GetComponent<Enemy>().TakeDamage(damage);
             Instantiate(hit, transform.position, Quaternion.identity);
+            AudioGame.instance.PlaySmallSFX(AudioGame.instance.lightningCharge);
 
             if (sequence <= 0)
             {
@@ -44,6 +45,7 @@ public class Lightning : Projectile
 
     private void OnEnable()
     {
+        AudioGame.instance.PlaySmallSFX(AudioGame.instance.lightningCharge);
         isHit = false;
     }
 

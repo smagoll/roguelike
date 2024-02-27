@@ -15,5 +15,6 @@ public class UpgradeAddFireball : UpgradeAbility
     {
         var fireball = GameManager.player.AddComponent<FireBall>();
         fireball.Initialize(this);
+        GlobalEventManager.Start_AddItem(this);
     }
 }

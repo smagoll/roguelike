@@ -246,7 +246,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344303cefe33b2b41b30dd35858cfbff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isFlight: 1
   direction: {x: 0, y: 0}
+  startPosition: {x: 0, y: 0}
   bow: {fileID: 0}
 --- !u!50 &6892198238538163684
 Rigidbody2D:

@@ -7,13 +7,18 @@ public class AudioGame : MonoBehaviour
     public static AudioGame instance;
 
     [Header("Audio Sources")]
-    public AudioSource sfxSource;
+    public AudioSource sfxMainSource;
+    public AudioSource sfxSmallSource;
     public AudioSource musicSource;
     public AudioSource moveSource;
 
     [Header("SFX")]
-    public AudioClip hit;
     public AudioClip dropTake;
+    public AudioClip playerDamage;
+    public AudioClip playerMiss;
+    public AudioClip fireballExplosion;
+    public AudioClip lightningCharge;
+    public AudioClip magneticFieldPulse;
 
     [Header("Loops")]
     public AudioClip music;
@@ -29,8 +34,13 @@ public class AudioGame : MonoBehaviour
         musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip)
+    public void PlayMainSFX(AudioClip clip)
     {
-        sfxSource.PlayOneShot(clip);
+        sfxMainSource.PlayOneShot(clip);
+    }   
+    
+    public void PlaySmallSFX(AudioClip clip)
+    {
+        sfxSmallSource.PlayOneShot(clip);
     }    
 }

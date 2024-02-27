@@ -11,5 +11,11 @@ public class BackgroundBack : MonoBehaviour, IPointerDownHandler
     public void OnPointerDown(PointerEventData eventData)
     {
         window.SetActive(false);
+        Action();
+    }
+
+    public virtual void Action()
+    {
+        Debug.Log("Action");
     }
 }

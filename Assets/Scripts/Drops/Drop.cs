@@ -33,7 +33,7 @@ public abstract class Drop : MonoBehaviour
         {
             Action();
             pool.Release(this);
-            AudioGame.instance.PlaySFX(AudioGame.instance.dropTake);
+            AudioGame.instance.PlaySmallSFX(AudioGame.instance.dropTake);
         }
     }
 
