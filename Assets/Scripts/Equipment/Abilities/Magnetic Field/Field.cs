@@ -41,7 +41,7 @@ public class Field : MonoBehaviour
         {
             lastTimeAttack = Time.time;
             impulse.SendEvent("OnPlay");
-            AudioGame.instance.PlayMainSFX(AudioGame.instance.magneticFieldPulse);
+            AudioGame.instance.PlaySmallSFX(AudioGame.instance.magneticFieldPulse);
 
             if (enemiesCopy.Count == 0)
                 return;
