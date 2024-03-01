@@ -12,10 +12,11 @@ public class BackgroundBack : MonoBehaviour, IPointerDownHandler
     {
         window.SetActive(false);
         Action();
+        //AudioMenu.instance.PlayUI(AudioMenu.UISound.BackgroundBack);
     }
 
     public virtual void Action()
     {
-        Debug.Log("Action");
+        
     }
 }

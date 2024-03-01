@@ -13,6 +13,8 @@ public class PauseMenu : MonoBehaviour
     private Image imageHero;
     [SerializeField]
     private GameObject prefabEquipment;
+    [SerializeField]
+    private GameObject confirmation;
 
     private void Awake()
     {
@@ -34,4 +36,6 @@ public class PauseMenu : MonoBehaviour
                 break;
         }
     }
+
+    public void ShowConfirmation() => confirmation.SetActive(true);
 }

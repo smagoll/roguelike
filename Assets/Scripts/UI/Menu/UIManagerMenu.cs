@@ -40,7 +40,7 @@ public class UIManagerMenu : MonoBehaviour
 
     public void ButtonPlay()
     {
-        SceneManager.LoadScene("Game");
+        SceneTransition.LoadScene("Game");
     }
 
     public void ShowWindowUpgrade(int id, EquipmentType equipmentType)

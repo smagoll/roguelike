@@ -9,4 +9,5 @@ public class GameData
     public ImprovementStatData[] improvements;
     public Prices prices;
     public EquipmentSelectedData equipmentSelected = new();
+    public SettingsData settings = new();
 }

@@ -15,7 +15,7 @@ public abstract class MenuElement : MonoBehaviour
     private void Awake()
     {
         buttonSelected.GetComponent<Button>().onClick.AddListener(Select);
-        buttonSelected.GetComponent<Button>().onClick.AddListener(PlaySFXButton);
+        buttonSelected.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonNavigation());
     }
 
     [Inject]
@@ -27,11 +27,6 @@ public abstract class MenuElement : MonoBehaviour
     private void Select()
     {
         simpleScrollSnap.GoToPanel(numberPanel);
-    }
-
-    private void PlaySFXButton()
-    {
-        AudioUI.instance.PlaySFX(AudioUI.instance.click);
     }
 
     public abstract void UpdateView();

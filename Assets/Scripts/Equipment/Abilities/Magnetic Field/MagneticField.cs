@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class MagneticField : EquipmentStatic
@@ -8,6 +9,7 @@ public class MagneticField : EquipmentStatic
     private float frequency;
     public float scaleFrequency = 100;
     private float scaleRadius = 100;
+    public float Radius { get; set; }
 
     public GameObject prefabField;
     private GameObject field;
@@ -43,6 +45,8 @@ public class MagneticField : EquipmentStatic
         upgrades = data.upgrades;
         Frequency = data.Frequency;
         prefabField = data.prefabField;
+        Radius = data.Radius;
+
 
         CreateField();
     }

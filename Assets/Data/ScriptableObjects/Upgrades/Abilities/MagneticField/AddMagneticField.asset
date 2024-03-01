@@ -29,9 +29,12 @@ MonoBehaviour:
     value: 2
     step: 0.05
     clampValue: 0.3
+  - statType: 5
+    statUpgradeType: 0
+    value: 1
+    step: 0.02
+    clampValue: 5
   prefabField: {fileID: 7032785621556537540, guid: adb65e404ca031849bc111a8aafb7025, type: 3}
-  damage: 2
-  frequency: 0.8
   upgrades:
   - {fileID: 11400000, guid: c2f97fef0fca25d4cb9c69c722a669f8, type: 2}
   - {fileID: 11400000, guid: f6932c5d558d01e459874009084b0eb1, type: 2}

@@ -28,9 +28,9 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private Transform upgradesLayout;
 
-    private static bool isPause = false;
+    private bool isPause = false;
 
-    public static bool IsPause
+    public bool IsPause
     {
         get => isPause;
         set
@@ -44,6 +44,7 @@ public class GameUI : MonoBehaviour
     {
         GlobalEventManager.ShowUpgrades.AddListener(ShowUpgrades);
         GlobalEventManager.EndGame.AddListener(ShowEndWindow);
+        GlobalEventManager.PauseGame.AddListener(ButtonPause);
         GlobalEventManager.AddItem.AddListener(infoMenu.AddItem);
         GlobalEventManager.UpdateCoinGameText.AddListener(UpdateCoin);
     }
@@ -100,6 +101,7 @@ public class GameUI : MonoBehaviour
 
         upgradeView.GetComponent<UpgradeView>().upgrade = upgrade;
         upgradeView.GetComponent<Button>().onClick.AddListener(HideSelected);
+        upgradeView.GetComponent<Button>().onClick.AddListener(AudioGame.instance.PlayButtonUpgrade);
     }
     
     public void HideSelected()

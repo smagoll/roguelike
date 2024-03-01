@@ -74,27 +74,15 @@
     ],
     "prices": {
         "improvement": 5,
-        "chests": [
-            {
-                "title": "Обычный сундук",
-                "rare": 0,
-                "price": 500
-            },
-            {
-                "title": "Редкий сундук",
-                "rare": 1,
-                "price": 1000
-            },
-            {
-                "title": "Эпический сундук",
-                "rare": 2,
-                "price": 2000
-            }
-        ],
         "upgrade_abilities": 10,
         "upgrade_weapons": 20
     },
     "equipmentSelected": {
         "id_hero": 1
+    },
+    "settings":{
+        "id_language" : 0,
+        "music" : true,
+        "sounds" : true
     }
 }

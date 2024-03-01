@@ -58,6 +58,6 @@ public class Field : MonoBehaviour
 
     public void UpdateScale(float scaleScale)
     {
-        transform.localScale = scale * (scaleScale) / 100;
+        transform.localScale = scale * (scaleScale) / 100 * controller.Radius;
     }
 }

@@ -22,7 +22,10 @@ public class WindowUpgrade : MonoBehaviour
     [SerializeField]
     private Transform listStats;
     [SerializeField]
-    private GameObject prefabStatInfo;
+    private GameObject prefabStatInfo;    
+    
+    [SerializeField]
+    private MenuHeroes menuHeroes;
 
     private int price;
     private int startPrice;
@@ -86,6 +89,7 @@ public class WindowUpgrade : MonoBehaviour
             equipment.LevelUp();
             DataManager.instance.Save();
             UpdateInfo();
+            menuHeroes.UpdateView();
             GlobalEventManager.Start_UpdateCoinMenu();
         }
     }

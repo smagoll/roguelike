@@ -28,6 +28,7 @@ public class MenuHeroes : MenuElement
         {
             Transform transformEquipment = hero.stageForOpen <= DataManager.instance.gameData.record ? openCells : closeCells;
             var cellObject = Instantiate(prefabCell, transformEquipment);
+            cellObject.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonDefault());
             var cell = cellObject.GetComponent<CellHero>();
             cell.Init(hero.id);
         }

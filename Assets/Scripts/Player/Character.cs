@@ -31,6 +31,7 @@ public class Character : MonoBehaviour
             }
             if (value <= 0)
             {
+                GlobalEventManager.Start_UpdateHealthBar(0, MaxHP);
                 Death();
             }
             GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);

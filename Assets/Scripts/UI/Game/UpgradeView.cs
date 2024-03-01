@@ -30,6 +30,6 @@ public class UpgradeView : MonoBehaviour
         if (upgrade.UpgradeType == UpgradeType.Add)
             GlobalEventManager.Start_RemoveUpgrade(upgrade);
 
-        GameUI.IsPause = false;
+        GlobalEventManager.Start_PauseGame();
     }
 }

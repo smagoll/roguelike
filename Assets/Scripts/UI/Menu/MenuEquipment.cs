@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MenuEquipment : MenuElement
 {
@@ -27,6 +28,7 @@ public class MenuEquipment : MenuElement
         {
             Transform transformEquipment = ability.IsOpen ? openAbility : closeAbility;
             var cellObject = Instantiate(prefabCell, transformEquipment);
+            cellObject.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonDefault());
             var cell = cellObject.GetComponent<CellAbility>();
             cell.Init(ability.id);
         }

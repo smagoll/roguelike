@@ -33,7 +33,7 @@ MonoBehaviour:
   frequency: 1
   prefabSphere: {fileID: 8859960020742224401, guid: 3c8d8fc6292c13445a4106bf88ffc1ff, type: 3}
   countSphere: 1
-  radiusSphere: 0.15
+  radiusSphere: 0.2
   attackRange: 5
   distanceFlight: 5
   speedFlight: 3

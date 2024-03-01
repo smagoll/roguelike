@@ -22,6 +22,7 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<int> IncreaseCoinsData = new();
     public static UnityEvent<int> DecreaseCoinsData = new();
     public static UnityEvent EndGame = new();
+    public static UnityEvent PauseGame = new();
 
     public static void Start_ShowUpgrades(List<Upgrade> upgrades)
     {
@@ -91,6 +92,11 @@ public class GlobalEventManager : MonoBehaviour
     public static void Start_EndGame()
     {
         EndGame.Invoke();
+    }
+    
+    public static void Start_PauseGame()
+    {
+        PauseGame.Invoke();
     }
     
     public static void Start_ShowWindowUpgrade(int id, EquipmentType equipmentType)

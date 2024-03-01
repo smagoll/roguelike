@@ -13,6 +13,8 @@ public class Stone : Enemy
             {
                 var character = player.GetComponent<Character>();
                 character.TakeDamage(damage);
+                AudioGame.instance.PlaySmallSFX(AudioGame.instance.stoneExplosion);
+                EffectManager.instance.CreateStoneExplosion(transform);
                 DestroyEnemy();
             }
         }
