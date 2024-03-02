@@ -1,12 +1,13 @@
 ﻿using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class CellHero : Cell
 {
     [SerializeField]
-    private TextMeshProUGUI titleHero;
+    private LocalizeStringEvent titleHero;
     [SerializeField]
     private TextMeshProUGUI textBlock;
     [SerializeField]
@@ -31,7 +32,7 @@ public class CellHero : Cell
         image.sprite = selectedEquipment.sprite;
         this.id = selectedEquipment.Id;
         button.interactable = IsOpen;
-        titleHero.text = selectedEquipment.title;
+        titleHero.StringReference = selectedEquipment.title;
         iconWeapon.sprite = selectedEquipment.weapon.icon;
 
         var stageForOpen = DataManager.instance.gameData.heroes.FirstOrDefault(x => x.id == id).stageForOpen;

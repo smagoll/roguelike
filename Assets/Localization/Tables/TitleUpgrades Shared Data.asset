@@ -1,0 +1,128 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: TitleUpgrades Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: TitleUpgrades
+  m_TableCollectionNameGuidString: b5166ecd4fd1b564285200900e8913ca
+  m_Entries:
+  - m_Id: 4808988438528
+    m_Key: bowAttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5403304538112
+    m_Key: bowDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654799200256
+    m_Key: bowArrowThrough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5901243920384
+    m_Key: swordRangeAttack
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6135416107008
+    m_Key: swordDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6386843660288
+    m_Key: swordAttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6523699605504
+    m_Key: magicwandDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6826100535296
+    m_Key: fireballRadius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6993289687040
+    m_Key: fireballDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7169093939200
+    m_Key: fireballAttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8025906360320
+    m_Key: magneticfieldRadius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8461073788928
+    m_Key: magneticfieldAttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8634055274496
+    m_Key: magneticfieldDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8980584476672
+    m_Key: winddanceSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9198830891008
+    m_Key: winddanceDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9355291013120
+    m_Key: winddanceCountTornado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9530843607040
+    m_Key: zipzapDamage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9723903225856
+    m_Key: zipzapCountLighnings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10068230418432
+    m_Key: zipzapAttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11130853142528
+    m_Key: evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11309605990400
+    m_Key: hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11447095275520
+    m_Key: speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12045853143040
+    m_Key: zonedrop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20711331344384
+    m_Key: magicwandCountSphere
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21039132979200
+    m_Key: magicwandAttackSpeed
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6440513655607918633
+  references:
+    version: 2
+    RefIds:
+    - rid: 6440513655607918633
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1709375302546

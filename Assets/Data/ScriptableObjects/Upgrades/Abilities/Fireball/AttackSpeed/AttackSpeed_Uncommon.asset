@@ -14,6 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 2096904075, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 1
-  title: "\u0421\u0436\u0430\u0442\u0438\u0435"
+  title:
+    m_TableReference:
+      m_TableCollectionName: GUID:b5166ecd4fd1b564285200900e8913ca
+    m_TableEntryReference:
+      m_KeyId: 7169093939200
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: "+7% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"
   scaleAttackSpeed: 7
+  references:
+    version: 2
+    RefIds: []

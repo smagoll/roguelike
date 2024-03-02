@@ -14,7 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 8b78a4138e91c7e45b9bbdb847626c71, type: 2}
   rare: 2
-  title: "\u041C\u0435\u0447"
+  title:
+    m_TableReference:
+      m_TableCollectionName: GUID:796c47a68c2e7c4449e070c510b9bfc3
+    m_TableEntryReference:
+      m_KeyId: 384408760320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   description: "\u0445\u0443 \u0438\u0437 \u0445\u0443"
   id: 1
   equipmentType: 0
@@ -44,3 +52,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ac5e4630d5f84394cb8b3f97189ce48f, type: 2}
   - {fileID: 11400000, guid: e1bf624e2008bb7448fe52ff24815eba, type: 2}
   - {fileID: 11400000, guid: bfdf705958070a14b94c3636e7a3aacb, type: 2}
+  references:
+    version: 2
+    RefIds: []

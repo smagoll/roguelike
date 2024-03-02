@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UI Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UI
+  m_TableCollectionNameGuidString: 882d1121ec923a84ca4f5c34baa92799
+  m_Entries:
+  - m_Id: 247955468288
+    m_Key: play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13610861211648
+    m_Key: heroes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13678624387072
+    m_Key: equipment
+    m_Metadata:
+      m_Items: []
+  - m_Id: 13827392155648
+    m_Key: evolution
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14096788107264
+    m_Key: improve
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14332600266752
+    m_Key: abilities
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14533733920768
+    m_Key: exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14637572304896
+    m_Key: yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14678575820800
+    m_Key: no
+    m_Metadata:
+      m_Items: []
+  - m_Id: 14971673784320
+    m_Key: select
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6440513655607918616
+  references:
+    version: 2
+    RefIds:
+    - rid: 6440513655607918616
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1709360678402

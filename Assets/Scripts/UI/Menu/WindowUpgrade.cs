@@ -4,6 +4,7 @@ using System.Linq;
 using DanielLochner.Assets.SimpleScrollSnap;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 using Zenject;
 
@@ -12,7 +13,7 @@ public class WindowUpgrade : MonoBehaviour
     [SerializeField]
     private Image image;
     [SerializeField]
-    private TextMeshProUGUI nameEquipment;
+    private LocalizeStringEvent nameEquipment;
     [SerializeField]
     private TextMeshProUGUI numberLevel;
     [SerializeField]
@@ -54,7 +55,7 @@ public class WindowUpgrade : MonoBehaviour
                 break;
         }
         image.sprite = equipment.icon;
-        nameEquipment.text = equipment.title;
+        nameEquipment.StringReference = equipment.title;
         UpdateInfo();
     }
 

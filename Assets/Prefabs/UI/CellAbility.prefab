@@ -349,7 +349,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 0ea88cbccf1f91f4abf3a4df1a6510c1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -423,7 +423,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 2726865394996260824}
   fade: {fileID: 5482281100759451494}
-  button: {fileID: 6864026068527078278}
   textLevel: {fileID: 5023679852066009349}
 --- !u!114 &6864026068527078278
 MonoBehaviour:

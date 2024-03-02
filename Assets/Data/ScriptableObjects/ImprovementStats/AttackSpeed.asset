@@ -10,11 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39cb0a04c30adb74c83396579801f630, type: 3}
-  m_Name: Frequency
+  m_Name: AttackSpeed
   m_EditorClassIdentifier: 
   id: 4
   icon: {fileID: 1529791356, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
-  title: "\u0421\u043A\u043E\u0440\u043E\u0441\u0442\u044C \u0430\u0442\u0430\u043A\u0438"
+  title:
+    m_TableReference:
+      m_TableCollectionName: GUID:122f9001799d7294ca774c1c8ef79c9a
+    m_TableEntryReference:
+      m_KeyId: 914833027072
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   step: 5
   rare: 0
   statType: 1
+  references:
+    version: 2
+    RefIds: []

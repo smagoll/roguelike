@@ -59,16 +59,15 @@ public class Character : MonoBehaviour
         HP = maxHp;
 
         GlobalEventManager.IncreaseHP.AddListener(IncreaseHP);
+    }
 
+    private void Start()
+    {
         foreach (var upgrade in upgrades)
         {
             GlobalEventManager.Start_AddUpgrade(upgrade);
         }
 
-    }
-
-    private void Start()
-    {
         GlobalEventManager.Start_UpdateHealthBar(HP, MaxHP);
         weapon.Action();
     }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3549895333476240777}
   - component: {fileID: 1887189949396765865}
   - component: {fileID: -472353214070776562}
+  - component: {fileID: 1455355931945360127}
   m_Layer: 0
   m_Name: ProjectContext
   m_TagString: Untagged
@@ -103,6 +104,10 @@ MonoBehaviour:
       upgrade_weapons: 0
     equipmentSelected:
       id_hero: 0
+    settings:
+      id_language: 0
+      music: 0
+      sounds: 0
   weapons:
   - {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
   - {fileID: 11400000, guid: b499189d7fac57d4687e2098f3c362ac, type: 2}
@@ -123,3 +128,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 27b7d1b78da99084c9151970df3a1a5b, type: 2}
   - {fileID: 11400000, guid: 201250b7f0d14eb4d8dfaa48830b50fc, type: 2}
   countCoins: 0
+  localeSelector: {fileID: 1455355931945360127}
+--- !u!114 &1455355931945360127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 315347697102581070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c99a35f712ff54ebe5413b415dfd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

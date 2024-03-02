@@ -5,5 +5,5 @@ using Zenject;
 
 public abstract class UpgradeWeapon : UpgradeEquipment
 {
-    
+   
 }

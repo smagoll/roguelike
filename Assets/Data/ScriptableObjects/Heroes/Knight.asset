@@ -13,7 +13,15 @@ MonoBehaviour:
   m_Name: Knight
   m_EditorClassIdentifier: 
   id: 1
-  title: "\u0420\u044B\u0446\u0430\u0440\u044C"
+  title:
+    m_TableReference:
+      m_TableCollectionName: GUID:ff78ad574ed57704995a59b0c754efac
+    m_TableEntryReference:
+      m_KeyId: 243786330112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   sprite: {fileID: 352321488, guid: 73af8da1e1a849349a47f9b6bc705b25, type: 3}
   animator: {fileID: 9100000, guid: e4ac2ddfe30682a48b89974aced62f1f, type: 2}
   weapon: {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
@@ -33,3 +41,6 @@ MonoBehaviour:
     value: 0
     step: 0
     clampValue: 70
+  references:
+    version: 2
+    RefIds: []

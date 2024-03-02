@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization;
 
 [CreateAssetMenu(fileName = "Hero", menuName = "Hero")]
 public class Hero : ScriptableObject
 {
     [SerializeField]
     private int id;
-    public string title;
+    public LocalizedString title;
     public Sprite sprite;
 
     public RuntimeAnimatorController animator;

@@ -1,0 +1,123 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: TitleUpgrades_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: b5166ecd4fd1b564285200900e8913ca, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 4808988438528
+    m_Localized: Finger training
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5403304538112
+    m_Localized: Pulling the bowstring
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654799200256
+    m_Localized: Through punching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5901243920384
+    m_Localized: Elongation
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6135416107008
+    m_Localized: Sword tempering
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6386843660288
+    m_Localized: Relief
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6523699605504
+    m_Localized: Cleansing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6826100535296
+    m_Localized: Extension
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6993289687040
+    m_Localized: Incandescent
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7169093939200
+    m_Localized: Compression
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8025906360320
+    m_Localized: Current supply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8461073788928
+    m_Localized: Vibration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8634055274496
+    m_Localized: Recharging
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8980584476672
+    m_Localized: Blowing
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9198830891008
+    m_Localized: Compression
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9355291013120
+    m_Localized: Pumping the breather
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9530843607040
+    m_Localized: Current supply
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9723903225856
+    m_Localized: Conductor
+    m_Metadata:
+      m_Items: []
+  - m_Id: 10068230418432
+    m_Localized: Ka-Chow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11130853142528
+    m_Localized: Stretching
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11309605990400
+    m_Localized: Increased health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 11447095275520
+    m_Localized: Leg workout
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12045853143040
+    m_Localized: Deft hands
+    m_Metadata:
+      m_Items: []
+  - m_Id: 20711331344384
+    m_Localized: Reproduction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 21039132979200
+    m_Localized: Energy burst
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

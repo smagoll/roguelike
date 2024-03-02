@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization.Components;
 using UnityEngine.UI;
 
 public class UpgradeView : MonoBehaviour
@@ -7,7 +8,7 @@ public class UpgradeView : MonoBehaviour
     [HideInInspector]
     public Upgrade upgrade;
     [SerializeField]
-    private TextMeshProUGUI title;
+    private LocalizeStringEvent title;
     [SerializeField]
     private TextMeshProUGUI description;
     [SerializeField]
@@ -18,7 +19,7 @@ public class UpgradeView : MonoBehaviour
         if (upgrade != null)
         {
             image.sprite = upgrade.icon;
-            title.text = upgrade.title;
+            title.StringReference = upgrade.title;
             description.text = upgrade.description;
         }
     }

@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: DescriprionUpgrades_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 29177a015465301418ca88d45b00fa1d, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 66941890560
+    m_Localized: Hot stuff
+    m_Metadata:
+      m_Items: []
+  - m_Id: 494748315648
+    m_Localized: Bzzz...
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630945755136
+    m_Localized: Viu viu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861703778304
+    m_Localized: "\u041C\u043E\u043B\u043D\u0438\u044F, \u0432\u0430\u0443!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1258048729088
+    m_Localized: Adds bleeding to weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1563289202688
+    m_Localized: Attacks increase enemies' gravity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1777358090240
+    m_Localized: Unreal cannon
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1955033001984
+    m_Localized: Alohomora, baby!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2378083086336
+    m_Localized: Just steel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477280141312
+    m_Localized: to attack speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3850002771968
+    m_Localized: to damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3931552624640
+    m_Localized: to the explosion radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4272591482880
+    m_Localized: to radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5229467414528
+    m_Localized: to the number of tornadoes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411659591680
+    m_Localized: to movement speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5490298597376
+    m_Localized: to the number of bounces
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5755143729152
+    m_Localized: to evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5847741378560
+    m_Localized: health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5992591667200
+    m_Localized: to the loot collection radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6237627101184
+    m_Localized: The arrow goes through enemies
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6399791476736
+    m_Localized: to attack radius
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

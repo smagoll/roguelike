@@ -32,7 +32,7 @@ public class DataManager : MonoBehaviour
         filePath = Application.dataPath + "/Data/Json/GameData.json";
         Load();
     }
-    
+
     public void Save()
     {
         //string gameDataJson = JsonUtility.ToJson(gameData);

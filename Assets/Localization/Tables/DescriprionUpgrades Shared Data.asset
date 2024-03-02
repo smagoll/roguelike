@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: DescriprionUpgrades Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: DescriprionUpgrades
+  m_TableCollectionNameGuidString: 29177a015465301418ca88d45b00fa1d
+  m_Entries:
+  - m_Id: 66941890560
+    m_Key: fireball
+    m_Metadata:
+      m_Items: []
+  - m_Id: 494748315648
+    m_Key: magneticfield
+    m_Metadata:
+      m_Items: []
+  - m_Id: 630945755136
+    m_Key: winddance
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861703778304
+    m_Key: zipzap
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1258048729088
+    m_Key: bleeding
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1563289202688
+    m_Key: gravity
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1777358090240
+    m_Key: bow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1955033001984
+    m_Key: magicwand
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2378083086336
+    m_Key: sword
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3477280141312
+    m_Key: attackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3850002771968
+    m_Key: damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3931552624640
+    m_Key: explosionRadius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4272591482880
+    m_Key: radius
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5229467414528
+    m_Key: countTornado
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5411659591680
+    m_Key: speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5490298597376
+    m_Key: countLightnings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5755143729152
+    m_Key: evasion
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5847741378560
+    m_Key: hp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5992591667200
+    m_Key: zoneDrop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6237627101184
+    m_Key: arrowThrough
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6399791476736
+    m_Key: rangeAttack
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 6440513655607918647
+  references:
+    version: 2
+    RefIds:
+    - rid: 6440513655607918647
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1709399061101
