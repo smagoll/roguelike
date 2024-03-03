@@ -23,8 +23,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  description: "\u0414\u043E\u0431\u0430\u0432\u043B\u044F\u0435\u0442 \u043A\u0440\u043E\u0432\u043E\u0442\u0435\u0447\u0435\u043D\u0438\u0435
-    \u043A \u043E\u0440\u0443\u0436\u0438\u044E"
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:29177a015465301418ca88d45b00fa1d
+    m_TableEntryReference:
+      m_KeyId: 1258048729088
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   stats:
   - statType: 6
     statUpgradeType: 0

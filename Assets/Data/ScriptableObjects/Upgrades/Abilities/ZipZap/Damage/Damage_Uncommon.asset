@@ -23,7 +23,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  description: "+3 \u043A \u0443\u0440\u043E\u043D\u0443"
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:29177a015465301418ca88d45b00fa1d
+    m_TableEntryReference:
+      m_KeyId: 3850002771968
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   damage: 3
   references:
     version: 2

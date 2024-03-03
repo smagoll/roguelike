@@ -16,7 +16,8 @@ MonoBehaviour:
     m_Code: en
   m_SharedData: {fileID: 11400000, guid: 29177a015465301418ca88d45b00fa1d, type: 2}
   m_Metadata:
-    m_Items: []
+    m_Items:
+    - rid: 894650693498699778
   m_TableData:
   - m_Id: 66941890560
     m_Localized: Hot stuff
@@ -31,7 +32,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 861703778304
-    m_Localized: "\u041C\u043E\u043B\u043D\u0438\u044F, \u0432\u0430\u0443!"
+    m_Localized: Lightning, wow!
     m_Metadata:
       m_Items: []
   - m_Id: 1258048729088
@@ -55,53 +56,73 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3477280141312
-    m_Localized: to attack speed
+    m_Localized: ' to attack speed'
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 3850002771968
-    m_Localized: to damage
+    m_Localized: +{0} to damage
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 3931552624640
-    m_Localized: to the explosion radius
+    m_Localized: +{0}% to the explosion radius
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 4272591482880
-    m_Localized: to radius
+    m_Localized: +{0}% to radius
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 5229467414528
-    m_Localized: to the number of tornadoes
+    m_Localized: +{0} to the number of tornadoes
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 5411659591680
-    m_Localized: to movement speed
+    m_Localized: +{0}% to movement speed
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 5490298597376
-    m_Localized: to the number of bounces
+    m_Localized: +{0} to the number of bounces
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 5755143729152
-    m_Localized: to evasion
+    m_Localized: +{0}% to evasion
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 5847741378560
-    m_Localized: health
+    m_Localized: +{0}% health
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 5992591667200
-    m_Localized: to the loot collection radius
+    m_Localized: +{0}% to the loot collection radius
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
   - m_Id: 6237627101184
     m_Localized: The arrow goes through enemies
     m_Metadata:
       m_Items: []
   - m_Id: 6399791476736
-    m_Localized: to attack radius
+    m_Localized: +{0}% to attack radius
     m_Metadata:
-      m_Items: []
+      m_Items:
+      - rid: 894650693498699778
+  - m_Id: 201652812054528
+    m_Localized: +{0} sphere
+    m_Metadata:
+      m_Items:
+      - rid: 894650693498699778
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 894650693498699778
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 00300c9e2903000000304c11d205000000304c427305000000308c885105000000304cf93b05000000304c4ffe04000000300c00ec04000000308c94c104000000304ccae20300000030cc629303000000300c668003000000003bf466b70000

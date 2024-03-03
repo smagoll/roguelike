@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8605032718255692537}
   - component: {fileID: 1709320077843490073}
   - component: {fileID: 5818808957977614523}
-  - component: {fileID: 7780738628140819910}
+  - component: {fileID: 3959414250552791700}
   m_Layer: 5
   m_Name: Title
   m_TagString: Untagged
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &7780738628140819910
+--- !u!114 &3959414250552791700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,6 +186,7 @@ GameObject:
   - component: {fileID: 5905486109682252589}
   - component: {fileID: 4403988030801981318}
   - component: {fileID: 3316305820654366764}
+  - component: {fileID: 6199247746055085829}
   m_Layer: 5
   m_Name: Description
   m_TagString: Untagged
@@ -309,6 +310,46 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &6199247746055085829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3837400889162966463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56eb0353ae6e5124bb35b17aff880f16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StringReference:
+    m_TableReference:
+      m_TableCollectionName: 
+    m_TableEntryReference:
+      m_KeyId: 0
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  m_FormatArguments: []
+  m_UpdateString:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3316305820654366764}
+        m_TargetAssemblyTypeName: TMPro.TMP_Text, Unity.TextMeshPro
+        m_MethodName: set_text
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  references:
+    version: 2
+    RefIds: []
 --- !u!1 &4991373294213275218
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,8 +438,9 @@ GameObject:
   - component: {fileID: 3531204295848909424}
   - component: {fileID: 152180043116429450}
   - component: {fileID: 8647284695763871326}
+  - component: {fileID: 4800476371117289023}
   m_Layer: 5
-  m_Name: UpgradeViewEpic
+  m_Name: UpgradeView
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -453,7 +495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -682367728, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
+  m_Sprite: {fileID: 151013651, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -482,7 +524,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 3
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -519,18 +561,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpgradeView, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8647284695763871326
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -544,9 +574,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upgrade: {fileID: 0}
-  title: {fileID: 7780738628140819910}
-  description: {fileID: 3316305820654366764}
+  title: {fileID: 3959414250552791700}
+  description: {fileID: 6199247746055085829}
   image: {fileID: 8966908613165870825}
+  background: {fileID: 3531204295848909424}
+  backgroundCommon: {fileID: 151013651, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
+  backgroundUncommon: {fileID: -1341074318, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
+  backgroundEpic: {fileID: -682367728, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
+--- !u!95 &4800476371117289023
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7140211887437202004}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d1f0ac1cc94029b46a5b1f589b5c1a25, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8345858988065015017
 GameObject:
   m_ObjectHideFlags: 0

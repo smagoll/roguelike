@@ -99,6 +99,10 @@ MonoBehaviour:
     m_Key: rangeAttack
     m_Metadata:
       m_Items: []
+  - m_Id: 201652812054528
+    m_Key: countSphere
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

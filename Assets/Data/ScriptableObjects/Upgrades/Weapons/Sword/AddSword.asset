@@ -23,7 +23,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  description: "\u0445\u0443 \u0438\u0437 \u0445\u0443"
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:29177a015465301418ca88d45b00fa1d
+    m_TableEntryReference:
+      m_KeyId: 2378083086336
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   id: 1
   equipmentType: 0
   stats:

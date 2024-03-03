@@ -23,8 +23,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  description: "+1 \u043A \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0443
-    \u043E\u0442\u0441\u043A\u043E\u043A\u043E\u0432"
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:29177a015465301418ca88d45b00fa1d
+    m_TableEntryReference:
+      m_KeyId: 5490298597376
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   count: 1
   references:
     version: 2

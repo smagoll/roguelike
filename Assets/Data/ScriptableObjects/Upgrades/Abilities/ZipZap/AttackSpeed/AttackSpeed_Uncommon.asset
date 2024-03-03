@@ -23,7 +23,15 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  description: "+7% \u043A \u0441\u043A\u043E\u0440\u043E\u0441\u0442\u0438 \u0430\u0442\u0430\u043A\u0438"
+  description:
+    m_TableReference:
+      m_TableCollectionName: GUID:29177a015465301418ca88d45b00fa1d
+    m_TableEntryReference:
+      m_KeyId: 3477280141312
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   scaleAttackSpeed: 7
   references:
     version: 2

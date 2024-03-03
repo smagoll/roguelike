@@ -944,9 +944,7 @@ MonoBehaviour:
   textCountCoins: {fileID: 922480852}
   endWindow: {fileID: 1645060744}
   infoMenu: {fileID: 1313877646}
-  upgradeViewCommon: {fileID: 7140211887437202004, guid: 479567e1b7e30c74e96c96c80943f8a2, type: 3}
-  upgradeViewUncommon: {fileID: 7140211887437202004, guid: e0b2d73d0620e904887aa6e24f1f47c5, type: 3}
-  upgradeViewEpic: {fileID: 7140211887437202004, guid: 2b44f2691eb06bd478e3983b55491f57, type: 3}
+  prefabUpgradeView: {fileID: 7140211887437202004, guid: 479567e1b7e30c74e96c96c80943f8a2, type: 3}
   upgradesLayout: {fileID: 983722198}
 --- !u!114 &370693776
 MonoBehaviour:
