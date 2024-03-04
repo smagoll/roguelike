@@ -22,7 +22,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  sprite: {fileID: 21300000, guid: 27b8bd925d8e9b84aa968002688ac492, type: 3}
+  sprite: {fileID: -1863318054, guid: 27b8bd925d8e9b84aa968002688ac492, type: 3}
   animator: {fileID: 9100000, guid: a0bb351e2efd2484c990ed2677d1c44a, type: 2}
   weapon: {fileID: 11400000, guid: 0582b85b56127804fa3c4c3319b54d71, type: 2}
   stats:

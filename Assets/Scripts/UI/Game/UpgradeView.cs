@@ -13,28 +13,7 @@ public class UpgradeView : MonoBehaviour
     private LocalizeStringEvent description;
     [SerializeField]
     private Image image;
-    [SerializeField]
-    private Image background;
 
-    [Header("Backgrounds")]
-    [SerializeField]
-    private Sprite backgroundCommon;
-    [SerializeField]
-    private Sprite backgroundUncommon;
-    [SerializeField]
-    private Sprite backgroundEpic;
-
-
-    private void Start()
-    {
-        if (upgrade != null)
-        {
-            image.sprite = upgrade.icon;
-            title.StringReference = upgrade.title;
-            description.StringReference = upgrade.Description;
-            SetBackground(upgrade.rare);
-        }
-    }
 
     public void SelectUpgrade()
     {
@@ -46,19 +25,14 @@ public class UpgradeView : MonoBehaviour
         GlobalEventManager.Start_PauseGame();
     }
 
-    private void SetBackground(RareType rare)
+    public void Initialize(Upgrade upgrade)
     {
-        switch (rare)
+        if (upgrade != null)
         {
-            case RareType.Common:
-                background.sprite = backgroundCommon;
-                break;
-            case RareType.Uncommon:
-                background.sprite = backgroundUncommon;
-                break;
-            case RareType.Epic:
-                background.sprite = backgroundEpic;
-                break;
+            this.upgrade = upgrade;
+            image.sprite = upgrade.icon;
+            title.StringReference = upgrade.title;
+            description.StringReference = upgrade.Description;
         }
     }
 }

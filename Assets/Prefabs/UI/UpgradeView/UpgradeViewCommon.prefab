@@ -75,8 +75,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4289572269
-  m_fontColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+    rgba: 4278848010
+  m_fontColor: {r: 0.03773582, g: 0.03773582, b: 0.03773582, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -440,7 +440,7 @@ GameObject:
   - component: {fileID: 8647284695763871326}
   - component: {fileID: 4800476371117289023}
   m_Layer: 5
-  m_Name: UpgradeView
+  m_Name: UpgradeViewCommon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -488,7 +488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -577,10 +577,6 @@ MonoBehaviour:
   title: {fileID: 3959414250552791700}
   description: {fileID: 6199247746055085829}
   image: {fileID: 8966908613165870825}
-  background: {fileID: 3531204295848909424}
-  backgroundCommon: {fileID: 151013651, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
-  backgroundUncommon: {fileID: -1341074318, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
-  backgroundEpic: {fileID: -682367728, guid: 71f6a5f648d737144bc068f904dc2500, type: 3}
 --- !u!95 &4800476371117289023
 Animator:
   serializedVersion: 5
@@ -593,7 +589,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: d1f0ac1cc94029b46a5b1f589b5c1a25, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0

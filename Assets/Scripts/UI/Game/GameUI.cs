@@ -24,7 +24,11 @@ public class GameUI : MonoBehaviour
     private PauseMenu infoMenu;
 
     [SerializeField]
-    private GameObject prefabUpgradeView;
+    private GameObject upgradeViewCommon;
+    [SerializeField]
+    private GameObject upgradeViewUncommon;
+    [SerializeField]
+    private GameObject upgradeViewEpic;
     [SerializeField]
     private Transform upgradesLayout;
 
@@ -84,10 +88,22 @@ public class GameUI : MonoBehaviour
 
     private void CreateUpgradeView(Upgrade upgrade)
     {
+        GameObject upgradeView = new();
 
-        var upgradeView = Instantiate(prefabUpgradeView, upgradesLayout);
-
-        upgradeView.GetComponent<UpgradeView>().upgrade = upgrade;
+        switch (upgrade.rare)
+        {
+            case RareType.Common:
+                upgradeView = Instantiate(upgradeViewCommon, upgradesLayout);
+                break;
+            case RareType.Uncommon:
+                upgradeView = Instantiate(upgradeViewUncommon, upgradesLayout);
+                break;
+            case RareType.Epic:
+                upgradeView = Instantiate(upgradeViewEpic, upgradesLayout);
+                break;
+        }
+        
+        upgradeView.GetComponent<UpgradeView>().Initialize(upgrade);
         upgradeView.GetComponent<Button>().onClick.AddListener(HideSelected);
         upgradeView.GetComponent<Button>().onClick.AddListener(AudioGame.instance.PlayButtonUpgrade);
     }

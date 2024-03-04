@@ -36,7 +36,7 @@ public class CellHero : Cell
         iconWeapon.sprite = selectedEquipment.weapon.icon;
 
         var stageForOpen = DataManager.instance.gameData.heroes.FirstOrDefault(x => x.id == id).stageForOpen;
-        textBlock.text = $"Необходимо пройти {stageForOpen} стадию";
+        textBlock.text = stageForOpen.ToString();
 
         foreach (var stat in selectedEquipment.weapon.stats)
         {
