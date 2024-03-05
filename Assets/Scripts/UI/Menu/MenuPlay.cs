@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -29,7 +26,7 @@ public class MenuPlay : MenuElement
     public void UpdateHero()
     {
         var hero = DataManager.instance.heroes.FirstOrDefault(x => x.Id == DataManager.instance.gameData.equipmentSelected.id_hero);
-        iconHero.sprite = hero.sprite;
+        if (hero != null) iconHero.sprite = hero.sprite;
     }
 
     public override void UpdateView()

@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Localization;
 
 public class LanguageChanger : MonoBehaviour
 {
@@ -18,10 +15,10 @@ public class LanguageChanger : MonoBehaviour
         dropdown.onValueChanged.AddListener(SetLocalization);
     }
 
-    private void SetLocalization(int id_language)
+    private void SetLocalization(int idLanguage)
     {
-        DataManager.instance.gameData.settings.id_language = id_language;
+        DataManager.instance.gameData.settings.id_language = idLanguage;
         DataManager.instance.Save();
-        LocaleSelector.instance.UpdateLocalization();
+        LocaleSelector.Instance.UpdateLocalization();
     }
 }

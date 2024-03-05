@@ -15,6 +15,8 @@ public class UIManagerMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textRecord;
 
+    [SerializeField]
+    private UIAnimation[] buttonsNavigation;
 
     private void Awake()
     {
@@ -26,6 +28,7 @@ public class UIManagerMenu : MonoBehaviour
     {
         UpdateCoinText();
         UpdateRecord();
+        SequenceAnimated(buttonsNavigation);
     }
 
     public void UpdateCoinText()
@@ -55,6 +58,20 @@ public class UIManagerMenu : MonoBehaviour
                 windowUpgradeAbility.SetInfo(id, equipmentType);
                 windowUpgradeAbility.gameObject.SetActive(true);
                 break;
+        }
+    }
+
+    public void SequenceAnimated(UIAnimation[] uiAnimations)
+    {
+        StartCoroutine(SequenceAnimation(uiAnimations));
+    }
+
+    IEnumerator SequenceAnimation(UIAnimation[] uiAnimations)
+    {
+        foreach (var uiAnimation in uiAnimations)
+        {
+            uiAnimation.AnimationIn();
+            yield return new WaitForSeconds(.25f);
         }
     }
 }

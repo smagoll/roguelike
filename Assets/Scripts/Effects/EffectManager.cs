@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
+using DG.Tweening;
 
 public class EffectManager : MonoBehaviour
 {
@@ -92,4 +93,6 @@ public class EffectManager : MonoBehaviour
 
         return pool;
     }
+
+
 }

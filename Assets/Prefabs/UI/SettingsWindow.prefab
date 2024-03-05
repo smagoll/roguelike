@@ -1826,6 +1826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5281151857218594366}
   - component: {fileID: 1482298332152800758}
+  - component: {fileID: 1802425738261729859}
   m_Layer: 5
   m_Name: SettingsWindow
   m_TagString: Untagged
@@ -1866,6 +1867,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28eb0f7f7c424c541ba5e74e5673356f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1802425738261729859
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6469241771992849179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ef079404a520245b75ff2f1a761d3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiAnimation: 1
+  rectTransform: {fileID: 5281151857218594366}
+  fadeTime: 0.7
 --- !u!1 &6641569504705872821
 GameObject:
   m_ObjectHideFlags: 0

@@ -56,7 +56,7 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 3477280141312
-    m_Localized: ' to attack speed'
+    m_Localized: +{0}% to attack speed
     m_Metadata:
       m_Items:
       - rid: 894650693498699778

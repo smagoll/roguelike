@@ -55,6 +55,18 @@ MonoBehaviour:
     m_Key: select
     m_Metadata:
       m_Items: []
+  - m_Id: 1144438369484800
+    m_Key: revive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1158703713288192
+    m_Key: aristocracy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1218448054747136
+    m_Key: double reward
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

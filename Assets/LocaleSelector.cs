@@ -1,14 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
 
 public class LocaleSelector : MonoBehaviour
 {
-    public static LocaleSelector instance;
-    private bool active = false;
+    public static LocaleSelector Instance;
+    private bool active;
 
-    private void Awake() { if (instance == null) instance = this; }
+    private void Awake() { if (Instance == null) Instance = this; }
 
     public void UpdateLocalization()
     {

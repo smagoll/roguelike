@@ -58,6 +58,18 @@ MonoBehaviour:
     m_Localized: Select
     m_Metadata:
       m_Items: []
+  - m_Id: 1144438369484800
+    m_Localized: Revive
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1158703713288192
+    m_Localized: Aristocracy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1218448054747136
+    m_Localized: Double reward
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

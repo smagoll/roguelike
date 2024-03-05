@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Zenject;
 
 public class GameUI : MonoBehaviour
 {
@@ -32,8 +31,9 @@ public class GameUI : MonoBehaviour
     [SerializeField]
     private Transform upgradesLayout;
 
-    private bool isPause = false;
+    private bool isPause;
 
+    
     public bool IsPause
     {
         get => isPause;
@@ -119,7 +119,7 @@ public class GameUI : MonoBehaviour
         }
     }
 
-    public void ButtonOK()
+    public void ButtonOk()
     {
         HideSelected();
     }
@@ -144,9 +144,8 @@ public class GameUI : MonoBehaviour
 
     private void UpdateCoin(int coins)
     {
-        var scale = textCountCoins.transform.localScale;
         DOTween.Sequence().AppendCallback(() => textCountCoins.text = coins.ToString())
-            .Append(textCountCoins.transform.DOScale(1.3f, 0.1f))
+            .Append(textCountCoins.transform.DOScale(1.2f, 0.1f))
             .Append(textCountCoins.transform.DOScale(1f, 0.1f));
     }
 }

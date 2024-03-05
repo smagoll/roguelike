@@ -21,6 +21,7 @@ public class AudioGame : MonoBehaviour, ISwitchAudio
     public AudioClip stoneExplosion;
     public AudioClip lightningCharge;
     public AudioClip magneticFieldPulse;
+    public AudioClip revive;
 
     [Header("UI")]
     public AudioClip button_click;
