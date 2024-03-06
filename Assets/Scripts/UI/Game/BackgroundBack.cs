@@ -1,7 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class BackgroundBack : MonoBehaviour, IPointerDownHandler
 {
@@ -12,7 +12,6 @@ public class BackgroundBack : MonoBehaviour, IPointerDownHandler
     {
         window.SetActive(false);
         Action();
-        //AudioMenu.instance.PlayUI(AudioMenu.UISound.BackgroundBack);
     }
 
     public virtual void Action()

@@ -1,9 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Zenject;
 
 public class UIManagerMenu : MonoBehaviour
 {
@@ -15,9 +11,6 @@ public class UIManagerMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textRecord;
 
-    [SerializeField]
-    private UIAnimation[] buttonsNavigation;
-
     private void Awake()
     {
         GlobalEventManager.UpdateCoinMenu.AddListener(UpdateCoinText);
@@ -28,7 +21,6 @@ public class UIManagerMenu : MonoBehaviour
     {
         UpdateCoinText();
         UpdateRecord();
-        SequenceAnimated(buttonsNavigation);
     }
 
     public void UpdateCoinText()
@@ -46,32 +38,21 @@ public class UIManagerMenu : MonoBehaviour
         SceneTransition.LoadScene("Game");
     }
 
-    public void ShowWindowUpgrade(int id, EquipmentType equipmentType)
+    public void ShowWindowUpgrade(Cell cell, EquipmentType equipmentType)
     {
         switch (equipmentType)
         {
             case EquipmentType.Weapon:
-                windowUpgradeWeapon.SetInfo(id, equipmentType);
-                windowUpgradeWeapon.gameObject.SetActive(true);
+                windowUpgradeWeapon.SetInfo(cell, equipmentType);
+                if (!windowUpgradeWeapon.isActiveAndEnabled)
+                    windowUpgradeWeapon.gameObject.SetActive(true);
+                else
+                    windowUpgradeWeapon.animation.AnimationIn();
                 break;
             case EquipmentType.Ability:
-                windowUpgradeAbility.SetInfo(id, equipmentType);
+                windowUpgradeAbility.SetInfo(cell, equipmentType);
                 windowUpgradeAbility.gameObject.SetActive(true);
                 break;
-        }
-    }
-
-    public void SequenceAnimated(UIAnimation[] uiAnimations)
-    {
-        StartCoroutine(SequenceAnimation(uiAnimations));
-    }
-
-    IEnumerator SequenceAnimation(UIAnimation[] uiAnimations)
-    {
-        foreach (var uiAnimation in uiAnimations)
-        {
-            uiAnimation.AnimationIn();
-            yield return new WaitForSeconds(.25f);
         }
     }
 }

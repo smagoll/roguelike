@@ -7,9 +7,9 @@ public class StatInfoWithUpgradeUI : StatInfoUI
     private TextMeshProUGUI valueNext;
 
 
-    public override void Initialize(int level, Stat stat)
+    public override void UpdateStat(int level)
     {
-        base.Initialize(level, stat);
-        valueNext.text = stat.GetValue(level + 1).ToString();
+        base.UpdateStat(level);
+        valueNext.text = Stat.GetValue(level + 1).ToString();
     }
 }

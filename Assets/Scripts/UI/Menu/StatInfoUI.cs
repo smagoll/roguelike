@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
@@ -12,10 +10,18 @@ public class StatInfoUI : MonoBehaviour
     [SerializeField]
     private Image icon;
 
+    public Stat Stat { get; set; }
 
-    public virtual void Initialize(int level, Stat stat)
+
+    public void Initialize(int level, Stat stat)
     {
-        value.text = stat.GetValue(level).ToString();
-        icon.sprite = DataManager.instance.improvements.FirstOrDefault(x => x.statType == stat.Type).icon;
+        Stat = stat;
+        UpdateStat(level);
+        icon.sprite = DataManager.instance.improvements.FirstOrDefault(x => x.statType == stat.Type)?.icon;
+    }
+
+    public virtual void UpdateStat(int level)
+    {
+        value.text = Stat.GetValue(level).ToString();
     }
 }

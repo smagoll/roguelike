@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
@@ -15,15 +13,22 @@ public class HeroInfoUI : MonoBehaviour
     [SerializeField]
     private LocalizeStringEvent nameHero;
     [SerializeField]
-    private GameObject prefabStatInfo;
+    private StatInfoUI prefabStatInfo;
     [SerializeField]
     private Transform listWeaponsStats;
     [SerializeField]
     private WindowUpgrade windowUpgrade;
 
     private Hero hero;
+    private List<StatInfoUI> stats;
+    private UIAnimation animation;
 
-    void Start()
+    private void Awake()
+    {
+        animation = GetComponent<UIAnimation>();
+    }
+
+    private void Start()
     {
         UpdateInfo();
     }
@@ -34,22 +39,41 @@ public class HeroInfoUI : MonoBehaviour
 
         var idHero = DataManager.instance.gameData.equipmentSelected.id_hero;
         hero = DataManager.instance.heroes.FirstOrDefault(x => x.Id == idHero);
-        iconHero.sprite = hero.sprite;
-        iconWeapon.sprite = hero.weapon.icon;
-        nameHero.StringReference = hero.title;
+        if (hero != null)
+        {
+            iconHero.sprite = hero.sprite;
+            iconWeapon.sprite = hero.weapon.icon;
+            nameHero.StringReference = hero.title;
+        }
+        CreateStats();
+    }
 
+    private void CreateStats()
+    {
+        stats = new List<StatInfoUI>();
         foreach (var stat in hero.weapon.stats)
         {
             var statInfo = Instantiate(prefabStatInfo, listWeaponsStats);
-            statInfo.GetComponent<StatInfoUI>().Initialize(hero.weapon.Level, stat);
+            stats.Add(statInfo);
+            statInfo.Initialize(hero.weapon.Level, stat);
         }
+    }
 
+    public void UpdateStats()
+    {
+        foreach (var stat in stats)
+        {
+            stat.UpdateStat(hero.weapon.Level); 
+        }
+        
     }
 
     public void SelectHero()
     {
         DataManager.instance.gameData.equipmentSelected.id_hero = windowUpgrade.equipment.Id;
         DataManager.instance.Save();
+        animation.AnimationIn();
+        windowUpgrade.gameObject.GetComponent<UIAnimation>().AnimationOut();
         UpdateInfo();
     }
 }

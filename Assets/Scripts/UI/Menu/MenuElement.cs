@@ -13,12 +13,6 @@ public abstract class MenuElement : MonoBehaviour
     public int numberPanel;
     public GameObject buttonSelected;
 
-    private void Awake()
-    {
-        //buttonSelected.GetComponent<Button>().onClick.AddListener(Select);
-        //buttonSelected.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonNavigation());
-    }
-
     [Inject]
     public void Construct(SimpleScrollSnap simpleScrollSnap)
     {
@@ -30,5 +24,5 @@ public abstract class MenuElement : MonoBehaviour
         simpleScrollSnap.GoToPanel(numberPanel);
     }
 
-    public abstract void UpdateView();
+    public abstract void EnterView();
 }

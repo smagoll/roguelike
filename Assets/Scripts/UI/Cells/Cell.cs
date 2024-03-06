@@ -11,7 +11,8 @@ public abstract class Cell : MonoBehaviour
     public GameObject fade;
 
     private bool isOpen = false;
-
+    public int id;
+    
     public bool IsOpen
     {
         get => isOpen;
@@ -23,6 +24,7 @@ public abstract class Cell : MonoBehaviour
     }
 
     public abstract void Init(int id);
+    public abstract void UpdateCell();
 
     public virtual void SetFade(bool isOpen)
     {

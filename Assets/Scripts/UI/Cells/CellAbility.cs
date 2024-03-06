@@ -1,15 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Zenject;
 
 public class CellAbility : Cell
 {
-    private int id;
     [SerializeField]
     private TextMeshProUGUI textLevel;
 
@@ -22,6 +17,11 @@ public class CellAbility : Cell
         textLevel.text = selectedEquipment.Level.ToString();
     }
 
+    public override void UpdateCell()
+    {
+        
+    }
+
     public override void SetFade(bool isOpen)
     {
         base.SetFade(isOpen);
@@ -30,6 +30,6 @@ public class CellAbility : Cell
 
     public void ShowWindowUpgrade()
     {
-        GlobalEventManager.Start_ShowWindowUpgrade(id, EquipmentType.Ability);
+        GlobalEventManager.Start_ShowWindowUpgrade(this, EquipmentType.Ability);
     }
 }

@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
 
 public class MenuHeroes : MenuElement
 {
@@ -16,12 +13,7 @@ public class MenuHeroes : MenuElement
     [SerializeField]
     private HeroInfoUI heroInfoUI;
 
-    private void Start()
-    {
-        //UpdateCells();
-    }
-
-    public void UpdateCells()
+    private void UpdateCells()
     {
         ClearCells();
         StopAllCoroutines();
@@ -40,10 +32,11 @@ public class MenuHeroes : MenuElement
         }
     }
 
-    public override void UpdateView()
+    public override void EnterView()
     {
         UpdateCells();
         heroInfoUI.UpdateInfo();
+        heroInfoUI.gameObject.GetComponent<UIAnimation>().AnimationIn();
     }
 
     private void ClearCells()

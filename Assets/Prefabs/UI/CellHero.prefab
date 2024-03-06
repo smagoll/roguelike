@@ -639,7 +639,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef079404a520245b75ff2f1a761d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiAnimation: 3
+  uiAnimationIn: 3
+  uiAnimationOut: 2
   rectTransform: {fileID: 3141750055512774124}
   fadeTime: 0.7
 --- !u!1 &2839814110102177774
@@ -1040,11 +1041,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 6937426120345835420}
   fade: {fileID: 41500717459539826}
+  id: 0
   titleHero: {fileID: 2391078094933614096}
   textBlock: {fileID: 8154059019525645661}
   iconWeapon: {fileID: 3979061565800607786}
   listStats: {fileID: 3507234801070919045}
-  prefabStatInfo: {fileID: 1185886626441919485, guid: 2411e840ce3e07646a8e790c8b132da5, type: 3}
+  prefabStatInfo: {fileID: 9041564525357598500, guid: 2411e840ce3e07646a8e790c8b132da5, type: 3}
   button: {fileID: 6119919162634788727}
 --- !u!1 &9017411928959549337
 GameObject:

@@ -20,7 +20,7 @@ public class MenuPlay : MenuElement
     private void Start()
     {
         equipmentSelected = DataManager.instance.gameData.equipmentSelected;
-        UpdateView();
+        EnterView();
     }
 
     public void UpdateHero()
@@ -29,7 +29,7 @@ public class MenuPlay : MenuElement
         if (hero != null) iconHero.sprite = hero.sprite;
     }
 
-    public override void UpdateView()
+    public override void EnterView()
     {
         UpdateHero();
     }

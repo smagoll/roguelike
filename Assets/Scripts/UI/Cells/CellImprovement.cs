@@ -5,7 +5,6 @@ using UnityEngine.Localization.Components;
 
 public class CellImprovement : Cell
 {
-    public int id;
     public LocalizeStringEvent title;
     public TextMeshProUGUI value;
 
@@ -20,6 +19,11 @@ public class CellImprovement : Cell
         title.StringReference = selectedEquipment.title;
         value.text = selectedEquipment.Value.ToString() + "%";
         this.id = id;
+        
+    }
+
+    public override void UpdateCell()
+    {
         
     }
 }

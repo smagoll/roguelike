@@ -1,4 +1,4 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using DanielLochner.Assets.SimpleScrollSnap;
@@ -23,7 +23,7 @@ public class WindowUpgrade : MonoBehaviour
     [SerializeField]
     private Transform listStats;
     [SerializeField]
-    private GameObject prefabStatInfo;    
+    private StatInfoUI prefabStatInfo;    
     
     [SerializeField]
     private MenuHeroes menuHeroes;
@@ -34,28 +34,46 @@ public class WindowUpgrade : MonoBehaviour
     public UpgradeEquipment equipment;
     private EquipmentData equipmentData;
     private SimpleScrollSnap scrollSnap;
+    private Cell selectedCellHero;
 
+    private List<StatInfoUI> stats;
+    public UIAnimation animation;
+    
+    
     [Inject]
     private void Construct(SimpleScrollSnap scroll)
     {
         scrollSnap = scroll;
     }
 
-    public void SetInfo(int id, EquipmentType equipmentType)
+    private void Awake()
     {
+        animation = GetComponent<UIAnimation>();
+    }
+
+    public void SetInfo(Cell cell, EquipmentType equipmentType)
+    {
+        selectedCellHero = cell;
         switch (equipmentType)
         {
             case EquipmentType.Weapon:
-                equipment = DataManager.instance.weapons.Where(x => x.Id == id).FirstOrDefault();
+                equipment = DataManager.instance.weapons.FirstOrDefault(x => x.Id == selectedCellHero.id);
                 startPrice = DataManager.instance.gameData.prices.upgrade_weapons;
                 break;
             case EquipmentType.Ability:
-                equipment = DataManager.instance.abilities.Where(x => x.Id == id).FirstOrDefault();
+                equipment = DataManager.instance.abilities.FirstOrDefault(x => x.Id == selectedCellHero.id);
                 startPrice = DataManager.instance.gameData.prices.upgrade_abilities;
                 break;
+            default:
+                throw new ArgumentOutOfRangeException(nameof(equipmentType), equipmentType, null);
         }
-        image.sprite = equipment.icon;
-        nameEquipment.StringReference = equipment.title;
+
+        if (equipment != null)
+        {
+            image.sprite = equipment.icon;
+            nameEquipment.StringReference = equipment.title;
+        }
+        CreateStats();
         UpdateInfo();
     }
 
@@ -71,15 +89,22 @@ public class WindowUpgrade : MonoBehaviour
         }
     }
 
-    public void UpdateStats()
+    private void CreateStats()
     {
+        stats = new();
         foreach(Transform child in listStats) Destroy(child.gameObject);
 
         foreach (var stat in equipment.stats)
         {
             var statInfo = Instantiate(prefabStatInfo, listStats);
-            statInfo.GetComponent<StatInfoUI>().Initialize(equipment.Level, stat);
+            statInfo.Initialize(equipment.Level, stat);
+            stats.Add(statInfo);
         }
+    }
+
+    public void UpdateStats()
+    {
+        foreach(var stat in stats)stat.UpdateStat(equipment.Level);
     }
 
     public void IncreaseLevelAbility()
@@ -90,7 +115,7 @@ public class WindowUpgrade : MonoBehaviour
             equipment.LevelUp();
             DataManager.instance.Save();
             UpdateInfo();
-            menuHeroes.UpdateView();
+            selectedCellHero.UpdateCell();
             GlobalEventManager.Start_UpdateCoinMenu();
         }
     }
@@ -106,7 +131,7 @@ public class WindowUpgrade : MonoBehaviour
             buttonUpgrade.GetComponent<Button>().interactable = true;
         }
     }
-     
+    
     private void OnEnable()
     {
         scrollSnap.UseSwipeGestures = false;
@@ -116,6 +141,4 @@ public class WindowUpgrade : MonoBehaviour
     {
         scrollSnap.UseSwipeGestures = true;
     }
-
-    
 }

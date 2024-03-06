@@ -24,11 +24,12 @@ public class ScrollMenu : MonoBehaviour
         }
         else
         {
+            simpleScrollSnap.Panels[numberPrevious].gameObject.SetActive(false);
             centeredMenu = numberCentred;
             simpleScrollSnap.Panels[numberCentred].gameObject.SetActive(true);
-            var panel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
-            panel.UpdateView();
-            var button = panel.buttonSelected;
+            var selectedPanel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
+            selectedPanel.EnterView();
+            var button = selectedPanel.buttonSelected;
             eventSystem.SetSelectedGameObject(button);
         }
 

@@ -285,8 +285,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300.5904, y: -126.52573}
-  m_SizeDelta: {x: 541.1808, y: 193.05144}
+  m_AnchoredPosition: {x: 300.46997, y: -126.08359}
+  m_SizeDelta: {x: 540.93994, y: 192.16718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5971020746334766618
 MonoBehaviour:
@@ -626,8 +626,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 430.8856, y: -96.52572}
-  m_SizeDelta: {x: 220.5904, y: 193.05144}
+  m_AnchoredPosition: {x: 430.70496, y: -96.08359}
+  m_SizeDelta: {x: 220.46997, y: 192.16718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5105507229766373664
 CanvasRenderer:
@@ -1283,8 +1283,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300.5904, y: -572.6286}
-  m_SizeDelta: {x: 541.1808, y: 193.05144}
+  m_AnchoredPosition: {x: 300.46997, y: -570.41797}
+  m_SizeDelta: {x: 540.93994, y: 192.16718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6762378953720126106
 CanvasRenderer:
@@ -1492,8 +1492,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.2952, y: -96.52572}
-  m_SizeDelta: {x: 220.5904, y: 193.05144}
+  m_AnchoredPosition: {x: 110.234985, y: -96.08359}
+  m_SizeDelta: {x: 220.46997, y: 192.16718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1430734505268879686
 CanvasRenderer:
@@ -1669,8 +1669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 300.5904, y: -349.57715}
-  m_SizeDelta: {x: 541.1808, y: 193.05144}
+  m_AnchoredPosition: {x: 300.46997, y: -348.25076}
+  m_SizeDelta: {x: 540.93994, y: 192.16718}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &472705568927018477
 CanvasRenderer:
@@ -1855,7 +1855,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef079404a520245b75ff2f1a761d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiAnimation: 1
+  uiAnimationIn: 1
+  uiAnimationOut: 0
   rectTransform: {fileID: 5281151857218594366}
   fadeTime: 0.5
 --- !u!1 &6641569504705872821
