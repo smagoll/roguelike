@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class MenuHeroes : MenuElement
 {
@@ -17,20 +18,25 @@ public class MenuHeroes : MenuElement
 
     private void Start()
     {
-        UpdateCells();
+        //UpdateCells();
     }
 
     public void UpdateCells()
     {
         ClearCells();
+        StopAllCoroutines();
+        StartCoroutine(CreateCells());
+    }
 
+    private IEnumerator CreateCells()
+    {
         foreach (var hero in DataManager.instance.gameData.heroes.OrderBy(x => x.id))
         {
             Transform transformEquipment = hero.stageForOpen <= DataManager.instance.gameData.record ? openCells : closeCells;
             var cellObject = Instantiate(prefabCell, transformEquipment);
-            cellObject.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonDefault());
             var cell = cellObject.GetComponent<CellHero>();
             cell.Init(hero.id);
+            yield return new WaitForSeconds(.1f);
         }
     }
 

@@ -18,12 +18,8 @@ public class CellHero : Cell
     private GameObject prefabStatInfo;
 
     private int id;
+    [SerializeField]
     private Button button;
-
-    private void Awake()
-    {
-        button = GetComponent<Button>();
-    }
 
     public override void Init(int id)
     {
@@ -48,6 +44,7 @@ public class CellHero : Cell
 
     public void ShowWindowUpgrade()
     {
+        AudioMenu.instance.PlayButtonDefault();
         GlobalEventManager.Start_ShowWindowUpgrade(id, EquipmentType.Weapon);
     }
 }

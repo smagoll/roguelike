@@ -36,10 +36,15 @@ public class SceneTransition : MonoBehaviour
 
     public static void LoadScene(string sceneName)
     {
-        instance.ShowSceneTransition();
+        if (instance.background.isActiveAndEnabled)
+        {
+            instance.ShowSceneTransition();
 
-        instance.loadingAsyncOperation = SceneManager.LoadSceneAsync(sceneName);
-        instance.StartCoroutine(instance.Wait(.3f));
+            instance.loadingAsyncOperation = SceneManager.LoadSceneAsync(sceneName);
+            instance.StartCoroutine(instance.Wait(.3f));
+        }
+        else
+            SceneManager.LoadSceneAsync(sceneName);
     }
 
     public void ShowSceneTransition()

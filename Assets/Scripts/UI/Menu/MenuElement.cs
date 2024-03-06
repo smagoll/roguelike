@@ -15,8 +15,8 @@ public abstract class MenuElement : MonoBehaviour
 
     private void Awake()
     {
-        buttonSelected.GetComponent<Button>().onClick.AddListener(Select);
-        buttonSelected.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonNavigation());
+        //buttonSelected.GetComponent<Button>().onClick.AddListener(Select);
+        //buttonSelected.GetComponent<Button>().onClick.AddListener(() => AudioMenu.instance.PlayButtonNavigation());
     }
 
     [Inject]
@@ -25,7 +25,7 @@ public abstract class MenuElement : MonoBehaviour
         this.simpleScrollSnap = simpleScrollSnap;
     }
 
-    private void Select()
+    public void Select()
     {
         simpleScrollSnap.GoToPanel(numberPanel);
     }
