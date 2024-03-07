@@ -188,7 +188,10 @@ MonoBehaviour:
   uiAnimationIn: 4
   uiAnimationOut: 4
   rectTransform: {fileID: 7282115823086856307}
-  fadeTime: 0.5
+  fadeTime: 0.3
+  ease: 30
+  distance: 100
+  delay: 0.2
 --- !u!1 &7621288063808896271
 GameObject:
   m_ObjectHideFlags: 0

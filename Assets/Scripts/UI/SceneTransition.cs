@@ -36,26 +36,21 @@ public class SceneTransition : MonoBehaviour
 
     public static void LoadScene(string sceneName)
     {
-        if (instance.background.isActiveAndEnabled)
-        {
             instance.ShowSceneTransition();
 
             instance.loadingAsyncOperation = SceneManager.LoadSceneAsync(sceneName);
             instance.StartCoroutine(instance.Wait(.3f));
-        }
-        else
-            SceneManager.LoadSceneAsync(sceneName);
     }
 
     public void ShowSceneTransition()
     {
-        background.DOFade(255f, .5f);
+        background.DOFade(255f, .3f);
         slider.gameObject.SetActive(true);
     }
     
     public void HideSceneTransition()
     {
-        background.DOFade(0f, .5f);
+        background.DOFade(0f, 1f);
         slider.gameObject.SetActive(false);
     }
 

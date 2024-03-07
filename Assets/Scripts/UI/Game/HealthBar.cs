@@ -29,6 +29,6 @@ public class HealthBar : MonoBehaviour
     {
         DOTween.Sequence()
             .Append(iconHeart.DOScale(1.3f, 0.05f))
-            .Append(iconHeart.DOScale(1f, 0.05f));
+            .Append(iconHeart.DOScale(1f, 0.05f)).SetUpdate(true);
     }
 }

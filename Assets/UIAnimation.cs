@@ -20,6 +20,11 @@ public class UIAnimation : MonoBehaviour
     private RectTransform rectTransform;
     [SerializeField]
     private float fadeTime;
+    [SerializeField]
+    private Ease ease = Ease.OutElastic;
+    [SerializeField]
+    private float distance = 100f;    [SerializeField]
+    private float delay;
 
     private Sequence sequenceOut;
 
@@ -42,24 +47,34 @@ public class UIAnimation : MonoBehaviour
         switch (uiAnimationIn)
         {
             case AnimationType.ScaleUp:
-                rectTransform.transform.localScale = Vector3.zero;
-                rectTransform.DOScale(1f, fadeTime).SetEase(Ease.OutBounce).SetUpdate(true);
+                DOTween.Sequence()
+                    .AppendCallback(() => rectTransform.transform.localScale = Vector3.zero)
+                    .AppendInterval(delay)
+                    .Append(rectTransform.DOScale(1f, fadeTime).SetEase(ease)).SetUpdate(true);
                 break;
             case AnimationType.SlideDown:
-                rectTransform.transform.localPosition = new Vector3(0f,100f,0f);
-                rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(Ease.OutElastic).SetUpdate(true);
+                DOTween.Sequence()
+                    .AppendCallback(() => rectTransform.transform.localPosition += new Vector3(0f,distance,0f))
+                    .AppendInterval(delay)
+                    .Append(rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(ease)).SetUpdate(true);
                 break;
             case AnimationType.SlideUp:
-                rectTransform.transform.localPosition = new Vector3(0f,-100f,0f);
-                rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(Ease.OutElastic).SetUpdate(true);
+                DOTween.Sequence()
+                    .AppendCallback(() => rectTransform.transform.localPosition += new Vector3(0f,-distance,0f))
+                    .AppendInterval(delay)
+                    .Append(rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(ease)).SetUpdate(true);
                 break;
             case AnimationType.SlideLeft:
-                rectTransform.transform.localPosition = new Vector3(-100f,0f,0f);
-                rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(Ease.OutElastic).SetUpdate(true);
+                DOTween.Sequence()
+                    .AppendCallback(() => rectTransform.transform.localPosition += new Vector3(distance, 0f,0f))
+                    .AppendInterval(delay)
+                    .Append(rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(ease)).SetUpdate(true);
                 break;
             case AnimationType.SlideRight:
-                rectTransform.transform.localPosition = new Vector3(100f,0f,0f);
-                rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(Ease.OutElastic).SetUpdate(true);
+                DOTween.Sequence()
+                    .AppendCallback(() => rectTransform.transform.localPosition += new Vector3(-distance,0f,0f))
+                    .AppendInterval(delay)
+                    .Append(rectTransform.DOAnchorPos(new Vector2(0f, 0f), fadeTime).SetEase(ease)).SetUpdate(true);
                 break;
         }
     }

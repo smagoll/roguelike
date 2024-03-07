@@ -74,7 +74,5 @@ public class UIManagerMenu : MonoBehaviour
     public void ShowNavigate()
     {
         navigationMenu.gameObject.SetActive(true);
-        navigationMenu.transform.localPosition = new Vector3(0f,-100f,0f);
-        navigationMenu.DOAnchorPos(new Vector2(0f, 0f), timeAnimation).SetEase(Ease.OutBack).SetUpdate(true);
     }
 }
