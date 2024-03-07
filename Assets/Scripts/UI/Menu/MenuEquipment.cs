@@ -14,7 +14,7 @@ public class MenuEquipment : MenuElement
     [SerializeField]
     private WindowUpgrade windowUpgrade;
 
-    public void UpdateCells()
+    private void UpdateCells()
     {
         var abilities = DataManager.instance.gameData.abilities.OrderBy(x => x.id).ToArray();
 
@@ -41,5 +41,10 @@ public class MenuEquipment : MenuElement
     {
         UpdateCells();
         windowUpgrade.gameObject.SetActive(false);
+    }
+
+    public override void ExitView()
+    {
+        
     }
 }

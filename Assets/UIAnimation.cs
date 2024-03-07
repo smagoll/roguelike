@@ -1,11 +1,9 @@
-using System;
 using DG.Tweening;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class UIAnimation : MonoBehaviour
 {
-    public enum AnimationType
+    private enum AnimationType
     {
         SlideUp,
         SlideDown,
@@ -25,9 +23,17 @@ public class UIAnimation : MonoBehaviour
 
     private Sequence sequenceOut;
 
-    private void OnEnable()
+    private bool isFirst;
+    
+    private void Start()
     {
         AnimationIn();
+        isFirst = true;
+    }
+
+    private void OnEnable()
+    {
+        if (isFirst) AnimationIn();
     }
 
     public void AnimationIn()

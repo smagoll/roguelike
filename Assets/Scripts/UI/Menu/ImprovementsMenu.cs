@@ -44,6 +44,7 @@ public class ImprovementsMenu : MenuElement
 
     private IEnumerator CreateCells(ImprovementStatData[] improvements)
     {
+        cells.Clear();
         foreach (var improvement in improvements)
         {
             var cellObject = Instantiate(prefabCell, allImprovements);
@@ -59,7 +60,7 @@ public class ImprovementsMenu : MenuElement
         if (IsEnable)
         {
             RandomImprovement();
-            EnterView();
+            UpdateInfo();
         }
     }
 
@@ -70,11 +71,21 @@ public class ImprovementsMenu : MenuElement
 
     public override void EnterView()
     {
+        UpdateInfo();
+        UpdateCells();
+    }
+
+    public override void ExitView()
+    {
+        
+    }
+
+    private void UpdateInfo()
+    {
         price = DataManager.instance.gameData.prices.improvement;
         value.text = price.ToString();
         CheckOpportunityBuy();
         GlobalEventManager.Start_UpdateCoinMenu();
-        UpdateCells();
     }
 
     public void RandomImprovement()

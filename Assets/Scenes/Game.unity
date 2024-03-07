@@ -1388,7 +1388,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef079404a520245b75ff2f1a761d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiAnimation: 0
+  uiAnimationIn: 0
+  uiAnimationOut: 0
   rectTransform: {fileID: 480275636}
   fadeTime: 0.5
 --- !u!1 &509477249
@@ -4705,7 +4706,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef079404a520245b75ff2f1a761d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiAnimation: 2
+  uiAnimationIn: 0
+  uiAnimationOut: 0
   rectTransform: {fileID: 1208976093}
   fadeTime: 0.8
 --- !u!1 &1227721406
@@ -7641,7 +7643,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28ef079404a520245b75ff2f1a761d3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiAnimation: 4
+  uiAnimationIn: 0
+  uiAnimationOut: 0
   rectTransform: {fileID: 2106901932}
   fadeTime: 0.2
 --- !u!1 &2143615240

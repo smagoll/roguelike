@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using DanielLochner.Assets.SimpleScrollSnap;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -13,26 +11,22 @@ public class ScrollMenu : MonoBehaviour
 
     private void Start()
     {
-        simpleScrollSnap.OnPanelCentered.AddListener(SelectButton);
+        simpleScrollSnap.OnPanelCentered.AddListener(SelectButtonCentered);
     }
 
-    public void SelectButton(int numberCentred, int numberPrevious)
+    public void SelectButtonCentered(int numberCentred, int numberPrevious)
     {
         if (centeredMenu == numberCentred)
         {
             return;
         }
-        else
-        {
-            simpleScrollSnap.Panels[numberPrevious].gameObject.SetActive(false);
-            centeredMenu = numberCentred;
-            simpleScrollSnap.Panels[numberCentred].gameObject.SetActive(true);
-            var selectedPanel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
-            selectedPanel.EnterView();
-            var button = selectedPanel.buttonSelected;
-            eventSystem.SetSelectedGameObject(button);
-        }
 
-
+        //simpleScrollSnap.Panels[numberPrevious].gameObject.SetActive(false);
+        centeredMenu = numberCentred;
+        //simpleScrollSnap.Panels[numberCentred].gameObject.SetActive(true);
+        var selectedPanel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
+        //selectedPanel.EnterView();
+        var button = selectedPanel.buttonSelected;
+        eventSystem.SetSelectedGameObject(button);
     }
 }

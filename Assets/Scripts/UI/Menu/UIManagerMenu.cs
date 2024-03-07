@@ -1,3 +1,4 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
@@ -11,6 +12,12 @@ public class UIManagerMenu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textRecord;
 
+    [Header("AnimationUI")]
+    [SerializeField]
+    private RectTransform navigationMenu, header;
+    [SerializeField]
+    private float timeAnimation;
+
     private void Awake()
     {
         GlobalEventManager.UpdateCoinMenu.AddListener(UpdateCoinText);
@@ -19,6 +26,9 @@ public class UIManagerMenu : MonoBehaviour
 
     private void Start()
     {
+        ShowHeader();
+        ShowNavigate();
+        
         UpdateCoinText();
         UpdateRecord();
     }
@@ -54,5 +64,17 @@ public class UIManagerMenu : MonoBehaviour
                 windowUpgradeAbility.gameObject.SetActive(true);
                 break;
         }
+    }
+
+    public void ShowHeader()
+    {
+        header.gameObject.SetActive(true);
+    }
+
+    public void ShowNavigate()
+    {
+        navigationMenu.gameObject.SetActive(true);
+        navigationMenu.transform.localPosition = new Vector3(0f,-100f,0f);
+        navigationMenu.DOAnchorPos(new Vector2(0f, 0f), timeAnimation).SetEase(Ease.OutBack).SetUpdate(true);
     }
 }

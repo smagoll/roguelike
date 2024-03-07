@@ -23,7 +23,7 @@ public class MenuPlay : MenuElement
         EnterView();
     }
 
-    public void UpdateHero()
+    private void UpdateHero()
     {
         var hero = DataManager.instance.heroes.FirstOrDefault(x => x.Id == DataManager.instance.gameData.equipmentSelected.id_hero);
         if (hero != null) iconHero.sprite = hero.sprite;
@@ -32,5 +32,10 @@ public class MenuPlay : MenuElement
     public override void EnterView()
     {
         UpdateHero();
+    }
+
+    public override void ExitView()
+    {
+        
     }
 }

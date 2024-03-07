@@ -39,6 +39,11 @@ public class MenuHeroes : MenuElement
         heroInfoUI.gameObject.GetComponent<UIAnimation>().AnimationIn();
     }
 
+    public override void ExitView()
+    {
+        
+    }
+
     private void ClearCells()
     {
         if (openCells.transform.childCount > 0)
