@@ -22,7 +22,7 @@ public class UpgradeView : MonoBehaviour
         if (upgrade.UpgradeType == UpgradeType.Add)
             GlobalEventManager.Start_RemoveUpgrade(upgrade);
 
-        GlobalEventManager.Start_PauseGame();
+        //GlobalEventManager.Start_PauseGame();
     }
 
     public void Initialize(Upgrade upgrade)

@@ -1,10 +1,10 @@
+using System.Collections;
 using DG.Tweening;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 public class GameUI : MonoBehaviour
 {
@@ -30,7 +30,9 @@ public class GameUI : MonoBehaviour
     private GameObject upgradeViewEpic;
     [SerializeField]
     private Transform upgradesLayout;
-
+    [SerializeField]
+    private float delayAppearanceWindowUpgrade;
+    
     private bool isPause;
 
     
@@ -41,6 +43,7 @@ public class GameUI : MonoBehaviour
         {
             isPause = value;
             GameManager.joystick.gameObject.SetActive(!isPause);
+            Time.timeScale = isPause ? 0 : 1;
         }
     }
 
@@ -58,14 +61,12 @@ public class GameUI : MonoBehaviour
         if (!isPause)
         {
             infoHero.SetActive(true);
-            Time.timeScale = 0;
             IsPause = true;
         }
         else
         {
             IsPause = false;
             infoHero.SetActive(false);
-            Time.timeScale = 1;
         }
 
     }
@@ -74,18 +75,27 @@ public class GameUI : MonoBehaviour
     {
         IsPause = true;
         selected.SetActive(true);
-        Time.timeScale = 0f;
         GameManager.joystick.JoystickUp();
 
+        StartCoroutine(CreateUpgradesView(upgrades));
+    }
+
+    private IEnumerator CreateUpgradesView(List<Upgrade> upgrades)
+    {
+        foreach (Transform upgradeView in upgradesLayout)
+        {
+            Destroy(upgradeView.gameObject);
+        }
         var upgradesClone = new List<Upgrade>(upgrades);
         int countUpgrades = upgrades.Count >= 3 ? 3 : upgrades.Count;
         for (int i = 0; i < countUpgrades; i++)
         {
             var randomUpgrade = RandomUpgrade(ref upgradesClone);
             CreateUpgradeView(randomUpgrade);
+            yield return new WaitForSecondsRealtime(delayAppearanceWindowUpgrade);
         }
     }
-
+    
     private void CreateUpgradeView(Upgrade upgrade)
     {
         GameObject upgradeView = new();
@@ -104,24 +114,14 @@ public class GameUI : MonoBehaviour
         }
         
         upgradeView.GetComponent<UpgradeView>().Initialize(upgrade);
-        upgradeView.GetComponent<Button>().onClick.AddListener(HideSelected);
+        upgradeView.GetComponent<ClickButtonDefault>().endClick.AddListener(HideSelected);
         upgradeView.GetComponent<Button>().onClick.AddListener(AudioGame.instance.PlayButtonUpgrade);
     }
     
     public void HideSelected()
     {
         selected.SetActive(false);
-        Time.timeScale = 1f;
-
-        foreach (Transform upgradeView in upgradesLayout)
-        {
-            Destroy(upgradeView.gameObject);
-        }
-    }
-
-    public void ButtonOk()
-    {
-        HideSelected();
+        IsPause = false;
     }
 
     public Upgrade RandomUpgrade(ref List<Upgrade> upgrades)
@@ -146,6 +146,6 @@ public class GameUI : MonoBehaviour
     {
         DOTween.Sequence().AppendCallback(() => textCountCoins.text = coins.ToString())
             .Append(textCountCoins.transform.DOScale(1.2f, 0.1f))
-            .Append(textCountCoins.transform.DOScale(1f, 0.1f));
+            .Append(textCountCoins.transform.DOScale(1f, 0.1f)).SetEase(Ease.OutBounce);
     }
 }

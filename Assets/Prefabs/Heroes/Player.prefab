@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textHp: {fileID: 5595697542102603530}
+  iconHeart: {fileID: 0}
 --- !u!1 &3044171157737930479
 GameObject:
   m_ObjectHideFlags: 0
