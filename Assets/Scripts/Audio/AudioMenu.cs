@@ -42,6 +42,7 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
     {
         musicSource.clip = music;
         musicSource.Play();
+        UpdateSettings();
     }
     
     public void PlayUI(UISound uiSound)

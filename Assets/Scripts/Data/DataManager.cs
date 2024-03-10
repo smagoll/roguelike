@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using System.IO;
 using UnityEngine;
 using System.Linq;
@@ -16,8 +15,6 @@ public class DataManager : MonoBehaviour
     public Hero[] heroes;
     public ImprovementStat[] improvements;
 
-    public int countCoins = 0;
-
     private string filePath;
 
     private void Awake()
@@ -29,14 +26,21 @@ public class DataManager : MonoBehaviour
 
         GlobalEventManager.IncreaseCoinsData.AddListener(IncreaseCoins);
         GlobalEventManager.DecreaseCoinsData.AddListener(DecreaseCoins);
-        filePath = Application.dataPath + "/Data/Json/GameData.json";
+        filePath = Application.persistentDataPath + "GameData.json";
         Load();
+    }
+
+    private void CreateNew()
+    {
+        var textAssetJson = Resources.Load<TextAsset>("GameData/GameData");
+        gameData = JsonUtility.FromJson<GameData>(textAssetJson.text);
+        Save();
     }
 
     public void Save()
     {
-        //string gameDataJson = JsonUtility.ToJson(gameData);
-        //File.WriteAllText(filePath, gameDataJson);
+        string gameDataJson = JsonUtility.ToJson(gameData);
+        File.WriteAllText(filePath, gameDataJson);
     }
 
     public void Load()
@@ -45,6 +49,10 @@ public class DataManager : MonoBehaviour
         {
             string gameDataJson = File.ReadAllText(filePath);
             gameData = JsonUtility.FromJson<GameData>(gameDataJson);
+        }
+        else
+        {
+            CreateNew();
         }
     }
 

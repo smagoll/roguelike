@@ -54,7 +54,7 @@ public class EndGameWindow : MonoBehaviour
     public void LoadMenu()
     {
         UpdateData();
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         SceneTransition.LoadScene("Menu");
         Time.timeScale = 1f;
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
@@ -8,6 +9,11 @@ public class LocaleSelector : MonoBehaviour
     private bool active;
 
     private void Awake() { if (Instance == null) Instance = this; }
+
+    private void Start()
+    {
+        UpdateLocalization();
+    }
 
     public void UpdateLocalization()
     {

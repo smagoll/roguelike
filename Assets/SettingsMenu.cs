@@ -28,11 +28,13 @@ public class SettingsWindow : MonoBehaviour
         DataManager.instance.gameData.settings.music = value;
         musicOn.enabled = value;
         musicOff.enabled = !value;
+        DataManager.instance.Save();
     }
     public void ChangeEffects(bool value)
     {
         DataManager.instance.gameData.settings.sounds = value;
         effectOn.enabled = value;
         effectOff.enabled = !value;
+        DataManager.instance.Save();
     }
 }

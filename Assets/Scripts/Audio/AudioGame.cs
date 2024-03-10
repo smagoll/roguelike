@@ -39,6 +39,7 @@ public class AudioGame : MonoBehaviour, ISwitchAudio
     {
         musicSource.clip = music;
         musicSource.Play();
+        UpdateSettings();
     }
 
     public void PlayMainSFX(AudioClip clip)

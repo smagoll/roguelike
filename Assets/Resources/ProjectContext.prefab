@@ -127,8 +127,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 029d5ad08ac08304eaaefdf079b57066, type: 2}
   - {fileID: 11400000, guid: 27b7d1b78da99084c9151970df3a1a5b, type: 2}
   - {fileID: 11400000, guid: 201250b7f0d14eb4d8dfaa48830b50fc, type: 2}
-  countCoins: 0
-  localeSelector: {fileID: 1455355931945360127}
 --- !u!114 &1455355931945360127
 MonoBehaviour:
   m_ObjectHideFlags: 0
