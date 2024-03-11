@@ -18,7 +18,7 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
 
     [Header("Sources")]
     [SerializeField]
-    private AudioSource musicSource;
+    public AudioSource musicSource;
     [SerializeField]
     private AudioSource sfxSource;
     [SerializeField]

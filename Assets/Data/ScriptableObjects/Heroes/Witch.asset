@@ -38,7 +38,7 @@ MonoBehaviour:
     clampValue: 3
   - statType: 4
     statUpgradeType: 0
-    value: 0
+    value: 1
     step: 0
     clampValue: 70
   references:

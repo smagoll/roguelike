@@ -10,9 +10,9 @@ public class FrameRateManager : MonoBehaviour
     void Awake()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = 60;
-        //currentFrameTime = Time.realtimeSinceStartup;
-        //StartCoroutine("WaitForNextFrame");
+        Application.targetFrameRate = MaxRate;
+        currentFrameTime = Time.realtimeSinceStartup;
+        StartCoroutine("WaitForNextFrame");
     }
     private IEnumerator WaitForNextFrame()
     {

@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39cb0a04c30adb74c83396579801f630, type: 3}
-  m_Name: Evasion
+  m_Name: Speed
   m_EditorClassIdentifier: 
-  id: 5
-  icon: {fileID: 1195349977, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
+  id: 3
+  icon: {fileID: 21300000, guid: 9f0b223c60c915543ab2c9dbc68aac7f, type: 2}
   title:
     m_TableReference:
-      m_TableCollectionName: GUID:122f9001799d7294ca774c1c8ef79c9a
+      m_TableCollectionName: GUID:29177a015465301418ca88d45b00fa1d
     m_TableEntryReference:
-      m_KeyId: 72012804096
+      m_KeyId: 5411659591680
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  step: 50
+  step: 1
   rare: 1
-  statType: 4
+  statType: 3
   references:
     version: 2
     RefIds: []

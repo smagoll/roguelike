@@ -19,7 +19,7 @@ public class WindowUpgrade : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI textPrice;
     [SerializeField]
-    private GameObject buttonUpgrade;
+    private Button buttonUpgrade;
     [SerializeField]
     private Transform listStats;
     [SerializeField]
@@ -107,7 +107,7 @@ public class WindowUpgrade : MonoBehaviour
         foreach(var stat in stats)stat.UpdateStat(equipment.Level);
     }
 
-    public void IncreaseLevelAbility()
+    public void IncreaseLevelEquipment()
     {
         if (DataManager.instance.gameData.coins >= price)
         {
@@ -123,13 +123,9 @@ public class WindowUpgrade : MonoBehaviour
     public void CheckPrice()
     {
         if (DataManager.instance.gameData.coins < price)
-        {
-            buttonUpgrade.GetComponent<Button>().interactable = false;
-        }
+            buttonUpgrade.interactable = false;
         else
-        {
-            buttonUpgrade.GetComponent<Button>().interactable = true;
-        }
+            buttonUpgrade.interactable = true;
     }
     
     private void OnEnable()

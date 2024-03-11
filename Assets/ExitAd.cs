@@ -3,14 +3,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Advertisements;
  
-public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
+public class Exit : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
 {
     [SerializeField] Button _showAdButton;
     [SerializeField] string _androidAdUnitId = "Rewarded_Android";
     [SerializeField] string _iOSAdUnitId = "Rewarded_iOS";
     private string _adUnitId = null;
     [SerializeField]
-    private ImprovementsMenu improvementsMenu;
+    private EndGameWindow endGameWindow;
 
     private bool isComplete;
  
@@ -28,9 +28,9 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
     private void Start()
     {
         if (AdManager.Instance.isInitializated)
-        {
             LoadAd();
-        }
+        else
+            _showAdButton.interactable = false;
     }
     
     public void LoadAd()
@@ -62,16 +62,16 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
     {
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED) && !isComplete)
         {
-            if (DataManager.instance.gameData.settings.music) AudioMenu.instance.musicSource.UnPause();
-            improvementsMenu.AdImprovement();
+            if (DataManager.instance.gameData.settings.music) AudioGame.instance.musicSource.UnPause();
             isComplete = true;
-            LoadAd();
+            endGameWindow.ButtonAd();
+            if(!endGameWindow.isRevive || !endGameWindow.isDoubleReward) LoadAd();
         }
         
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.SKIPPED))
         {
-            if (DataManager.instance.gameData.settings.music) AudioMenu.instance.musicSource.UnPause();
-            LoadAd();
+            if (DataManager.instance.gameData.settings.music) AudioGame.instance.musicSource.UnPause();
+            _showAdButton.interactable = true;
         }
     }
  
@@ -90,7 +90,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
  
     public void OnUnityAdsShowStart(string adUnitId)
     {
-        if (DataManager.instance.gameData.settings.music) AudioMenu.instance.musicSource.Pause();
+        if (DataManager.instance.gameData.settings.music) AudioGame.instance.musicSource.Pause();
     }
     public void OnUnityAdsShowClick(string adUnitId) { }
  

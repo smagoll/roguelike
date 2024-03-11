@@ -591,6 +591,7 @@ MonoBehaviour:
   _showAdButton: {fileID: 1039871560}
   _androidAdUnitId: Rewarded_Android
   _iOSAdUnitId: Rewarded_iOS
+  improvementsMenu: {fileID: 867476094}
 --- !u!4 &56716621
 Transform:
   m_ObjectHideFlags: 0
@@ -2512,8 +2513,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1, y: 0}
-  m_SizeDelta: {x: -1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &731888508
 MonoBehaviour:
@@ -2557,7 +2558,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
+  m_PixelsPerUnitMultiplier: 100
 --- !u!222 &731888510
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3464,6 +3465,7 @@ MonoBehaviour:
   allImprovements: {fileID: 591826750}
   value: {fileID: 1244865636}
   buttonBuy: {fileID: 649037354}
+  countUpgradeAd: 2
   timeBetweenAppereanceCells: 0.05
 --- !u!1 &870735797
 GameObject:
@@ -3977,8 +3979,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberPanel: 0
   buttonSelected: {fileID: 834410827}
-  equipmentSelected:
-    id_hero: 0
   iconHero: {fileID: 76294739}
 --- !u!1 &933963058
 GameObject:
@@ -8721,7 +8721,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: NaN
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
   m_sharedMaterial: {fileID: 6137584911582904113, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
@@ -9034,6 +9034,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2138301834}
+  - component: {fileID: 2138301835}
+  - component: {fileID: 2138301836}
   m_Layer: 5
   m_Name: Info
   m_TagString: Untagged
@@ -9055,11 +9057,54 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1933940141}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMin: {x: 0.33563212, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -275.79004, y: 0.0009765625}
-  m_SizeDelta: {x: 551.58, y: -1.7600098}
+  m_AnchoredPosition: {x: 0.02999878, y: 0.0009765625}
+  m_SizeDelta: {x: -0.070007324, y: -1.7600002}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2138301835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138301833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &2138301836
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138301833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146e1c65a4fd7ca499fcfeec042d99c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listStatsTransform: {fileID: 2138301834}
+  statInfoUI: {fileID: 9041564525357598500, guid: 2411e840ce3e07646a8e790c8b132da5, type: 3}
+  hpText: {fileID: 0}
+  speedText: {fileID: 0}
+  evasionText: {fileID: 0}
 --- !u!1 &2145392924
 GameObject:
   m_ObjectHideFlags: 0
@@ -9310,7 +9355,7 @@ MonoBehaviour:
   nameEquipment: {fileID: 8929139095772892110}
   numberLevel: {fileID: 9202658953211947916}
   textPrice: {fileID: 5616067601261140382}
-  buttonUpgrade: {fileID: 7024180236567753919}
+  buttonUpgrade: {fileID: 1166632293257300152}
   listStats: {fileID: 2756053124919876646}
   prefabStatInfo: {fileID: 1393193486866748729, guid: c984ce2176fbb4148800bf26498ab8b1, type: 3}
   menuHeroes: {fileID: 1483244858}
@@ -9598,13 +9643,13 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
+  m_TargetGraphic: {fileID: 833711132}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 404507180968177758}
         m_TargetAssemblyTypeName: WindowUpgrade, Assembly-CSharp
-        m_MethodName: IncreaseLevelAbility
+        m_MethodName: IncreaseLevelEquipment
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11330,7 +11375,7 @@ MonoBehaviour:
   nameEquipment: {fileID: 7166415407405042774}
   numberLevel: {fileID: 1914464522440382090}
   textPrice: {fileID: 2943002721896211608}
-  buttonUpgrade: {fileID: 314412419387558329}
+  buttonUpgrade: {fileID: 8437308341498705342}
   listStats: {fileID: 4834778505576571168}
   prefabStatInfo: {fileID: 1393193486866748729, guid: c984ce2176fbb4148800bf26498ab8b1, type: 3}
   menuHeroes: {fileID: 1483244858}
@@ -11916,7 +11961,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 241927562358988954, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1638987691906080815, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_SortingOrder
@@ -11924,11 +11969,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5229094418570573630, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5229094418570573630, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8370160214711799429, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12186,7 +12231,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6970160429483052376}
         m_TargetAssemblyTypeName: WindowUpgrade, Assembly-CSharp
-        m_MethodName: IncreaseLevelAbility
+        m_MethodName: IncreaseLevelEquipment
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

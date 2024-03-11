@@ -18,12 +18,7 @@ public class Hero : ScriptableObject
 
     public int Id => id;
     public bool IsOpen => DataManager.instance.gameData.heroes.Where(x => x.id == id).Select(x => x.stageForOpen <= DataManager.instance.gameData.record).FirstOrDefault();
-    public float Hp => stats.FirstOrDefault(x => x.Type == StatType.HP).GetValue();
-    public float Speed => stats.FirstOrDefault(x => x.Type == StatType.Speed).GetValue();
-    public float Evasion => stats.FirstOrDefault(x => x.Type == StatType.Evasion).GetValue();
-}
-
-public interface IStats
-{
-    Stat[] Stats { get; }
+    public float Hp => stats.FirstOrDefault(x => x.Type == StatType.HP)!.GetValue();
+    public float Speed => stats.FirstOrDefault(x => x.Type == StatType.Speed)!.GetValue();
+    public float Evasion => stats.FirstOrDefault(x => x.Type == StatType.Evasion)!.GetValue();
 }

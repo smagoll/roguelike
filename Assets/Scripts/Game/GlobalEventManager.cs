@@ -13,6 +13,7 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<float, float> UpdateHealthBar = new();
     public static UnityEvent<int, float, float> UpdateStageBar = new();
     public static UnityEvent<Vector3, float, TextHit> CreateDamageHurt = new();
+    public static UnityEvent<Vector3> CreateEvade = new();
     public static UnityEvent<UpgradeEquipment> AddItem = new();
     public static UnityEvent<Upgrade> AddUpgrade = new();
     public static UnityEvent<Upgrade> RemoveUpgrade = new();
@@ -52,6 +53,11 @@ public class GlobalEventManager : MonoBehaviour
     public static void Start_CreateDamageHurt(Vector3 position, float damage, TextHit textHit)
     {
         CreateDamageHurt.Invoke(position, damage, textHit);
+    } 
+    
+    public static void Start_CreateEvade(Vector3 position)
+    {
+        CreateEvade.Invoke(position);
     } 
     
     public static void Start_IncreaseHP(float hp)

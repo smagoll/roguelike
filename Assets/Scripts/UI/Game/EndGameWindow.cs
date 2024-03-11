@@ -22,8 +22,8 @@ public class EndGameWindow : MonoBehaviour
     [SerializeField]
     private LocalizedString doubleAwardsStringReference;
 
-    private bool isRevive;
-    private bool isDoubleReward;
+    public bool isRevive;
+    public bool isDoubleReward;
 
     private Character character;
 

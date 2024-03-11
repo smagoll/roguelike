@@ -4,11 +4,10 @@ using UnityEngine.Advertisements;
 
 public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
 {
-    public static AdManager instance;
+    public static AdManager Instance;
     
-    [SerializeField] string _androidGameId = "5571221";
-    [SerializeField] string _iOSGameId = "5571220";
-    private bool _testMode = false;
+    [SerializeField] private string _androidGameId = "5571221";
+    [SerializeField] private string _iOSGameId = "5571220";
     public bool isInitializated = false;
     private string _gameId;
     public RewardedAd rewardedAd;
@@ -16,9 +15,9 @@ public class AdManager : MonoBehaviour, IUnityAdsInitializationListener
     void Awake()
     {
         DontDestroyOnLoad(this);
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
             InitializeAds();
         }
     }

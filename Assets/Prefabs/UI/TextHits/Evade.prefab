@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NaN
+  m_text: evade
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
   m_sharedMaterial: {fileID: 6137584911582904113, guid: 41ec42de2c4d6e347a814c875ca8a785, type: 2}
@@ -74,8 +74,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4284901112
-  m_fontColor: {r: 0.9716981, g: 0.3987629, b: 0.3987629, a: 1}
+    rgba: 4294959104
+  m_fontColor: {r: 0, g: 0.8773601, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -92,17 +92,17 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 200
-  m_fontSizeBase: 200
+  m_fontSize: 300
+  m_fontSizeBase: 300
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 16
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: -10
+  m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -146,9 +146,9 @@ GameObject:
   - component: {fileID: 5513225146746918732}
   - component: {fileID: 1465156726229820365}
   - component: {fileID: 8953268858322937362}
-  - component: {fileID: 1710122189132906087}
+  - component: {fileID: -1997568095919510213}
   m_Layer: 5
-  m_Name: DefaultTextHitSmall
+  m_Name: Evade
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1710122189132906087
+--- !u!114 &-1997568095919510213
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -246,11 +246,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8411739936392241906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f837c9ccce25c904abb1300f9a4621ea, type: 3}
+  m_Script: {fileID: 11500000, guid: 53caa97f9ddd86349bfdb9921799c9f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
-  textDamage: {fileID: 2003055012749252113}
-  moveY: 0.05
-  timeInMove: 0.7
+  textEvade: {fileID: 2003055012749252113}
+  moveY: 0.1
+  timeInMove: 0.5
   timeBeforeDestroy: 0.3

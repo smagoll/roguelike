@@ -19,9 +19,21 @@ public class StatInfoUI : MonoBehaviour
         UpdateStat(level);
         icon.sprite = DataManager.instance.improvements.FirstOrDefault(x => x.statType == stat.Type)?.icon;
     }
+    
+    public void Initialize(Stat stat)
+    {
+        Stat = stat;
+        UpdateStat();
+        icon.sprite = DataManager.instance.improvements.FirstOrDefault(x => x.statType == stat.Type)?.icon;
+    }
 
     public virtual void UpdateStat(int level)
     {
         value.text = Stat.GetValue(level).ToString();
+    }
+    
+    public void UpdateStat()
+    {
+        value.text = Stat.GetValue().ToString();
     }
 }

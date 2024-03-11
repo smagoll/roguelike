@@ -1,6 +1,8 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -16,9 +18,24 @@ public class PauseMenu : MonoBehaviour
     [SerializeField]
     private GameObject confirmation;
 
+    [SerializeField]
+    private TextMeshProUGUI hpText;
+    [SerializeField]
+    private TextMeshProUGUI speedText;
+    [SerializeField]
+    private TextMeshProUGUI evasionText;
+
+    private Character character;
+
+    [Inject]
+    private void Construct(Character character)
+    {
+        this.character = character;
+    }
+
     private void Awake()
     {
-        imageHero.sprite = GameManager.player.GetComponent<Character>().hero.sprite;
+        imageHero.sprite = character.hero.sprite;
     }
 
     public void AddItem(UpgradeEquipment upgrade)
@@ -38,4 +55,11 @@ public class PauseMenu : MonoBehaviour
     }
 
     public void ShowConfirmation() => confirmation.SetActive(true);
+
+    private void OnEnable()
+    {
+        hpText.text = character.HP.ToString();
+        speedText.text = character.Speed.ToString();
+        evasionText.text = character.Evasion.ToString();
+    }
 }

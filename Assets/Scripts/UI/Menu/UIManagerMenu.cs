@@ -56,8 +56,6 @@ public class UIManagerMenu : MonoBehaviour
                 windowUpgradeWeapon.SetInfo(cell, equipmentType);
                 if (!windowUpgradeWeapon.isActiveAndEnabled)
                     windowUpgradeWeapon.gameObject.SetActive(true);
-                else
-                    windowUpgradeWeapon.animation.AnimationIn();
                 break;
             case EquipmentType.Ability:
                 windowUpgradeAbility.SetInfo(cell, equipmentType);

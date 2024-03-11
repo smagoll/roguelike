@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.Pool;
 using UnityEngine.Serialization;
 
-public class DamageHurt : MonoBehaviour
+public class Evade : MonoBehaviour
 {
-    public ObjectPool<DamageHurt> pool;
-    public float damage;
-    [SerializeField]
-    private TextMeshProUGUI textDamage;
+    public ObjectPool<Evade> pool;
+    [FormerlySerializedAs("text")] [SerializeField]
+    private TextMeshProUGUI textEvade;
     [SerializeField]
     private float moveY;
     [SerializeField]
@@ -19,13 +18,11 @@ public class DamageHurt : MonoBehaviour
 
     public void Show()
     {
-        textDamage.text = damage.ToString();
-
-        transform.DOMove(transform.position + new Vector3(0, 0.2f, 0), timeInMove);
+        transform.DOMove(transform.position + new Vector3(0, moveY, 0), timeInMove);
         DOTween.Sequence()
             .Append(transform.DOScale(0.03f, 0.1f))
             .AppendInterval(timeBeforeDestroy)
-            .Append(textDamage.DOFade(0.1f, 1f))
+            .Append(textEvade.DOFade(0.1f, 1f))
             .AppendCallback(Delete);
     }
 
@@ -33,6 +30,6 @@ public class DamageHurt : MonoBehaviour
     {
         pool.Release(this);
         transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-        textDamage.DOFade(1f, 0f);
+        textEvade.DOFade(1f, 0f);
     }
 }

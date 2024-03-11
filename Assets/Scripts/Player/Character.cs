@@ -86,8 +86,9 @@ public class Character : MonoBehaviour
         else
         {
             AudioGame.instance.PlayMainSFX(AudioGame.instance.playerMiss);
+            GlobalEventManager.Start_CreateEvade(transform.position);
         }
-
+        Debug.Log(rnd + " " + evasion);
     }
 
     public void Death()
@@ -108,5 +109,6 @@ public class Character : MonoBehaviour
         speed = hero.Speed;
         evasion = hero.Evasion;
         weapon = hero.weapon;
+        Debug.Log(hero.Hp);
     }
 }

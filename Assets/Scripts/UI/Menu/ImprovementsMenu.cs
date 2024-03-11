@@ -16,8 +16,10 @@ public class ImprovementsMenu : MenuElement
     private TextMeshProUGUI value;
     [SerializeField]
     private GameObject buttonBuy;
-
-    private bool isEnable = false;
+    [SerializeField]
+    private int countUpgradeAd;
+    
+    private bool isEnable;
 
     [SerializeField]
     private float timeBetweenAppereanceCells;
@@ -97,5 +99,17 @@ public class ImprovementsMenu : MenuElement
         DataManager.instance.gameData.coins -= price;
         DataManager.instance.gameData.prices.improvement += 5;
         DataManager.instance.Save();
+    }
+
+    public void AdImprovement()
+    {
+        for (int i = 0; i < countUpgradeAd; i++)
+        {
+            var improvements = DataManager.instance.gameData.improvements;
+            var rnd = Random.Range(0, improvements.Length);
+            improvements[rnd].level++;
+            cells.FirstOrDefault(x => x.id == improvements[rnd].id)?.Init(improvements[rnd].id);
+            DataManager.instance.Save();
+        }
     }
 }
