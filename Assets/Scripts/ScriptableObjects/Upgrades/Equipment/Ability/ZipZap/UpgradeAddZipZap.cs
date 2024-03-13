@@ -15,6 +15,7 @@ public class UpgradeAddZipZap : UpgradeAbility
     public override void Action()
     {
         var zipZap = GameManager.player.AddComponent<ZipZap>();
+        foreach (var upgrade in upgrades) upgrade.objectUpgrade = this;
         zipZap.Initialize(this);
         GlobalEventManager.Start_AddItem(this);
     }

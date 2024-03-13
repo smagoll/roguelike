@@ -9,11 +9,12 @@ public class UpgradeAddFireball : UpgradeAbility
     public float speedFlight;
     public Upgrade[] upgrades;
 
-    public float RadiusBlast => stats.FirstOrDefault(x => x.Type == StatType.Radius).GetValue(Level);
+    public float RadiusBlast => stats.FirstOrDefault(x => x.Type == StatType.Radius)!.GetValue(Level);
 
     public override void Action()
     {
         var fireball = GameManager.player.AddComponent<FireBall>();
+        foreach (var upgrade in upgrades) upgrade.objectUpgrade = this;
         fireball.Initialize(this);
         GlobalEventManager.Start_AddItem(this);
     }

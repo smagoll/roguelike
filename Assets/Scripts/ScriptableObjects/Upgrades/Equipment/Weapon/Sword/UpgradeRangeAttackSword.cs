@@ -15,7 +15,7 @@ public class UpgradeRangeAttackSword : UpgradeStats
             return description;
         }
     }
-
+    
     public override void Action()
     {
         GameManager.player.GetComponent<Sword>().ScaleAttackRange += scaleRadius;

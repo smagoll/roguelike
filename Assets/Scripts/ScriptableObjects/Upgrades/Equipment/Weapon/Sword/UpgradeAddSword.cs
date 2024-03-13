@@ -16,6 +16,7 @@ public class UpgradeAddSword : UpgradeWeapon
     {
         GlobalEventManager.Start_AddItem(this);
         var sword = GameManager.player.AddComponent<Sword>();
+        foreach (var upgrade in upgrades) upgrade.objectUpgrade = this;
         sword.Initialize(this);
     }
 }

@@ -14,10 +14,10 @@ public class HeroStats : MonoBehaviour
 
     private void OnEnable()
     {
-        SetStats();
+        StartCoroutine(SetStats());
     }
 
-    private void SetStats()
+    private IEnumerator SetStats()
     {
         foreach (Transform stat in listStatsTransform) Destroy(stat.gameObject);
         var hero = DataManager.instance.heroes.FirstOrDefault(x => x.Id == DataManager.instance.gameData.equipmentSelected.id_hero);
@@ -26,6 +26,7 @@ public class HeroStats : MonoBehaviour
             {
                 var statInfo = Instantiate(statInfoUI, listStatsTransform);
                 statInfo.Initialize(stat);
+                yield return new WaitForSeconds(0.1f);
             }
     }
     

@@ -21,6 +21,8 @@ public class EndGameWindow : MonoBehaviour
     private LocalizeStringEvent adButtonText;
     [SerializeField]
     private LocalizedString doubleAwardsStringReference;
+    [SerializeField]
+    private GameObject reviveEffect;
 
     public bool isRevive;
     public bool isDoubleReward;
@@ -76,6 +78,7 @@ public class EndGameWindow : MonoBehaviour
 
     private void Revive()
     {
+        if(reviveEffect != null) Instantiate(reviveEffect, GameManager.player.transform);
         Time.timeScale = 1f;
         UpdateTextCoin();
         character.HP = character.MaxHP / 2;

@@ -12,6 +12,7 @@ public abstract class MenuElement : MonoBehaviour
     private SimpleScrollSnap simpleScrollSnap;
     public int numberPanel;
     public GameObject buttonSelected;
+    public Toggle toggle;
 
     [Inject]
     public void Construct(SimpleScrollSnap simpleScrollSnap)
@@ -19,9 +20,9 @@ public abstract class MenuElement : MonoBehaviour
         this.simpleScrollSnap = simpleScrollSnap;
     }
 
-    public void Select()
+    public void Select(bool isSelect)
     {
-        simpleScrollSnap.GoToPanel(numberPanel);
+        if (isSelect) simpleScrollSnap.GoToPanel(numberPanel);
     }
 
     public abstract void EnterView();

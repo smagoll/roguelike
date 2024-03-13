@@ -73,4 +73,9 @@ public class UIManagerMenu : MonoBehaviour
     {
         navigationMenu.gameObject.SetActive(true);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

@@ -163,11 +163,8 @@ public class GameManager : MonoBehaviour
             obj.gameObject.SetActive(true);
         }, obj => {
             obj.gameObject.SetActive(false);
-        }, obj => {
-            Destroy(obj);
-        }, false);
+        }, Destroy, false);
 
         return pool;
     }
-
 }

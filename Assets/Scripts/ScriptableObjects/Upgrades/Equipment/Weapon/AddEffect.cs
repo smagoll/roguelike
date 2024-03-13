@@ -11,7 +11,6 @@ public class AddEffect : Upgrade
     public override void Action()
     {
           ActivateEffect(GameManager.player.GetComponent<Weapon>());
-
     }
 
     private void ActivateEffect(Weapon weapon)

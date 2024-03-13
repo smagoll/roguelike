@@ -15,6 +15,7 @@ public class UpgradeAddBow : UpgradeWeapon
     {
         var bow = GameManager.player.AddComponent<Bow>();
         bow.Initialize(this);
+        foreach (var upgrade in upgrades) upgrade.objectUpgrade = this;
         GlobalEventManager.Start_AddItem(this);
     }
 

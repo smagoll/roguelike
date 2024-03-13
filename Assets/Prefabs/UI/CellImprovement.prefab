@@ -58,6 +58,9 @@ MonoBehaviour:
   uiAnimationOut: 0
   rectTransform: {fileID: 6789987618245253457}
   fadeTime: 0.5
+  ease: 24
+  distance: 100
+  delay: 0
 --- !u!1 &5059223047448973235
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +356,7 @@ GameObject:
   - component: {fileID: 45159878293538573}
   - component: {fileID: 1815265754067252699}
   - component: {fileID: 8014760109958161950}
+  - component: {fileID: 5575105558538718087}
   m_Layer: 5
   m_Name: Background
   m_TagString: Untagged
@@ -399,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: 2d37c4afca8784ce9ab899810e29aa9c, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -417,6 +421,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5575105558538718087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6348069753660645384}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62e4947d070cf41eb87bc6a9968c32a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  m_Location: 0.471457
+  m_Width: 0.223
+  m_Softness: 1
+  m_Brightness: 0.281
+  m_Rotation: -44
+  m_Highlight: 0.14
+  m_EffectMaterial: {fileID: 2100000, guid: 2d37c4afca8784ce9ab899810e29aa9c, type: 2}
 --- !u!1 &6741426875506345313
 GameObject:
   m_ObjectHideFlags: 0

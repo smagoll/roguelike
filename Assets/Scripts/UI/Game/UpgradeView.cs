@@ -12,7 +12,9 @@ public class UpgradeView : MonoBehaviour
     [SerializeField]
     private LocalizeStringEvent description;
     [SerializeField]
-    private Image image;
+    private Image iconUpgrade;
+    [SerializeField]
+    private Image iconObjectUpgrade;
 
 
     public void SelectUpgrade()
@@ -30,9 +32,15 @@ public class UpgradeView : MonoBehaviour
         if (upgrade != null)
         {
             this.upgrade = upgrade;
-            image.sprite = upgrade.icon;
+            iconUpgrade.sprite = upgrade.icon;
             title.StringReference = upgrade.title;
             description.StringReference = upgrade.Description;
+            
+            if (upgrade.objectUpgrade != null)
+            {
+                iconObjectUpgrade.enabled = true;
+                iconObjectUpgrade.sprite = upgrade.objectUpgrade.icon;
+            }
         }
     }
 }

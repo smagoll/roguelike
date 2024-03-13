@@ -7,11 +7,12 @@ public class ScrollMenu : MonoBehaviour
     public SimpleScrollSnap simpleScrollSnap;
     public EventSystem eventSystem;
 
-    private int centeredMenu;
+    private int centeredMenu = -1;
 
     private void Start()
     {
         simpleScrollSnap.OnPanelCentered.AddListener(SelectButtonCentered);
+        SelectButtonCentered(simpleScrollSnap.CenteredPanel);
     }
 
     public void SelectButtonCentered(int numberCentred, int numberPrevious)
@@ -20,13 +21,21 @@ public class ScrollMenu : MonoBehaviour
         {
             return;
         }
-
-        //simpleScrollSnap.Panels[numberPrevious].gameObject.SetActive(false);
+        
         centeredMenu = numberCentred;
-        //simpleScrollSnap.Panels[numberCentred].gameObject.SetActive(true);
         var selectedPanel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
-        //selectedPanel.EnterView();
-        var button = selectedPanel.buttonSelected;
-        eventSystem.SetSelectedGameObject(button);
+        selectedPanel.toggle.isOn = true;
+    }
+    
+    public void SelectButtonCentered(int numberCentred)
+    {
+        if (centeredMenu == numberCentred)
+        {
+            return;
+        }
+        
+        centeredMenu = numberCentred;
+        var selectedPanel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
+        selectedPanel.toggle.isOn = true;
     }
 }

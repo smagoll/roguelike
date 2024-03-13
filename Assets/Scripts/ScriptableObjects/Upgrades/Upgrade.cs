@@ -6,6 +6,7 @@ public abstract class Upgrade : ScriptableObject
     public Sprite icon;
     public RareType rare;
     public abstract UpgradeType UpgradeType { get; }
+    public Upgrade objectUpgrade = null;
     public LocalizedString title;
     public LocalizedString description;
 

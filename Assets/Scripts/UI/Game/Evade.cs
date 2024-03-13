@@ -18,6 +18,7 @@ public class Evade : MonoBehaviour
 
     public void Show()
     {
+        AudioGame.instance.PlayMainSFX(AudioGame.instance.evasion);
         transform.DOMove(transform.position + new Vector3(0, moveY, 0), timeInMove);
         DOTween.Sequence()
             .Append(transform.DOScale(0.03f, 0.1f))

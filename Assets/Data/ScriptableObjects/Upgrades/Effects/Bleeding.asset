@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 2597cee30bfd4de4fa22ab9cddd8da73, type: 2}
   rare: 0
+  objectUpgrade: {fileID: 11400000, guid: 107ccf5bf0ad2f344ac2c7589b71b705, type: 2}
   title:
     m_TableReference:
       m_TableCollectionName: GUID:e5b65dc3b58bf054a850b08f28cea105

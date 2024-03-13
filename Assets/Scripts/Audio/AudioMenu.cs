@@ -11,7 +11,8 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
         UpgradeButton,
         NavigationButton,
         SelectButton,
-        BackgroundBack
+        BackgroundBack,
+        SwipeEffect
     }
 
     public static AudioMenu instance;
@@ -32,6 +33,7 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
     public AudioClip buttonUpgrade;
     public AudioClip buttonSelect;
     public AudioClip buttonBuy;
+    public AudioClip swipeEffect;
 
     private void Awake()
     {
@@ -67,6 +69,9 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
             case UISound.SelectButton:
                 uiSource.PlayOneShot(buttonSelect);
                 break;
+            case UISound.SwipeEffect:
+                uiSource.PlayOneShot(swipeEffect);
+                break;
         }
     }
 
@@ -82,6 +87,7 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
     public void PlayButtonUpgrade() => PlayUI(UISound.UpgradeButton);
     public void PlayButtonNavigation() => PlayUI(UISound.NavigationButton);
     public void PlayButtonSelect() => PlayUI(UISound.SelectButton);
+    public void PlaySwipeEffect() => PlayUI(UISound.SwipeEffect);
 }
 
 public interface ISwitchAudio
