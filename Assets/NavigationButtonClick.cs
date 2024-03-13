@@ -15,17 +15,13 @@ public class NavigationButtonClick : MonoBehaviour
     {
         if (isOn)
         {
-            DOTween.Sequence()
-                .Append(content.DOAnchorPos(new Vector2(0f, -25f), .5f))
-                .SetEase(Ease.OutBounce)
-                .SetUpdate(true);
+            content.DOAnchorPos(new Vector2(0f, -25f), .5f)
+                .SetEase(Ease.OutBounce);
         }
         else
         {
-            DOTween.Sequence()
-                .Append(content.DOAnchorPos(new Vector2(0f, 0f), .5f))
-                .SetEase(Ease.OutBounce)
-                .SetUpdate(true);
+            content.DOAnchorPos(new Vector2(0f, 0f), .5f)
+                .SetEase(Ease.OutBounce);
         }
 
         

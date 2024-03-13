@@ -37,5 +37,6 @@ public class ScrollMenu : MonoBehaviour
         centeredMenu = numberCentred;
         var selectedPanel = simpleScrollSnap.Panels[numberCentred].GetComponent<MenuElement>();
         selectedPanel.toggle.isOn = true;
+        //selectedPanel.Select(true);
     }
 }

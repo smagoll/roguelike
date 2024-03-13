@@ -11,7 +11,6 @@ public abstract class MenuElement : MonoBehaviour
     [Header("Navigation")]
     private SimpleScrollSnap simpleScrollSnap;
     public int numberPanel;
-    public GameObject buttonSelected;
     public Toggle toggle;
 
     [Inject]
