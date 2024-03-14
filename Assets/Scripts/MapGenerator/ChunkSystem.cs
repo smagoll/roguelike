@@ -6,9 +6,9 @@ using UnityEngine.Tilemaps;
 
 public class ChunkSystem : MonoBehaviour
 {
-    public ChunkData[,] chunks;
-    [SerializeField]
-    private Grid grid;
+    public List<ChunkData[,]> chunkLayers = new();
+    public ChunkData[,] chunksItems;
+    public Grid grid;
     [SerializeField]
     public int size;
     [SerializeField]
@@ -21,80 +21,85 @@ public class ChunkSystem : MonoBehaviour
         CreateFirstChunks();
     }
 
-    public void CreateFirstChunks()
+    private void CreateFirstChunks()
     {
-        chunks = new ChunkData[size, size];
-
-        for (int x = -1; x <= 1; x++)
+        //chunksEarth = new ChunkData[size, size];
+        //chunksItems = new ChunkData[size, size];
+        
+        foreach (ChunkType chunkType in Enum.GetValues(typeof(ChunkType)))
+        {
+            var chunks = new ChunkData[size, size];
+            chunkLayers.Add(chunks);
+            for (int x = -1; x <= 1; x++)
             for (int y = -1; y <= 1; y++)
-                CreateChunk(x, y);
+                CreateChunk(chunks, x, y, chunkType);
+        }
+        
+        //for (int x = -1; x <= 1; x++)
+        //    for (int y = -1; y <= 1; y++)
+        //        CreateChunk(chunksEarth, x, y);
     }
 
-    private void CreateChunk(int x, int y)
+    private void CreateChunk(ChunkData[,] chunks, int x, int y, ChunkType chunkType)
     {
         var tilemap = Instantiate(prefabTilemap, grid.gameObject.transform);
-        tilemap.gameObject.GetComponent<TilemapRenderer>().sortingOrder = -1;
+        tilemap.gameObject.GetComponent<TilemapRenderer>().sortingOrder = (int)chunkType;
         var coordChunk = new Vector2Int(x, y);
-        chunks[x + 1, y + 1] = new ChunkData(coordChunk, tilemap);
+        chunks[x + 1, y + 1] = new ChunkData(coordChunk, tilemap, chunkType);
     }
 
     public void Rotate(int xRotate, int yRotate)
     {
-        if (xRotate == 0 && yRotate == 0)
-        {
-            return;
-        }
+        if (xRotate == 0 && yRotate == 0) return;
 
-        ChunkData[,] copyChunks = Copy(chunks);
-
-        foreach (var chunk in chunks)
+        foreach (var chunkLayer in chunkLayers)
         {
-            chunk.coord += new Vector2Int(xRotate, yRotate);
-            Debug.Log(chunk.coord);
-        }
+            ChunkData[,] copyChunks = Copy(chunkLayer);
 
-        for(int x = 0; x < size; x++)
-        {
-            for(int y = 0; y < size; y++)
+            foreach (var chunk in chunkLayer) chunk.coord += new Vector2(xRotate, yRotate);
+
+            for (int x = 0; x < size; x++)
+            for (int y = 0; y < size; y++)
             {
-                var isFind = true;
+                var isFind = false;
                 foreach (var copyChunk in copyChunks)
-                {
-                    if (chunks[x, y].coord == copyChunk.coord)
+                    if (chunkLayer[x, y].coord == copyChunk.coord)
                     {
-                        chunks[x, y].tilemap = copyChunk.tilemap;
-                        isFind = false;
+                        chunkLayer[x, y].tilemap = copyChunk.tilemap;
+                        isFind = true;
                         break;
                     }
-                }
+
                 if (!isFind)
                 {
-                    copyChunks[x, y].tilemap.ClearAllTiles();
-                    mapGenerator.GenerateMap(chunks[x,y].coord, chunks[x, y].tilemap);
+                    chunkLayer[x, y].tilemap = copyChunks[x + xRotate * -2, y + yRotate * -2].tilemap;
+                    chunkLayer[x, y].tilemap.ClearAllTiles();
+                    mapGenerator.GenerateTilemap(chunkLayer[x, y].coord, chunkLayer[x, y].tilemap, chunkLayer[x, y].chunkType);
                 }
-
             }
         }
     }
 
-    private static T[,] Copy<T>(T[,] array)
+    private static ChunkData[,] Copy(ChunkData[,] array)
     {
-        T[,] newArray = new T[array.GetLength(0), array.GetLength(1)];
+        ChunkData[,] newArray = new ChunkData[array.GetLength(0), array.GetLength(1)];
         for (int i = 0; i < array.GetLength(0); i++)
             for (int j = 0; j < array.GetLength(1); j++)
-                newArray[i, j] = array[i, j];
+                newArray[i, j] = new ChunkData(array[i, j].coord, array[i, j].tilemap, array[i,j].chunkType);
         return newArray;
     }
 }
 
 public class ChunkData
 {
-    public Vector2Int coord;
+    public Vector2 coord;
     public Tilemap tilemap;
+    public ChunkType chunkType;
 
-    public ChunkData(Vector2Int coord, Tilemap tilemap)
+    public ChunkData(Vector2 coord, Tilemap tilemap, ChunkType chunkType)
     {
         this.coord = coord;
         this.tilemap = tilemap;
+        this.chunkType = chunkType;
     }
 }

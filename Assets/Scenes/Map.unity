@@ -133,8 +133,6 @@ GameObject:
   m_Component:
   - component: {fileID: 492619107}
   - component: {fileID: 492619109}
-  - component: {fileID: 492619110}
-  - component: {fileID: 492619112}
   - component: {fileID: 492619113}
   m_Layer: 0
   m_Name: MapGenerator
@@ -170,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a8dcfcf982f83644b53e80aec1ca525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 20
-  height: 20
+  width: 30
+  height: 30
   cam: {fileID: 1962316301}
   seed: 50
   scale: 10
@@ -181,31 +179,13 @@ MonoBehaviour:
   floorTile: {fileID: 11400000, guid: 21858e2616157db459321001846646f2, type: 2}
   grainGreyTile: {fileID: 11400000, guid: b498b8b97c6fd934f9d363414be9e4e5, type: 2}
   grainTile: {fileID: 11400000, guid: cf0329c4111d1cb4a969cebcb22ef994, type: 2}
+  flowers:
+  - {fileID: 11400000, guid: 7a270a6ecb8f16242bd6ad2bd922451e, type: 2}
+  - {fileID: 11400000, guid: bb95f3ed065479d48a5335511cc03657, type: 2}
+  - {fileID: 11400000, guid: 3217bb8d4feb94c47aaa08f4d56083ad, type: 2}
+  stones: {fileID: 11400000, guid: 6f50e99f2cab57247b51117a46c2d3db, type: 2}
+  stump: {fileID: 11400000, guid: 3d5f18c2f08ecd24a8dbee33fd857da1, type: 2}
   chunkSystem: {fileID: 492619113}
---- !u!114 &492619110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492619104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 711635d7fb220084093328be82cc0d8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &492619112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 492619104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6704e693e7b44f24d9f67b56440ed42b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &492619113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,8 +241,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

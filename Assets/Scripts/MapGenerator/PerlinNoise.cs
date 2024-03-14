@@ -4,7 +4,7 @@ using UnityEngine;
 
 public static class PerlinNoise
 {
-    public static float[,] GenerateNoiseMap(int width, int height, float scale, int seed, int octaves, float persistence, float lacunarity, Vector2Int offset)
+    public static float[,] GenerateNoiseMap(int width, int height, float scale, int seed, int octaves, float persistence, float lacunarity, Vector2 offset)
     {
         float[,] noiseMap = new float[width, height];
         var rnd = new System.Random(seed);
