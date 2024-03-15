@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1731,7 +1731,6 @@ GameObject:
   m_Component:
   - component: {fileID: 458633390}
   - component: {fileID: 458633389}
-  - component: {fileID: 458633394}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -1773,19 +1772,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &458633394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 458633388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8a3579a27c58b14d974dfb661849311, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  TargetFrameRate: 200
 --- !u!1 &500293858
 GameObject:
   m_ObjectHideFlags: 0
@@ -1950,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -2921,12 +2907,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762976387}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 834410827}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &762976390
@@ -3179,7 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -4878,8 +4864,6 @@ GameObject:
   - component: {fileID: 998433023}
   - component: {fileID: 998433026}
   - component: {fileID: 998433027}
-  - component: {fileID: 998433029}
-  - component: {fileID: 998433028}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5014,33 +4998,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 998433022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed36b4d646edd3d4f92208573215cce6, type: 3}
+  m_Script: {fileID: 11500000, guid: b8a3579a27c58b14d974dfb661849311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &998433028
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998433022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 12f131413a27341448bd425de5660b95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &998433029
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 998433022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ff034445934d4d4b976e42ffb0a6979, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  TargetFrameRate: 61
 --- !u!1 &1013367932
 GameObject:
   m_ObjectHideFlags: 0
@@ -5230,7 +5191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -6603,7 +6564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -7845,7 +7806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8252,7 +8213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8523,7 +8484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9180,7 +9141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9822,7 +9783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -10237,7 +10198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.6852557
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281

@@ -467,7 +467,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                     switch (movementAxis)
                     {
                         case MovementAxis.Horizontal:
-                            Panels[i].gameObject.SetActive(Mathf.Abs(GetDisplacementFromCenter(i).x) <= Viewport.rect.width);
+                            Panels[i].gameObject.SetActive(Mathf.Abs(GetDisplacementFromCenter(i).x) <= Viewport.rect.width / 1.01f);
                             break;
                         case MovementAxis.Vertical:
                             Panels[i].gameObject.SetActive(Mathf.Abs(GetDisplacementFromCenter(i).y) <= Viewport.rect.height / 2f + size.y);

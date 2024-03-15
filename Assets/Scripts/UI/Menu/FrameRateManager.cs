@@ -7,13 +7,20 @@ public class FrameRateManager : MonoBehaviour
     int MaxRate = 9999;
     public float TargetFrameRate = 60.0f;
     float currentFrameTime;
-    void Awake()
+    void Start()
     {
-        QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = MaxRate;
-        currentFrameTime = Time.realtimeSinceStartup;
-        StartCoroutine("WaitForNextFrame");
+        StartCoroutine(StartFrameUnlock());
+        //currentFrameTime = Time.realtimeSinceStartup;
+        //StartCoroutine("WaitForNextFrame");
     }
+
+    private IEnumerator StartFrameUnlock()
+    {
+        yield return new WaitForSeconds(1f);
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 61;
+    }
+    
     private IEnumerator WaitForNextFrame()
     {
         while (true)

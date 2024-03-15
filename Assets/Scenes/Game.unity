@@ -4788,6 +4788,12 @@ MonoBehaviour:
   floorTile: {fileID: 11400000, guid: 21858e2616157db459321001846646f2, type: 2}
   grainGreyTile: {fileID: 11400000, guid: 546853634135e7042891dc636defc361, type: 2}
   grainTile: {fileID: 11400000, guid: cf0329c4111d1cb4a969cebcb22ef994, type: 2}
+  flowers:
+  - {fileID: 11400000, guid: 3217bb8d4feb94c47aaa08f4d56083ad, type: 2}
+  - {fileID: 11400000, guid: bb95f3ed065479d48a5335511cc03657, type: 2}
+  - {fileID: 11400000, guid: 7a270a6ecb8f16242bd6ad2bd922451e, type: 2}
+  stones: {fileID: 11400000, guid: 6f50e99f2cab57247b51117a46c2d3db, type: 2}
+  stump: {fileID: 11400000, guid: 3d5f18c2f08ecd24a8dbee33fd857da1, type: 2}
   chunkSystem: {fileID: 1320290007}
 --- !u!1 &1338435623
 GameObject:
