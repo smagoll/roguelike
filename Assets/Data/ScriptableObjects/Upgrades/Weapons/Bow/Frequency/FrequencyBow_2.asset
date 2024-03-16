@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 1457902684, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 1
+  objectUpgrade: {fileID: 0}
   title:
     m_TableReference:
       m_TableCollectionName: GUID:b5166ecd4fd1b564285200900e8913ca
@@ -32,7 +33,7 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
-  scaleFrequency: 3
+  scaleFrequency: 4
   references:
     version: 2
     RefIds: []

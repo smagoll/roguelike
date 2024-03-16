@@ -39,7 +39,7 @@ public class SceneTransition : MonoBehaviour
             instance.ShowSceneTransition();
 
             instance.loadingAsyncOperation = SceneManager.LoadSceneAsync(sceneName);
-            //instance.StartCoroutine(instance.Wait(.3f));
+            instance.StartCoroutine(instance.Wait(.3f));
     }
 
     public void ShowSceneTransition()

@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: -439223267, guid: bbaa45533938c4048baf9da3193ae9d0, type: 3}
   rare: 1
+  objectUpgrade: {fileID: 0}
   title:
     m_TableReference:
       m_TableCollectionName: GUID:e6a4b863141f13849be240ee8e7dc784
@@ -37,7 +38,7 @@ MonoBehaviour:
   stats:
   - statType: 0
     statUpgradeType: 0
-    value: 3
+    value: 5
     step: 2
     clampValue: 20000
   - statType: 1

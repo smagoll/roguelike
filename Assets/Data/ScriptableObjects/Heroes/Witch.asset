@@ -28,14 +28,14 @@ MonoBehaviour:
   stats:
   - statType: 2
     statUpgradeType: 0
-    value: 100
+    value: 50
     step: 0
     clampValue: 10000
   - statType: 3
     statUpgradeType: 0
-    value: 2
+    value: 2.2
     step: 0
-    clampValue: 3
+    clampValue: 3.5
   - statType: 4
     statUpgradeType: 0
     value: 1
