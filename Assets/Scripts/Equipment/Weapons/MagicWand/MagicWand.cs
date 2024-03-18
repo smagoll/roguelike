@@ -5,7 +5,7 @@ using UnityEngine;
 public class MagicWand : Weapon
 {
     [SerializeField]
-    private GameObject prefabSphere;
+    private MagicWandSphere prefabSphere;
     [SerializeField]
     public float attackRange;
     [SerializeField]
@@ -27,8 +27,7 @@ public class MagicWand : Weapon
         {
             var direction = GameCalculator.GetDirectionOnTheAngle(360f / countSphere);
             var position = new Vector3(direction.x, direction.y, 0f).normalized * radiusSphere;
-            var sphereObject = Instantiate(prefabSphere, position, Quaternion.identity, transform);
-            var sphere = sphereObject.GetComponent<MagicWandSphere>();
+            var sphere = Instantiate(prefabSphere, position, Quaternion.identity, transform);
             sphere.Initialize(this);
             spheres.Add(sphere);
         }
@@ -48,7 +47,7 @@ public class MagicWand : Weapon
         }
     }
 
-    public void Initialize(GameObject prefabSphere, float attackRange, float radius, int countSphere, float speedFlight, float distanceFlight, float damage, float frequency, Upgrade[] upgrades)
+    public void Initialize(MagicWandSphere prefabSphere, float attackRange, float radius, int countSphere, float speedFlight, float distanceFlight, float damage, float frequency, Upgrade[] upgrades)
     {
         this.prefabSphere = prefabSphere;
         this.attackRange = attackRange;

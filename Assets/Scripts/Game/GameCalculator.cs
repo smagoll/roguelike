@@ -25,7 +25,7 @@ public static class GameCalculator
 
         if (rnd < 10)
             return RareType.Epic;
-        if (rnd < 40)
+        if (rnd < 30)
             return RareType.Uncommon;
         if (rnd < 100)
             return RareType.Common;

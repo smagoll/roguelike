@@ -5,7 +5,9 @@ using UnityEngine;
 public class MenuHeroes : MenuElement
 {
     [SerializeField]
-    private GameObject prefabCell;
+    private GameObject windowUpgrade;
+    [SerializeField]
+    private CellHero prefabCell;
     [SerializeField]
     private Transform openCells;
     [SerializeField]
@@ -25,8 +27,7 @@ public class MenuHeroes : MenuElement
         foreach (var hero in DataManager.instance.gameData.heroes.OrderBy(x => x.id))
         {
             Transform transformEquipment = hero.stageForOpen <= DataManager.instance.gameData.record ? openCells : closeCells;
-            var cellObject = Instantiate(prefabCell, transformEquipment);
-            var cell = cellObject.GetComponent<CellHero>();
+            var cell = Instantiate(prefabCell, transformEquipment);
             cell.Init(hero.id);
             yield return new WaitForSeconds(.1f);
         }
@@ -34,6 +35,7 @@ public class MenuHeroes : MenuElement
 
     public override void EnterView()
     {
+        windowUpgrade.SetActive(false);
         UpdateCells();
         heroInfoUI.UpdateInfo();
         heroInfoUI.gameObject.GetComponent<UIAnimation>().AnimationIn();

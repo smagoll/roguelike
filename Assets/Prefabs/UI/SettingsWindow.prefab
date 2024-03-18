@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.0507039
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1655,7 +1655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.0279357
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -2103,6 +2103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28eb0f7f7c424c541ba5e74e5673356f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: {fileID: 5433127289287037915}
+  effects: {fileID: 745621406217303710}
   effectOn: {fileID: 9207742635028283429}
   effectOff: {fileID: 3966956329197150701}
   musicOn: {fileID: 537346151759016808}
@@ -2390,7 +2392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.0608822
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -2486,7 +2488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.1285793
+  m_Location: 0
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281

@@ -67,28 +67,20 @@ public class AudioGame : MonoBehaviour, ISwitchAudio
 
     public void UpdateSettings()
     {
-        if (DataManager.instance.gameData.settings.music)
+        if (!DataManager.instance.gameData.settings.music)
             audioMixer.SetFloat("Music", -80f);
         else
-            audioMixer.SetFloat("Music", 0f);
+            audioMixer.SetFloat("Music", -20f);
         
-        if (DataManager.instance.gameData.settings.music)
+        if (!DataManager.instance.gameData.settings.sounds)
         {
             audioMixer.SetFloat("UI", -80f);
             audioMixer.SetFloat("SFX", -80f);
         }
         else
         {
-            audioMixer.SetFloat("UI", 0f);
-            audioMixer.SetFloat("SFX", 0f);
+            audioMixer.SetFloat("UI", -15f);
+            audioMixer.SetFloat("SFX", -7f);
         }
-        
-        //var isSound = DataManager.instance.gameData.settings.sounds;
-        //var isMusic = DataManager.instance.gameData.settings.music;
-        //sfxMainSource.enabled = isSound;
-        //sfxSmallSource.enabled = isSound;
-        //uiSource.enabled = isSound;
-        //musicSource.enabled = isMusic;
-        //moveSource.enabled = isSound;
     }
 }

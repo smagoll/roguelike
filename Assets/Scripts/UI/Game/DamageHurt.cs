@@ -19,6 +19,7 @@ public class DamageHurt : MonoBehaviour
 
     public void Show()
     {
+        if (damage > 1f) damage = Mathf.Round(damage);
         textDamage.text = damage.ToString();
 
         transform.DOMove(transform.position + new Vector3(0, 0.2f, 0), timeInMove);

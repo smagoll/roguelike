@@ -73,7 +73,8 @@ public class HeroInfoUI : MonoBehaviour
         DataManager.instance.gameData.equipmentSelected.id_hero = windowUpgrade.equipment.Id;
         DataManager.instance.Save();
         animation.AnimationIn();
-        windowUpgrade.gameObject.GetComponent<UIAnimation>().AnimationOut();
+        //windowUpgrade.gameObject.GetComponent<UIAnimation>().AnimationOut();
+        windowUpgrade.gameObject.SetActive(false);
         UpdateInfo();
     }
 }

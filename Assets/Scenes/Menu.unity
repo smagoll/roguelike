@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1498,7 +1498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -2227,7 +2227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -2265,10 +2265,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1042781308}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 425, y: -40}
-  m_SizeDelta: {x: 850, y: 80}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 850, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &591826751
 MonoBehaviour:
@@ -2456,9 +2456,9 @@ RectTransform:
   - {fileID: 778019409}
   m_Father: {fileID: 79233356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 212.5, y: -93.015}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 287.1781, y: 191.452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &649037356
@@ -2519,7 +2519,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2045931263}
         m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
-        m_MethodName: PlayButtonUpgrade
+        m_MethodName: PlayButtonBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -3901,7 +3901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &867476092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4327,7 +4327,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -5191,7 +5191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -5232,9 +5232,9 @@ RectTransform:
   - {fileID: 1528977897}
   m_Father: {fileID: 79233356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 637.5, y: -93.015}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 287.1781, y: 191.452}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1039871560
@@ -5283,7 +5283,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2045931263}
         m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
-        m_MethodName: PlayButtonUpgrade
+        m_MethodName: PlayButtonBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6564,7 +6564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -7149,7 +7149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberPanel: 1
   toggle: {fileID: 925483436}
-  prefabCell: {fileID: 8340773842497062041, guid: fa84d37c5490846439df295f0ec3289a, type: 3}
+  windowUpgrade: {fileID: 8868720637321328744}
+  prefabCell: {fileID: 7166645386209171913, guid: fa84d37c5490846439df295f0ec3289a, type: 3}
   openCells: {fileID: 9217801340715185027}
   closeCells: {fileID: 3844327067699883506}
   heroInfoUI: {fileID: 1354128554}
@@ -7806,7 +7807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8213,7 +8214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8484,7 +8485,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9141,7 +9142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9783,7 +9784,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -10011,7 +10012,6 @@ MonoBehaviour:
   sfxSource: {fileID: 1903913977}
   uiSource: {fileID: 597992237}
   audioMixer: {fileID: 24100000, guid: aa5f77ff9f19e3949bfad72f846b1dee, type: 2}
-  audioMixerGroup: {fileID: 0}
   music: {fileID: 8300000, guid: 0f52a409bed37754e9968ebf781f2463, type: 3}
   backgroundBack: {fileID: 8300000, guid: 56f4664303e9bcb4cb9148e6923a3ebc, type: 3}
   buttonNavigation: {fileID: 8300000, guid: 7b36b81e65201da4bb6e41c3063a7480, type: 3}
@@ -10200,7 +10200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.9942441
+  m_Location: 0.8743487
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -11030,7 +11030,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2045931263}
         m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
-        m_MethodName: PlayButtonUpgrade
+        m_MethodName: PlayButtonBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13710,7 +13710,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2045931263}
         m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
-        m_MethodName: PlayButtonUpgrade
+        m_MethodName: PlayButtonBuy
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

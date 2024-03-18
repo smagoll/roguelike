@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
+using UnityEngine.Pool;
 
 public class MagicWandProjectile : Projectile
 {
+    [SerializeField]
+    private TrailRenderer trailRenderer;
+    public ObjectPool<MagicWandProjectile> pool;
     public MagicWand magicWand;
     private bool isHit = false;
 
@@ -17,5 +21,23 @@ public class MagicWandProjectile : Projectile
 
             DestroyProjectile();
         }
+    }
+
+    private void OnEnable()
+    {
+        isHit = false;
+    }
+    
+    public void StartFlight()
+    {
+        UpdateProjectile();
+        isFlight = true;
+    }
+    
+    public override void DestroyProjectile()
+    {
+        trailRenderer.Clear();
+        isFlight = false;
+        pool.Release(this);
     }
 }

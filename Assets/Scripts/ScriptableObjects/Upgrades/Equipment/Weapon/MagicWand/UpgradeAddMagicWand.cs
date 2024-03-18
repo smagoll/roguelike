@@ -9,7 +9,7 @@ public class UpgradeAddMagicWand : UpgradeWeapon
     [SerializeField]
     private float frequency;
 
-    public GameObject prefabSphere;
+    public MagicWandSphere prefabSphere;
     public int countSphere;
     public float radiusSphere;
     public float attackRange;

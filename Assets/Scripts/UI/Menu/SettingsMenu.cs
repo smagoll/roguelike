@@ -24,10 +24,10 @@ public class SettingsWindow : MonoBehaviour
 
     private void Start()
     {
-        music.onValueChanged.Invoke(DataManager.instance.gameData.settings.music);
-        effects.onValueChanged.Invoke(DataManager.instance.gameData.settings.sounds);
-        //ChangeMusic(DataManager.instance.gameData.settings.music);
-        //ChangeEffects(DataManager.instance.gameData.settings.sounds);
+        music.isOn = DataManager.instance.gameData.settings.music;
+        effects.isOn = DataManager.instance.gameData.settings.sounds;
+        ChangeMusic(DataManager.instance.gameData.settings.music);
+        ChangeEffects(DataManager.instance.gameData.settings.sounds);
     }
 
     public void ChangeMusic(bool value)

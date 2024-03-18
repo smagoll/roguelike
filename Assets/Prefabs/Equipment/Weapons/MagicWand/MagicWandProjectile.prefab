@@ -386,6 +386,7 @@ MonoBehaviour:
   isFlight: 1
   direction: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
+  trailRenderer: {fileID: 264321297519643488}
   magicWand: {fileID: 0}
 --- !u!58 &-190134670131361077
 CircleCollider2D:
