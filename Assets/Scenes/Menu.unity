@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -5191,7 +5191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -6564,7 +6564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -6897,7 +6897,7 @@ MonoBehaviour:
     m_TableReference:
       m_TableCollectionName: GUID:882d1121ec923a84ca4f5c34baa92799
     m_TableEntryReference:
-      m_KeyId: 14096788107264
+      m_KeyId: 4689581081034752
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0
@@ -7806,7 +7806,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8213,7 +8213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8484,7 +8484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9141,7 +9141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9783,7 +9783,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -10010,6 +10010,8 @@ MonoBehaviour:
   musicSource: {fileID: 804330358}
   sfxSource: {fileID: 1903913977}
   uiSource: {fileID: 597992237}
+  audioMixer: {fileID: 24100000, guid: aa5f77ff9f19e3949bfad72f846b1dee, type: 2}
+  audioMixerGroup: {fileID: 0}
   music: {fileID: 8300000, guid: 0f52a409bed37754e9968ebf781f2463, type: 3}
   backgroundBack: {fileID: 8300000, guid: 56f4664303e9bcb4cb9148e6923a3ebc, type: 3}
   buttonNavigation: {fileID: 8300000, guid: 7b36b81e65201da4bb6e41c3063a7480, type: 3}
@@ -10198,7 +10200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.442477
+  m_Location: 0.9942441
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -10589,8 +10591,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 0
+    m_Left: 20
+    m_Right: 20
     m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 1
@@ -12894,8 +12896,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Padding:
-    m_Left: 10
-    m_Right: 0
+    m_Left: 20
+    m_Right: 20
     m_Top: 20
     m_Bottom: 0
   m_ChildAlignment: 1

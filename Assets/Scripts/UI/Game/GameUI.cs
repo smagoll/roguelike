@@ -98,7 +98,7 @@ public class GameUI : MonoBehaviour
     
     private void CreateUpgradeView(Upgrade upgrade)
     {
-        GameObject upgradeView = new();
+        GameObject upgradeView= null;
 
         switch (upgrade.rare)
         {
@@ -112,10 +112,13 @@ public class GameUI : MonoBehaviour
                 upgradeView = Instantiate(upgradeViewEpic, upgradesLayout);
                 break;
         }
-        
-        upgradeView.GetComponent<UpgradeView>().Initialize(upgrade);
-        upgradeView.GetComponent<ClickButtonDefault>().endClick.AddListener(HideSelected);
-        upgradeView.GetComponent<Button>().onClick.AddListener(AudioGame.instance.PlayButtonUpgrade);
+
+        if (upgradeView != null)
+        {
+            upgradeView.GetComponent<UpgradeView>().Initialize(upgrade);
+            upgradeView.GetComponent<ClickButtonDefault>().endClick.AddListener(HideSelected);
+            upgradeView.GetComponent<Button>().onClick.AddListener(AudioGame.instance.PlayButtonUpgrade);
+        }
     }
     
     public void HideSelected()

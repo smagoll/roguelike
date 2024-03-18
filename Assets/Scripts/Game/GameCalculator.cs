@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public static class GameCalculator
 {
@@ -29,5 +31,13 @@ public static class GameCalculator
             return RareType.Common;
 
         return RareType.Common;
+    }
+    
+    public static string ConvertNumberToString(float number)
+    {
+        if (number > 1000f) return Math.Round(number / 1000f, 1) + "K";
+        if (number > 1000000f) return Math.Round(number / 1000000f, 1) + "M";
+        
+        return Math.Round(number, 1).ToString();
     }
 }

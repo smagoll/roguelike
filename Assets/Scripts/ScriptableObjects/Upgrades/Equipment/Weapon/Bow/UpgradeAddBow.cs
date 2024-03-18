@@ -5,7 +5,7 @@ using UnityEngine;
 public class UpgradeAddBow : UpgradeWeapon
 {
     [Header("Stats")]
-    public GameObject prefabSword;
+    public Arrow prefabArrow;
     public float attackRange;
     public float distanceFlight;
     public float speedFlightArrow;

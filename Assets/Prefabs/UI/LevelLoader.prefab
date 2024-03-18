@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0
+  m_Location: 0.5635526
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281

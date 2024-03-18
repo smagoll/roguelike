@@ -9,7 +9,7 @@ public class GlobalEventManager : MonoBehaviour
     public static UnityEvent<float> IncreaseHP = new();
     public static UnityEvent<float> UpdateXp = new();
     public static UnityEvent<int> OpenEnemies = new();
-    public static UnityEvent<DropManager.DropType, Vector2> SpawnDrop = new();
+    public static UnityEvent<DropManager.DropType, Vector2, int> SpawnDrop = new();
     public static UnityEvent<float, float> UpdateHealthBar = new();
     public static UnityEvent<int, float, float> UpdateStageBar = new();
     public static UnityEvent<Vector3, float, TextHit> CreateDamageHurt = new();
@@ -120,8 +120,8 @@ public class GlobalEventManager : MonoBehaviour
         RemoveUpgrade.Invoke(upgrade);
     }
     
-    public static void Start_SpawnDrop(DropManager.DropType dropType, Vector2 position)
+    public static void Start_SpawnDrop(DropManager.DropType dropType, Vector2 position, int count)
     {
-        SpawnDrop.Invoke(dropType, position);
+        SpawnDrop.Invoke(dropType, position, count);
     }
 }

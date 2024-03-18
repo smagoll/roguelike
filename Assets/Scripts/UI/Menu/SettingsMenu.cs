@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class SettingsWindow : MonoBehaviour
 {
+    [Header("Toggles")] 
+    [SerializeField]
+    private Toggle music;
+    [SerializeField]
+    private Toggle effects;
     [Header("Icon Effects")]
     [SerializeField]
     private Image effectOn;
@@ -19,8 +24,10 @@ public class SettingsWindow : MonoBehaviour
 
     private void Start()
     {
-        ChangeMusic(DataManager.instance.gameData.settings.music);
-        ChangeEffects(DataManager.instance.gameData.settings.sounds);
+        music.onValueChanged.Invoke(DataManager.instance.gameData.settings.music);
+        effects.onValueChanged.Invoke(DataManager.instance.gameData.settings.sounds);
+        //ChangeMusic(DataManager.instance.gameData.settings.music);
+        //ChangeEffects(DataManager.instance.gameData.settings.sounds);
     }
 
     public void ChangeMusic(bool value)

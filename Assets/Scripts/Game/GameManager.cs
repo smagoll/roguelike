@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     private float xpCollect = 0; // собранный опыт за текущую стадию
     private int coin = 0;
 
+    private static ContactFilter2D contactFilter2D = new();
+    
     public int Coin
     {
         get => coin;
@@ -70,6 +72,9 @@ public class GameManager : MonoBehaviour
     {
         layerEnemy = LayerMask.GetMask("Enemy");
         layerPlayer = LayerMask.GetMask("Player");
+        
+        contactFilter2D.SetLayerMask(layerEnemy);
+        contactFilter2D.useLayerMask = true;
 
         InitializeUpgrades();
 
@@ -87,12 +92,22 @@ public class GameManager : MonoBehaviour
 
     public static GameObject GetCloseEnemy(Transform from, float radius)
     {
+        float radiusCheck = 0;
         float closestDistance = Mathf.Infinity;
         GameObject closestEnemy = null;
-        Collider2D[] enemies = Physics2D.OverlapCircleAll(from.position, radius, layerEnemy);
+        var enemies = new Collider2D[10];
+        
+        bool isFind = false;
+        while (!isFind)
+        {
+            radiusCheck = Mathf.Clamp(radiusCheck + 1, float.MinValue, radius);
+            var size = Physics2D.OverlapCircle(from.position, radiusCheck,contactFilter2D, enemies);
+            if (size > 0 || radiusCheck == radius) isFind = true;
+        }
 
         foreach (var enemy in enemies)
         {
+            if (enemy == null) break;
             var distance = (from.transform.position - enemy.transform.position).sqrMagnitude;
             if (distance < closestDistance)
             {

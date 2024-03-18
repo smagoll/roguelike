@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
 
@@ -10,7 +9,6 @@ public class Enemy : MonoBehaviour
     private float startHp;
     private float hp;
     public float scaleHp;
-    public float xp;
     public float speed;
     public float distanceStop;
 
@@ -28,7 +26,13 @@ public class Enemy : MonoBehaviour
     public DropManager.DropType[] drops;
     public Animator animator;
     public ParticleSystem hit;
+    public CircleCollider2D circleCollider;
 
+    [Header("Drops")]
+    public int dropXp;
+    public int dropHp;
+    public int dropCoin;
+    
     public float HP
     {
         get { return hp; }
@@ -46,6 +50,7 @@ public class Enemy : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        circleCollider = GetComponent<CircleCollider2D>();
     }
 
     private void Start()
@@ -137,7 +142,7 @@ public class Enemy : MonoBehaviour
     private void Death()
     {
         isDeath = true;
-        GetComponent<CircleCollider2D>().enabled = false;
+        circleCollider.enabled = false;
         animator.SetTrigger("death");
     }
 
@@ -152,7 +157,7 @@ public class Enemy : MonoBehaviour
     {  
         HP = startHp * scaleHp;
         isDeath = false;
-        GetComponent<CircleCollider2D>().enabled = true;
+        circleCollider.enabled = true;
 
         var effects = GetComponents<Effect>();
         if(effects.Length > 0)
@@ -171,12 +176,24 @@ public class Enemy : MonoBehaviour
             }
         }
     }
-
+    
     public void AppearanceDrops()
     {
         foreach (var drop in drops)
         {
-            GlobalEventManager.Start_SpawnDrop(drop, transform.position);
+            switch (drop)
+            {
+                case DropManager.DropType.Coin:
+                    GlobalEventManager.Start_SpawnDrop(drop, transform.position, dropCoin);
+                    break;
+                case DropManager.DropType.HP:
+                    GlobalEventManager.Start_SpawnDrop(drop, transform.position, dropHp);
+                    break;
+                case DropManager.DropType.XP:
+                    GlobalEventManager.Start_SpawnDrop(drop, transform.position, dropXp);
+                    break;
+            }
+
         }
     }
 }

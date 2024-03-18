@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioMenu : MonoBehaviour, ISwitchAudio
 {
@@ -24,6 +23,10 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
     private AudioSource sfxSource;
     [SerializeField]
     private AudioSource uiSource;
+    
+    [Header("Audio Mixer")]
+    [SerializeField]
+    private AudioMixer audioMixer;
 
     [Header("AudioClips")]
     public AudioClip music;
@@ -77,9 +80,24 @@ public class AudioMenu : MonoBehaviour, ISwitchAudio
 
     public void UpdateSettings()
     {
-        musicSource.enabled = DataManager.instance.gameData.settings.music;
-        sfxSource.enabled = DataManager.instance.gameData.settings.sounds;
-        uiSource.enabled = DataManager.instance.gameData.settings.sounds;
+        if (DataManager.instance.gameData.settings.music)
+            audioMixer.SetFloat("Music", -80f);
+        else
+            audioMixer.SetFloat("Music", 0f);
+        
+        if (DataManager.instance.gameData.settings.music)
+        {
+            audioMixer.SetFloat("UI", -80f);
+            audioMixer.SetFloat("SFX", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("UI", 0f);
+            audioMixer.SetFloat("SFX", 0f);
+        }
+        //musicSource.enabled = DataManager.instance.gameData.settings.music;
+        //sfxSource.enabled = DataManager.instance.gameData.settings.sounds;
+        //uiSource.enabled = DataManager.instance.gameData.settings.sounds;
     }
 
     public void PlayButtonDefault() => PlayUI(UISound.DefaultButton);

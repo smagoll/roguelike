@@ -1,10 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class AudioGame : MonoBehaviour, ISwitchAudio
 {
     public static AudioGame instance;
+
+    [SerializeField]
+    private AudioMixer audioMixer;
 
     [Header("Audio Sources")]
     public AudioSource sfxMainSource;
@@ -65,12 +67,28 @@ public class AudioGame : MonoBehaviour, ISwitchAudio
 
     public void UpdateSettings()
     {
-        var isSound = DataManager.instance.gameData.settings.sounds;
-        var isMusic = DataManager.instance.gameData.settings.music;
-        sfxMainSource.enabled = isSound;
-        sfxSmallSource.enabled = isSound;
-        uiSource.enabled = isSound;
-        musicSource.enabled = isMusic;
-        moveSource.enabled = isSound;
+        if (DataManager.instance.gameData.settings.music)
+            audioMixer.SetFloat("Music", -80f);
+        else
+            audioMixer.SetFloat("Music", 0f);
+        
+        if (DataManager.instance.gameData.settings.music)
+        {
+            audioMixer.SetFloat("UI", -80f);
+            audioMixer.SetFloat("SFX", -80f);
+        }
+        else
+        {
+            audioMixer.SetFloat("UI", 0f);
+            audioMixer.SetFloat("SFX", 0f);
+        }
+        
+        //var isSound = DataManager.instance.gameData.settings.sounds;
+        //var isMusic = DataManager.instance.gameData.settings.music;
+        //sfxMainSource.enabled = isSound;
+        //sfxSmallSource.enabled = isSound;
+        //uiSource.enabled = isSound;
+        //musicSource.enabled = isMusic;
+        //moveSource.enabled = isSound;
     }
 }

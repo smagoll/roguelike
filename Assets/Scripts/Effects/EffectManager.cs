@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
-using DG.Tweening;
 
 public class EffectManager : MonoBehaviour
 {
@@ -29,10 +26,13 @@ public class EffectManager : MonoBehaviour
     [Header("Others")]
     [SerializeField]
     private GameObject stoneExplosion;
+    [SerializeField]
+    private GameObject lightningExplosion;
 
     private ObjectPool<GameObject> poolGravityExplosion;
     private ObjectPool<GameObject> poolFireballExplosion;
     private ObjectPool<GameObject> poolStoneExplosion;
+    private ObjectPool<GameObject> poolLightningExplosion;
     private ObjectPool<GameObject> poolHit;
 
 
@@ -44,6 +44,7 @@ public class EffectManager : MonoBehaviour
         poolFireballExplosion = CreatePool(fireballExplosion);
         poolGravityExplosion = CreatePool(gravityExplosion);
         poolStoneExplosion = CreatePool(stoneExplosion);
+        poolLightningExplosion = CreatePool(lightningExplosion);
         poolHit = CreatePool(hit);
     }
 
@@ -54,6 +55,12 @@ public class EffectManager : MonoBehaviour
     }
     
     public void CreateStoneExplosion(Transform transform)
+    {
+        var explosion = poolStoneExplosion.Get();
+        explosion.transform.position = transform.position;
+    }
+    
+    public void CreateLightningExplosion(Transform transform)
     {
         var explosion = poolStoneExplosion.Get();
         explosion.transform.position = transform.position;

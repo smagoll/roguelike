@@ -150,7 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startHp: 30
   scaleHp: 0
-  xp: 4
   speed: 0.9
   distanceStop: 0.2
   damage: 5
@@ -162,6 +161,9 @@ MonoBehaviour:
   drops: 000000000200000001000000
   animator: {fileID: 0}
   hit: {fileID: 0}
+  dropXp: 2
+  dropHp: 1
+  dropCoin: 1
 --- !u!58 &3344561361105422530
 CircleCollider2D:
   m_ObjectHideFlags: 0

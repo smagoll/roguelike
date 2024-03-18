@@ -8,6 +8,7 @@ public abstract class Drop : MonoBehaviour
 {
     public ObjectPool<Drop> pool;
     private readonly float speed = 4f;
+    public int count;
     public bool isAttraction = false;
     public int chance;
     public DropManager.DropType dropType;

@@ -1,7 +1,10 @@
 using UnityEngine;
+using UnityEngine.Pool;
 
 public class Bow : Weapon, IProjectileController
 {
+    private ObjectPool<Arrow> arrows;
+    
     public GameObject prefabArrow;
     public bool isArrowThrough = false;
 
@@ -21,27 +24,27 @@ public class Bow : Weapon, IProjectileController
     public override void Action()
     {
         Direction = GameManager.GetDirectionToCloseEnemy(transform, attackRange);
-        var arrowObject = Instantiate(prefabArrow, gameObject.transform.position, Quaternion.identity);
-        var arrow = arrowObject.GetComponent<Arrow>();
-        arrow.bow = this;
-        arrow.projectileController = this;
-        arrow.IsThrough = isArrowThrough;
+        var arrow = arrows.Get();
+        arrow.transform.position = transform.position;
+        arrow.Initialize(this, isArrowThrough, arrows);
 
         if (Direction == Vector2.zero)
             arrow.direction = playerController.directionLook;
         else
             arrow.direction = Direction;
+        
+        arrow.StartFlight();
     }
 
     public void Initialize(UpgradeAddBow dataBow)
     {
-        prefabArrow = dataBow.prefabSword;
         Damage = dataBow.Damage;
         SpeedFlight = dataBow.speedFlightArrow;
         attackRange = dataBow.attackRange;
         Frequency = dataBow.Frequency;
         upgrades = dataBow.upgrades;
         DistanceFlight = dataBow.distanceFlight;
+        arrows = GameManager.CreatePool<Arrow>(dataBow.prefabArrow);
 
         isAttack = true;
     }

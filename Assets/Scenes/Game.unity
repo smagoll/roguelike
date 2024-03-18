@@ -1908,7 +1908,7 @@ MonoBehaviour:
   minRadius: 5
   maxRadius: 10
   frequencySpawn: 0.3
-  percentIncreaseHP: 10
+  percentIncreaseHP: 2
 --- !u!114 &533176929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,6 +1928,7 @@ MonoBehaviour:
   scaleExplosion: 0.25
   hit: {fileID: 100000, guid: f06e78284f831ae469c74624ab5d513b, type: 3}
   stoneExplosion: {fileID: 100002, guid: e9391f622091e1449bdef4ef15af4948, type: 3}
+  lightningExplosion: {fileID: 8443190031800748759, guid: 201dbc0cda5161e40bf825190f55357b, type: 3}
 --- !u!114 &533176930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6867,7 +6868,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -7543,6 +7544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151348d32ca771247a91bc2efb73bdbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: aa5f77ff9f19e3949bfad72f846b1dee, type: 2}
   sfxMainSource: {fileID: 912206622}
   sfxSmallSource: {fileID: 1353559445}
   uiSource: {fileID: 1885736691}
@@ -8085,8 +8087,8 @@ SceneRoots:
   - {fileID: 737447812}
   - {fileID: 1805858113}
   - {fileID: 268263969}
-  - {fileID: 370693774}
   - {fileID: 415873426}
+  - {fileID: 370693774}
   - {fileID: 533176926}
   - {fileID: 2076808873}
   - {fileID: 1320290006}

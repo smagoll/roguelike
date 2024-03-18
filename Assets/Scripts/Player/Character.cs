@@ -18,7 +18,7 @@ public class Character : MonoBehaviour
 
     public Upgrade[] upgrades;
 
-    public float MaxHP => maxHp * scaleHp;
+    public float MaxHP => Mathf.Round(maxHp * scaleHp);
 
     public float HP
     {

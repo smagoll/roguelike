@@ -34,7 +34,7 @@ public class SpawnerEnemy : MonoBehaviour
 
     public float FrequencySpawn
     {
-        get => frequencySpawn - gameManager.NumberStage * 0.01f;
+        get => Mathf.Clamp(frequencySpawn - gameManager.NumberStage * 0.002f, 0.1f, float.MaxValue);
     }
 
     private void Awake()
@@ -52,7 +52,7 @@ public class SpawnerEnemy : MonoBehaviour
     {
         if (isSpawn)
         {
-            if (Time.time - lastTimeSpawn >= FrequencySpawn)
+            if ((Time.time - lastTimeSpawn)*Time.timeScale>= FrequencySpawn)
             {
                 var position = Random.onUnitSphere * Random.Range(minRadius, maxRadius) + GameManager.player.transform.position;
                 position.z = 0f;

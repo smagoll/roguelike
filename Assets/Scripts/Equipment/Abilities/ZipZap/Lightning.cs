@@ -11,8 +11,6 @@ public class Lightning : Projectile
     public float attackRange;
     private int sequence;
     private bool isHit = false;
-    [SerializeField]
-    private GameObject hit;
     public Transform trail;
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -28,7 +26,7 @@ public class Lightning : Projectile
             sequence -= 1;
             
             collision.GetComponent<Enemy>().TakeDamage(damage);
-            Instantiate(hit, transform.position, Quaternion.identity);
+            EffectManager.instance.CreateLightningExplosion(transform);
             AudioGame.instance.PlaySmallSFX(AudioGame.instance.lightningCharge);
 
             if (sequence <= 0)

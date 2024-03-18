@@ -206,7 +206,7 @@ TrailRenderer:
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.7
     widthCurve:
       serializedVersion: 2
       m_Curve:
@@ -220,13 +220,22 @@ TrailRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: -0.031712286
-        outSlope: -0.031712286
+        time: 0.7081999
+        value: 0.4766762
+        inSlope: -1.3867837
+        outSlope: -1.3867837
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.19832402
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: -2.5642421
+        outSlope: -2.5642421
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.24969643
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -234,7 +243,7 @@ TrailRenderer:
     colorGradient:
       serializedVersion: 2
       key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -249,7 +258,7 @@ TrailRenderer:
       ctime5: 0
       ctime6: 0
       ctime7: 0
-      atime0: 0
+      atime0: 5012
       atime1: 65535
       atime2: 0
       atime3: 0
@@ -258,7 +267,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -268,7 +277,7 @@ TrailRenderer:
     textureScale: {x: 1, y: 1}
     shadowBias: 0.5
     generateLightingData: 0
-  m_MinVertexDistance: 0
+  m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
   m_Autodestruct: 0
   m_Emitting: 1
@@ -286,7 +295,7 @@ GameObject:
   - component: {fileID: 5661891587120074702}
   - component: {fileID: 6892198238538163684}
   - component: {fileID: 59593990800916568}
-  - component: {fileID: 1790925652007249913}
+  - component: {fileID: 8652704506049888744}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -379,6 +388,7 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   startPosition: {x: 0, y: 0}
   bow: {fileID: 0}
+  trailRenderer: {fileID: 742313415966915043}
 --- !u!50 &6892198238538163684
 Rigidbody2D:
   serializedVersion: 4
@@ -427,8 +437,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!60 &1790925652007249913
-PolygonCollider2D:
+--- !u!58 &8652704506049888744
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -460,21 +470,5 @@ PolygonCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.32}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.049999997, y: 0.16}
-      - {x: -0.08, y: 0.14}
-      - {x: -0.08, y: -0.16}
-      - {x: 0.08, y: -0.16}
-      - {x: 0.08, y: 0.13}
-      - {x: 0.03, y: 0.16}
-  m_UseDelaunayMesh: 0
+  serializedVersion: 2
+  m_Radius: 0.16
