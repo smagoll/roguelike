@@ -57,7 +57,6 @@ public class EndGameWindow : MonoBehaviour
     {
         UpdateData();
         SceneTransition.LoadScene("Menu");
-        Time.timeScale = 1f;
     }
 
     public void ButtonAd()

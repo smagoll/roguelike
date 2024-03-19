@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -23,6 +22,7 @@ public class SceneTransition : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1f;
         HideSceneTransition();
     }
 
@@ -30,27 +30,27 @@ public class SceneTransition : MonoBehaviour
     {
         if (loadingAsyncOperation  != null)
         {
-            slider.DOValue(loadingAsyncOperation.progress / .8f, .3f);
+            slider.DOValue(loadingAsyncOperation.progress / .8f, .3f).SetUpdate(true);
         }
     }
 
     public static void LoadScene(string sceneName)
     {
-        SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
+        //SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         instance.ShowSceneTransition();
         instance.loadingAsyncOperation = SceneManager.LoadSceneAsync(sceneName);
-        instance.StartCoroutine(instance.Wait(.3f));
+        //instance.StartCoroutine(instance.Wait(.3f));
     }
 
     public void ShowSceneTransition()
     {
-        background.DOFade(255f, .3f);
+        background.DOFade(255f, .3f).SetUpdate(true);
         slider.gameObject.SetActive(true);
     }
     
     public void HideSceneTransition()
     {
-        background.DOFade(0f, 1f);
+        background.DOFade(0f, 1f).SetUpdate(true);
         slider.gameObject.SetActive(false);
     }
 
