@@ -1269,13 +1269,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelLoader
       objectReference: {fileID: 0}
-    - target: {fileID: 241927562358988954, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1167184315517287484, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000021457672
+    - target: {fileID: 1377291004053178663, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
+      propertyPath: m_Location
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5229094418570573630, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_AnchorMax.x
@@ -1284,34 +1280,6 @@ PrefabInstance:
     - target: {fileID: 5229094418570573630, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5229094418570573630, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000005722046
-      objectReference: {fileID: 0}
-    - target: {fileID: 6036593531422243506, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 6279945303828014845, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6279945303828014845, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_FillAmount
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6551788453143095076, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6551788453143095076, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 865a9f9c46edf87458a3277d6804b9ad, type: 3}
-    - target: {fileID: 6617012136516205243, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -0.000021457672
       objectReference: {fileID: 0}
     - target: {fileID: 8370160214711799429, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_LocalPosition.x
