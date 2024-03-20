@@ -1,4 +1,4 @@
-#About
+# About
 The game is an endless roguelike
-#Links
+# Links
 https://smagoll.itch.io/aristocrasy
