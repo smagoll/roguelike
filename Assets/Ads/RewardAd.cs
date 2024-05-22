@@ -63,7 +63,7 @@ public class RewardedAd : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLis
         if (adUnitId.Equals(_adUnitId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED) && !isComplete)
         {
             if (DataManager.instance.gameData.settings.music) AudioMenu.instance.musicSource.UnPause();
-            improvementsMenu.AdImprovement();
+            //improvementsMenu.AdImprovement();
             isComplete = true;
             LoadAd();
         }

@@ -5,9 +5,10 @@ public class HeroData
     public bool isOpen;
     public int stageForOpen;
 
-    public HeroData(int id, bool isOpen)
+    public HeroData(int id, bool isOpen, int stageForOpen)
     {
         this.id = id;
         this.isOpen = isOpen;
+        this.stageForOpen = stageForOpen;
     }
 }

@@ -27,6 +27,6 @@ public abstract class MenuElement : MonoBehaviour
     public abstract void EnterView();
     public abstract void ExitView();
 
-    private void OnEnable() => EnterView();
-    private void OnDisable() => ExitView();
+    public virtual void OnEnable() => EnterView();
+    public virtual void OnDisable() => ExitView();
 }

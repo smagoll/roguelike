@@ -1,6 +1,7 @@
 using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using YG;
 
 public class UIManagerMenu : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class UIManagerMenu : MonoBehaviour
         
         UpdateCoinText();
         UpdateRecord();
+        
+        LocaleSelector.Instance.UpdateLocalization();
     }
 
     public void UpdateCoinText()
@@ -45,6 +48,7 @@ public class UIManagerMenu : MonoBehaviour
 
     public void ButtonPlay()
     {
+        YandexGame.FullscreenShow();
         SceneTransition.LoadScene("Game");
     }
 

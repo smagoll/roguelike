@@ -22,15 +22,15 @@ public class Exit : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
         _adUnitId = _androidAdUnitId;
 #endif
         
-        _showAdButton.interactable = false;
+        //_showAdButton.interactable = false;
     }
 
     private void Start()
     {
         if (AdManager.Instance.isInitializated)
             LoadAd();
-        else
-            _showAdButton.interactable = false;
+        //else
+            //_showAdButton.interactable = false;
     }
     
     public void LoadAd()
@@ -64,7 +64,7 @@ public class Exit : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowListener
         {
             if (DataManager.instance.gameData.settings.music) AudioGame.instance.musicSource.UnPause();
             isComplete = true;
-            endGameWindow.ButtonAd();
+            //endGameWindow.ButtonAd();
             if(!endGameWindow.isRevive || !endGameWindow.isDoubleReward) LoadAd();
         }
         

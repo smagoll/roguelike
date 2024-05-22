@@ -3,12 +3,13 @@ using System.IO;
 using UnityEngine;
 using System.Linq;
 using UnityEditor;
+using YG;
 
 public class DataManager : MonoBehaviour
 {
     public static DataManager instance = null;
-
-    public GameData gameData = new();
+    
+    public GameData gameData => YandexGame.savesData;
 
     public UpgradeWeapon[] weapons;
     public UpgradeAbility[] abilities;
@@ -19,6 +20,9 @@ public class DataManager : MonoBehaviour
 
     private void Awake()
     {
+        var objects = GameObject.FindGameObjectsWithTag("Data");
+        if (objects.Length > 1) Destroy(gameObject);
+        
         if (instance != null && instance != this)
             Destroy(this);
         else
@@ -27,20 +31,26 @@ public class DataManager : MonoBehaviour
         GlobalEventManager.IncreaseCoinsData.AddListener(IncreaseCoins);
         GlobalEventManager.DecreaseCoinsData.AddListener(DecreaseCoins);
         filePath = Application.persistentDataPath + "GameData.json";
-        Load();
+        //Load();
+        
+        //if (YandexGame.savesData.isFirstSession) CreateNew();
+        //CreateNew();
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     private void CreateNew()
     {
         var textAssetJson = Resources.Load<TextAsset>("GameData/GameData");
-        gameData = JsonUtility.FromJson<GameData>(textAssetJson.text);
+        YandexGame.savesData = JsonUtility.FromJson<GameData>(textAssetJson.text);
         Save();
     }
 
     public void Save()
     {
-        string gameDataJson = JsonUtility.ToJson(gameData);
-        File.WriteAllText(filePath, gameDataJson);
+        //string gameDataJson = JsonUtility.ToJson(gameData);
+        //File.WriteAllText(filePath, gameDataJson);
+        YandexGame.SaveProgress();
     }
 
     public void Load()
@@ -48,7 +58,7 @@ public class DataManager : MonoBehaviour
         if (File.Exists(filePath))
         {
             string gameDataJson = File.ReadAllText(filePath);
-            gameData = JsonUtility.FromJson<GameData>(gameDataJson);
+            //gameData = JsonUtility.FromJson<GameData>(gameDataJson);
         }
         else
         {

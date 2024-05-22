@@ -5,6 +5,7 @@ using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YG;
 using Zenject;
 
 public class EndGameWindow : MonoBehaviour
@@ -56,23 +57,50 @@ public class EndGameWindow : MonoBehaviour
     public void LoadMenu()
     {
         UpdateData();
+        YandexGame.FullscreenShow();
         SceneTransition.LoadScene("Menu");
     }
 
-    public void ButtonAd()
+    public void Rewarded(int idRewarded)
     {
-        if (!isRevive)
+        if (idRewarded == 1)
         {
-            Revive();
-            adButtonText.StringReference = doubleAwardsStringReference;
-            return;
-        }
+            if (!isRevive)
+            {
+                Revive();
+                adButtonText.StringReference = doubleAwardsStringReference;
+                return;
+            }
         
-        if (!isDoubleReward)
-        {
-            DoubleReward();
+            if (!isDoubleReward)
+            {
+                DoubleReward();
+            }
         }
     }
+
+    private void ShowRewardedAd()
+    {
+        if (!isRevive || !isDoubleReward)
+        {
+            YandexGame.RewVideoShow(1);
+        }
+    }
+    
+    //public void ButtonAd()
+    //{
+    //    if (!isRevive)
+    //    {
+    //        Revive();
+    //        adButtonText.StringReference = doubleAwardsStringReference;
+    //        return;
+    //    }
+    //    
+    //    if (!isDoubleReward)
+    //    {
+    //        DoubleReward();
+    //    }
+    //}
 
     private void Revive()
     {
@@ -93,5 +121,17 @@ public class EndGameWindow : MonoBehaviour
         isDoubleReward = true;
 
         AdButton.interactable = false;
+    }
+
+    private void OnEnable()
+    {
+        YandexGame.RewardVideoEvent += Rewarded;
+        AdButton.GetComponent<ClickButtonDefault>().endClick.AddListener(ShowRewardedAd);
+    }
+    
+    private void OnDisable()
+    {
+        YandexGame.RewardVideoEvent -= Rewarded;
+        AdButton.GetComponent<ClickButtonDefault>().endClick.RemoveListener(ShowRewardedAd);
     }
 }

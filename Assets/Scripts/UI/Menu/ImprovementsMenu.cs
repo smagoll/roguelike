@@ -4,6 +4,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class ImprovementsMenu : MenuElement
 {
@@ -101,8 +102,9 @@ public class ImprovementsMenu : MenuElement
         DataManager.instance.Save();
     }
 
-    public void AdImprovement()
+    public void AdImprovement(int idReward)
     {
+        if (idReward != 0) return;
         for (int i = 0; i < countUpgradeAd; i++)
         {
             var improvements = DataManager.instance.gameData.improvements;
@@ -111,5 +113,19 @@ public class ImprovementsMenu : MenuElement
             cells.FirstOrDefault(x => x.id == improvements[rnd].id)?.Init(improvements[rnd].id);
             DataManager.instance.Save();
         }
+    }
+
+    public void LaunchAdReward() => YandexGame.RewVideoShow(0);
+
+    public override void OnEnable()
+    {
+        base.OnEnable();
+        YandexGame.RewardVideoEvent += AdImprovement;
+    }
+    
+    public override void OnDisable()
+    {
+        base.OnDisable();
+        YandexGame.RewardVideoEvent -= AdImprovement;
     }
 }
