@@ -1000,7 +1000,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioGame, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1
         m_Arguments:
@@ -1477,8 +1477,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
-        m_MethodName: ShowConfirmation
+        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+        m_MethodName: PlayButtonDefault
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1489,16 +1489,16 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioGame, Assembly-CSharp
-        m_MethodName: PlayButtonClick
-        m_Mode: 1
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &8699848217574432406
 MonoBehaviour:
@@ -1769,7 +1769,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: AudioGame, Assembly-CSharp
+        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
         m_MethodName: UpdateSettings
         m_Mode: 1
         m_Arguments:
@@ -1883,7 +1883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &757319972825338918
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1899,10 +1899,10 @@ RectTransform:
   - {fileID: 7593116716936790362}
   m_Father: {fileID: 1042445755789420293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 268.52396, y: -311.2302}
+  m_SizeDelta: {x: 477.0479, y: 167.4868}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &472705568927018477
 CanvasRenderer:
@@ -1968,7 +1968,19 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AudioMenu, Assembly-CSharp
+        m_MethodName: PlayButtonDefault
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_AlphaFadeSpeed: 0.15
 --- !u!114 &2802674210111088568
 MonoBehaviour:
@@ -2529,7 +2541,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.19042444, y: 0.17911853}
   m_AnchorMax: {x: 0.8184533, y: 0.82088184}
-  m_AnchoredPosition: {x: -0.99998474, y: 0.5000076}
+  m_AnchoredPosition: {x: -0.9999924, y: 0.5000076}
   m_SizeDelta: {x: -1.2622986, y: -2.3383007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6616286191811126590

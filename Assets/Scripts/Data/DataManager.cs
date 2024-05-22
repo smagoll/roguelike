@@ -31,10 +31,6 @@ public class DataManager : MonoBehaviour
         GlobalEventManager.IncreaseCoinsData.AddListener(IncreaseCoins);
         GlobalEventManager.DecreaseCoinsData.AddListener(DecreaseCoins);
         filePath = Application.persistentDataPath + "GameData.json";
-        //Load();
-        
-        //if (YandexGame.savesData.isFirstSession) CreateNew();
-        //CreateNew();
         
         DontDestroyOnLoad(gameObject);
     }

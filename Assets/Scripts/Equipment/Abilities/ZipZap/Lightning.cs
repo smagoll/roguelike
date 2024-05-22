@@ -12,6 +12,8 @@ public class Lightning : Projectile
     private int sequence;
     private bool isHit = false;
     public Transform trail;
+    [SerializeField]
+    private TrailRenderer trailRenderer;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -36,7 +38,7 @@ public class Lightning : Projectile
 
             direction = DirectionCloseEnemy(collision.gameObject);
             UpdateProjectile();
-            UpdateRotation();
+            //UpdateRotation();
             isHit = false;
         }
     }
@@ -50,7 +52,7 @@ public class Lightning : Projectile
     public void StartFlight()
     {
         UpdateProjectile();
-        UpdateRotation();
+        //UpdateRotation();
         isFlight = true;
     }
 
@@ -93,6 +95,7 @@ public class Lightning : Projectile
     public override void DestroyProjectile()
     {
         isFlight = false;
+        trailRenderer.Clear();
         pool.Release(this);
     }
 }

@@ -7,6 +7,8 @@ using Zenject;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance;
+    
     [Header("Stage")]
     private int numberStage = 1;
     public float xpForFirstStage; // необходимый опыт для первой стадии
@@ -70,6 +72,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance == null) instance = this;
+        
         layerEnemy = LayerMask.GetMask("Enemy");
         layerPlayer = LayerMask.GetMask("Player");
         

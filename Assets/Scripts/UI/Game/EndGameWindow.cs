@@ -51,13 +51,15 @@ public class EndGameWindow : MonoBehaviour
             DataManager.instance.gameData.record = gameManager.NumberStage;
         }
 
+        YandexGame.NewLeaderboardScores("leaderboard", gameManager.NumberStage);
+        
         DataManager.instance.Save();
     }
 
     public void LoadMenu()
     {
-        UpdateData();
         YandexGame.FullscreenShow();
+        UpdateData();
         SceneTransition.LoadScene("Menu");
     }
 

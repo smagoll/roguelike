@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.05502
+  m_Location: 0.0211706
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -623,19 +623,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3074639367087758938}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7166645386209171913}
-        m_TargetAssemblyTypeName: CellHero, Assembly-CSharp
-        m_MethodName: ShowWindowUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &6100413859947977848
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -650,7 +638,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7166645386209171913}
+        m_TargetAssemblyTypeName: CellHero, Assembly-CSharp
+        m_MethodName: ShowWindowUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6112122766099521256
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Components;
 using UnityEngine.UI;
+using YG;
 
 public class UpgradeView : MonoBehaviour
 {
@@ -24,7 +25,8 @@ public class UpgradeView : MonoBehaviour
         if (upgrade.UpgradeType == UpgradeType.Add)
             GlobalEventManager.Start_RemoveUpgrade(upgrade);
 
-        //GlobalEventManager.Start_PauseGame();
+        if(GameManager.instance.NumberStage % 5 == 0)
+            YandexGame.FullscreenShow();
     }
 
     public void Initialize(Upgrade upgrade)

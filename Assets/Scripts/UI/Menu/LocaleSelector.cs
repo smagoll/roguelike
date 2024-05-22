@@ -19,7 +19,22 @@ public class LocaleSelector : MonoBehaviour
     {
         if (active) return;
 
-        StartCoroutine(SetLocale(DataManager.instance.gameData.settings.id_language));
+        int id_language;
+        
+        switch (DataManager.instance.gameData.language)
+        {
+            case "ru":
+                id_language = 1;
+                break;
+            case "en":
+                id_language = 0;
+                break;
+            default:
+                id_language = 0;
+                break;
+        }
+        
+        StartCoroutine(SetLocale(id_language));
     }
 
     private IEnumerator SetLocale(int localeId)
