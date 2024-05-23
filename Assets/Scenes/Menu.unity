@@ -1127,7 +1127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1223,7 +1223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -1936,7 +1936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -3165,7 +3165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -5191,7 +5191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -6576,7 +6576,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -7819,7 +7819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8274,7 +8274,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -8545,7 +8545,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -9266,7 +9266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -10324,7 +10324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duration: 1
-  m_Location: 0.4859662
+  m_Location: 0.7037418
   m_Width: 0.223
   m_Softness: 1
   m_Brightness: 0.281
@@ -13409,6 +13409,10 @@ PrefabInstance:
     - target: {fileID: 241927562358988954, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1377291004053178663, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
+      propertyPath: m_Location
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2758589583211567306, guid: b92b48809aa56944c975d55e2c7e284b, type: 3}
       propertyPath: m_UiScaleMode
