@@ -52,9 +52,7 @@ namespace YG
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);
 
-            bool fileExits = false;
-            if (File.Exists(path))
-                fileExits = true;
+            bool fileExits = File.Exists(path);
 
 #if YG_NEWTONSOFT_FOR_SAVES
             string json = JsonConvert.SerializeObject(savesData, Formatting.Indented);
@@ -82,7 +80,7 @@ namespace YG
 #if YG_NEWTONSOFT_FOR_SAVES
                 savesData = JsonConvert.DeserializeObject<GameData>(json);
 #else
-                savesData = JsonUtility.FromJson<SavesYG>(json);
+                savesData = JsonUtility.FromJson<GameData>(json);
 #endif
             }
             else
@@ -118,7 +116,7 @@ namespace YG
                 //savesData = gameData;
                 savesData = JsonConvert.DeserializeObject<GameData>(LoadFromLocalStorage("savesData"));
 #else
-                savesData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
+                savesData = JsonUtility.FromJson<GameData>(LoadFromLocalStorage("savesData"));
 #endif
             }
         }
@@ -197,7 +195,7 @@ namespace YG
 #if YG_NEWTONSOFT_FOR_SAVES
                     cloudData = JsonConvert.DeserializeObject<GameData>(data);
 #else
-                    cloudData = JsonUtility.FromJson<SavesYG>(data);
+                    cloudData = JsonUtility.FromJson<GameData>(data);
 #endif
                 }
                 catch (Exception e)
@@ -233,7 +231,7 @@ namespace YG
 #if YG_NEWTONSOFT_FOR_SAVES
                     localData = JsonConvert.DeserializeObject<GameData>(LoadFromLocalStorage("savesData"));
 #else
-                    localData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
+                    localData = JsonUtility.FromJson<GameData>(LoadFromLocalStorage("savesData"));
 #endif
                 }
                 catch (Exception e)
@@ -276,7 +274,7 @@ namespace YG
 #if YG_NEWTONSOFT_FOR_SAVES
                 savesData = JsonConvert.DeserializeObject<GameData>(data);
 #else
-                savesData = JsonUtility.FromJson<SavesYG>(data);
+                savesData = JsonUtility.FromJson<GameData>(data);
 #endif
                 Message("Cloud Saves Partially Restored!");
             }
@@ -288,7 +286,7 @@ namespace YG
 #if YG_NEWTONSOFT_FOR_SAVES
                 savesData = JsonConvert.DeserializeObject<GameData>(LoadFromLocalStorage("savesData"));
 #else
-                savesData = JsonUtility.FromJson<SavesYG>(LoadFromLocalStorage("savesData"));
+                savesData = JsonUtility.FromJson<GameData>(LoadFromLocalStorage("savesData"));
 #endif
                 Message("Local Saves Partially Restored!");
             }

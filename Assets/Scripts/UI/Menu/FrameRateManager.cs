@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Threading;
 using UnityEngine;
+using YG;
+
 public class FrameRateManager : MonoBehaviour
 {
     [Header("Frame Settings")]

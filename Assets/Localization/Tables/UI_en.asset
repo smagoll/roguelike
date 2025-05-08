@@ -74,6 +74,10 @@ MonoBehaviour:
     m_Localized: Improve
     m_Metadata:
       m_Items: []
+  - m_Id: 156551424219602944
+    m_Localized: Exit?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

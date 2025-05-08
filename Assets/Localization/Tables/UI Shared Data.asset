@@ -71,6 +71,10 @@ MonoBehaviour:
     m_Key: improve
     m_Metadata:
       m_Items: []
+  - m_Id: 156551424219602944
+    m_Key: exitConfirmation
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
