@@ -61,6 +61,7 @@ public class DropInfo
             drop.pool = pool;
             drop.transform.position = position;
             drop.count = count;
+            drop.StartTimer();
         }
     }
 }

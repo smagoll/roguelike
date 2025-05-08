@@ -14,9 +14,27 @@ public abstract class Drop : MonoBehaviour
     public DropManager.DropType dropType;
     private GameObject player;
 
+    private float time = 30f;
+    private Coroutine destroyTimerCoroutine;
+    
     private void Awake()
     {
         player = GameManager.player;
+    }
+
+    public void StartTimer()
+    {
+        if (destroyTimerCoroutine != null)
+            StopCoroutine(destroyTimerCoroutine);
+
+        destroyTimerCoroutine = StartCoroutine(DestroyAfterTime());
+    }
+
+    private IEnumerator DestroyAfterTime()
+    {
+        yield return new WaitForSeconds(time);
+        pool.Release(this); // Возвращаем объект в пул
+        destroyTimerCoroutine = null;
     }
 
     private void Update()
@@ -32,6 +50,12 @@ public abstract class Drop : MonoBehaviour
     {
         if (collision.CompareTag("CenterCollector"))
         {
+            if (destroyTimerCoroutine != null)
+            {
+                StopCoroutine(destroyTimerCoroutine);
+                destroyTimerCoroutine = null;
+            }
+            
             Action();
             pool.Release(this);
             AudioGame.instance.PlaySmallSFX(AudioGame.instance.dropTake);

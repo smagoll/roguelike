@@ -1,100 +1,93 @@
 {
-  "idSave": 239,
-  "isFirstSession": true,
-  "language": "ru",
-  "promptDone": false,
-  "record": 8,
-  "coins": 33,
-  "weapons": [
-    {
-      "id": 1,
-      "level": 1,
-      "IsOpen": true
+    "idSave": 246,
+    "isFirstSession": true,
+    "language": "ru",
+    "promptDone": false,
+    "record": 18,
+    "coins": 44,
+    "weapons": [
+        {
+            "id": 1,
+            "level": 1
+        },
+        {
+            "id": 2,
+            "level": 1
+        },
+        {
+            "id": 3,
+            "level": 1
+        }
+    ],
+    "abilities": [
+        {
+            "id": 1,
+            "level": 1
+        },
+        {
+            "id": 2,
+            "level": 1
+        },
+        {
+            "id": 3,
+            "level": 5
+        },
+        {
+            "id": 4,
+            "level": 1
+        }
+    ],
+    "heroes": [
+        {
+            "id": 1,
+            "isOpen": true,
+            "stageForOpen": 0
+        },
+        {
+            "id": 2,
+            "isOpen": false,
+            "stageForOpen": 100
+        },
+        {
+            "id": 3,
+            "isOpen": false,
+            "stageForOpen": 200
+        }
+    ],
+    "improvements": [
+        {
+            "id": 1,
+            "level": 0
+        },
+        {
+            "id": 2,
+            "level": 2
+        },
+        {
+            "id": 3,
+            "level": 1
+        },
+        {
+            "id": 4,
+            "level": 1
+        },
+        {
+            "id": 5,
+            "level": 2
+        }
+    ],
+    "prices": {
+        "improvement": 25,
+        "chests": [],
+        "upgrade_abilities": 10,
+        "upgrade_weapons": 20
     },
-    {
-      "id": 2,
-      "level": 1,
-      "IsOpen": true
+    "equipmentSelected": {
+        "id_hero": 1
     },
-    {
-      "id": 3,
-      "level": 1,
-      "IsOpen": true
+    "settings": {
+        "id_language": 0,
+        "music": true,
+        "sounds": true
     }
-  ],
-  "abilities": [
-    {
-      "id": 1,
-      "level": 1,
-      "IsOpen": true
-    },
-    {
-      "id": 2,
-      "level": 1,
-      "IsOpen": true
-    },
-    {
-      "id": 3,
-      "level": 1,
-      "IsOpen": true
-    },
-    {
-      "id": 4,
-      "level": 1,
-      "IsOpen": true
-    }
-  ],
-  "heroes": [
-    {
-      "id": 1,
-      "isOpen": true,
-      "stageForOpen": 0
-    },
-    {
-      "id": 2,
-      "isOpen": false,
-      "stageForOpen": 100
-    },
-    {
-      "id": 3,
-      "isOpen": false,
-      "stageForOpen": 200
-    }
-  ],
-  "improvements": [
-    {
-      "id": 1,
-      "level": 0
-    },
-    {
-      "id": 2,
-      "level": 1
-    },
-    {
-      "id": 3,
-      "level": 1
-    },
-    {
-      "id": 4,
-      "level": 1
-    },
-    {
-      "id": 5,
-      "level": 2
-    }
-  ],
-  "prices": {
-    "improvement": 20,
-    "chests": null,
-    "upgrade_abilities": 10,
-    "upgrade_weapons": 20
-  },
-  "equipmentSelected": {
-    "id_hero": 1
-  },
-  "settings": {
-    "id_language": 0,
-    "music": true,
-    "sounds": true
-  }
 }

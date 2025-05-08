@@ -23,9 +23,9 @@ public static class GameCalculator
     {
         var rnd = Random.Range(0, 100);
 
-        if (rnd < 10)
+        if (rnd < 20)
             return RareType.Epic;
-        if (rnd < 30)
+        if (rnd < 50)
             return RareType.Uncommon;
         if (rnd < 100)
             return RareType.Common;
